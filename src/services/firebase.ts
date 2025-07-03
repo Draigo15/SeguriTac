@@ -1,8 +1,9 @@
+// src/services/firebase.ts
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
-// Configuración de Firebase
+// Configuración directa (sin .env)
 const firebaseConfig = {
   apiKey: 'AIzaSyBI5Jwmt5CoT02LhuoHvHIxMQl3S9yMgSA',
   authDomain: 'seguritacapp.firebaseapp.com',
@@ -15,8 +16,6 @@ const firebaseConfig = {
 // Inicializa Firebase
 const app = initializeApp(firebaseConfig);
 
-// Auth sin persistencia personalizada (Expo Go no la soporta)
+// Auth y Firestore
 export const auth = getAuth(app);
-
-// Firestore
 export const db = getFirestore(app);

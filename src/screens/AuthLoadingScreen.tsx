@@ -15,42 +15,50 @@ const AuthLoadingScreen = () => {
   const navigation = useNavigation<NavigationProp>();
 
   useEffect(() => {
-    const checkSession = async () => {
-      const unsubscribe = auth.onAuthStateChanged(async (user: User | null) => {
-        if (user) {
-          try {
-            const userDoc = await getDoc(doc(db, 'users', user.uid));
-            const storedUser = await AsyncStorage.getItem('user');
+    const unsubscribe = auth.onAuthStateChanged(async (user: User | null) => {
+      if (user) {
+        try {
+          const userDoc = await getDoc(doc(db, 'users', user.uid));
+          const storedUser = await AsyncStorage.getItem('user');
+          const storedRole = storedUser ? JSON.parse(storedUser).role : null;
 
-            if (userDoc.exists()) {
-              const role = userDoc.data().role;
+          if (userDoc.exists()) {
+            const role = userDoc.data().role;
 
-              if (role === 'ciudadano') {
-                navigation.reset({ index: 0, routes: [{ name: 'Home' }] });
-              } else if (role === 'autoridad') {
-                navigation.reset({ index: 0, routes: [{ name: 'AuthorityDashboard' }] });
-              } else {
-                navigation.reset({ index: 0, routes: [{ name: 'RoleSelector' }] });
-              }
-            } else if (storedUser) {
-              // fallback si Firestore no encuentra el doc, pero AsyncStorage tiene usuario
+            // ✅ VERIFICAR que el rol actual coincida con el guardado en AsyncStorage
+            if (storedRole && role !== storedRole) {
+              console.warn(`Rol inconsistente. Firebase: ${role} | AsyncStorage: ${storedRole}`);
+              await auth.signOut();
+              await AsyncStorage.removeItem('user');
+              navigation.reset({ index: 0, routes: [{ name: 'RoleSelector' }] });
+              return;
+            }
+
+            // ✅ Redirección segura
+            if (role === 'ciudadano') {
               navigation.reset({ index: 0, routes: [{ name: 'Home' }] });
+            } else if (role === 'autoridad') {
+              navigation.reset({ index: 0, routes: [{ name: 'AuthorityDashboard' }] });
             } else {
               navigation.reset({ index: 0, routes: [{ name: 'RoleSelector' }] });
             }
-          } catch (err) {
-            console.error('Error verificando usuario:', err);
+          } else {
+            await auth.signOut();
+            await AsyncStorage.removeItem('user');
             navigation.reset({ index: 0, routes: [{ name: 'RoleSelector' }] });
           }
-        } else {
+        } catch (err) {
+          console.error('Error verificando usuario:', err);
+          await auth.signOut();
+          await AsyncStorage.removeItem('user');
           navigation.reset({ index: 0, routes: [{ name: 'RoleSelector' }] });
         }
-      });
+      } else {
+        navigation.reset({ index: 0, routes: [{ name: 'RoleSelector' }] });
+      }
+    });
 
-      return unsubscribe;
-    };
-
-    checkSession();
+    return unsubscribe;
   }, []);
 
   return (

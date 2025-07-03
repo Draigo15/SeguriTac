@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   StyleSheet,
   Image,
-  TouchableOpacity,
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { setDoc, doc } from 'firebase/firestore';
-import { auth, db } from '../services/firebase';
+import { auth } from '../services/firebase';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { db } from '../services/firebase';
 import { RootStackParamList } from '../navigation/types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RouteProp } from '@react-navigation/native';
@@ -18,7 +18,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import * as Animatable from 'react-native-animatable';
 import { Text, TextInput, Button } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 type LoginScreenNav = NativeStackNavigationProp<RootStackParamList, 'Login'>;
 type LoginScreenRoute = RouteProp<RootStackParamList, 'Login'>;
@@ -38,7 +37,7 @@ const LoginScreen = () => {
       Toast.show({
         type: 'error',
         text1: 'Campos requeridos',
-        text2: 'Por favor completa todos los campos',
+        text2: 'Por favor completa todos los campos.',
       });
       return;
     }
@@ -49,8 +48,17 @@ const LoginScreen = () => {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      console.log('Usuario autenticado:', user);
-      await AsyncStorage.setItem('user', JSON.stringify(user));
+      const userDoc = await getDoc(doc(db, 'users', user.uid));
+      if (!userDoc.exists()) {
+        throw new Error('El usuario no tiene información registrada en Firestore.');
+      }
+
+      const userData = userDoc.data();
+      if (userData.role !== role) {
+        throw new Error(`Tu rol registrado es "${userData.role}", pero seleccionaste "${role}".`);
+      }
+
+      await AsyncStorage.setItem('user', JSON.stringify({ ...user, role: userData.role }));
 
       const fcmToken = await registerForPushNotificationsAsync();
       if (fcmToken && user.email) {
@@ -65,22 +73,37 @@ const LoginScreen = () => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ token: fcmToken, email: user.email }),
         });
+      }
+
+      Toast.show({
+        type: 'success',
+        text1: 'Inicio de sesión exitoso',
+        text2: `Bienvenido, ${userData.role}`,
+      });
+
+      if (userData.role === 'autoridad') {
+        navigation.navigate('AuthorityDashboard');
+      } else {
+        navigation.navigate('Home');
+      }
+
+    } catch (error: any) {
+      let message = error.message || 'Ha ocurrido un error. Inténtalo nuevamente.';
+
+      if (message.includes('Tu rol registrado')) {
+        await auth.signOut();
+        await AsyncStorage.removeItem('user');
 
         Toast.show({
-          type: 'success',
-          text1: 'Notificaciones activadas',
-          text2: 'Recibirás alertas de seguridad en este dispositivo',
+          type: 'error',
+          text1: 'Rol incorrecto',
+          text2: 'Este no es el rol que corresponde a tu cuenta.',
         });
+
+        setLoading(false);
+        return;
       }
 
-      if (role === 'ciudadano') {
-        navigation.navigate('Home');
-      } else {
-        navigation.navigate('AuthorityDashboard');
-      }
-    } catch (error: any) {
-      console.log('Código de error:', error.code);
-      let message = 'Ha ocurrido un error. Inténtalo nuevamente.';
       if (error.code === 'auth/invalid-credential') {
         message = 'Correo o contraseña incorrectos.';
       } else if (error.code === 'auth/user-not-found') {
@@ -118,28 +141,45 @@ const LoginScreen = () => {
           label="Correo electrónico"
           value={email}
           onChangeText={setEmail}
+          mode="outlined"
           keyboardType="email-address"
           autoCapitalize="none"
-          style={styles.input}
-          mode="outlined"
           left={<TextInput.Icon icon="email-outline" />}
+          style={styles.input}
+          theme={{
+            colors: {
+              text: '#000',         
+              primary: '#000',      
+              placeholder: '#000',  
+              background: '#fff',
+            },
+          }}
         />
 
         <TextInput
-          label="Contraseña"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry={secure}
-          style={styles.input}
-          mode="outlined"
-          left={<TextInput.Icon icon="lock-outline" />}
-          right={
-            <TextInput.Icon
-              icon={secure ? 'eye-off-outline' : 'eye-outline'}
-              onPress={() => setSecure(!secure)}
-            />
-          }
-        />
+            label="Contraseña"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry={secure}
+            mode="outlined"
+            style={styles.input}
+            left={<TextInput.Icon icon="lock-outline" />}
+            right={
+              <TextInput.Icon
+                icon={secure ? 'eye-off-outline' : 'eye-outline'}
+                onPress={() => setSecure(!secure)}
+              />
+            }
+            theme={{
+              colors: {
+                text: '#000',         
+                primary: '#000',      
+                placeholder: '#000',  
+                background: '#fff',
+              },
+            }}
+          />
+
 
         <Button
           mode="contained"
@@ -161,15 +201,16 @@ const LoginScreen = () => {
             Regístrate
           </Text>
         </Text>
+
         <Text style={styles.changeRoleText}>
-  ¿Quieres cambiar de rol?{' '}
-  <Text
-    style={styles.changeRoleLink}
-    onPress={() => navigation.navigate('RoleSelector')}
-  >
-    Volver a seleccionar
-  </Text>
-</Text>
+          ¿Quieres cambiar de rol?{' '}
+          <Text
+            style={styles.changeRoleLink}
+            onPress={() => navigation.navigate('RoleSelector')}
+          >
+            Volver a seleccionar
+          </Text>
+        </Text>
       </Animatable.View>
     </View>
   );
@@ -218,14 +259,14 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   changeRoleText: {
-  color: '#fff',
-  marginTop: 8,
-  fontSize: 14,
-  textAlign: 'center',
-},
-changeRoleLink: {
-  color: '#E0F7FA',
-  fontWeight: 'bold',
-  textDecorationLine: 'underline',
-},
+    color: '#fff',
+    marginTop: 8,
+    fontSize: 14,
+    textAlign: 'center',
+  },
+  changeRoleLink: {
+    color: '#E0F7FA',
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
+  },
 });

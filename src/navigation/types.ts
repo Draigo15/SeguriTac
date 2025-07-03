@@ -14,4 +14,5 @@ export type RootStackParamList = {
   CitizenProfile: undefined;
   ReportStats: undefined;
   AllReportsMap: undefined;
+  Chat: { reportId: string };
 };

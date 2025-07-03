@@ -36,74 +36,78 @@ const RegisterScreen = () => {
   const [loading, setLoading] = useState(false);
 
   const handleRegister = async () => {
-    if (!email || !password || !firstName || !lastName) {
+  if (!email || !password || !firstName || !lastName) {
+    Toast.show({
+      type: 'error',
+      text1: 'Campos requeridos',
+      text2: 'Por favor completa todos los campos.',
+    });
+    return;
+  }
+
+  if (password.length < 8) {
+    Toast.show({
+      type: 'error',
+      text1: 'Contraseña débil',
+      text2: 'Debe tener al menos 8 caracteres.',
+    });
+    return;
+  }
+
+  setLoading(true);
+
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const uid = userCredential.user.uid;
+
+    // 🔐 Guardar el rol SOLO desde navegación, no desde el formulario
+    await setDoc(doc(db, 'users', uid), {
+      email,
+      firstName,
+      lastName,
+      role: role === 'autoridad' ? 'autoridad' : 'ciudadano', // Refuerzo de seguridad
+    });
+
+   Toast.show({
+      type: 'success',
+      text1: 'Registro exitoso',
+      text2: 'Ahora puedes iniciar sesión.',
+    });
+
+    setTimeout(() => {
+      navigation.navigate('Login', { role });
+    }, 1000); // 1 segundo
+
+  } catch (error: any) {
+    if (error.code === 'auth/email-already-in-use') {
       Toast.show({
         type: 'error',
-        text1: 'Campos requeridos',
-        text2: 'Por favor completa todos los campos.',
+        text1: 'Correo en uso',
+        text2: 'El correo electrónico ya está registrado.',
       });
-      return;
-    }
-
-    if (password.length < 8) {
+    } else if (error.code === 'auth/invalid-email') {
+      Toast.show({
+        type: 'error',
+        text1: 'Correo inválido',
+        text2: 'Ingresa un correo válido.',
+      });
+    } else if (error.code === 'auth/weak-password') {
       Toast.show({
         type: 'error',
         text1: 'Contraseña débil',
         text2: 'Debe tener al menos 8 caracteres.',
       });
-      return;
-    }
-
-    setLoading(true);
-
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const uid = userCredential.user.uid;
-
-      await setDoc(doc(db, 'users', uid), {
-        email,
-        firstName,
-        lastName,
-        role,
-      });
-
+    } else {
       Toast.show({
-        type: 'success',
-        text1: 'Registro exitoso',
-        text2: 'Ahora puedes iniciar sesión.',
+        type: 'error',
+        text1: 'Error',
+        text2: error.message || 'No se pudo completar el registro.',
       });
-
-      navigation.navigate('Login', { role });
-    } catch (error: any) {
-      if (error.code === 'auth/email-already-in-use') {
-        Toast.show({
-          type: 'error',
-          text1: 'Correo en uso',
-          text2: 'El correo electrónico ya está registrado.',
-        });
-      } else if (error.code === 'auth/invalid-email') {
-        Toast.show({
-          type: 'error',
-          text1: 'Correo inválido',
-          text2: 'Ingresa un correo válido.',
-        });
-      } else if (error.code === 'auth/weak-password') {
-        Toast.show({
-          type: 'error',
-          text1: 'Contraseña débil',
-          text2: 'Debe tener al menos 8 caracteres.',
-        });
-      } else {
-        Toast.show({
-          type: 'error',
-          text1: 'Error',
-          text2: error.message || 'No se pudo completar el registro.',
-        });
-      }
-    } finally {
-      setLoading(false);
     }
-  };
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <KeyboardAvoidingView

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "361203563970",
+    "project_id": "seguritacapp",
+    "storage_bucket": "seguritacapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361203563970:android:b59da781c8ef1142f7aa5b",
+        "android_client_info": {
+          "package_name": "com.tuapp.seguritacapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI5Jwmt5CoT02LhuoHvHIxMQl3S9yMgSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

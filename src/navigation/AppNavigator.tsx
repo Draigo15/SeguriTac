@@ -17,6 +17,7 @@ import NotificationsScreen from '../screens/NotificationsScreen';
 import CitizenProfileScreen from '../screens/CitizenProfileScreen';
 import AllReportsMapScreen from '../screens/AllReportsMapScreen';
 import LoginMethodScreen from '../screens/LoginMethodScreen';
+import ChatScreen from '../screens/ChatScreen';
 
 import { RootStackParamList } from './types';
 
@@ -53,6 +54,7 @@ const AppNavigator = () => {
         <Stack.Screen name="Notifications" component={NotificationsScreen} options={{ title: 'Notificaciones' }} />
         <Stack.Screen name="CitizenProfile" component={CitizenProfileScreen} options={{ title: 'Perfil del Ciudadano' }} />
         <Stack.Screen name="AllReportsMap" component={AllReportsMapScreen} options={{ title: 'Mapa de Reportes' }} />
+        <Stack.Screen name="Chat" component={ChatScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

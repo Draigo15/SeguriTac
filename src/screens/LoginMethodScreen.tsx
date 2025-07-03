@@ -5,18 +5,17 @@ import {
   StyleSheet,
   Pressable,
   Image,
-  Alert,
   ActivityIndicator,
-  AccessibilityRole,
 } from 'react-native';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/types';
 import useGoogleAuth from '../services/useGoogleAuth';
 import { registerForPushNotificationsAsync } from '../services/notifications';
-import { setDoc, doc } from 'firebase/firestore';
-import { db } from '../services/firebase';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { auth, db } from '../services/firebase';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Toast from 'react-native-toast-message';
 
 type ScreenRouteProp = RouteProp<RootStackParamList, 'LoginMethod'>;
 type Nav = NativeStackNavigationProp<RootStackParamList>;
@@ -38,15 +37,35 @@ const LoginMethodScreen = () => {
       setLoading(true);
       const result = await promptAsync();
 
-      // ✅ Validación adicional
       if (result && result.type === 'success') {
         const user = await handleLogin();
 
         if (user) {
-          console.log('Usuario logueado:', user); // ✅ Debug opcional
+          const userDoc = await getDoc(doc(db, 'users', user.uid));
+          if (!userDoc.exists()) {
+            await auth.signOut();
+            Toast.show({
+              type: 'error',
+              text1: 'Usuario no encontrado',
+              text2: 'Tu cuenta no está registrada correctamente.',
+            });
+            return;
+          }
 
-          // ✅ Guardar sesión
-          await AsyncStorage.setItem('user', JSON.stringify(user));
+          const userData = userDoc.data();
+          if (userData.role !== role) {
+            await auth.signOut();
+            await AsyncStorage.removeItem('user');
+
+            Toast.show({
+              type: 'error',
+              text1: 'Rol incorrecto',
+              text2: `Tu rol registrado es "${userData.role}", pero seleccionaste "${role}".`,
+            });
+            return;
+          }
+
+          await AsyncStorage.setItem('user', JSON.stringify({ ...user, role: userData.role }));
 
           const token = await registerForPushNotificationsAsync();
           if (token && user.email) {
@@ -63,7 +82,13 @@ const LoginMethodScreen = () => {
             });
           }
 
-          if (role === 'autoridad') {
+          Toast.show({
+            type: 'success',
+            text1: 'Inicio de sesión exitoso',
+            text2: `Bienvenido, ${userData.role}`,
+          });
+
+          if (userData.role === 'autoridad') {
             navigation.reset({ index: 0, routes: [{ name: 'AuthorityDashboard' }] });
           } else {
             navigation.reset({ index: 0, routes: [{ name: 'Home' }] });
@@ -71,7 +96,11 @@ const LoginMethodScreen = () => {
         }
       }
     } catch (error: any) {
-      Alert.alert('Error', error.message || 'Ocurrió un problema al iniciar sesión');
+      Toast.show({
+        type: 'error',
+        text1: 'Error de inicio de sesión',
+        text2: error.message || 'No se pudo iniciar sesión con Google.',
+      });
     } finally {
       setLoading(false);
     }
@@ -116,6 +145,8 @@ const LoginMethodScreen = () => {
           )}
         </View>
       </Pressable>
+
+      <Toast />
     </View>
   );
 };

@@ -2,6 +2,8 @@
   "expo": {
     "name": "SeguridadCiudadanaApp",
     "slug": "SeguridadCiudadanaApp",
+    "owner": "rodliraa15",
+    "scheme": "seguridadciudadanaapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

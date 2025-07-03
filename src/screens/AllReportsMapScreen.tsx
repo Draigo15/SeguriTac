@@ -6,14 +6,37 @@ import {
   ActivityIndicator,
   Dimensions,
   TouchableOpacity,
+  TextInput,
 } from 'react-native';
-import MapView, { Marker, Heatmap, PROVIDER_GOOGLE } from 'react-native-maps';
+import { Platform } from 'react-native';
+
+
 import { Picker } from '@react-native-picker/picker';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../services/firebase';
 import * as Location from 'expo-location';
+import * as Animatable from 'react-native-animatable';
+import Toast from 'react-native-toast-message';
+const WebMapList = Platform.OS === 'web' ? require('../components/WebMapList').default : null;
+
 
 const AllReportsMapScreen = () => {
+  
+const [MapView, setMapView] = useState<any>(null);
+const [Marker, setMarker] = useState<any>(null);
+const [Heatmap, setHeatmap] = useState<any>(null);
+const [PROVIDER_GOOGLE, setProvider] = useState<any>(null);
+
+useEffect(() => {
+  if (Platform.OS !== 'web') {
+    import('react-native-maps').then((Maps) => {
+      setMapView(() => Maps.default);
+      setMarker(() => Maps.Marker);
+      setHeatmap(() => Maps.Heatmap);
+      setProvider(() => Maps.PROVIDER_GOOGLE);
+    });
+  }
+}, []);
   const [reports, setReports] = useState<any[]>([]);
   const [filteredReports, setFilteredReports] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -22,7 +45,8 @@ const AllReportsMapScreen = () => {
   const [incidentTypes, setIncidentTypes] = useState<string[]>([]);
   const [statusTypes, setStatusTypes] = useState<string[]>([]);
   const [showHeatmap, setShowHeatmap] = useState(true);
-  const mapRef = useRef<MapView>(null);
+  const [search, setSearch] = useState('');
+ const mapRef = useRef<any>(null);
 
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, 'reports'), (querySnapshot) => {
@@ -34,7 +58,6 @@ const AllReportsMapScreen = () => {
         const data = doc.data();
         if (data.location?.latitude && data.location?.longitude) {
           fetchedReports.push({ id: doc.id, ...data });
-
           if (data.incidentType) typesSet.add(data.incidentType);
           if (data.status) statusSet.add(data.status);
         }
@@ -45,7 +68,14 @@ const AllReportsMapScreen = () => {
       setIncidentTypes(Array.from(typesSet));
       setStatusTypes(Array.from(statusSet));
       setLoading(false);
+
+      Toast.show({
+        type: 'info',
+        text1: `Se cargaron ${fetchedReports.length} reportes`,
+      });
     });
+
+    centerOnUserLocation(); // Centra al iniciar
 
     return unsubscribe;
   }, []);
@@ -61,8 +91,15 @@ const AllReportsMapScreen = () => {
       filtered = filtered.filter((r) => r.status === statusFilter);
     }
 
+    if (search.trim() !== '') {
+      filtered = filtered.filter((r) =>
+        r.description?.toLowerCase().includes(search.toLowerCase()) ||
+        r.email?.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+
     setFilteredReports(filtered);
-  }, [incidentFilter, statusFilter]);
+  }, [incidentFilter, statusFilter, search]);
 
   const centerOnUserLocation = async () => {
     const { status } = await Location.requestForegroundPermissionsAsync();
@@ -87,10 +124,26 @@ const AllReportsMapScreen = () => {
       </View>
     );
   }
-
+  // ⬇️ Agrega esto justo aquí
+if (Platform.OS !== 'web' && (!MapView || !Marker || !Heatmap || !PROVIDER_GOOGLE)) {
+  return (
+    <View style={styles.center}>
+      <ActivityIndicator size="large" color="#002B7F" />
+    </View>
+  );
+}
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Mapa de Reportes</Text>
+      <Animatable.Text animation="fadeInDown" style={styles.header}>
+        🗺️ Mapa de Reportes
+      </Animatable.Text>
+
+      <TextInput
+        placeholder="🔍 Buscar por palabra clave..."
+        style={styles.searchInput}
+        onChangeText={setSearch}
+        value={search}
+      />
 
       <View style={styles.filters}>
         <Picker
@@ -116,49 +169,78 @@ const AllReportsMapScreen = () => {
         </Picker>
       </View>
 
-      <MapView
-        ref={mapRef}
-        style={styles.map}
-        provider={PROVIDER_GOOGLE}
-        initialRegion={{
-          latitude: filteredReports[0]?.location.latitude || -16.5,
-          longitude: filteredReports[0]?.location.longitude || -68.15,
-          latitudeDelta: 0.1,
-          longitudeDelta: 0.1,
+{Platform.OS === 'web' && WebMapList ? (
+  <View style={styles.map}>
+    <WebMapList reports={filteredReports} />
+  </View>
+) : MapView && Marker && Heatmap && PROVIDER_GOOGLE ? (
+  <MapView
+    ref={mapRef}
+    style={styles.map}
+    provider={PROVIDER_GOOGLE}
+    initialRegion={{
+      latitude: filteredReports[0]?.location.latitude || -16.5,
+      longitude: filteredReports[0]?.location.longitude || -68.15,
+      latitudeDelta: 0.1,
+      longitudeDelta: 0.1,
+    }}
+  >
+    {showHeatmap && (
+      <Heatmap
+        points={reports.map((r) => ({
+          latitude: r.location.latitude,
+          longitude: r.location.longitude,
+          weight: 1,
+        }))}
+        radius={40}
+        opacity={0.6}
+      />
+    )}
+
+    {filteredReports.map((report) => (
+      <Marker
+        key={report.id}
+        coordinate={{
+          latitude: report.location.latitude,
+          longitude: report.location.longitude,
         }}
-      >
-        {showHeatmap && (
-          <Heatmap
-            points={reports.map((r) => ({
-              latitude: r.location.latitude,
-              longitude: r.location.longitude,
-              weight: 1,
-            }))}
-            radius={40}
-            opacity={0.6}
-          />
-        )}
+        title={report.incidentType}
+        description={report.status}
+        pinColor={
+          report.status === 'Resuelto'
+            ? 'green'
+            : report.status === 'En proceso'
+            ? 'orange'
+            : 'red'
+        }
+      />
+    ))}
+  </MapView>
+) : (
+  <View style={styles.center}>
+    <ActivityIndicator size="large" color="#002B7F" />
+  </View>
+)}
 
-        {filteredReports.map((report) => (
-          <Marker
-            key={report.id}
-            coordinate={{
-              latitude: report.location.latitude,
-              longitude: report.location.longitude,
-            }}
-            title={report.incidentType}
-            description={report.status}
-            pinColor={
-              report.status === 'Resuelto'
-                ? 'green'
-                : report.status === 'En proceso'
-                ? 'orange'
-                : 'red'
-            }
-          />
-        ))}
-      </MapView>
 
+
+      <View style={styles.legend}>
+  <View style={styles.legendItem}>
+    <View style={[styles.legendCircle, { backgroundColor: 'red' }]} />
+    <Text style={styles.legendLabel}>Pendiente</Text>
+  </View>
+  <View style={styles.legendItem}>
+    <View style={[styles.legendCircle, { backgroundColor: 'orange' }]} />
+    <Text style={styles.legendLabel}>En Proceso</Text>
+  </View>
+  <View style={styles.legendItem}>
+    <View style={[styles.legendCircle, { backgroundColor: 'green' }]} />
+    <Text style={styles.legendLabel}>Resuelto</Text>
+  </View>
+</View>
+
+
+      {/* FABs */}
       <TouchableOpacity style={styles.fabHeatmap} onPress={() => setShowHeatmap(!showHeatmap)}>
         <Text style={styles.fabText}>{showHeatmap ? '🔥' : '🌡️'}</Text>
       </TouchableOpacity>
@@ -166,12 +248,13 @@ const AllReportsMapScreen = () => {
       <TouchableOpacity style={styles.fabLocation} onPress={centerOnUserLocation}>
         <Text style={styles.fabText}>📍</Text>
       </TouchableOpacity>
+
+      <Toast />
     </View>
   );
 };
 
 export default AllReportsMapScreen;
-
 
 const styles = StyleSheet.create({
   container: {
@@ -185,6 +268,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 10,
   },
+  searchInput: {
+    marginHorizontal: 10,
+    marginBottom: 6,
+    padding: 10,
+    borderRadius: 8,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    backgroundColor: '#f7f7f7',
+  },
   map: {
     flex: 1,
     width: Dimensions.get('window').width,
@@ -193,7 +285,7 @@ const styles = StyleSheet.create({
   filters: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginBottom: 10,
+    marginBottom: 5,
     paddingHorizontal: 10,
   },
   picker: {
@@ -234,4 +326,29 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: '#fff',
   },
+  legend: {
+    position: 'absolute',
+    bottom: 160,
+    left: 10,
+    backgroundColor: 'rgba(255,255,255,0.9)',
+    padding: 8,
+    borderRadius: 8,
+    elevation: 4,
+  },
+  legendItem: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  marginVertical: 2,
+},
+legendCircle: {
+  width: 14,
+  height: 14,
+  borderRadius: 7,
+  marginRight: 6,
+},
+legendLabel: {
+  fontSize: 14,
+  color: '#333',
+},
+
 });

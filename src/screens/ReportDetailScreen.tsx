@@ -10,19 +10,51 @@ import {
   Share,
 } from 'react-native';
 import { useRoute } from '@react-navigation/native';
-import MapView, { Marker } from 'react-native-maps';
+import { Platform } from 'react-native';
+
 import { Picker } from '@react-native-picker/picker';
-import { doc, updateDoc, getDoc } from 'firebase/firestore';
+import { doc, updateDoc, getDoc ,setDoc } from 'firebase/firestore';
 import { db, auth } from '../services/firebase';
 import Toast from 'react-native-toast-message';
+import { Timestamp } from 'firebase/firestore';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../navigation/types'; // Ajusta la ruta si es distinta
+import * as Location from 'expo-location';
+import { useRef } from 'react';
+
+
 
 
 const ReportDetailScreen = () => {
+
+    const [MapView, setMapView] = useState<any>(null);
+  const [Marker, setMarker] = useState<any>(null);
+  const [WebMap, setWebMap] = useState<any>(null);
+
+  useEffect(() => {
+    if (Platform.OS === 'web') {
+      import('../components/WebMap').then((mod) => setWebMap(() => mod.default));
+    } else {
+      import('react-native-maps').then((Maps) => {
+        setMapView(() => Maps.default);
+        setMarker(() => Maps.Marker);
+      });
+    }
+  }, []);
+
   const route = useRoute();
   const { report }: any = route.params || {};
 
+const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
+
+
   const [newStatus, setNewStatus] = useState('Pendiente');
   const [currentUserRole, setCurrentUserRole] = useState('');
+  const [userLocation, setUserLocation] = useState<{ latitude: number; longitude: number } | null>(null);
+const mapRef = useRef<any>(null);
+
 
   useEffect(() => {
     if (report?.status) {
@@ -60,6 +92,7 @@ const ReportDetailScreen = () => {
 
       const mensaje = `📢 *Reporte de Incidente* 🛑
 
+
 🗂 Tipo: ${tipo}
 📅 Fecha: ${fecha}
 📝 Descripción:
@@ -73,39 +106,103 @@ ${ubicacion}`;
     }
   };
 
-  const handleUpdateStatus = async () => {
-    try {
-      if (!report?.id || !report?.email) {
-        throw new Error('Faltan datos del reporte para actualizar.');
-      }
+  const handleLocateMe = async () => {
+  const { status } = await Location.requestForegroundPermissionsAsync();
+  if (status !== 'granted') {
+    Alert.alert('Permiso denegado', 'No se puede acceder a tu ubicación.');
+    return;
+  }
 
-      const reportRef = doc(db, 'reports', report.id);
-      await updateDoc(reportRef, { status: newStatus });
+  const location = await Location.getCurrentPositionAsync({});
+  const { latitude, longitude } = location.coords;
 
-      const tokenDoc = await getDoc(doc(db, 'user_tokens', report.email));
-      if (tokenDoc.exists()) {
-        const { token } = tokenDoc.data();
-        await fetch('https://seguridad-ciudadana-backend.onrender.com/send-status-update', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ token, newStatus }),
-        });
-      }
+  setUserLocation({ latitude, longitude });
 
-      Toast.show({
-        type: 'success',
-        text1: 'Estado actualizado',
-        text2: `Nuevo estado: ${newStatus}`,
-      });
-    } catch (error) {
-      console.error('Error al actualizar estado:', error);
+  mapRef.current?.animateToRegion({
+    latitude,
+    longitude,
+    latitudeDelta: 0.005,
+    longitudeDelta: 0.005,
+  });
+};
+
+const handleUpdateStatus = async () => {
+  try {
+    console.log('🧪 Intentando actualizar estado...');
+    if (!report?.id) {
+      console.error('⛔ report.id es undefined');
       Toast.show({
         type: 'error',
         text1: 'Error',
-        text2: 'No se pudo actualizar el estado.',
+        text2: 'ID del reporte no disponible.',
+      });
+      return;
+    }
+
+    const reportRef = doc(db, 'reports', report.id);
+    await updateDoc(reportRef, { status: newStatus });
+
+    console.log('✅ Estado actualizado en Firestore:', newStatus);
+
+    // Envío de notificación push si existe token
+    const tokenDoc = await getDoc(doc(db, 'user_tokens', report.email));
+    if (tokenDoc.exists()) {
+      const { token } = tokenDoc.data();
+      console.log('📲 Token encontrado, enviando notificación...');
+      await fetch('https://seguridad-ciudadana-backend.onrender.com/send-status-update', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token, newStatus }),
       });
     }
-  };
+
+    const userNotifRef = doc(db, 'user_notifications', report.email);
+    const notifSnap = await getDoc(userNotifRef);
+
+    const nuevaNotificacion = {
+      id: Date.now().toString(),
+      title: '🔔 Estado actualizado',
+      body: `El estado de tu reporte cambió a "${newStatus}".`,
+      timestamp: Timestamp.now(),
+    };
+
+    if (notifSnap.exists()) {
+      const prevData = notifSnap.data();
+      const updatedNotifs = [nuevaNotificacion, ...(prevData.notifications || [])];
+
+      await updateDoc(userNotifRef, {
+        notifications: updatedNotifs,
+        hasUnread: true,
+      });
+    } else {
+      await setDoc(userNotifRef, {
+        notifications: [nuevaNotificacion],
+        hasUnread: true,
+      });
+    }
+
+    // ✅ Confirmación visual (Toast + Alert)
+    Toast.show({
+      type: 'success',
+      text1: 'Estado actualizado',
+      text2: `Nuevo estado: ${newStatus}`,
+    });
+
+    Alert.alert(
+      '✅ Estado actualizado',
+      `El estado del reporte se cambió exitosamente a "${newStatus}".`,
+      [{ text: 'OK', style: 'default' }]
+    );
+
+  } catch (error: any) {
+    console.error('❌ Error al actualizar estado:', error.message || error);
+    Toast.show({
+      type: 'error',
+      text1: 'Error',
+      text2: 'No se pudo actualizar el estado.',
+    });
+  }
+};
 
   if (!report || typeof report !== 'object') {
     return (
@@ -114,6 +211,13 @@ ${ubicacion}`;
       </View>
     );
   }
+if (Platform.OS !== 'web' && (!MapView || !Marker)) {
+  return (
+    <View style={styles.center}>
+      <Text style={{ color: '#002B7F' }}>Cargando mapa...</Text>
+    </View>
+  );
+}
 
   const isValidLocation =
     typeof report.location?.latitude === 'number' &&
@@ -148,11 +252,22 @@ ${ubicacion}`;
         </View>
       )}
 
-      {isValidLocation && (
-        <View style={styles.card}>
-          <Text style={styles.label}>Ubicación del incidente:</Text>
+{isValidLocation && (
+  <View style={styles.card}>
+    <Text style={styles.label}>Ubicación del incidente:</Text>
+
+    <View style={{ position: 'relative', width: '100%', height: 250, marginTop: 10 }}>
+      {Platform.OS === 'web' ? (
+        WebMap ? (
+          <WebMap latitude={report.location.latitude} longitude={report.location.longitude} />
+        ) : (
+          <View style={styles.center}><Text>Cargando mapa...</Text></View>
+        )
+      ) : MapView && Marker ? (
+        <>
           <MapView
-            style={styles.map}
+            ref={mapRef}
+            style={{ ...StyleSheet.absoluteFillObject, borderRadius: 10 }}
             initialRegion={{
               latitude: report.location?.latitude ?? -16.5,
               longitude: report.location?.longitude ?? -68.15,
@@ -167,9 +282,29 @@ ${ubicacion}`;
               }}
               title="Ubicación del Reporte"
             />
+
+            {userLocation && (
+              <Marker
+                coordinate={userLocation}
+                title="Mi ubicación"
+                pinColor="blue"
+              />
+            )}
           </MapView>
-        </View>
+
+          <TouchableOpacity style={styles.fabLocation} onPress={handleLocateMe}>
+            <Text style={styles.fabText}>📍</Text>
+          </TouchableOpacity>
+        </>
+      ) : (
+        <View style={styles.center}><Text>Cargando mapa...</Text></View>
       )}
+    </View>
+  </View>
+)}
+
+
+
 
       {currentUserRole === 'autoridad' && (
         <View style={styles.card}>
@@ -187,6 +322,13 @@ ${ubicacion}`;
 
       <TouchableOpacity style={styles.shareButton} onPress={handleShare}>
         <Text style={styles.shareButtonText}>📤 Compartir Reporte</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.chatButton}
+        onPress={() => navigation.navigate('Chat', { reportId: report.id })}
+      >
+        <Text style={styles.chatButtonText}>💬 Ir al Chat</Text>
       </TouchableOpacity>
     </ScrollView>
   );
@@ -282,4 +424,50 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
+  chatButton: {
+  backgroundColor: '#002B7F',
+  paddingVertical: 14,
+  borderRadius: 10,
+  alignItems: 'center',
+  marginTop: 10,
+  shadowColor: '#000',
+  shadowOffset: { width: 0, height: 2 },
+  shadowOpacity: 0.2,
+  shadowRadius: 4,
+  elevation: 3,
+},
+chatButtonText: {
+  color: '#fff',
+  fontSize: 16,
+  fontWeight: 'bold',
+},
+locateButton: {
+  marginTop: 10,
+  backgroundColor: '#007BFF',
+  paddingVertical: 10,
+  borderRadius: 8,
+  alignItems: 'center',
+},
+locateButtonText: {
+  color: '#fff',
+  fontWeight: 'bold',
+  fontSize: 14,
+},
+fabLocation: {
+  position: 'absolute',
+  bottom: 10,
+  right: 10,
+  backgroundColor: '#007BFF',
+  width: 46,
+  height: 46,
+  borderRadius: 23,
+  justifyContent: 'center',
+  alignItems: 'center',
+  elevation: 5,
+},
+fabText: {
+  fontSize: 22,
+  color: '#fff',
+},
+
 });

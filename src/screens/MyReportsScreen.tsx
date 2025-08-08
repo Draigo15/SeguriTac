@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import {
   View,
-  Text,
   FlatList,
   StyleSheet,
-  TouchableOpacity,
   ActivityIndicator,
 } from 'react-native';
+import AnimatedScreen from '../components/AnimatedScreen';
+import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
+import AnimatedButton from '../components/AnimatedButton';
 import { collection, query, where, onSnapshot, orderBy } from 'firebase/firestore';
 import { db, auth } from '../services/firebase';
 import { useNavigation } from '@react-navigation/native';
@@ -44,48 +45,67 @@ const MyReportsScreen = () => {
   };
 
   return (
+    <AnimatedScreen animationType="slideHorizontal" duration={800}>
     <View style={styles.container}>
-      <Text style={styles.title}>📄 Mis Reportes</Text>
+      <Animated.Text 
+        entering={FadeInDown.duration(800)}
+        style={styles.title}
+      >
+        📄 Mis Reportes
+      </Animated.Text>
 
       {loading ? (
-        <ActivityIndicator size="large" color="#002B7F" style={{ marginTop: 50 }} />
+        <Animated.View entering={FadeInUp.duration(800)} style={{alignItems: 'center'}}>
+          <ActivityIndicator size="large" color="#002B7F" style={{ marginTop: 50 }} />
+        </Animated.View>
       ) : reports.length === 0 ? (
-        <Text style={styles.noReports}>No tienes reportes aún.</Text>
+        <Animated.Text 
+          entering={FadeInUp.duration(800)}
+          style={styles.noReports}
+        >
+          No tienes reportes aún.
+        </Animated.Text>
       ) : (
         <FlatList
           data={reports}
           keyExtractor={(item) => item.id}
           contentContainerStyle={{ paddingBottom: 20 }}
-          renderItem={({ item }) => (
-            <TouchableOpacity
-              style={styles.reportItem}
-              onPress={() => {
-                if (
-                  item &&
-                  item.incidentType &&
-                  item.dateFormatted &&
-                  item.description &&
-                  item.status &&
-                  item.location &&
-                  typeof item.location.latitude === 'number' &&
-                  typeof item.location.longitude === 'number'
-                ) {
-                  handlePressReport(item);
-                } else {
-                  alert('⚠️ Este reporte está incompleto o mal formateado.');
-                }
-              }}
+          renderItem={({ item, index }) => (
+            <Animated.View
+              entering={FadeInUp.delay(index * 100).duration(500)}
             >
-              <Text style={styles.reportTitle}>📌 {item.incidentType}</Text>
-              <Text style={styles.reportDate}>🗓 {item.dateFormatted}</Text>
-              <Text style={styles.reportStatus}>
-                Estado: {item.status ?? 'Pendiente'}
-              </Text>
-            </TouchableOpacity>
+              <AnimatedButton
+                style={styles.reportItem}
+                animationType="scale"
+                onPress={() => {
+                  if (
+                    item &&
+                    item.incidentType &&
+                    item.dateFormatted &&
+                    item.description &&
+                    item.status &&
+                    item.location &&
+                    typeof item.location.latitude === 'number' &&
+                    typeof item.location.longitude === 'number'
+                  ) {
+                    handlePressReport(item);
+                  } else {
+                    alert('⚠️ Este reporte está incompleto o mal formateado.');
+                  }
+                }}
+              >
+                <Animated.Text style={styles.reportTitle}>📌 {item.incidentType}</Animated.Text>
+                <Animated.Text style={styles.reportDate}>🗓 {item.dateFormatted}</Animated.Text>
+                <Animated.Text style={styles.reportStatus}>
+                  Estado: {item.status ?? 'Pendiente'}
+                </Animated.Text>
+              </AnimatedButton>
+            </Animated.View>
           )}
         />
       )}
     </View>
+    </AnimatedScreen>
   );
 };
 

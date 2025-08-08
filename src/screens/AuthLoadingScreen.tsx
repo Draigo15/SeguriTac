@@ -3,6 +3,8 @@ import { ActivityIndicator, View, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/types';
+import AnimatedScreen from '../components/AnimatedScreen';
+import Animated, { FadeIn, ZoomIn } from 'react-native-reanimated';
 
 import { auth, db } from '../services/firebase';
 import { doc, getDoc } from 'firebase/firestore';
@@ -62,9 +64,22 @@ const AuthLoadingScreen = () => {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <ActivityIndicator size="large" color="#2196f3" />
-    </View>
+    <AnimatedScreen animationType="fade" duration={800}>
+      <View style={styles.container}>
+        <Animated.View 
+          entering={ZoomIn.duration(1000).springify()}
+          style={styles.loaderContainer}
+        >
+          <ActivityIndicator size="large" color="#2196f3" />
+          <Animated.Text 
+            entering={FadeIn.delay(300).duration(800)}
+            style={styles.loadingText}
+          >
+            Verificando sesión...
+          </Animated.Text>
+        </Animated.View>
+      </View>
+    </AnimatedScreen>
   );
 };
 
@@ -76,5 +91,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#f2f2f2',
+  },
+  loaderContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+    borderRadius: 16,
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  loadingText: {
+    marginTop: 16,
+    fontSize: 16,
+    color: '#555',
+    fontWeight: '500',
   },
 });

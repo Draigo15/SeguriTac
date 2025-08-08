@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import {
   View,
-  Text,
   TextInput,
   StyleSheet,
-  Image,
   ScrollView,
-  TouchableOpacity,
 } from 'react-native';
+import AnimatedScreen from '../components/AnimatedScreen';
+import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
+import AnimatedButton from '../components/AnimatedButton';
 import { Picker } from '@react-native-picker/picker';
 import * as ImagePicker from 'expo-image-picker';
 import * as Location from 'expo-location';
@@ -16,7 +16,7 @@ import { db, auth } from '../services/firebase';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Toast from 'react-native-toast-message';
-import * as Animatable from 'react-native-animatable';
+
 import { ActivityIndicator } from 'react-native-paper';
 
 const ReportScreen = () => {
@@ -128,27 +128,42 @@ const ReportScreen = () => {
   };
 
  return (
+  <AnimatedScreen animationType="slideVertical" duration={800}>
   <LinearGradient colors={['#E3F2FD', '#BBDEFB']} style={{ flex: 1 }}>
     <ScrollView contentContainerStyle={styles.container}>
-      <Animatable.View animation="fadeInUp" duration={800}>
-        <Text style={styles.title}>Nuevo Reporte</Text>
+      <Animated.View entering={FadeInDown.duration(800)}>
+        <Animated.Text style={styles.title}>Nuevo Reporte</Animated.Text>
 
-        <View style={styles.box}>
-          <Text style={styles.labelLight}>📅 Fecha:</Text>
-          <Text style={styles.value}>{dateFormatted}</Text>
-        </View>
+        <Animated.View 
+          entering={FadeInDown.delay(100).duration(500)}
+          style={styles.box}
+        >
+          <Animated.Text style={styles.labelLight}>📅 Fecha:</Animated.Text>
+          <Animated.Text style={styles.value}>{dateFormatted}</Animated.Text>
+        </Animated.View>
 
         {location && (
-          <View style={styles.box}>
-            <Text style={styles.labelLight}>📍 Ubicación:</Text>
-            <Text style={styles.value}>
+          <Animated.View 
+            entering={FadeInDown.delay(200).duration(500)}
+            style={styles.box}
+          >
+            <Animated.Text style={styles.labelLight}>📍 Ubicación:</Animated.Text>
+            <Animated.Text style={styles.value}>
               Lat: {location.latitude.toFixed(4)}, Lng: {location.longitude.toFixed(4)}
-            </Text>
-          </View>
+            </Animated.Text>
+          </Animated.View>
         )}
 
-        <Text style={styles.label}>Tipo de Incidente</Text>
-        <View style={styles.pickerContainer}>
+        <Animated.Text 
+          entering={FadeInDown.delay(300).duration(500)}
+          style={styles.label}
+        >
+          Tipo de Incidente
+        </Animated.Text>
+        <Animated.View 
+          entering={FadeInDown.delay(400).duration(500)}
+          style={styles.pickerContainer}
+        >
           <Picker
             selectedValue={incidentType}
             onValueChange={(itemValue) => setIncidentType(itemValue)}
@@ -162,37 +177,55 @@ const ReportScreen = () => {
             <Picker.Item label="Accidente" value="Accidente" />
             <Picker.Item label="Otro" value="Otro" />
           </Picker>
-        </View>
+        </Animated.View>
 
-        <TextInput
-          style={[styles.input, { height: 100 }]}
-          placeholder="Descripción detallada"
-          value={description}
-          onChangeText={setDescription}
-          multiline
-          placeholderTextColor="#666"
-        />
+        <Animated.View entering={FadeInDown.delay(500).duration(500)}>
+          <TextInput
+            style={[styles.input, { height: 100 }]}
+            placeholder="Descripción detallada"
+            value={description}
+            onChangeText={setDescription}
+            multiline
+            placeholderTextColor="#666"
+          />
+        </Animated.View>
 
-        <TouchableOpacity style={styles.imageButton} onPress={handleImagePick}>
-          <Text style={styles.imageButtonText}>📷 Tomar o seleccionar imagen</Text>
-        </TouchableOpacity>
+        <Animated.View entering={FadeInUp.delay(600).duration(500)}>
+          <AnimatedButton 
+            style={styles.imageButton} 
+            onPress={handleImagePick}
+            animationType="scale"
+            iconName="camera"
+          >
+            <Animated.Text style={styles.imageButtonText}>Tomar o seleccionar imagen</Animated.Text>
+          </AnimatedButton>
+        </Animated.View>
 
-        {image && <Image source={{ uri: image }} style={styles.imagePreview} />}
+        {image && (
+          <Animated.View entering={FadeInUp.delay(700).duration(500)}>
+            <Animated.Image source={{ uri: image }} style={styles.imagePreview} />
+          </Animated.View>
+        )}
 
-       <TouchableOpacity
-          style={[styles.sendButton, loading && { opacity: 0.7 }]}
-          onPress={handleSubmit}
-          disabled={loading}
-        >
-          {loading ? (
-            <ActivityIndicator size="small" color="#fff" />
-          ) : (
-            <Text style={styles.sendButtonText}>Enviar Reporte</Text>
-          )}
-        </TouchableOpacity>
-      </Animatable.View>
+       <Animated.View entering={FadeInUp.delay(800).duration(500)}>
+         <AnimatedButton
+            style={[styles.sendButton, loading && { opacity: 0.7 }]}
+            onPress={handleSubmit}
+            disabled={loading}
+            animationType="bounce"
+            iconName="send"
+          >
+            {loading ? (
+              <ActivityIndicator size="small" color="#fff" />
+            ) : (
+              <Animated.Text style={styles.sendButtonText}>Enviar Reporte</Animated.Text>
+            )}
+          </AnimatedButton>
+       </Animated.View>
+      </Animated.View>
     </ScrollView>
   </LinearGradient>
+  </AnimatedScreen>
 );
 };
 

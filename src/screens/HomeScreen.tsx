@@ -6,8 +6,10 @@ import {
   TouchableOpacity,
   Alert,
   Image,
-  Pressable,
 } from 'react-native';
+import AnimatedScreen from '../components/AnimatedScreen';
+import AnimatedButton from '../components/AnimatedButton';
+import EmergencyButton from '../components/EmergencyButton';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { signOut } from 'firebase/auth';
 import { auth, db } from '../services/firebase';
@@ -76,40 +78,63 @@ const handleLogout = async () => {
 };
 
   return (
-    <View style={styles.container}>
-      {/* Encabezado con ícono de notificaciones */}
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Hola, {userName || 'Usuario'} 👋</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
-          <Ionicons name="notifications-outline" size={28} color="#fff" />
-          {hasNewNotifications && <View style={styles.redDot} />}
-        </TouchableOpacity>
+    <AnimatedScreen animationType="fade" duration={500}>
+      <View style={styles.container}>
+        {/* Encabezado con ícono de notificaciones */}
+        <View style={styles.header}>
+          <Text style={styles.headerText}>Hola, {userName || 'Usuario'} 👋</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
+            <Ionicons name="notifications-outline" size={28} color="#fff" />
+            {hasNewNotifications && <View style={styles.redDot} />}
+          </TouchableOpacity>
+        </View>
+        
+        {/* Botón de emergencia */}
+        <View style={styles.emergencyButtonContainer}>
+          <EmergencyButton />
+        </View>
+
+        {/* Logo */}
+        <Image
+          source={require('../../assets/iconselector.png')}
+          style={styles.logo}
+          resizeMode="contain"
+        />
+
+        {/* Botones de navegación con animaciones */}
+        <AnimatedButton
+          title="📝 Crear Nuevo Reporte"
+          onPress={() => navigation.navigate('Report')}
+          style={styles.button}
+          animationType="scale"
+          icon="create-outline"
+        />
+
+        <AnimatedButton
+          title="📄 Ver Mis Reportes"
+          onPress={() => navigation.navigate('MyReports')}
+          style={styles.button}
+          animationType="bounce"
+          icon="document-text-outline"
+        />
+
+        <AnimatedButton
+          title="👤 Editar Perfil"
+          onPress={() => navigation.navigate('CitizenProfile')}
+          style={styles.button}
+          animationType="highlight"
+          icon="person-outline"
+        />
+
+        <AnimatedButton
+          title="🚪 Cerrar Sesión"
+          onPress={handleLogout}
+          style={styles.logoutButton}
+          animationType="scale"
+          icon="log-out-outline"
+        />
       </View>
-
-      {/* Logo */}
-      <Image
-        source={require('../../assets/iconselector.png')}
-        style={styles.logo}
-        resizeMode="contain"
-      />
-
-      {/* Botones de navegación */}
-      <Pressable style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]} onPress={() => navigation.navigate('Report')}>
-        <Text style={styles.buttonText}>📝 Crear Nuevo Reporte</Text>
-      </Pressable>
-
-      <Pressable style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]} onPress={() => navigation.navigate('MyReports')}>
-        <Text style={styles.buttonText}>📄 Ver Mis Reportes</Text>
-      </Pressable>
-
-      <Pressable style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]} onPress={() => navigation.navigate('CitizenProfile')}>
-        <Text style={styles.buttonText}>👤 Editar Perfil</Text>
-      </Pressable>
-
-      <Pressable style={({ pressed }) => [styles.logoutButton, pressed && styles.buttonPressed]} onPress={handleLogout}>
-        <Text style={styles.buttonText}>🚪 Cerrar Sesión</Text>
-      </Pressable>
-    </View>
+    </AnimatedScreen>
   );
 };
 
@@ -122,6 +147,12 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     paddingHorizontal: 30,
     alignItems: 'center',
+  },
+  emergencyButtonContainer: {
+    position: 'absolute',
+    bottom: 30,
+    right: 30,
+    zIndex: 100,
   },
   header: {
     position: 'absolute',
@@ -153,32 +184,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-    backgroundColor: '#0055CC',
-    paddingVertical: 14,
-    paddingHorizontal: 25,
-    borderRadius: 12,
     marginBottom: 18,
     width: '100%',
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowOffset: { width: 0, height: 3 },
-    shadowRadius: 4,
-    elevation: 5,
   },
   logoutButton: {
     backgroundColor: '#e53935',
-    paddingVertical: 14,
-    paddingHorizontal: 25,
-    borderRadius: 12,
-    width: '100%',
-    alignItems: 'center',
     marginTop: 10,
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowOffset: { width: 0, height: 3 },
-    shadowRadius: 4,
-    elevation: 5,
+    width: '100%',
   },
   buttonPressed: {
     opacity: 0.85,

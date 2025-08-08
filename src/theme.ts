@@ -4,6 +4,7 @@ export const colors = {
   white: '#FFFFFF',
   
   text: '#FFFFFF',        // texto sobre fondo oscuro
+  textLight: '#9ca3af',    // texto secundario/gris claro
   background: '#03276C',
 
   // Grises
@@ -22,6 +23,7 @@ export const colors = {
 
   // Rojos
   red500: '#ef4444', // ✅ Añade esta línea si no está
+  error: '#ef4444',   // color de error
 };
 
 export const spacing = {

@@ -1,12 +1,13 @@
 import React from 'react';
 import {
   View,
-  Text,
   StyleSheet,
-  Pressable,
   Image,
   ActivityIndicator,
 } from 'react-native';
+import AnimatedScreen from '../components/AnimatedScreen';
+import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
+import AnimatedButton from '../components/AnimatedButton';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/types';
@@ -49,6 +50,7 @@ const LoginMethodScreen = () => {
               text1: 'Usuario no encontrado',
               text2: 'Tu cuenta no está registrada correctamente.',
             });
+            await new Promise(resolve => setTimeout(resolve, 500));
             return;
           }
 
@@ -62,6 +64,7 @@ const LoginMethodScreen = () => {
               text1: 'Rol incorrecto',
               text2: `Tu rol registrado es "${userData.role}", pero seleccionaste "${role}".`,
             });
+            await new Promise(resolve => setTimeout(resolve, 500));
             return;
           }
 
@@ -88,6 +91,8 @@ const LoginMethodScreen = () => {
             text2: `Bienvenido, ${userData.role}`,
           });
 
+          await new Promise(resolve => setTimeout(resolve, 500)); // ✅ Delay para que se vea el Toast
+
           if (userData.role === 'autoridad') {
             navigation.reset({ index: 0, routes: [{ name: 'AuthorityDashboard' }] });
           } else {
@@ -107,47 +112,52 @@ const LoginMethodScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Image source={require('../../assets/iconselector.png')} style={styles.logo} />
-      <Text style={styles.title}>Iniciar sesión como {role}</Text>
+    <AnimatedScreen animationType="fade" duration={800}>
+      <View style={styles.container}>
+        <Animated.Image 
+          source={require('../../assets/iconselector.png')} 
+          style={styles.logo} 
+          entering={FadeInDown.duration(1000).springify()}
+        />
+        <Animated.Text 
+          style={styles.title}
+          entering={FadeInUp.delay(300).duration(800)}
+        >
+          Iniciar sesión como {role}
+        </Animated.Text>
 
-      <Pressable
-        style={({ pressed }) => [
-          styles.button,
-          { opacity: pressed ? 0.6 : 1 },
-        ]}
-        onPress={handleCorreo}
-        accessibilityRole="button"
-        accessibilityLabel="Iniciar sesión con correo"
-      >
-        <Text style={styles.buttonText}>📧 Correo y Contraseña</Text>
-      </Pressable>
-
-      <Pressable
-        style={({ pressed }) => [
-          styles.googleButton,
-          { opacity: pressed ? 0.6 : 1 },
-        ]}
-        onPress={handleGoogleLogin}
-        disabled={loading}
-        accessibilityRole="button"
-        accessibilityLabel="Iniciar sesión con cuenta de Google"
-      >
-        <View style={styles.googleContent}>
-          <Image
-            source={require('../../assets/google-icon.png')}
-            style={styles.googleIcon}
+        <Animated.View entering={FadeInUp.delay(400).duration(800)} style={styles.buttonContainer}>
+          <AnimatedButton
+            title="📧 Correo y Contraseña"
+            onPress={handleCorreo}
+            style={styles.button}
+            animationType="scale"
+            icon="mail-outline"
           />
-          {loading ? (
-            <ActivityIndicator size="small" color="#000" />
-          ) : (
-            <Text style={styles.googleText}>Iniciar con Google</Text>
-          )}
-        </View>
-      </Pressable>
+        </Animated.View>
 
-      <Toast />
-    </View>
+        <Animated.View entering={FadeInUp.delay(500).duration(800)} style={styles.buttonContainer}>
+          <AnimatedButton
+            onPress={handleGoogleLogin}
+            disabled={loading}
+            style={styles.googleButton}
+            animationType="bounce"
+          >
+            <View style={styles.googleContent}>
+              <Image
+                source={require('../../assets/google-icon.png')}
+                style={styles.googleIcon}
+              />
+              {loading ? (
+                <ActivityIndicator size="small" color="#000" />
+              ) : (
+                <Animated.Text style={styles.googleText}>Iniciar con Google</Animated.Text>
+              )}
+            </View>
+          </AnimatedButton>
+        </Animated.View>
+      </View>
+    </AnimatedScreen>
   );
 };
 
@@ -172,11 +182,15 @@ const styles = StyleSheet.create({
     marginBottom: 32,
     fontWeight: 'bold',
   },
+  buttonContainer: {
+    width: '95%',
+    alignItems: 'center',
+  },
   button: {
     backgroundColor: '#FFFFFF',
     padding: 16,
     borderRadius: 12,
-    width: '80%',
+    width: '100%',
     marginBottom: 16,
   },
   googleButton: {
@@ -184,7 +198,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 16,
     borderRadius: 12,
-    width: '80%',
+    width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',

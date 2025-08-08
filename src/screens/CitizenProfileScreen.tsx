@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import {
   View,
-  Text,
   TextInput,
   StyleSheet,
-  TouchableOpacity,
   ScrollView,
 } from 'react-native';
+import AnimatedScreen from '../components/AnimatedScreen';
+import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
+import AnimatedButton from '../components/AnimatedButton';
 import { auth, db } from '../services/firebase';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -69,48 +70,74 @@ const CitizenProfileScreen = () => {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Editar Perfil</Text>
+    <AnimatedScreen animationType="slideVertical" duration={800}>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Animated.Text 
+          entering={FadeInDown.duration(800)}
+          style={styles.title}
+        >
+          Editar Perfil
+        </Animated.Text>
 
-      <Text style={styles.label}>Nombres</Text>
-      <View style={styles.inputWrapper}>
-        <Icon name="account" size={20} color="#000" style={styles.inputIcon} />
-        <TextInput
-          style={styles.input}
-          value={firstName}
-          onChangeText={setFirstName}
-          placeholder="Nombres"
-          placeholderTextColor="#000"
-        />
-      </View>
+        <Animated.Text 
+          entering={FadeInUp.delay(100).duration(800)}
+          style={styles.label}
+        >
+          Nombres
+        </Animated.Text>
+        <Animated.View 
+          entering={FadeInUp.delay(200).duration(800)}
+          style={styles.inputWrapper}
+        >
+          <Icon name="account" size={20} color="#000" style={styles.inputIcon} />
+          <TextInput
+            style={styles.input}
+            value={firstName}
+            onChangeText={setFirstName}
+            placeholder="Nombres"
+            placeholderTextColor="#000"
+          />
+        </Animated.View>
 
-      <Text style={styles.label}>Apellidos</Text>
-      <View style={styles.inputWrapper}>
-        <Icon name="account-box" size={20} color="#000" style={styles.inputIcon} />
-        <TextInput
-          style={styles.input}
-          value={lastName}
-          onChangeText={setLastName}
-          placeholder="Apellidos"
-          placeholderTextColor="#000"
-        />
-      </View>
+        <Animated.Text 
+          entering={FadeInUp.delay(300).duration(800)}
+          style={styles.label}
+        >
+          Apellidos
+        </Animated.Text>
+        <Animated.View 
+          entering={FadeInUp.delay(400).duration(800)}
+          style={styles.inputWrapper}
+        >
+          <Icon name="account-box" size={20} color="#000" style={styles.inputIcon} />
+          <TextInput
+            style={styles.input}
+            value={lastName}
+            onChangeText={setLastName}
+            placeholder="Apellidos"
+            placeholderTextColor="#000"
+          />
+        </Animated.View>
 
-      <TouchableOpacity
-        style={[styles.button, loading && { opacity: 0.6 }]}
-        onPress={handleSave}
-        disabled={loading}
-      >
-        <View style={styles.buttonContent}>
-          <Icon name="content-save" size={20} color="#fff" style={{ marginRight: 8 }} />
-          <Text style={styles.buttonText}>
-            {loading ? 'Guardando...' : 'Guardar Cambios'}
-          </Text>
-        </View>
-      </TouchableOpacity>
+        <Animated.View entering={FadeInUp.delay(500).duration(800)}>
+          <AnimatedButton
+            style={[styles.button, loading && { opacity: 0.6 }]}
+            onPress={handleSave}
+            disabled={loading}
+            animationType="scale"
+          >
+            <View style={styles.buttonContent}>
+              <Icon name="content-save" size={20} color="#fff" style={{ marginRight: 8 }} />
+              <Animated.Text style={styles.buttonText}>
+                {loading ? 'Guardando...' : 'Guardar Cambios'}
+              </Animated.Text>
+            </View>
+          </AnimatedButton>
+        </Animated.View>
 
-      <Toast />
-    </ScrollView>
+        <Toast />
+      </ScrollView>
+    </AnimatedScreen>
   );
 };
 

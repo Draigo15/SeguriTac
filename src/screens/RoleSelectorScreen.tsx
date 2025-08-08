@@ -1,10 +1,10 @@
 import React from 'react';
 import {
   View,
-  Text,
   StyleSheet,
-  Image,
 } from 'react-native';
+import AnimatedScreen from '../components/AnimatedScreen';
+import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/types';
@@ -21,52 +21,74 @@ const RoleSelectorScreen = () => {
   };
 
   return (
-    <View style={styles.background}>
-      <Animatable.View animation="fadeInUp" duration={800} style={styles.container}>
+    <AnimatedScreen animationType="zoom" duration={800}>
+      <View style={styles.background}>
+        <View style={styles.container}>
 
-        <Image
-          source={require('../../assets/roleimageen4.png')}
-          style={styles.headerImage}
-          resizeMode="contain"
-        />
+          <Animated.Image
+            entering={FadeInDown.duration(1000).springify()}
+            source={require('../../assets/roleimageen4.png')}
+            style={styles.headerImage}
+            resizeMode="contain"
+          />
 
-        <Image
-          source={require('../../assets/iconselector.png')}
-          style={styles.logo}
-          resizeMode="contain"
-        />
+          <Animated.Image
+            entering={FadeInDown.delay(200).duration(1000).springify()}
+            source={require('../../assets/iconselector.png')}
+            style={styles.logo}
+            resizeMode="contain"
+          />
 
-        <Text style={styles.title}>¿Quién eres?</Text>
+          <Animated.Text 
+            entering={FadeInUp.delay(400).duration(800)}
+            style={styles.title}
+          >
+            ¿Quién eres?
+          </Animated.Text>
 
-        <Text style={styles.description}>
-          Reporta incidentes o responde como autoridad en tu comunidad.
-        </Text>
+          <Animated.Text 
+            entering={FadeInUp.delay(500).duration(800)}
+            style={styles.description}
+          >
+            Reporta incidentes o responde como autoridad en tu comunidad.
+          </Animated.Text>
 
-        <Button
-          mode="contained"
-          onPress={() => handleSelectRole('ciudadano')}
-          contentStyle={styles.buttonContent}
-          style={[styles.button, { backgroundColor: '#FFFFFF' }]}
-          labelStyle={{ color: '#002B7F', fontWeight: 'bold' }}
-          accessibilityRole="button"
-          accessibilityLabel="Seleccionar rol Ciudadano"
+        <Animated.View 
+          entering={FadeInUp.delay(600).duration(800)}
+          style={styles.buttonContainer}
         >
-          🧍 Ciudadano
-        </Button>
+          <Button
+            mode="contained"
+            onPress={() => handleSelectRole('ciudadano')}
+            contentStyle={styles.buttonContent}
+            style={[styles.button, { backgroundColor: '#FFFFFF' }]}
+            labelStyle={{ color: '#002B7F', fontWeight: 'bold' }}
+            accessibilityRole="button"
+            accessibilityLabel="Seleccionar rol Ciudadano"
+          >
+            🧍 Ciudadano
+          </Button>
+        </Animated.View>
 
-        <Button
-          mode="contained"
-          onPress={() => handleSelectRole('autoridad')}
-          contentStyle={styles.buttonContent}
-          style={[styles.button, { backgroundColor: '#0055CC' }]}
-          labelStyle={{ color: '#FFFFFF', fontWeight: 'bold' }}
-          accessibilityRole="button"
-          accessibilityLabel="Seleccionar rol Autoridad"
+        <Animated.View 
+          entering={FadeInUp.delay(700).duration(800)}
+          style={styles.buttonContainer}
         >
-          🛡 Autoridad
-        </Button>
-      </Animatable.View>
+          <Button
+            mode="contained"
+            onPress={() => handleSelectRole('autoridad')}
+            contentStyle={styles.buttonContent}
+            style={[styles.button, { backgroundColor: '#0055CC' }]}
+            labelStyle={{ color: '#FFFFFF', fontWeight: 'bold' }}
+            accessibilityRole="button"
+            accessibilityLabel="Seleccionar rol Autoridad"
+          >
+            🛡 Autoridad
+          </Button>
+        </Animated.View>
+      </View>
     </View>
+    </AnimatedScreen>
   );
 };
 
@@ -107,13 +129,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 20,
   },
+  buttonContainer: {
+    width: '95%',
+    alignItems: 'center',
+  },
   button: {
     borderRadius: 16,
     marginBottom: 16,
-    width: '80%',
+    width: '100%',
     elevation: 4,
   },
   buttonContent: {
-    paddingVertical: 10,
+    paddingVertical: 12,
   },
 });

@@ -1,14 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react';
 import {
   View,
-  Text,
   TextInput,
-  TouchableOpacity,
   FlatList,
   StyleSheet,
   KeyboardAvoidingView,
   Platform,
+  Text,
 } from 'react-native';
+import AnimatedScreen from '../components/AnimatedScreen';
+import Animated, { FadeInDown, FadeInUp, ZoomIn } from 'react-native-reanimated';
+import AnimatedButton from '../components/AnimatedButton';
 import { useRoute } from '@react-navigation/native';
 import { db, auth } from '../services/firebase';
 import {
@@ -20,6 +22,7 @@ import {
   serverTimestamp,
   getDoc,
   doc,
+  updateDoc,
 } from 'firebase/firestore';
 import { format } from 'date-fns';
 import type { FlatList as FlatListType } from 'react-native';
@@ -30,8 +33,13 @@ const ChatScreen = () => {
 
   const [messages, setMessages] = useState<any[]>([]);
   const [input, setInput] = useState('');
-  const [allowed, setAllowed] = useState<boolean | null>(null); // null = cargando
-  const flatListRef = useRef<FlatListType<any>>(null); // ✅ tipado correctamente
+  const [allowed, setAllowed] = useState<boolean | null>(null);
+  const [role, setRole] = useState<'autoridad' | 'ciudadano' | null>(null);
+  const [sending, setSending] = useState(false);
+  const flatListRef = useRef<FlatListType<any>>(null);
+
+  const [chatClosed, setChatClosed] = useState(false);
+
 
   useEffect(() => {
     const checkPermissionAndLoadMessages = async () => {
@@ -47,8 +55,15 @@ const ChatScreen = () => {
       }
 
       const reportData = reportSnap.data();
-      const isCreator = reportData.email === currentUser.email;
-      const isAuthority = currentUser.email?.includes('@autoridad');
+      setChatClosed(reportData.chatClosed || false);
+      const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
+const userData = userDoc.exists() ? userDoc.data() : null;
+const roleFromDB = userData?.role || null;
+
+setRole(roleFromDB);
+
+const isCreator = reportData.email === currentUser.email;
+const isAuthority = roleFromDB === 'autoridad';
 
       if (isCreator || isAuthority) {
         setAllowed(true);
@@ -71,21 +86,46 @@ const ChatScreen = () => {
     checkPermissionAndLoadMessages();
   }, [reportId]);
 
+  useEffect(() => {
+    flatListRef.current?.scrollToEnd({ animated: true });
+  }, [messages]);
+
   const sendMessage = async () => {
+    if (!role) return;
     const currentUser = auth.currentUser;
-    if (!input.trim() || !currentUser || !currentUser.email) return;
+    if (!input.trim() || !currentUser || !currentUser.email || sending) return;
 
-    const sender = currentUser.email.includes('@autoridad') ? 'autoridad' : 'ciudadano';
+    setSending(true);
+    const sender = role || 'ciudadano';
 
-    await addDoc(collection(db, 'report_chats', reportId, 'messages'), {
-      text: input,
-      sender,
-      uid: currentUser.uid,
-      timestamp: serverTimestamp(),
-    });
+    try {
+      await addDoc(collection(db, 'report_chats', reportId, 'messages'), {
+        text: input.trim(),
+        sender,
+        uid: currentUser.uid,
+        timestamp: serverTimestamp(),
+      });
+      setInput('');
+    } catch (e) {
+      console.error('❌ Error al enviar mensaje:', e);
+    } finally {
+      setSending(false);
+    }
 
-    setInput('');
+    
   };
+  
+  const handleCloseChat = async () => {
+  try {
+    await updateDoc(doc(db, 'reports', reportId), {
+      chatClosed: true,
+    });
+    setChatClosed(true);
+    console.log('🔒 Chat cerrado manualmente por la autoridad.');
+  } catch (error) {
+    console.error('Error al cerrar chat manualmente:', error);
+  }
+};
 
   const renderItem = ({ item }: any) => {
     const isUser = item.uid === auth.currentUser?.uid;
@@ -123,33 +163,80 @@ const ChatScreen = () => {
   }
 
   return (
+    <AnimatedScreen animationType="rotateZoom" duration={800}>
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       style={styles.container}
     >
-      <FlatList
-        ref={flatListRef}
-        data={messages}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-        contentContainerStyle={styles.messagesList}
-        onContentSizeChange={() =>
-          flatListRef.current?.scrollToEnd({ animated: true })
-        }
-      />
-
-      <View style={styles.inputContainer}>
-        <TextInput
-          placeholder="Escribe un mensaje..."
-          value={input}
-          onChangeText={setInput}
-          style={styles.input}
+      <Animated.View entering={FadeInDown.duration(500)} style={{flex: 1}}>
+        <FlatList
+          ref={flatListRef}
+          data={messages}
+          renderItem={({item, index}) => {
+            const isUser = item.uid === auth.currentUser?.uid;
+            return (
+              <Animated.View
+                entering={isUser ? FadeInUp.delay(index * 100).duration(300) : FadeInDown.delay(index * 100).duration(300)}
+                style={[
+                  styles.messageContainer,
+                  isUser ? styles.myMessage : styles.theirMessage,
+                ]}
+              >
+                <Animated.Text style={styles.messageText}>{item.text}</Animated.Text>
+                <Animated.Text style={styles.timestamp}>
+                  {item.timestamp?.seconds ? format(item.timestamp.toDate(), 'HH:mm') : '...'}
+                </Animated.Text>
+              </Animated.View>
+            );
+          }}
+          keyExtractor={(item) => item.id}
+          contentContainerStyle={styles.messagesList}
         />
-        <TouchableOpacity onPress={sendMessage} style={styles.sendButton}>
-          <Text style={styles.sendButtonText}>Enviar</Text>
-        </TouchableOpacity>
-      </View>
+      </Animated.View>
+      {role === 'autoridad' && !chatClosed && (
+  <Animated.View entering={ZoomIn.delay(300).duration(500)}>
+    <AnimatedButton
+      style={styles.closeChatButton}
+      onPress={handleCloseChat}
+      animationType="scale"
+      iconName="close-circle"
+    >
+      <Animated.Text style={styles.closeChatButtonText}>Cerrar Chat Manualmente</Animated.Text>
+    </AnimatedButton>
+  </Animated.View>
+)}
+      {chatClosed ? (
+  <Animated.View entering={FadeInUp.duration(500)} style={styles.closedBanner}>
+    <Animated.Text style={styles.closedText}>🔒 El chat fue cerrado. Gracias por comunicarte.</Animated.Text>
+  </Animated.View>
+) : (
+  <Animated.View entering={FadeInUp.delay(200).duration(500)} style={styles.inputContainer}>
+    <TextInput
+      placeholder={
+        role === 'autoridad'
+          ? 'Conversa con el ciudadano...'
+          : 'Conversa con la autoridad...'
+      }
+      value={input}
+      onChangeText={setInput}
+      style={styles.input}
+      editable={!sending}
+    />
+    <AnimatedButton
+      onPress={sendMessage}
+      style={[styles.sendButton, sending && { backgroundColor: '#999' }]}
+      disabled={sending}
+      animationType="bounce"
+      iconName="send"
+    >
+      <Animated.Text style={styles.sendButtonText}>
+        {sending ? '...' : 'Enviar'}
+      </Animated.Text>
+    </AnimatedButton>
+  </Animated.View>
+)}
     </KeyboardAvoidingView>
+    </AnimatedScreen>
   );
 };
 
@@ -202,4 +289,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   sendButtonText: { color: 'white', fontWeight: 'bold' },
+  closeChatButton: {
+  backgroundColor: '#E53935',
+  padding: 12,
+  marginHorizontal: 20,
+  borderRadius: 10,
+  alignItems: 'center',
+  marginBottom: 10,
+},
+closeChatButtonText: {
+  color: 'white',
+  fontWeight: 'bold',
+  fontSize: 15,
+},
+closedBanner: {
+  padding: 12,
+  backgroundColor: '#EEE',
+  borderTopColor: '#DDD',
+  borderTopWidth: 1,
+  alignItems: 'center',
+},
+closedText: {
+  fontStyle: 'italic',
+  color: '#555',
+},
 });

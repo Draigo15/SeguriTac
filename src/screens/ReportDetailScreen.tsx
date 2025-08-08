@@ -9,6 +9,8 @@ import {
   Alert,
   Share,
 } from 'react-native';
+import AnimatedScreen from '../components/AnimatedScreen';
+import AnimatedButton from '../components/AnimatedButton';
 import { useRoute } from '@react-navigation/native';
 import { Platform } from 'react-native';
 
@@ -32,14 +34,17 @@ const ReportDetailScreen = () => {
   const [Marker, setMarker] = useState<any>(null);
   const [WebMap, setWebMap] = useState<any>(null);
 
-  useEffect(() => {
+   useEffect(() => {
     if (Platform.OS === 'web') {
       import('../components/WebMap').then((mod) => setWebMap(() => mod.default));
     } else {
-      import('react-native-maps').then((Maps) => {
-        setMapView(() => Maps.default);
-        setMarker(() => Maps.Marker);
-      });
+      // Defer the map import to next JS tick to avoid early resolution during bundling
+      setTimeout(() => {
+        import('react-native-maps').then((Maps) => {
+          setMapView(() => Maps.default);
+          setMarker(() => Maps.Marker);
+        });
+      }, 0);
     }
   }, []);
 
@@ -144,15 +149,22 @@ const handleUpdateStatus = async () => {
 
     console.log('✅ Estado actualizado en Firestore:', newStatus);
 
+    if (newStatus === 'Resuelto') {
+  await updateDoc(reportRef, {
+    chatClosed: true,
+  });
+  console.log('🔒 Chat marcado como cerrado automáticamente.');
+}
+
     // Envío de notificación push si existe token
     const tokenDoc = await getDoc(doc(db, 'user_tokens', report.email));
     if (tokenDoc.exists()) {
       const { token } = tokenDoc.data();
       console.log('📲 Token encontrado, enviando notificación...');
-      await fetch('https://seguridad-ciudadana-backend.onrender.com/send-status-update', {
+      await fetch('https://seguridad-ciudadana-backend.onrender.com/enviar-notificacion-estado', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token, newStatus }),
+        body: JSON.stringify({ email: report.email, newStatus }),
       });
     }
 
@@ -211,13 +223,7 @@ const handleUpdateStatus = async () => {
       </View>
     );
   }
-if (Platform.OS !== 'web' && (!MapView || !Marker)) {
-  return (
-    <View style={styles.center}>
-      <Text style={{ color: '#002B7F' }}>Cargando mapa...</Text>
-    </View>
-  );
-}
+
 
   const isValidLocation =
     typeof report.location?.latitude === 'number' &&
@@ -227,9 +233,10 @@ if (Platform.OS !== 'web' && (!MapView || !Marker)) {
     typeof report.imageUri === 'string' && report.imageUri.startsWith('http');
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 100 }}>
-      <Text style={styles.title}>📌 {report.incidentType ?? 'Tipo desconocido'}</Text>
-      <Text style={styles.date}>📅 {report.dateFormatted ?? 'Fecha no disponible'}</Text>
+    <AnimatedScreen animationType="zoom" duration={600}>
+      <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 100 }}>
+        <Text style={styles.title}>📌 {report.incidentType ?? 'Tipo desconocido'}</Text>
+        <Text style={styles.date}>📅 {report.dateFormatted ?? 'Fecha no disponible'}</Text>
 
       <View style={styles.card}>
         <Text style={styles.label}>Estado actual:</Text>
@@ -257,13 +264,20 @@ if (Platform.OS !== 'web' && (!MapView || !Marker)) {
     <Text style={styles.label}>Ubicación del incidente:</Text>
 
     <View style={{ position: 'relative', width: '100%', height: 250, marginTop: 10 }}>
-      {Platform.OS === 'web' ? (
-        WebMap ? (
-          <WebMap latitude={report.location.latitude} longitude={report.location.longitude} />
-        ) : (
-          <View style={styles.center}><Text>Cargando mapa...</Text></View>
-        )
-      ) : MapView && Marker ? (
+  {Platform.OS === 'web' ? (
+    WebMap ? (
+      <WebMap latitude={report.location.latitude} longitude={report.location.longitude} />
+    ) : (
+      <View style={{ height: 250, justifyContent: 'center', alignItems: 'center' }}>
+        <Text style={{ color: '#002B7F' }}>Cargando mapa...</Text>
+      </View>
+    )
+  ) : !MapView || !Marker ? (
+    <View style={{ height: 250, justifyContent: 'center', alignItems: 'center' }}>
+      <Text style={{ color: '#002B7F' }}>Cargando mapa...</Text>
+    </View>
+  ) : (
+
         <>
           <MapView
             ref={mapRef}
@@ -296,15 +310,10 @@ if (Platform.OS !== 'web' && (!MapView || !Marker)) {
             <Text style={styles.fabText}>📍</Text>
           </TouchableOpacity>
         </>
-      ) : (
-        <View style={styles.center}><Text>Cargando mapa...</Text></View>
       )}
     </View>
   </View>
 )}
-
-
-
 
       {currentUserRole === 'autoridad' && (
         <View style={styles.card}>
@@ -314,23 +323,33 @@ if (Platform.OS !== 'web' && (!MapView || !Marker)) {
             <Picker.Item label="En proceso" value="En proceso" />
             <Picker.Item label="Resuelto" value="Resuelto" />
           </Picker>
-          <TouchableOpacity style={styles.updateButton} onPress={handleUpdateStatus}>
-            <Text style={styles.updateButtonText}>Guardar Estado</Text>
-          </TouchableOpacity>
+          <AnimatedButton
+            title="Guardar Estado"
+            onPress={handleUpdateStatus}
+            style={styles.updateButton}
+            animationType="highlight"
+            icon="save-outline"
+          />
         </View>
       )}
 
-      <TouchableOpacity style={styles.shareButton} onPress={handleShare}>
-        <Text style={styles.shareButtonText}>📤 Compartir Reporte</Text>
-      </TouchableOpacity>
+      <AnimatedButton
+        title="📤 Compartir Reporte"
+        onPress={handleShare}
+        style={styles.shareButton}
+        animationType="scale"
+        icon="share-social-outline"
+      />
 
-      <TouchableOpacity
-        style={styles.chatButton}
+      <AnimatedButton
+        title="💬 Ir al Chat"
         onPress={() => navigation.navigate('Chat', { reportId: report.id })}
-      >
-        <Text style={styles.chatButtonText}>💬 Ir al Chat</Text>
-      </TouchableOpacity>
-    </ScrollView>
+        style={styles.chatButton}
+        animationType="bounce"
+        icon="chatbubble-outline"
+      />
+      </ScrollView>
+    </AnimatedScreen>
   );
 };
 

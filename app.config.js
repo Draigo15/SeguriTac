@@ -26,7 +26,12 @@ export default {
       useNextNotificationsApi: true
     },
     web: {
-      favicon: "./assets/favicon.png"
+      favicon: "./assets/favicon.png",
+      name: "Seguridad Ciudadana Tacna",
+      shortName: "SeguridadApp",
+      description: "Aplicativo web para reportes ciudadanos en tiempo real en Tacna.",
+      themeColor: "#002B7F",
+      backgroundColor: "#ffffff"
     },
     extra: {
        googleClientId: "361203563970-p4e3vf7koe2buno2rurqbsnutek8gi8p.apps.googleusercontent.com",

@@ -4,9 +4,12 @@ import {
   Text,
   StyleSheet,
   Image,
-  Pressable,
   Alert,
 } from 'react-native';
+import AnimatedScreen from '../components/AnimatedScreen';
+import AnimatedButton from '../components/AnimatedButton';
+
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { signOut } from 'firebase/auth';
 import { auth } from '../services/firebase';
@@ -33,54 +36,61 @@ const AuthorityDashboardScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
-      {/* Logo y título */}
-      <Image
-        source={require('../../assets/iconselector.png')}
-        style={styles.logo}
-        resizeMode="contain"
-      />
+    <AnimatedScreen animationType="zoom" duration={600}>
+      <View style={styles.container}>
 
-      <Text style={styles.title}>Panel de Autoridad</Text>
+        {/* Logo y título */}
+        <Image
+          source={require('../../assets/iconselector.png')}
+          style={styles.logo}
+          resizeMode="contain"
+        />
 
-      {/* Botones */}
-      <Pressable
-        style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}
-        onPress={() => navigation.navigate('ViewAllReports')}
-      >
-        <Ionicons name="document-text-outline" size={20} color="#fff" style={styles.icon} />
-        <Text style={styles.buttonText}>Ver Todos los Reportes</Text>
-      </Pressable>
+        <Text style={styles.title}>Panel de Autoridad</Text>
 
-      <Pressable
-        style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}
-        onPress={() => navigation.navigate('AllReportsMap')}
-      >
-        <Ionicons name="map-outline" size={20} color="#fff" style={styles.icon} />
-        <Text style={styles.buttonText}>Ver Mapa de Reportes</Text>
-      </Pressable>
+        {/* Botones con animaciones */}
+        <AnimatedButton
+          title="Ver Todos los Reportes"
+          onPress={() => navigation.navigate('ViewAllReports')}
+          style={styles.button}
+          animationType="scale"
+          icon="document-text-outline"
+        />
 
-      <Pressable
-        style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}
-        onPress={() => navigation.navigate('ReportStats')}
-      >
-        <Ionicons name="bar-chart-outline" size={20} color="#fff" style={styles.icon} />
-        <Text style={styles.buttonText}>Ver Estadísticas</Text>
-      </Pressable>
+        <AnimatedButton
+          title="Ver Mapa de Reportes"
+          onPress={() => navigation.navigate('AllReportsMap')}
+          style={styles.button}
+          animationType="bounce"
+          icon="map-outline"
+        />
 
-      {/* Cerrar sesión */}
-      <Pressable
-        style={({ pressed }) => [
-          styles.button,
-          styles.logoutButton,
-          pressed && styles.buttonPressed,
-        ]}
-        onPress={handleLogout}
-      >
-        <Ionicons name="log-out-outline" size={20} color="#fff" style={styles.icon} />
-        <Text style={styles.buttonText}>Cerrar Sesión</Text>
-      </Pressable>
-    </View>
+        <AnimatedButton
+          title="Ver Estadísticas"
+          onPress={() => navigation.navigate('ReportStats')}
+          style={styles.button}
+          animationType="highlight"
+          icon="bar-chart-outline"
+        />
+
+        <AnimatedButton
+          title="Alertas de Emergencia"
+          onPress={() => navigation.navigate('EmergencyAlerts')}
+          style={styles.button}
+          animationType="bounce"
+          icon="warning-outline"
+        />
+
+        {/* Cerrar sesión */}
+        <AnimatedButton
+          title="Cerrar Sesión"
+          onPress={handleLogout}
+          style={[styles.button, styles.logoutButton]}
+          animationType="scale"
+          icon="log-out-outline"
+        />
+      </View>
+    </AnimatedScreen>
   );
 };
 
@@ -94,6 +104,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
   logo: {
     width: 220,
     height: 220,

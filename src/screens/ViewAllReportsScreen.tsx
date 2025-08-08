@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import {
   View,
-  Text,
   FlatList,
   StyleSheet,
   ActivityIndicator,
-  TouchableOpacity,
   TextInput,
 } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
@@ -15,9 +13,10 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/types';
 import { colors, fontSizes, spacing } from '../theme';
-import Icon from 'react-native-vector-icons/Ionicons';
-import * as Animatable from 'react-native-animatable';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import AnimatedScreen from '../components/AnimatedScreen';
+import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
+import AnimatedButton from '../components/AnimatedButton';
 
 
 const ViewAllReportsScreen = () => {
@@ -111,17 +110,28 @@ const ViewAllReportsScreen = () => {
 
   if (loading) {
     return (
-      <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#fff" />
-      </View>
+      <AnimatedScreen animationType="fade" duration={600}>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color="#fff" />
+        </View>
+      </AnimatedScreen>
     );
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>📋 Todos los Reportes</Text>
+    <AnimatedScreen animationType="slideHorizontal" duration={800}>
+      <View style={styles.container}>
+        <Animated.Text 
+          entering={FadeInDown.duration(800)}
+          style={styles.title}
+        >
+          📋 Todos los Reportes
+        </Animated.Text>
 
-      <View style={styles.searchContainer}>
+      <Animated.View 
+        entering={FadeInDown.delay(100).duration(800)}
+        style={styles.searchContainer}
+      >
         <Ionicons name="search-outline" size={20} color="#999" style={styles.searchIcon} />
         <TextInput
           style={styles.searchInput}
@@ -130,9 +140,12 @@ const ViewAllReportsScreen = () => {
           value={searchText}
           onChangeText={setSearchText}
         />
-      </View>
+      </Animated.View>
 
-      <View style={styles.pickerContainer}>
+      <Animated.View 
+        entering={FadeInDown.delay(200).duration(800)}
+        style={styles.pickerContainer}
+      >
         <Picker
           selectedValue={statusFilter}
           onValueChange={(value) => setStatusFilter(value)}
@@ -143,42 +156,54 @@ const ViewAllReportsScreen = () => {
           <Picker.Item label="En proceso" value="en proceso" />
           <Picker.Item label="Resuelto" value="resuelto" />
         </Picker>
-      </View>
+      </Animated.View>
 
-      <Text style={styles.counterText}>
+      <Animated.Text 
+        entering={FadeInDown.delay(300).duration(800)}
+        style={styles.counterText}
+      >
         Mostrando {reports.length} reporte{reports.length === 1 ? '' : 's'}
-      </Text>
+      </Animated.Text>
 
       {reports.length === 0 ? (
-        <Text style={styles.noReports}>No hay reportes que coincidan con los filtros.</Text>
+        <Animated.Text 
+          entering={FadeInUp.delay(400).duration(800)}
+          style={styles.noReports}
+        >
+          No hay reportes que coincidan con los filtros.
+        </Animated.Text>
       ) : (
         <FlatList
           data={reports}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <Animatable.View animation="fadeInUp" duration={400} delay={100}>
-              <TouchableOpacity
+          renderItem={({ item, index }) => (
+            <Animated.View
+              entering={FadeInUp.delay(index * 100 + 400).duration(500)}
+            >
+              <AnimatedButton
                 style={styles.reportItem}
                 onPress={() => handlePressReport(item)}
+                animationType="scale"
               >
                 <View style={styles.reportContent}>
                   <View>
-                    <Text style={styles.reportTitle}>{item.incidentType}</Text>
-                    <Text style={styles.reportDate}>{item.dateFormatted}</Text>
-                    <Text style={styles.reportUser}>
+                    <Animated.Text style={styles.reportTitle}>{item.incidentType}</Animated.Text>
+                    <Animated.Text style={styles.reportDate}>{item.dateFormatted}</Animated.Text>
+                    <Animated.Text style={styles.reportUser}>
                       {item.firstName && item.lastName ? `${item.firstName} ${item.lastName}` : item.email}
-                    </Text>
+                    </Animated.Text>
                   </View>
-                  <View style={[styles.statusBadge, { backgroundColor: getStatusColor(item.status) }]}>
-                    <Text style={styles.statusText}>{(item.status || 'Pendiente').toUpperCase()}</Text>
-                  </View>
+                  <Animated.View style={[styles.statusBadge, { backgroundColor: getStatusColor(item.status) }]}>
+                    <Animated.Text style={styles.statusText}>{(item.status || 'Pendiente').toUpperCase()}</Animated.Text>
+                  </Animated.View>
                 </View>
-              </TouchableOpacity>
-            </Animatable.View>
+              </AnimatedButton>
+            </Animated.View>
           )}
         />
       )}
-    </View>
+      </View>
+    </AnimatedScreen>
   );
 };
 

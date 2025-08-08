@@ -10,6 +10,9 @@ import {
   Platform,
   Image,
 } from 'react-native';
+import AnimatedScreen from '../components/AnimatedScreen';
+import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
+import AnimatedButton from '../components/AnimatedButton';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../services/firebase';
@@ -110,22 +113,30 @@ const RegisterScreen = () => {
 };
 
   return (
-    <KeyboardAvoidingView
-      style={styles.background}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-    >
-      <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-        <Image
-          source={require('../../assets/iconselector.png')}
-          style={styles.logo}
-          resizeMode="contain"
-        />
+    <AnimatedScreen animationType="slideUp" duration={600}>
+      <KeyboardAvoidingView
+        style={styles.background}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      >
+        <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
+          <Animated.Image
+            entering={FadeInDown.duration(1000).springify()}
+            source={require('../../assets/iconselector.png')}
+            style={styles.logo}
+            resizeMode="contain"
+          />
 
-        <Text style={styles.title}>
-          Registro - {role === 'ciudadano' ? 'Ciudadano' : 'Autoridad'}
-        </Text>
+          <Animated.Text 
+            entering={FadeInUp.delay(200).duration(800)}
+            style={styles.title}
+          >
+            Registro - {role === 'ciudadano' ? 'Ciudadano' : 'Autoridad'}
+          </Animated.Text>
 
-        <View style={styles.inputContainer}>
+        <Animated.View 
+          entering={FadeInUp.delay(300).duration(800)}
+          style={styles.inputContainer}
+        >
           <Icon name="person-outline" size={20} color="#000" style={styles.icon} />
           <TextInput
             style={styles.input}
@@ -134,9 +145,12 @@ const RegisterScreen = () => {
             value={firstName}
             onChangeText={setFirstName}
           />
-        </View>
+        </Animated.View>
 
-        <View style={styles.inputContainer}>
+        <Animated.View 
+          entering={FadeInUp.delay(400).duration(800)}
+          style={styles.inputContainer}
+        >
           <Icon name="person-outline" size={20} color="#000" style={styles.icon} />
           <TextInput
             style={styles.input}
@@ -145,9 +159,12 @@ const RegisterScreen = () => {
             value={lastName}
             onChangeText={setLastName}
           />
-        </View>
+        </Animated.View>
 
-        <View style={styles.inputContainer}>
+        <Animated.View 
+          entering={FadeInUp.delay(500).duration(800)}
+          style={styles.inputContainer}
+        >
           <Icon name="mail-outline" size={20} color="#000" style={styles.icon} />
           <TextInput
             style={styles.input}
@@ -158,9 +175,12 @@ const RegisterScreen = () => {
             autoCapitalize="none"
             keyboardType="email-address"
           />
-        </View>
+        </Animated.View>
 
-        <View style={styles.inputContainer}>
+        <Animated.View 
+          entering={FadeInUp.delay(600).duration(800)}
+          style={styles.inputContainer}
+        >
           <Icon name="lock-closed-outline" size={20} color="#000" style={styles.icon} />
           <TextInput
             style={styles.input}
@@ -170,23 +190,24 @@ const RegisterScreen = () => {
             onChangeText={setPassword}
             secureTextEntry
           />
-        </View>
+        </Animated.View>
 
-        <Pressable
-          style={({ pressed }) => [
-            styles.button,
-            pressed && styles.buttonPressed,
-            loading && styles.buttonDisabled,
-          ]}
-          onPress={handleRegister}
-          disabled={loading}
+        <Animated.View 
+          entering={FadeInUp.delay(700).duration(800)}
+          style={{width: '100%'}}
         >
-          <Text style={styles.buttonText}>
-            {loading ? 'Registrando...' : 'Registrarse'}
-          </Text>
-        </Pressable>
+          <AnimatedButton
+            title={loading ? 'Registrando...' : 'Registrarse'}
+            onPress={handleRegister}
+            style={[styles.button, loading && styles.buttonDisabled]}
+            animationType="scale"
+            icon="person-add-outline"
+            disabled={loading}
+          />
+        </Animated.View>
       </ScrollView>
     </KeyboardAvoidingView>
+    </AnimatedScreen>
   );
 };
 

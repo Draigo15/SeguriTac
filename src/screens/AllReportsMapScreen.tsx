@@ -1,34 +1,44 @@
 import React, { useEffect, useState, useRef } from 'react';
 import {
   View,
-  Text,
   StyleSheet,
   ActivityIndicator,
   Dimensions,
-  TouchableOpacity,
   TextInput,
 } from 'react-native';
 import { Platform } from 'react-native';
+import AnimatedScreen from '../components/AnimatedScreen';
+import Animated, { FadeInDown, FadeInUp, ZoomIn } from 'react-native-reanimated';
+import AnimatedButton from '../components/AnimatedButton';
 
 
 import { Picker } from '@react-native-picker/picker';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../services/firebase';
 import * as Location from 'expo-location';
-import * as Animatable from 'react-native-animatable';
-import Toast from 'react-native-toast-message';
-const WebMapList = Platform.OS === 'web' ? require('../components/WebMapList').default : null;
 
+import Toast from 'react-native-toast-message';
+import { useRoute, RouteProp } from '@react-navigation/native';
+import { RootStackParamList } from '../navigation/types';
+
+type AllReportsMapRouteProp = RouteProp<RootStackParamList, 'AllReportsMap'>;
 
 const AllReportsMapScreen = () => {
+  const route = useRoute<AllReportsMapRouteProp>();
+  const { initialRegion, focusedReportId } = route.params || {};
   
+const [WebMapList, setWebMapList] = useState<any>(null);
 const [MapView, setMapView] = useState<any>(null);
 const [Marker, setMarker] = useState<any>(null);
 const [Heatmap, setHeatmap] = useState<any>(null);
 const [PROVIDER_GOOGLE, setProvider] = useState<any>(null);
 
+
+
 useEffect(() => {
-  if (Platform.OS !== 'web') {
+  if (Platform.OS === 'web') {
+    import('../components/WebMapList').then((mod) => setWebMapList(() => mod.default));
+  } else {
     import('react-native-maps').then((Maps) => {
       setMapView(() => Maps.default);
       setMarker(() => Maps.Marker);
@@ -133,19 +143,28 @@ if (Platform.OS !== 'web' && (!MapView || !Marker || !Heatmap || !PROVIDER_GOOGL
   );
 }
   return (
+    <AnimatedScreen animationType="slideHorizontal" duration={800}>
     <View style={styles.container}>
-      <Animatable.Text animation="fadeInDown" style={styles.header}>
+      <Animated.Text 
+        entering={FadeInDown.duration(800)}
+        style={styles.header}
+      >
         🗺️ Mapa de Reportes
-      </Animatable.Text>
+      </Animated.Text>
 
-      <TextInput
-        placeholder="🔍 Buscar por palabra clave..."
-        style={styles.searchInput}
-        onChangeText={setSearch}
-        value={search}
-      />
+      <Animated.View entering={FadeInDown.delay(100).duration(800)}>
+        <TextInput
+          placeholder="🔍 Buscar por palabra clave..."
+          style={styles.searchInput}
+          onChangeText={setSearch}
+          value={search}
+        />
+      </Animated.View>
 
-      <View style={styles.filters}>
+      <Animated.View 
+        entering={FadeInDown.delay(200).duration(800)}
+        style={styles.filters}
+      >
         <Picker
           selectedValue={incidentFilter}
           style={styles.picker}
@@ -167,7 +186,7 @@ if (Platform.OS !== 'web' && (!MapView || !Marker || !Heatmap || !PROVIDER_GOOGL
             <Picker.Item key={status} label={status} value={status} />
           ))}
         </Picker>
-      </View>
+      </Animated.View>
 
 {Platform.OS === 'web' && WebMapList ? (
   <View style={styles.map}>
@@ -178,7 +197,7 @@ if (Platform.OS !== 'web' && (!MapView || !Marker || !Heatmap || !PROVIDER_GOOGL
     ref={mapRef}
     style={styles.map}
     provider={PROVIDER_GOOGLE}
-    initialRegion={{
+    initialRegion={initialRegion || {
       latitude: filteredReports[0]?.location.latitude || -16.5,
       longitude: filteredReports[0]?.location.longitude || -68.15,
       latitudeDelta: 0.1,
@@ -224,33 +243,51 @@ if (Platform.OS !== 'web' && (!MapView || !Marker || !Heatmap || !PROVIDER_GOOGL
 
 
 
-      <View style={styles.legend}>
-  <View style={styles.legendItem}>
-    <View style={[styles.legendCircle, { backgroundColor: 'red' }]} />
-    <Text style={styles.legendLabel}>Pendiente</Text>
-  </View>
-  <View style={styles.legendItem}>
-    <View style={[styles.legendCircle, { backgroundColor: 'orange' }]} />
-    <Text style={styles.legendLabel}>En Proceso</Text>
-  </View>
-  <View style={styles.legendItem}>
-    <View style={[styles.legendCircle, { backgroundColor: 'green' }]} />
-    <Text style={styles.legendLabel}>Resuelto</Text>
-  </View>
-</View>
+      <Animated.View 
+        entering={FadeInUp.delay(300).duration(800)}
+        style={styles.legend}
+      >
+        <View style={styles.legendItem}>
+          <View style={[styles.legendCircle, { backgroundColor: 'red' }]} />
+          <Animated.Text style={styles.legendLabel}>Pendiente</Animated.Text>
+        </View>
+        <View style={styles.legendItem}>
+          <View style={[styles.legendCircle, { backgroundColor: 'orange' }]} />
+          <Animated.Text style={styles.legendLabel}>En Proceso</Animated.Text>
+        </View>
+        <View style={styles.legendItem}>
+          <View style={[styles.legendCircle, { backgroundColor: 'green' }]} />
+          <Animated.Text style={styles.legendLabel}>Resuelto</Animated.Text>
+        </View>
+      </Animated.View>
 
 
       {/* FABs */}
-      <TouchableOpacity style={styles.fabHeatmap} onPress={() => setShowHeatmap(!showHeatmap)}>
-        <Text style={styles.fabText}>{showHeatmap ? '🔥' : '🌡️'}</Text>
-      </TouchableOpacity>
+      <Animated.View entering={ZoomIn.delay(400).duration(500)}>
+        <AnimatedButton 
+          style={styles.fabHeatmap} 
+          onPress={() => setShowHeatmap(!showHeatmap)}
+          animationType="scale"
+          iconName={showHeatmap ? "fire" : "thermometer"}
+        >
+          <Animated.Text style={styles.fabText}>{showHeatmap ? '🔥' : '🌡️'}</Animated.Text>
+        </AnimatedButton>
+      </Animated.View>
 
-      <TouchableOpacity style={styles.fabLocation} onPress={centerOnUserLocation}>
-        <Text style={styles.fabText}>📍</Text>
-      </TouchableOpacity>
+      <Animated.View entering={ZoomIn.delay(500).duration(500)}>
+        <AnimatedButton 
+          style={styles.fabLocation} 
+          onPress={centerOnUserLocation}
+          animationType="bounce"
+          iconName="map-marker"
+        >
+          <Animated.Text style={styles.fabText}>📍</Animated.Text>
+        </AnimatedButton>
+      </Animated.View>
 
       <Toast />
     </View>
+    </AnimatedScreen>
   );
 };
 

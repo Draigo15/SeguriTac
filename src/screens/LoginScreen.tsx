@@ -4,6 +4,8 @@ import {
   StyleSheet,
   Image,
 } from 'react-native';
+import AnimatedScreen from '../components/AnimatedScreen';
+import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../services/firebase';
@@ -50,12 +52,28 @@ const LoginScreen = () => {
 
       const userDoc = await getDoc(doc(db, 'users', user.uid));
       if (!userDoc.exists()) {
-        throw new Error('El usuario no tiene información registrada en Firestore.');
+        await auth.signOut();
+        Toast.show({
+          type: 'error',
+          text1: 'Usuario no registrado',
+          text2: 'No se encontró información del usuario en Firestore.',
+        });
+        await new Promise(resolve => setTimeout(resolve, 500));
+        return;
       }
 
       const userData = userDoc.data();
       if (userData.role !== role) {
-        throw new Error(`Tu rol registrado es "${userData.role}", pero seleccionaste "${role}".`);
+        await auth.signOut();
+        await AsyncStorage.removeItem('user');
+
+        Toast.show({
+          type: 'error',
+          text1: 'Rol incorrecto',
+          text2: 'Este no es el rol que corresponde a tu cuenta.',
+        });
+        await new Promise(resolve => setTimeout(resolve, 500));
+        return;
       }
 
       await AsyncStorage.setItem('user', JSON.stringify({ ...user, role: userData.role }));
@@ -81,6 +99,8 @@ const LoginScreen = () => {
         text2: `Bienvenido, ${userData.role}`,
       });
 
+      await new Promise(resolve => setTimeout(resolve, 500)); // Espera para que el Toast se vea
+
       if (userData.role === 'autoridad') {
         navigation.navigate('AuthorityDashboard');
       } else {
@@ -89,20 +109,6 @@ const LoginScreen = () => {
 
     } catch (error: any) {
       let message = error.message || 'Ha ocurrido un error. Inténtalo nuevamente.';
-
-      if (message.includes('Tu rol registrado')) {
-        await auth.signOut();
-        await AsyncStorage.removeItem('user');
-
-        Toast.show({
-          type: 'error',
-          text1: 'Rol incorrecto',
-          text2: 'Este no es el rol que corresponde a tu cuenta.',
-        });
-
-        setLoading(false);
-        return;
-      }
 
       if (error.code === 'auth/invalid-credential') {
         message = 'Correo o contraseña incorrectos.';
@@ -125,17 +131,22 @@ const LoginScreen = () => {
   };
 
   return (
-    <View style={styles.background}>
-      <Animatable.View animation="fadeInUp" duration={800} style={styles.container}>
-        <Image
-          source={require('../../assets/iconselector.png')}
-          style={styles.logo}
-          resizeMode="contain"
-        />
+    <AnimatedScreen animationType="fade" duration={800}>
+      <View style={styles.background}>
+        <Animated.View entering={FadeInUp.duration(800).springify()} style={styles.container}>
+          <Animated.Image
+            entering={FadeInDown.duration(1000).springify()}
+            source={require('../../assets/iconselector.png')}
+            style={styles.logo}
+            resizeMode="contain"
+          />
 
-        <Text variant="headlineSmall" style={styles.title}>
-          {role === 'ciudadano' ? 'Inicio de sesión - Ciudadano' : 'Inicio de sesión - Autoridad'}
-        </Text>
+          <Animated.Text 
+            entering={FadeInUp.delay(300).duration(800)}
+            style={styles.title}
+          >
+            {role === 'ciudadano' ? 'Inicio de sesión - Ciudadano' : 'Inicio de sesión - Autoridad'}
+          </Animated.Text>
 
         <TextInput
           label="Correo electrónico"
@@ -148,51 +159,55 @@ const LoginScreen = () => {
           style={styles.input}
           theme={{
             colors: {
-              text: '#000',         
-              primary: '#000',      
-              placeholder: '#000',  
+              text: '#000',
+              primary: '#000',
+              placeholder: '#000',
               background: '#fff',
             },
           }}
         />
 
         <TextInput
-            label="Contraseña"
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry={secure}
-            mode="outlined"
-            style={styles.input}
-            left={<TextInput.Icon icon="lock-outline" />}
-            right={
-              <TextInput.Icon
-                icon={secure ? 'eye-off-outline' : 'eye-outline'}
-                onPress={() => setSecure(!secure)}
-              />
-            }
-            theme={{
-              colors: {
-                text: '#000',         
-                primary: '#000',      
-                placeholder: '#000',  
-                background: '#fff',
-              },
-            }}
-          />
+          label="Contraseña"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry={secure}
+          mode="outlined"
+          style={styles.input}
+          left={<TextInput.Icon icon="lock-outline" />}
+          right={
+            <TextInput.Icon
+              icon={secure ? 'eye-off-outline' : 'eye-outline'}
+              onPress={() => setSecure(!secure)}
+            />
+          }
+          theme={{
+            colors: {
+              text: '#000',
+              primary: '#000',
+              placeholder: '#000',
+              background: '#fff',
+            },
+          }}
+        />
 
+        <Animated.View entering={FadeInUp.delay(400).duration(800)} style={{width: '100%'}}>
+          <Button
+            mode="contained"
+            onPress={handleLogin}
+            loading={loading}
+            disabled={loading}
+            style={styles.loginButton}
+            contentStyle={{ paddingVertical: 8 }}
+          >
+            Iniciar Sesión
+          </Button>
+        </Animated.View>
 
-        <Button
-          mode="contained"
-          onPress={handleLogin}
-          loading={loading}
-          disabled={loading}
-          style={styles.loginButton}
-          contentStyle={{ paddingVertical: 8 }}
+        <Animated.Text 
+          entering={FadeInUp.delay(500).duration(800)}
+          style={styles.registerText}
         >
-          Iniciar Sesión
-        </Button>
-
-        <Text style={styles.registerText}>
           ¿No tienes cuenta?{' '}
           <Text
             style={styles.registerLink}
@@ -200,9 +215,12 @@ const LoginScreen = () => {
           >
             Regístrate
           </Text>
-        </Text>
+        </Animated.Text>
 
-        <Text style={styles.changeRoleText}>
+        <Animated.Text 
+          entering={FadeInUp.delay(600).duration(800)}
+          style={styles.changeRoleText}
+        >
           ¿Quieres cambiar de rol?{' '}
           <Text
             style={styles.changeRoleLink}
@@ -210,9 +228,10 @@ const LoginScreen = () => {
           >
             Volver a seleccionar
           </Text>
-        </Text>
-      </Animatable.View>
-    </View>
+        </Animated.Text>
+        </Animated.View>
+      </View>
+    </AnimatedScreen>
   );
 };
 

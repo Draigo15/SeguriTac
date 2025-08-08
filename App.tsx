@@ -4,25 +4,19 @@ import { registerForPushNotificationsAsync } from './src/services/notifications'
 import Toast from 'react-native-toast-message';
 import { PaperProvider } from 'react-native-paper';
 import { Platform, View, Text } from 'react-native';
+import { auth } from './src/services/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 
 export default function App() {
   useEffect(() => {
-    const getToken = async () => {
-      if (Platform.OS !== 'web') {
-        const token = await registerForPushNotificationsAsync();
-        console.log('FCM Token:', token);
-
-        if (token) {
-          await fetch('https://seguridad-ciudadana-backend.onrender.com/api/guardar-token', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ token }),
-          });
-        }
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user && Platform.OS !== 'web') {
+        const token = await registerForPushNotificationsAsync(user.email || undefined);
+        console.log('FCM Token registrado para:', user.email);
       }
-    };
+    });
 
-    getToken();
+    return () => unsubscribe();
   }, []);
 
   return (

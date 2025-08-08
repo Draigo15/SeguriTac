@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import {
   View,
-  Text,
   Dimensions,
   StyleSheet,
   ScrollView,
   ActivityIndicator,
-  TouchableOpacity,
 } from 'react-native';
+import AnimatedScreen from '../components/AnimatedScreen';
+import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 import { BarChart, PieChart } from 'react-native-chart-kit';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../services/firebase';
@@ -69,22 +69,32 @@ const ReportStatsScreen = () => {
   ];
 
   return (
+    <AnimatedScreen animationType="slideVertical" duration={800}>
     <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: spacing.xl }}>
-      <View style={styles.headerCard}>
+      <Animated.View 
+        entering={FadeInDown.duration(800)}
+        style={styles.headerCard}
+      >
         <Icon name="bar-chart-outline" size={28} color="#fff" />
-        <Text style={styles.title}>Estadísticas de Reportes</Text>
-        <Text style={styles.subtitle}>📈 Visualización de estado en tiempo real</Text>
-      </View>
+        <Animated.Text style={styles.title}>Estadísticas de Reportes</Animated.Text>
+        <Animated.Text style={styles.subtitle}>📈 Visualización de estado en tiempo real</Animated.Text>
+      </Animated.View>
 
       {loading ? (
-        <View style={styles.loaderContainer}>
+        <Animated.View 
+          entering={FadeInUp.duration(800)}
+          style={styles.loaderContainer}
+        >
           <ActivityIndicator size="large" color="#002B7F" />
-          <Text style={styles.loadingText}>Cargando datos...</Text>
-        </View>
+          <Animated.Text style={styles.loadingText}>Cargando datos...</Animated.Text>
+        </Animated.View>
       ) : (
         <>
-          <View style={styles.chartCard}>
-            <Text style={styles.sectionTitle}>📊 Distribución por Estado</Text>
+          <Animated.View 
+            entering={FadeInUp.delay(200).duration(800)}
+            style={styles.chartCard}
+          >
+            <Animated.Text style={styles.sectionTitle}>📊 Distribución por Estado</Animated.Text>
             <PieChart
               data={pieData}
               width={screenWidth - 32}
@@ -95,10 +105,13 @@ const ReportStatsScreen = () => {
               paddingLeft="16"
               absolute
             />
-          </View>
+          </Animated.View>
 
-          <View style={styles.chartCard}>
-            <Text style={styles.sectionTitle}>📋 Totales por Estado</Text>
+          <Animated.View 
+            entering={FadeInUp.delay(400).duration(800)}
+            style={styles.chartCard}
+          >
+            <Animated.Text style={styles.sectionTitle}>📋 Totales por Estado</Animated.Text>
           <BarChart
               data={{
                 labels: ['Pendiente', 'En proceso', 'Resuelto'],
@@ -120,10 +133,11 @@ const ReportStatsScreen = () => {
               verticalLabelRotation={15}
               style={{ marginVertical: 8, borderRadius: 16 }}
             />
-          </View>
+          </Animated.View>
         </>
       )}
     </ScrollView>
+    </AnimatedScreen>
   );
 };
 

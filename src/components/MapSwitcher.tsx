@@ -2,11 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Platform, View, ActivityIndicator } from 'react-native';
 import WebMapList from './WebMapList';
 
-let MapView: any = null;
-let Marker: any = null;
-let Heatmap: any = null;
-let PROVIDER_GOOGLE: any = null;
-
 type Report = {
   id: string;
   location: { latitude: number; longitude: number };
@@ -22,22 +17,30 @@ type Props = {
 };
 
 const MapSwitcher: React.FC<Props> = ({ reports, showHeatmap, filteredReports, mapRef }) => {
+  const [MapView, setMapView] = useState<any>(null);
+  const [Marker, setMarker] = useState<any>(null);
+  const [Heatmap, setHeatmap] = useState<any>(null);
+  const [PROVIDER_GOOGLE, setProvider] = useState<any>(null);
   const [ready, setReady] = useState(Platform.OS === 'web'); // ya está listo si es web
 
-  useEffect(() => {
-    if (Platform.OS !== 'web') {
-      (async () => {
-        const Maps = await import('react-native-maps');
-        MapView = Maps.default;
-        Marker = Maps.Marker;
-        Heatmap = Maps.Heatmap;
-        PROVIDER_GOOGLE = Maps.PROVIDER_GOOGLE;
+useEffect(() => {
+  if (Platform.OS === 'web') {
+    setReady(true); // No se importa nada en web
+  } else {
+    // Difiere la carga para evitar errores de importación temprana
+    setTimeout(() => {
+      import('react-native-maps').then((Maps) => {
+        setMapView(() => Maps.default);
+        setMarker(() => Maps.Marker);
+        setHeatmap(() => Maps.Heatmap);
+        setProvider(() => Maps.PROVIDER_GOOGLE);
         setReady(true);
-      })();
-    }
-  }, []);
+      });
+    }, 0);
+  }
+}, []);
 
-  if (!ready) {
+  if (!ready || (Platform.OS !== 'web' && (!MapView || !Marker || !PROVIDER_GOOGLE))) {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <ActivityIndicator size="large" color="#002B7F" />
@@ -49,12 +52,12 @@ const MapSwitcher: React.FC<Props> = ({ reports, showHeatmap, filteredReports, m
     return <WebMapList reports={filteredReports} />;
   }
 
-  const initialRegion = {
-    latitude: filteredReports[0]?.location.latitude ?? -16.5,
-    longitude: filteredReports[0]?.location.longitude ?? -68.15,
-    latitudeDelta: 0.1,
-    longitudeDelta: 0.1,
-  };
+ const initialRegion = {
+  latitude: filteredReports[0]?.location?.latitude || -16.5,
+  longitude: filteredReports[0]?.location?.longitude || -68.15,
+  latitudeDelta: 0.1,
+  longitudeDelta: 0.1,
+};
 
   return (
     <MapView

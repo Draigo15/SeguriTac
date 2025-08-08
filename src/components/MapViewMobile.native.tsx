@@ -1,13 +1,26 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
+import React, { useEffect, useState } from 'react';
+import { View, StyleSheet, Platform } from 'react-native';
 
-type MapViewMobileProps = {
+type Props = {
   latitude: number;
   longitude: number;
 };
 
-const MapViewMobile: React.FC<MapViewMobileProps> = ({ latitude, longitude }) => {
+const MapViewMobile: React.FC<Props> = ({ latitude, longitude }) => {
+  const [MapView, setMapView] = useState<any>(null);
+  const [Marker, setMarker] = useState<any>(null);
+
+  useEffect(() => {
+    if (Platform.OS !== 'web') {
+      import('react-native-maps').then((mod) => {
+        setMapView(() => mod.default);
+        setMarker(() => mod.Marker);
+      });
+    }
+  }, []);
+
+  if (!MapView || !Marker) return null;
+
   const region = {
     latitude,
     longitude,

@@ -6,9 +6,12 @@ import {
   FlatList,
   ActivityIndicator,
 } from 'react-native';
+import AnimatedScreen from '../components/AnimatedScreen';
+import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 import { auth, db } from '../services/firebase';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Toast from 'react-native-toast-message';
 
 interface NotificationItem {
   id: string;
@@ -22,32 +25,44 @@ const NotificationsScreen = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchNotifications = async () => {
-      const currentUser = auth.currentUser;
-      if (!currentUser?.email) return;
+ const fetchNotifications = async () => {
+  const currentUser = auth.currentUser;
+  if (!currentUser?.email) return;
 
-      try {
-        const docRef = doc(db, 'user_notifications', currentUser.email);
-        const docSnap = await getDoc(docRef);
+  try {
+    const docRef = doc(db, 'user_notifications', currentUser.email);
+    const docSnap = await getDoc(docRef);
 
-        if (docSnap.exists()) {
-          const data = docSnap.data();
-          setNotifications(data.notifications || []);
-        }
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      setNotifications(data.notifications || []);
 
-        await updateDoc(docRef, { hasUnread: false });
-      } catch (error) {
-        console.error('Error al cargar notificaciones:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+      // ✅ Solo actualizamos si el documento existe
+      await updateDoc(docRef, { hasUnread: false });
+    } else {
+      setNotifications([]);
+    }
+
+  } catch (error: any) {
+    console.error('Error al cargar notificaciones:', error);
+    Toast.show({
+      type: 'error',
+      text1: 'Error al cargar notificaciones',
+      text2: error.message || 'Ocurrió un problema al recuperar tus datos.',
+    });
+  } finally {
+    setLoading(false);
+  }
+};
 
     fetchNotifications();
   }, []);
 
-  const renderItem = ({ item }: { item: NotificationItem }) => (
-    <View style={styles.notificationItem}>
+  const renderItem = ({ item, index }: { item: NotificationItem, index: number }) => (
+    <Animated.View 
+      style={styles.notificationItem}
+      entering={FadeInDown.delay(index * 100).springify()}
+    >
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <Ionicons
           name="notifications-outline"
@@ -63,24 +78,36 @@ const NotificationsScreen = () => {
           {item.timestamp.toDate().toLocaleString('es-PE')}
         </Text>
       )}
-    </View>
+    </Animated.View>
   );
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>📬 Notificaciones</Text>
-      {loading ? (
-        <ActivityIndicator size="large" color="#002B7F" style={{ marginTop: 40 }} />
-      ) : notifications.length === 0 ? (
-        <Text style={styles.noNotificaciones}>No tienes notificaciones.</Text>
-      ) : (
-        <FlatList
-          data={notifications}
-          keyExtractor={(item) => item.id}
-          renderItem={renderItem}
-        />
-      )}
-    </View>
+    <AnimatedScreen animationType="slideUp" duration={500}>
+      <View style={styles.container}>
+        <Animated.Text 
+          style={styles.header}
+          entering={FadeInUp.duration(600)}
+        >
+          📬 Notificaciones
+        </Animated.Text>
+        {loading ? (
+          <ActivityIndicator size="large" color="#002B7F" style={{ marginTop: 40 }} />
+        ) : notifications.length === 0 ? (
+          <Animated.Text 
+            style={styles.noNotificaciones}
+            entering={FadeInUp.delay(300).duration(500)}
+          >
+            No tienes notificaciones.
+          </Animated.Text>
+        ) : (
+          <FlatList
+            data={notifications}
+            keyExtractor={(item) => item.id}
+            renderItem={renderItem}
+          />
+        )}
+      </View>
+    </AnimatedScreen>
   );
 };
 

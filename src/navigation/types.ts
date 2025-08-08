@@ -13,6 +13,16 @@ export type RootStackParamList = {
   Notifications: undefined;
   CitizenProfile: undefined;
   ReportStats: undefined;
-  AllReportsMap: undefined;
+  AllReportsMap: {
+    initialRegion?: {
+      latitude: number;
+      longitude: number;
+      latitudeDelta: number;
+      longitudeDelta: number;
+    };
+    focusedReportId?: string;
+  } | undefined;
   Chat: { reportId: string };
+  Emergency: undefined;
+  EmergencyAlerts: undefined;
 };

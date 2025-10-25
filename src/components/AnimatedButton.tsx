@@ -6,6 +6,7 @@ import {
   ViewStyle,
   TextStyle,
   View,
+  Platform,  
 } from 'react-native';
 import Animated, {
   useSharedValue,
@@ -30,6 +31,7 @@ interface AnimatedButtonProps {
   disabled?: boolean;
   animationType?: 'scale' | 'bounce' | 'highlight';
   children?: React.ReactNode;
+  disableAndroidShadow?: boolean;
 }
 
 /**
@@ -48,6 +50,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   disabled = false,
   animationType = 'scale',
   children,
+   disableAndroidShadow = false, 
 }) => {
   // Valores compartidos para las animaciones
   const scale = useSharedValue(1);
@@ -122,6 +125,9 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
           styles.button,
           style,
           animatedStyle,
+            (Platform.OS === 'android' && disableAndroidShadow) 
+          ? { elevation: 0, shadowColor: 'transparent' } 
+          : null,
           disabled && styles.disabled,
         ]}
       >
@@ -158,11 +164,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    elevation: 3,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 4,
     borderWidth: 0, // Eliminar cualquier borde
     overflow: 'hidden', // Para asegurar que el borderRadius funcione correctamente
   },

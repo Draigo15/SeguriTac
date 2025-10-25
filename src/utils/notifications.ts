@@ -1,11 +1,19 @@
 import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
 import Constants from 'expo-constants';
+import { Platform } from 'react-native';
 
 export async function registerForPushNotificationsAsync() {
   let token = null;
 
   try {
+    // En web, las notificaciones push requieren configuración VAPID
+    // Por ahora, simplemente retornamos null para evitar errores
+    if (Platform.OS === 'web') {
+      console.log('⚠️ Notificaciones push no configuradas para web');
+      return null;
+    }
+
     if (!Device.isDevice) {
       alert('Debes usar un dispositivo físico para recibir notificaciones push');
       return null;
@@ -36,7 +44,7 @@ export async function registerForPushNotificationsAsync() {
 
     return token;
 
-  } catch (error) {
+  } catch (error: any) {
     console.error('❌ Error al registrar FCM:', error);
     alert('Error al registrar las notificaciones');
     return null;

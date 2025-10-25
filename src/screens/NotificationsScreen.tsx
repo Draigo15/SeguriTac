@@ -6,6 +6,13 @@ import {
   FlatList,
   ActivityIndicator,
 } from 'react-native';
+import { 
+  colors, 
+  spacing, 
+  fontSizes,
+  commonContainers,
+  commonTexts
+} from '../theme';
 import AnimatedScreen from '../components/AnimatedScreen';
 import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 import { auth, db } from '../services/firebase';
@@ -116,42 +123,42 @@ export default NotificationsScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: '#fff',
+    padding: spacing.lg,
+    backgroundColor: colors.white,
   },
   header: {
-    fontSize: 24,
+    fontSize: fontSizes.xl,
     fontWeight: 'bold',
-    marginBottom: 20,
-    color: '#002B7F',
+    marginBottom: spacing.lg,
+    color: colors.primary,
   },
   notificationItem: {
-    backgroundColor: '#002B7F',
-    padding: 15,
+    backgroundColor: colors.primary,
+    padding: spacing.md,
     borderRadius: 10,
-    marginBottom: 15,
+    marginBottom: spacing.md,
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: colors.gray300,
   },
   notificationTitle: {
-    fontSize: 16,
+    fontSize: fontSizes.base,
     fontWeight: 'bold',
-    color: '#fff',
+    color: colors.white,
   },
   notificationBody: {
-    fontSize: 15,
-    color: '#eee',
-    marginTop: 5,
+    fontSize: fontSizes.sm,
+    color: colors.gray200,
+    marginTop: spacing.xs,
   },
   notificationTimestamp: {
-    fontSize: 13,
-    color: '#ccc',
-    marginTop: 6,
+    fontSize: fontSizes.xs,
+    color: colors.gray300,
+    marginTop: spacing.xs,
   },
   noNotificaciones: {
-    fontSize: 16,
+    fontSize: fontSizes.base,
     textAlign: 'center',
-    color: '#666',
-    marginTop: 40,
+    color: colors.gray600,
+    marginTop: spacing.xxl,
   },
 });

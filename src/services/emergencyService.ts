@@ -41,7 +41,7 @@ export const emergencyService = {
           accuracy: locationData.coords.accuracy,
         };
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error al obtener ubicación:', error);
       // Continuamos sin ubicación si hay error
     }
@@ -53,7 +53,7 @@ export const emergencyService = {
       if (userDoc.exists()) {
         userData = userDoc.data();
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error al obtener datos del usuario:', error);
     }
 
@@ -122,7 +122,7 @@ export const emergencyService = {
       
       await Promise.all(notificationPromises);
       
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error al notificar a las autoridades:', error);
     }
   },

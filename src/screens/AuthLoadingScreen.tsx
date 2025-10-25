@@ -1,5 +1,11 @@
 import React, { useEffect } from 'react';
 import { ActivityIndicator, View, StyleSheet } from 'react-native';
+import { 
+  colors, 
+  spacing, 
+  fontSizes,
+  shadows
+} from '../theme';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/types';
@@ -90,24 +96,20 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f2f2f2',
+    backgroundColor: colors.gray100,
   },
   loaderContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
+    padding: spacing.lg,
     borderRadius: 16,
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 4,
+    ...shadows.md,
   },
   loadingText: {
-    marginTop: 16,
-    fontSize: 16,
-    color: '#555',
+    marginTop: spacing.md,
+    fontSize: fontSizes.base,
+    color: colors.gray600,
     fontWeight: '500',
   },
 });

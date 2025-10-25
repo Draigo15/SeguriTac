@@ -26,10 +26,18 @@ import ReportStatsScreen from '../screens/ReportStatsScreen';
 import NotificationsScreen from '../screens/NotificationsScreen';
 import CitizenProfileScreen from '../screens/CitizenProfileScreen';
 import AllReportsMapScreen from '../screens/AllReportsMapScreen';
+import MyReportsMapScreen from '../screens/MyReportsMapScreen';
 import LoginMethodScreen from '../screens/LoginMethodScreen';
 import ChatScreen from '../screens/ChatScreen';
+import IntelligentChatbotScreen from '../screens/IntelligentChatbotScreen';
 import EmergencyScreen from '../screens/EmergencyScreen';
 import EmergencyAlertsScreen from '../screens/EmergencyAlertsScreen';
+import SettingsScreen from '../screens/SettingsScreen';
+import ChangePasswordScreen from '../screens/ChangePasswordScreen';
+import CitizenMetricsDashboard from '../screens/CitizenMetricsDashboard';
+import IncidentHeatmapScreen from '../screens/IncidentHeatmapScreen';
+import DataExportScreen from '../screens/DataExportScreen';
+import MFAEmailVerifyScreen from '../screens/MFAEmailVerifyScreen';
 
 import { RootStackParamList } from './types';
 
@@ -85,6 +93,11 @@ const AppNavigator = () => {
           options={{ title: 'Registro', ...slideHorizontalTransition }} 
         />
         <Stack.Screen 
+          name="MFAEmailVerify" 
+          component={MFAEmailVerifyScreen} 
+          options={{ title: 'Verificar Código', ...slideHorizontalTransition }} 
+        />
+        <Stack.Screen 
           name="Home" 
           component={HomeScreen} 
           options={{ headerShown: false, ...zoomTransition }} 
@@ -135,9 +148,19 @@ const AppNavigator = () => {
           options={{ title: 'Mapa de Reportes', ...slideHorizontalTransition }} 
         />
         <Stack.Screen 
+          name="MyReportsMap" 
+          component={MyReportsMapScreen} 
+          options={{ title: 'Mis Reportes en Mapa', ...slideHorizontalTransition }} 
+        />
+        <Stack.Screen 
           name="Chat" 
           component={ChatScreen} 
-          options={{ ...rotateZoomTransition }} 
+          options={{ title: 'Chat con Autoridad', ...rotateZoomTransition }} 
+        />
+        <Stack.Screen 
+          name="IntelligentChatbot" 
+          component={IntelligentChatbotScreen} 
+          options={{ headerShown: false, ...slideVerticalTransition }} 
         />
         <Stack.Screen 
           name="Emergency" 
@@ -159,6 +182,31 @@ const AppNavigator = () => {
             },
             headerTintColor: '#fff',
           }} 
+        />
+        <Stack.Screen 
+          name="Settings" 
+          component={SettingsScreen} 
+          options={{ title: 'Configuración', ...slideVerticalTransition }} 
+        />
+        <Stack.Screen 
+          name="ChangePassword" 
+          component={ChangePasswordScreen} 
+          options={{ headerShown: false, ...slideVerticalTransition }} 
+        />
+        <Stack.Screen 
+          name="CitizenMetricsDashboard" 
+          component={CitizenMetricsDashboard} 
+          options={{ headerShown: false, ...zoomTransition }} 
+        />
+        <Stack.Screen 
+          name="IncidentHeatmap" 
+          component={IncidentHeatmapScreen} 
+          options={{ headerShown: false, ...slideHorizontalTransition }} 
+        />
+        <Stack.Screen 
+          name="DataExport" 
+          component={DataExportScreen} 
+          options={{ headerShown: false, ...slideVerticalTransition }} 
         />
       </Stack.Navigator>
     </NavigationContainer>

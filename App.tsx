@@ -9,6 +9,19 @@ import { onAuthStateChanged } from 'firebase/auth';
 
 export default function App() {
   useEffect(() => {
+    // Cargar estilos web solo en plataforma web
+    if (Platform.OS === 'web') {
+      import('./src/utils/loadWebStyles.web')
+        .then((module) => {
+          if (module && module.default) {
+            module.default();
+          }
+        })
+        .catch((error) => {
+          console.warn('Error loading web styles:', error);
+        });
+    }
+
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user && Platform.OS !== 'web') {
         const token = await registerForPushNotificationsAsync(user.email || undefined);

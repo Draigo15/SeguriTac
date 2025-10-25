@@ -1,43 +1,28 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-//import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import { mapsConfig, getLeafletIconByStatus } from '../config/mapsConfig';
 
-// Configuración segura para íconos por defecto (si fueran necesarios)
+// Configuración segura para íconos por defecto
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+  iconRetinaUrl: mapsConfig.leafletIcons.defaultRetina,
+  iconUrl: mapsConfig.leafletIcons.default,
+  shadowUrl: mapsConfig.leafletIcons.shadow,
 });
 
-// Íconos personalizados por estado
-const redIcon = new L.Icon({
-  iconUrl: 'https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=warning|FF0000',
-  iconSize: [32, 32],
-  iconAnchor: [16, 32],
-});
-
-const orangeIcon = new L.Icon({
-  iconUrl: 'https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=info|FFA500',
-  iconSize: [32, 32],
-  iconAnchor: [16, 32],
-});
-
-const greenIcon = new L.Icon({
-  iconUrl: 'https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=check|008000',
-  iconSize: [32, 32],
-  iconAnchor: [16, 32],
+// Función para crear íconos personalizados por estado
+const createIcon = (iconUrl: string) => new L.Icon({
+  iconUrl,
+  shadowUrl: mapsConfig.leafletIcons.shadow,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
 });
 
 const getIconByStatus = (status: string) => {
-  switch (status) {
-    case 'Resuelto':
-      return greenIcon;
-    case 'En proceso':
-      return orangeIcon;
-    default:
-      return redIcon;
-  }
+  const iconUrl = getLeafletIconByStatus(status) || mapsConfig.leafletIcons.default;
+  return createIcon(iconUrl);
 };
 
 type Report = {
@@ -54,19 +39,19 @@ type Props = {
 const WebMapList: React.FC<Props> = ({ reports }) => {
   const center = reports.length
     ? [reports[0].location.latitude, reports[0].location.longitude]
-    : [-16.5, -68.15];
+    : [mapsConfig.defaultRegion.latitude, mapsConfig.defaultRegion.longitude];
 
   return (
     <div style={{ height: '100%', width: '100%' }}>
       <MapContainer
         center={center as [number, number]}
-        zoom={13}
+        zoom={mapsConfig.defaultZoom}
         scrollWheelZoom={true}
         style={{ height: '100%', width: '100%' }}
       >
         <TileLayer
-          attribution='&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution={mapsConfig.tileLayerAttribution || '&copy; OpenStreetMap contributors'}
+          url={mapsConfig.tileLayerUrl || 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'}
         />
 
         {reports.length === 0 ? (

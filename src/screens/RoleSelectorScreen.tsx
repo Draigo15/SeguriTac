@@ -3,6 +3,14 @@ import {
   View,
   StyleSheet,
 } from 'react-native';
+import { 
+  colors, 
+  spacing, 
+  fontSizes,
+  commonContainers,
+  commonTexts,
+  commonButtons
+} from '../theme';
 import AnimatedScreen from '../components/AnimatedScreen';
 import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 import { useNavigation } from '@react-navigation/native';
@@ -61,8 +69,8 @@ const RoleSelectorScreen = () => {
             mode="contained"
             onPress={() => handleSelectRole('ciudadano')}
             contentStyle={styles.buttonContent}
-            style={[styles.button, { backgroundColor: '#FFFFFF' }]}
-            labelStyle={{ color: '#002B7F', fontWeight: 'bold' }}
+            style={[styles.button, { backgroundColor: colors.white }]}
+            labelStyle={{ color: colors.primary, fontWeight: 'bold' }}
             accessibilityRole="button"
             accessibilityLabel="Seleccionar rol Ciudadano"
           >
@@ -78,8 +86,8 @@ const RoleSelectorScreen = () => {
             mode="contained"
             onPress={() => handleSelectRole('autoridad')}
             contentStyle={styles.buttonContent}
-            style={[styles.button, { backgroundColor: '#0055CC' }]}
-            labelStyle={{ color: '#FFFFFF', fontWeight: 'bold' }}
+            style={[styles.button, { backgroundColor: colors.secondary }]}
+            labelStyle={{ color: colors.white, fontWeight: 'bold' }}
             accessibilityRole="button"
             accessibilityLabel="Seleccionar rol Autoridad"
           >
@@ -97,37 +105,37 @@ export default RoleSelectorScreen;
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: '#002B7F',
+    backgroundColor: colors.primary,
   },
   container: {
     flex: 1,
-    paddingHorizontal: 24,
+    paddingHorizontal: spacing.lg,
     justifyContent: 'center',
     alignItems: 'center',
   },
   headerImage: {
     width: '90%',
     height: 150,
-    marginTop: 32,
-    marginBottom: 6,
+    marginTop: spacing.xl,
+    marginBottom: spacing.xs,
   },
   logo: {
     width: 300,
     height: 300,
-    marginBottom: 2,
+    marginBottom: spacing.xs,
   },
   title: {
-    fontSize: 28,
+    fontSize: fontSizes.xxl,
     fontWeight: 'bold',
-    color: '#FFFFFF',
+    color: colors.white,
     textAlign: 'center',
-    marginBottom: 6,
+    marginBottom: spacing.xs,
   },
   description: {
-    fontSize: 16,
-    color: '#E6ECF3',
+    fontSize: fontSizes.base,
+    color: colors.gray200,
     textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: spacing.lg,
   },
   buttonContainer: {
     width: '95%',
@@ -135,11 +143,11 @@ const styles = StyleSheet.create({
   },
   button: {
     borderRadius: 16,
-    marginBottom: 16,
+    marginBottom: spacing.md,
     width: '100%',
     elevation: 4,
   },
   buttonContent: {
-    paddingVertical: 12,
+    paddingVertical: spacing.md,
   },
 });

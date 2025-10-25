@@ -10,8 +10,9 @@ import {
 } from 'react-native';
 import AnimatedScreen from '../components/AnimatedScreen';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { collection, query, where, orderBy, onSnapshot } from 'firebase/firestore';
+import { collection, query, where, orderBy, Timestamp } from 'firebase/firestore';
 import { db } from '../services/firebase';
+import { robustOnSnapshot } from '../services/firestoreWrapper';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/types';
@@ -44,18 +45,26 @@ const EmergencyAlertsScreen = () => {
       orderBy('timestamp', 'desc')
     );
 
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const alertsData = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data(),
-      })) as EmergencyAlert[];
-      setAlerts(alertsData);
-      setLoading(false);
-    }, (error) => {
-      console.error('Error al obtener alertas:', error);
-      setLoading(false);
-      Alert.alert('Error', 'No se pudieron cargar las alertas de emergencia');
-    });
+    const unsubscribe = robustOnSnapshot(
+      q,
+      (querySnapshot) => {
+        // Type guard to ensure we have a QuerySnapshot
+        if (!('docs' in querySnapshot)) return;
+        
+        const alertsData = querySnapshot.docs.map((doc: any) => ({
+          id: doc.id,
+          ...doc.data(),
+        })) as EmergencyAlert[];
+        setAlerts(alertsData);
+        setLoading(false);
+      },
+      (error) => {
+        console.error('❌ Error cargando alertas de emergencia:', error);
+        setLoading(false);
+        Alert.alert('Error', 'No se pudieron cargar las alertas de emergencia');
+      },
+      { maxRetries: 3, retryDelay: 1000, enableLogging: true }
+    );
 
     return () => unsubscribe();
   }, []);

@@ -5,6 +5,15 @@ import {
   Image,
   ActivityIndicator,
 } from 'react-native';
+import { 
+  colors, 
+  spacing, 
+  fontSizes,
+  commonContainers,
+  commonTexts,
+  commonButtons,
+  commonImages
+} from '../theme';
 import AnimatedScreen from '../components/AnimatedScreen';
 import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 import AnimatedButton from '../components/AnimatedButton';
@@ -113,14 +122,14 @@ const LoginMethodScreen = () => {
 
   return (
     <AnimatedScreen animationType="fade" duration={800}>
-      <View style={styles.container}>
+      <View style={[commonContainers.authContainer, styles.container]}>
         <Animated.Image 
           source={require('../../assets/iconselector.png')} 
-          style={styles.logo} 
+          style={[commonImages.authLogo, { backgroundColor: 'transparent' }]} 
           entering={FadeInDown.duration(1000).springify()}
         />
         <Animated.Text 
-          style={styles.title}
+          style={commonTexts.authTitle}
           entering={FadeInUp.delay(300).duration(800)}
         >
           Iniciar sesión como {role}
@@ -128,15 +137,15 @@ const LoginMethodScreen = () => {
 
         <Animated.View entering={FadeInUp.delay(400).duration(800)} style={styles.buttonContainer}>
           <AnimatedButton
-            title="📧 Correo y Contraseña"
+            title="Correo y Contraseña"
             onPress={handleCorreo}
-            style={styles.button}
+            style={commonButtons.authButton}
             animationType="scale"
             icon="mail-outline"
           />
         </Animated.View>
 
-        <Animated.View entering={FadeInUp.delay(500).duration(800)} style={styles.buttonContainer}>
+        <Animated.View entering={FadeInUp.delay(500).duration(800)} style={[styles.buttonContainer, styles.buttonSpacing]}>
           <AnimatedButton
             onPress={handleGoogleLogin}
             disabled={loading}
@@ -149,7 +158,7 @@ const LoginMethodScreen = () => {
                 style={styles.googleIcon}
               />
               {loading ? (
-                <ActivityIndicator size="small" color="#000" />
+                <ActivityIndicator size="small" color={colors.gray900} />
               ) : (
                 <Animated.Text style={styles.googleText}>Iniciar con Google</Animated.Text>
               )}
@@ -166,44 +175,28 @@ export default LoginMethodScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#002B7F',
-    alignItems: 'center',
+    backgroundColor: colors.primary,
     justifyContent: 'center',
-    padding: 24,
-  },
-  logo: {
-    width: 180,
-    height: 180,
-    marginBottom: 24,
-  },
-  title: {
-    color: '#fff',
-    fontSize: 20,
-    marginBottom: 32,
-    fontWeight: 'bold',
+    paddingHorizontal: spacing.lg,
   },
   buttonContainer: {
     width: '95%',
     alignItems: 'center',
   },
-  button: {
-    backgroundColor: '#FFFFFF',
-    padding: 16,
-    borderRadius: 12,
-    width: '100%',
-    marginBottom: 16,
+  buttonSpacing: {
+    marginTop: spacing.lg,
   },
   googleButton: {
-    backgroundColor: '#FFFFFF',
-    paddingVertical: 12,
-    paddingHorizontal: 16,
+    backgroundColor: colors.white,
+    paddingVertical: spacing.md,
+    paddingHorizontal: spacing.md,
     borderRadius: 12,
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: colors.gray300,
   },
   googleContent: {
     flexDirection: 'row',
@@ -213,17 +206,11 @@ const styles = StyleSheet.create({
   googleIcon: {
     width: 24,
     height: 24,
-    marginRight: 10,
+    marginRight: spacing.sm,
   },
   googleText: {
-    color: '#000',
+    color: colors.gray900,
     fontWeight: 'bold',
-    fontSize: 16,
-  },
-  buttonText: {
-    color: '#002B7F',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    fontSize: 16,
+    fontSize: fontSizes.base,
   },
 });

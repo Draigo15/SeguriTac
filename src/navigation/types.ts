@@ -4,6 +4,7 @@ export type RootStackParamList = {
   LoginMethod: { role: string };      
   Login: { role: string };
   Register: { role: string };
+  MFAEmailVerify: { email: string; role: string };
   Home: undefined;
   AuthorityDashboard: undefined;
   Report: undefined;
@@ -22,7 +23,22 @@ export type RootStackParamList = {
     };
     focusedReportId?: string;
   } | undefined;
+  MyReportsMap: {
+    initialRegion?: {
+      latitude: number;
+      longitude: number;
+      latitudeDelta: number;
+      longitudeDelta: number;
+    };
+    focusedReportId?: string;
+  } | undefined;
   Chat: { reportId: string };
+  IntelligentChatbot: undefined;
   Emergency: undefined;
   EmergencyAlerts: undefined;
+  Settings: undefined;
+  ChangePassword: undefined;
+  CitizenMetricsDashboard: undefined;
+  IncidentHeatmap: undefined;
+  DataExport: undefined;
 };

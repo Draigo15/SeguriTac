@@ -1,0 +1,30 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Transparent background -->
+  <rect width="220" height="220" fill="transparent"/>
+  
+  <!-- Shield background with blue outline -->
+  <path d="M110 30L170 55V115C170 150 145 175 110 185C75 175 50 150 50 115V55L110 30Z" fill="#FFFFFF" stroke="#002B7F" stroke-width="4" stroke-linejoin="round"/>
+  
+  <!-- Inner shield design -->
+  <circle cx="110" cy="95" r="20" fill="#002B7F"/>
+  
+  <!-- Cat/Tiger eyes -->
+  <ellipse cx="104" cy="90" rx="2.5" ry="3" fill="#FFFFFF"/>
+  <ellipse cx="116" cy="90" rx="2.5" ry="3" fill="#FFFFFF"/>
+  
+  <!-- Nose -->
+  <path d="M110 98L107 101L110 104L113 101Z" fill="#FFFFFF"/>
+  
+  <!-- Whisker dots pattern -->
+  <circle cx="98" cy="105" r="1" fill="#002B7F"/>
+  <circle cx="103" cy="107" r="1" fill="#002B7F"/>
+  <circle cx="110" cy="108" r="1" fill="#002B7F"/>
+  <circle cx="117" cy="107" r="1" fill="#002B7F"/>
+  <circle cx="122" cy="105" r="1" fill="#002B7F"/>
+  
+  <!-- SEGURIDAD text -->
+  <text x="110" y="140" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#002B7F">SEGURIDAD</text>
+  
+  <!-- TACNA text -->
+  <text x="110" y="160" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#002B7F">TACNA</text>
+</svg>

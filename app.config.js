@@ -7,6 +7,7 @@ export default {
     owner: "rodliraa15",
     scheme: "seguridadciudadanaapp",
     version: "1.0.0",
+    newArchEnabled: true,
     orientation: "portrait",
     icon: "./assets/icon.png",
     userInterfaceStyle: "light",
@@ -46,6 +47,18 @@ export default {
         googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY
       }
     },
+    plugins: [
+      [
+        "expo-build-properties",
+        {
+          android: {
+            minSdkVersion: 26,
+            enableProguardInReleaseBuilds: true,
+            enableShrinkResourcesInReleaseBuilds: true
+          }
+        }
+      ]
+    ],
     extra: {
       FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
       FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN,

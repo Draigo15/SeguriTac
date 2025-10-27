@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Platform } from 'react-native';
+import { logMetric } from '../utils/metrics';
 
 // Importamos las transiciones personalizadas
 import {
@@ -44,8 +45,26 @@ import { RootStackParamList } from './types';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const AppNavigator = () => {
+  const navigationRef = React.useRef<any>(null);
+  const prevNavTs = React.useRef<number | null>(null);
+
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      ref={navigationRef}
+      onReady={() => {
+        // @ts-ignore
+        const t0 = (globalThis as any).__APP_START_TS__ || Date.now();
+        logMetric('navigation_ready_ms', Date.now() - t0, { initialRoute: 'AuthLoading' });
+      }}
+      onStateChange={() => {
+        const now = Date.now();
+        const delta = prevNavTs.current ? now - prevNavTs.current : 0;
+        prevNavTs.current = now;
+        const currentRoute = navigationRef.current?.getCurrentRoute?.();
+        const routeName = currentRoute?.name || 'unknown';
+        logMetric('navigation_event_delta_ms', delta, { route: routeName });
+      }}
+    >
       <Stack.Navigator
         initialRouteName="AuthLoading"
         screenOptions={{

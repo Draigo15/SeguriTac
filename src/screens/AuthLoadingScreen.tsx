@@ -14,7 +14,7 @@ import Animated, { FadeIn, ZoomIn } from 'react-native-reanimated';
 
 import { auth, db } from '../services/firebase';
 import { doc, getDoc } from 'firebase/firestore';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { secureStorage } from '../services/secureStorage';
 import { User } from 'firebase/auth';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'AuthLoading'>;
@@ -27,7 +27,7 @@ const AuthLoadingScreen = () => {
       if (user) {
         try {
           const userDoc = await getDoc(doc(db, 'users', user.uid));
-          const storedUser = await AsyncStorage.getItem('user');
+          const storedUser = await secureStorage.getItem('user');
           const storedRole = storedUser ? JSON.parse(storedUser).role : null;
 
           if (userDoc.exists()) {
@@ -37,7 +37,7 @@ const AuthLoadingScreen = () => {
             if (storedRole && role !== storedRole) {
               console.warn(`Rol inconsistente. Firebase: ${role} | AsyncStorage: ${storedRole}`);
               await auth.signOut();
-              await AsyncStorage.removeItem('user');
+              await secureStorage.removeItem('user');
               navigation.reset({ index: 0, routes: [{ name: 'RoleSelector' }] });
               return;
             }
@@ -52,13 +52,13 @@ const AuthLoadingScreen = () => {
             }
           } else {
             await auth.signOut();
-            await AsyncStorage.removeItem('user');
+            await secureStorage.removeItem('user');
             navigation.reset({ index: 0, routes: [{ name: 'RoleSelector' }] });
           }
         } catch (err) {
           console.error('Error verificando usuario:', err);
           await auth.signOut();
-          await AsyncStorage.removeItem('user');
+          await secureStorage.removeItem('user');
           navigation.reset({ index: 0, routes: [{ name: 'RoleSelector' }] });
         }
       } else {

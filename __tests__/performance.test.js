@@ -3,6 +3,16 @@
  */
 
 describe('Pruebas de rendimiento', () => {
+  // Métricas util: registro y recuperación
+  it('debe registrar métricas con el util y recuperarlas', () => {
+    const { clearMetrics, logMetric, getMetrics } = require('../src/utils/metrics');
+    clearMetrics();
+    logMetric('test_metric', 123, { route: 'Login' });
+    const metrics = getMetrics();
+    const found = metrics.some(m => m.name === 'test_metric' && m.value === 123);
+    expect(found).toBe(true);
+  });
+
   // Prueba de tiempo de ejecución
   it('debe medir el tiempo de ejecución de una operación', () => {
     const startTime = Date.now();

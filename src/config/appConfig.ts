@@ -18,6 +18,17 @@ export const apiConfig = {
   baseUrl: __DEV__ 
     ? 'http://localhost:3000/api' 
     : 'https://api.seguridad-ciudadana.com/api',
+  // Afirmación de HTTPS en producción
+  get isHttpsRequired() {
+    return !__DEV__;
+  },
+  get isHttpsConfigured() {
+    try {
+      return this.baseUrl.startsWith('https://');
+    } catch {
+      return false;
+    }
+  },
   
   endpoints: {
     notifications: '/notifications',
@@ -216,6 +227,9 @@ export const validateConfig = (): { isValid: boolean; errors: string[] } => {
   // Validar configuración de API
   if (!apiConfig.baseUrl) {
     errors.push('URL base de la API no configurada');
+  }
+  if (apiConfig.isHttpsRequired && !apiConfig.isHttpsConfigured) {
+    errors.push('Producción requiere HTTPS para la API');
   }
   
   return {

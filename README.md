@@ -54,6 +54,7 @@ npm test
 - Documentación de pruebas: `documentacion_pruebas.md`.
 - Guía de colaboración: `CONTRIBUTING.md`.
 - Seguridad del proyecto: `SECURITY.md`.
+ - Requerimientos no funcionales: `docs/REQUERIMIENTOS_NO_FUNCIONALES.md`.
 
 ## Problemas comunes
 - Conflictos de dependencias npm: revisar `package.json` y ejecutar `npm install`.

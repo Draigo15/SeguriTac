@@ -1,6 +1,7 @@
 // Mock para expo-location
 jest.mock('expo-location', () => ({
   requestForegroundPermissionsAsync: jest.fn().mockResolvedValue({ status: 'granted' }),
+  getForegroundPermissionsAsync: jest.fn().mockResolvedValue({ status: 'granted' }),
   getCurrentPositionAsync: jest.fn().mockResolvedValue({
     coords: {
       latitude: 37.78825,
@@ -17,6 +18,34 @@ jest.mock('expo-location', () => ({
     remove: jest.fn(),
   }),
   hasServicesEnabledAsync: jest.fn().mockResolvedValue(true),
+}));
+
+// Mock para expo-device
+jest.mock('expo-device', () => ({
+  isDevice: false,
+  osInternalBuildId: 'mock',
+  osVersion: '1.0.0',
+}));
+
+// Mock para expo-notifications
+jest.mock('expo-notifications', () => ({
+  setNotificationHandler: jest.fn(),
+  addNotificationReceivedListener: jest.fn().mockReturnValue({ remove: jest.fn() }),
+  addNotificationResponseReceivedListener: jest.fn().mockReturnValue({ remove: jest.fn() }),
+  getPermissionsAsync: jest.fn().mockResolvedValue({ status: 'granted', canAskAgain: true, granted: true }),
+  requestPermissionsAsync: jest.fn().mockResolvedValue({ status: 'granted', canAskAgain: true, granted: true }),
+  getExpoPushTokenAsync: jest.fn().mockResolvedValue({ data: 'ExponentPushToken[MOCK]' }),
+  getDevicePushTokenAsync: jest.fn().mockResolvedValue({ data: 'MOCK_DEVICE_PUSH_TOKEN' }),
+  scheduleNotificationAsync: jest.fn().mockResolvedValue('MOCK_NOTIFICATION_ID'),
+  cancelScheduledNotificationAsync: jest.fn().mockResolvedValue(undefined),
+  cancelAllScheduledNotificationsAsync: jest.fn().mockResolvedValue(undefined),
+  getAllScheduledNotificationsAsync: jest.fn().mockResolvedValue([]),
+  setBadgeCountAsync: jest.fn().mockResolvedValue(undefined),
+  setNotificationCategoryAsync: jest.fn().mockResolvedValue(undefined),
+  setNotificationChannelAsync: jest.fn().mockResolvedValue(undefined),
+  AndroidImportance: { NONE: 0, MIN: 1, LOW: 2, DEFAULT: 3, HIGH: 4, MAX: 5 },
+  AndroidNotificationPriority: { MIN: -2, LOW: -1, DEFAULT: 0, HIGH: 1, MAX: 2 },
+  SchedulableTriggerInputTypes: { DATE: 'date', TIME_INTERVAL: 'timeInterval' },
 }));
 
 // Mock para react-native

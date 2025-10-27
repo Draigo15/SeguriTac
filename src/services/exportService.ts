@@ -110,6 +110,9 @@ class ExportService {
       if (filters.priority && filters.priority !== 'all') {
         constraints.push(where('priority', '==', filters.priority));
       }
+      if (filters.zone && filters.zone !== 'all') {
+        constraints.push(where('zone', '==', filters.zone));
+      }
 
       // Agregar ordenamiento
       constraints.push(orderBy('createdAt', 'desc'));

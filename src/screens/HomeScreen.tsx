@@ -67,7 +67,7 @@ import { RootStackParamList } from '../navigation/types';
 
 // Iconos y almacenamiento
 import { Ionicons } from '@expo/vector-icons';
-import AsyncStorage from '@react-native-async-storage/async-storage'; // RF-10: Limpieza de datos locales
+import { secureStorage } from '../services/secureStorage'; // RNF-2: Almacenamiento seguro
 
 const { width } = Dimensions.get('window');
 
@@ -191,7 +191,7 @@ const HomeScreen = () => {
 const handleLogout = async () => {
   try {
     // RF-10: Obtener el rol del usuario actual desde AsyncStorage para preservar contexto
-    const storedUser = await AsyncStorage.getItem('user');
+    const storedUser = await secureStorage.getItem('user');
     let userRole = 'ciudadano'; // Valor por defecto
     
     if (storedUser) {
@@ -203,7 +203,7 @@ const handleLogout = async () => {
     await signOut(auth);
     
     // RF-10: Limpiar datos locales del usuario
-    await AsyncStorage.removeItem('user');
+    await secureStorage.removeItem('user');
     
     // RF-10: Redirigir a login sin historial de navegación (reset completo)
     navigation.reset({

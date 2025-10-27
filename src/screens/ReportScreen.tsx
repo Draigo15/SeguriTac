@@ -51,6 +51,7 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/types';
 import Toast from 'react-native-toast-message';
+import { logMetric } from '../utils/metrics';
 
 // Hooks optimizados para móvil
 import { useReportForm } from '../hooks/useForm';
@@ -392,6 +393,7 @@ const ReportScreen = () => {
    * @function performSubmit
    */
   const performSubmit = async () => {
+    const t0 = Date.now();
     try {
       console.log('📤 Iniciando envío de reporte...');
 
@@ -464,6 +466,14 @@ const ReportScreen = () => {
       const docRef = await addDoc(collection(db, 'reports'), reportData);
       console.log('✅ Reporte guardado con ID:', docRef.id);
 
+      // Métrica end-to-end del envío de reporte
+      logMetric('report_submit_ms', Date.now() - t0, {
+        docId: docRef.id,
+        incidentType: values.incidentType,
+        withImage: Boolean(imageUrl || imageBase64),
+        platform: Platform.OS,
+      });
+
       // Mostrar éxito
       Toast.show({
         type: 'success',
@@ -479,6 +489,11 @@ const ReportScreen = () => {
       navigation.navigate('MyReports');
       
     } catch (error) {
+      // Métrica de error de envío
+      logMetric('report_submit_error_ms', Date.now() - t0, {
+        platform: Platform.OS,
+        hasImage: Boolean(image),
+      });
       console.error('❌ Error enviando reporte:', error);
       Toast.show({
         type: 'error',

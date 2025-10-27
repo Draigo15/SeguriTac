@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {
   View,
   Text,
@@ -19,6 +19,7 @@ import { auth, db } from '../services/firebase';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Toast from 'react-native-toast-message';
+import { logMetric } from '../utils/metrics';
 
 interface NotificationItem {
   id: string;
@@ -33,6 +34,7 @@ const NotificationsScreen = () => {
 
   useEffect(() => {
  const fetchNotifications = async () => {
+  const t0 = Date.now();
   const currentUser = auth.currentUser;
   if (!currentUser?.email) return;
 
@@ -50,8 +52,13 @@ const NotificationsScreen = () => {
       setNotifications([]);
     }
 
+    // Métrica de carga de notificaciones
+    logMetric('notifications_load_ms', Date.now() - t0, {
+      count: (docSnap.data()?.notifications || []).length || 0,
+    });
   } catch (error: any) {
     console.error('Error al cargar notificaciones:', error);
+    logMetric('notifications_load_error_ms', Date.now() - t0, {});
     Toast.show({
       type: 'error',
       text1: 'Error al cargar notificaciones',

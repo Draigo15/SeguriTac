@@ -6,9 +6,23 @@ import { PaperProvider } from 'react-native-paper';
 import { Platform, View, Text } from 'react-native';
 import { auth } from './src/services/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
+import { logMetric } from './src/utils/metrics';
+
+// Marca global del inicio de la app para medir el primer render.
+// Si ya existe (por hot reload), no la sobrescribimos.
+// @ts-ignore
+if (typeof globalThis !== 'undefined' && !(globalThis as any).__APP_START_TS__) {
+  // @ts-ignore
+  (globalThis as any).__APP_START_TS__ = Date.now();
+}
 
 export default function App() {
   useEffect(() => {
+    // Medir tiempo hasta el primer render/effect.
+    // @ts-ignore
+    const t0 = (globalThis as any).__APP_START_TS__ || Date.now();
+    logMetric('cold_start_first_render_ms', Date.now() - t0, { platform: Platform.OS });
+
     // Cargar estilos web solo en plataforma web
     if (Platform.OS === 'web') {
       import('./src/utils/loadWebStyles.web')

@@ -41,7 +41,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/types';
 import { signOut } from 'firebase/auth'; // RF-10: Firebase Authentication para logout
 import { auth } from '../services/firebase'; // RF-10: Instancia de autenticación
-import AsyncStorage from '@react-native-async-storage/async-storage'; // RF-10: Almacenamiento local
+import { secureStorage } from '../services/secureStorage'; // RNF-2: Almacenamiento seguro
 
 const { width } = Dimensions.get('window');
 
@@ -116,7 +116,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose, userName, userTyp
     try {
       // RF-10 PROCEDIMIENTO 01: Obtener rol del usuario desde AsyncStorage
       // Líneas 34-42 en documentación - Recuperación de datos de usuario
-      const storedUser = await AsyncStorage.getItem('user');
+      const storedUser = await secureStorage.getItem('user');
       let userRole = 'ciudadano'; // Valor por defecto para casos sin datos
       
       if (storedUser) {
@@ -130,7 +130,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose, userName, userTyp
       
       // RF-10 PROCEDIMIENTO 03: Limpiar datos locales
       // Línea 46 en documentación - Eliminación de datos sensibles
-      await AsyncStorage.removeItem('user');
+      await secureStorage.removeItem('user');
       
       // RF-10 PROCEDIMIENTO 04: Redireccionar a pantalla de login
       // Líneas 48-52 en documentación - Navegación segura post-logout

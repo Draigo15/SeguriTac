@@ -55,6 +55,7 @@ import * as Location from 'expo-location';
 import Toast from 'react-native-toast-message';
 import { useRoute, RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '../navigation/types';
+import { logMetric } from '../utils/metrics';
 
 type AllReportsMapRouteProp = RouteProp<RootStackParamList, 'AllReportsMap'>;
 
@@ -98,6 +99,7 @@ const AllReportsMapScreen = () => {
 
   // RF-6: Efecto para cargar reportes en tiempo real desde Firestore
   useEffect(() => {
+    const t0 = Date.now();
     /**
      * Suscripción en tiempo real a la colección de reportes
      * 
@@ -139,6 +141,8 @@ const AllReportsMapScreen = () => {
         setIncidentTypes(Array.from(typesSet));
         setStatusTypes(Array.from(statusSet));
         setLoading(false);
+        // Métrica de carga de mapa con número de reportes
+        logMetric('map_load_ms', Date.now() - t0, { count: fetchedReports.length });
 
         // RF-11: Retroalimentación visual sobre la carga de datos
         Toast.show({
@@ -149,6 +153,7 @@ const AllReportsMapScreen = () => {
       (error) => {
         console.error('❌ Error cargando mapa de reportes:', error);
         setLoading(false);
+        logMetric('map_load_error_ms', Date.now() - t0, {});
       },
       { maxRetries: 3, retryDelay: 1000, enableLogging: true }
     );

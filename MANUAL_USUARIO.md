@@ -39,7 +39,7 @@ SeguridadCiudadanaApp es una aplicación móvil diseñada para mejorar la seguri
 
 ### Dispositivos Móviles
 - **iOS:** Versión 12.0 o superior
-- **Android:** API Level 21 (Android 5.0) o superior
+- **Android:** API Level 26 (Android 8.0) o superior
 - **Espacio:** Mínimo 100 MB disponibles
 - **Conectividad:** Internet (WiFi o datos móviles)
 - **Permisos:** Ubicación, Cámara, Notificaciones

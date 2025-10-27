@@ -18,7 +18,8 @@ import {
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+// Migración a almacenamiento seguro
+import secureStorage from '../services/secureStorage';
 import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 
 // Importar servicios y utilidades mejorados
@@ -194,9 +195,9 @@ const LoginScreenRefactored: React.FC = () => {
       // Verificar rol
       const userData = await verifyUserRole(user.uid, role);
 
-      // Guardar sesión
-      await AsyncStorage.setItem(
-        appConfig.storage.keys.userToken, 
+      // Guardar sesión en almacenamiento seguro
+      await secureStorage.setItem(
+        appConfig.storage.keys.userToken,
         JSON.stringify({ ...user, role: userData.role })
       );
 
@@ -226,7 +227,7 @@ const LoginScreenRefactored: React.FC = () => {
     if (!result) {
       // Si hay error, limpiar la sesión
       await auth.signOut();
-      await AsyncStorage.removeItem(appConfig.storage.keys.userToken);
+      await secureStorage.removeItem(appConfig.storage.keys.userToken);
     }
 
     setLoading(false);

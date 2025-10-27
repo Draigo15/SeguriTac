@@ -40,7 +40,7 @@ import Toast from 'react-native-toast-message';
 
 // Hooks optimizados para móvil
 import { useAuthForm, validationRules } from '../hooks/useForm';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { secureStorage } from '../services/secureStorage';
 
 // Componentes UI y tema
 import * as Animatable from 'react-native-animatable';
@@ -167,7 +167,7 @@ const LoginScreen = () => {
       if (userData.role !== role) {
         // Rol incorrecto - cerrar sesión y limpiar almacenamiento
         await auth.signOut();
-        await AsyncStorage.removeItem('user');
+        await secureStorage.removeItem('user');
 
         Toast.show({
           type: 'error',
@@ -179,7 +179,7 @@ const LoginScreen = () => {
       }
 
       // Paso 4: Almacenar datos del usuario localmente
-      await AsyncStorage.setItem('user', JSON.stringify({ ...user, role: userData.role }));
+      await secureStorage.setItem('user', JSON.stringify({ ...user, role: userData.role }));
 
       // Paso 5: Registrar token FCM para notificaciones push
       const fcmToken = await registerForPushNotificationsAsync();

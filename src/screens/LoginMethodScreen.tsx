@@ -24,7 +24,7 @@ import useGoogleAuth from '../services/useGoogleAuth';
 import { registerForPushNotificationsAsync } from '../services/notifications';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../services/firebase';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { secureStorage } from '../services/secureStorage';
 import Toast from 'react-native-toast-message';
 
 type ScreenRouteProp = RouteProp<RootStackParamList, 'LoginMethod'>;
@@ -66,7 +66,7 @@ const LoginMethodScreen = () => {
           const userData = userDoc.data();
           if (userData.role !== role) {
             await auth.signOut();
-            await AsyncStorage.removeItem('user');
+            await secureStorage.removeItem('user');
 
             Toast.show({
               type: 'error',
@@ -77,7 +77,7 @@ const LoginMethodScreen = () => {
             return;
           }
 
-          await AsyncStorage.setItem('user', JSON.stringify({ ...user, role: userData.role }));
+          await secureStorage.setItem('user', JSON.stringify({ ...user, role: userData.role }));
 
           const token = await registerForPushNotificationsAsync();
           if (token && user.email) {

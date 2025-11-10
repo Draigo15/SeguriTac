@@ -9,7 +9,7 @@ export type RootStackParamList = {
   AuthorityDashboard: undefined;
   Report: undefined;
   MyReports: undefined;
-  ReportDetail: { report: any };
+  ReportDetail: { report: any } | { reportId: string };
   ViewAllReports: undefined;
   Notifications: undefined;
   CitizenProfile: undefined;

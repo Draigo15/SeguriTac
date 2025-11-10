@@ -54,7 +54,8 @@ export default {
           android: {
             minSdkVersion: 26,
             enableProguardInReleaseBuilds: true,
-            enableShrinkResourcesInReleaseBuilds: true
+            enableShrinkResourcesInReleaseBuilds: true,
+            ndkVersion: "28.0.12433566"
           }
         }
       ]
@@ -69,6 +70,7 @@ export default {
       GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY,
       googleClientId: "361203563970-p4e3vf7koe2buno2rurqbsnutek8gi8p.apps.googleusercontent.com",
       googleAndroidClientId: "361203563970-v0kv953f57q7atunputfnof8l268ru9v.apps.googleusercontent.com",
+      detoxE2E: process.env.DETOX_E2E === 'true',
       eas: {
         projectId: "93506b05-04c3-4913-a269-1cb2a63a151c"
       }

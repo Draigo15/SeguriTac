@@ -23,14 +23,35 @@ if (!configValidation.isValid) {
   }
 }
 
-let app: FirebaseApp;
-let auth: Auth;
-let db: Firestore;
-let storage: FirebaseStorage;
+let app!: FirebaseApp;
+let auth!: Auth;
+let db!: Firestore;
+let storage!: FirebaseStorage;
+
+// Evitar inicialización real en entorno de pruebas (Jest)
+const isTestEnv = typeof process !== 'undefined' &&
+  process.env && (process.env.JEST_WORKER_ID !== undefined || process.env.NODE_ENV === 'test');
+
+if (isTestEnv) {
+  app = {} as FirebaseApp;
+  auth = {
+    currentUser: null,
+    // @ts-ignore
+    authStateReady: async () => {},
+  } as unknown as Auth;
+  db = {} as unknown as Firestore;
+  storage = {} as unknown as FirebaseStorage;
+}
 
 try {
-  // Inicializar Firebase
-  app = initializeApp(firebaseConfig);
+  if (isTestEnv) {
+    // En pruebas ya definimos stubs; saltar inicialización real
+    if (__DEV__) {
+      console.log('🧪 Firebase stubs activos en entorno de pruebas');
+    }
+  } else {
+    // Inicializar Firebase
+    app = initializeApp(firebaseConfig);
   
   // Inicializar servicios con persistencia apropiada según la plataforma
   try {
@@ -100,6 +121,7 @@ try {
     console.log('📱 Proyecto:', firebaseConfig.projectId);
   }
   
+  }
 } catch (error: any) {
   const errorMessage = 'Error al inicializar Firebase';
   logError(createAppError(

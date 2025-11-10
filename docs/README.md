@@ -14,6 +14,7 @@
 ## Pruebas
 - Guía de pruebas: `../TESTING.md` (si aplica)
 - Configuración jest: `../jest.config.js`
+- Tests de aceptación RNF (1–10): `./TESTS_ACEPTACION_RNF.md`
 
 ## Arquitectura
 - Estructura del cliente y dependencias: `../ARCHITECTURE.md` (si aplica)

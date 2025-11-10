@@ -37,6 +37,7 @@ import {
   validateRegistrationForm,
 } from '../utils/validations';
 import { apiConfig, appConfig } from '../config/appConfig';
+import apiClient from '../services/apiClient';
 
 // Importar componentes mejorados
 import ValidatedTextInput from '../components/ValidatedTextInput';
@@ -159,11 +160,11 @@ const LoginScreenRefactored: React.FC = () => {
       const timeoutId = setTimeout(() => controller.abort(), appConfig.timeouts.api);
       
       try {
-        await fetch(`${apiConfig.baseUrl}/guardar-token`, {
+        // Usar cliente centralizado con manejo de 401
+        await apiClient.request('/guardar-token', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ token: fcmToken, email: userEmail }),
-          signal: controller.signal,
+          body: { token: fcmToken, email: userEmail },
+          // timeout gestionado internamente por apiClient según appConfig
         });
       } finally {
         clearTimeout(timeoutId);

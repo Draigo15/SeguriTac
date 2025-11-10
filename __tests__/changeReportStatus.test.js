@@ -77,7 +77,7 @@ describe('Cambiar Estado del Reporte', () => {
     });
 
     // Verificar que exista el selector de estado para autoridades
-    const statusPicker = getByTestId('status-picker');
+    const statusPicker = await waitFor(() => getByTestId('status-picker'));
     expect(statusPicker).toBeTruthy();
 
     // Simular cambio de estado
@@ -141,7 +141,7 @@ describe('Cambiar Estado del Reporte', () => {
     });
 
     // Simular cambio de estado
-    const statusPicker = getByTestId('status-picker');
+    const statusPicker = await waitFor(() => getByTestId('status-picker'));
     fireEvent(statusPicker, 'onValueChange', 'resuelto');
     
     // Presionar el botón de actualizar

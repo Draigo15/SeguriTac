@@ -1,6 +1,7 @@
 import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
 import { Platform } from 'react-native';
+import { apiConfig } from '../config/appConfig';
 
 export async function registerForPushNotificationsAsync(email?: string) {
   let token;
@@ -35,7 +36,7 @@ export async function registerForPushNotificationsAsync(email?: string) {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 segundos de timeout
       
-      const response = await fetch('https://seguridad-ciudadana-backend.onrender.com/api/guardar-token', {
+      const response = await fetch(`${apiConfig.baseUrl}/guardar-token`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token, email }),

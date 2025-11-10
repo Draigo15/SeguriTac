@@ -1,0 +1,1657 @@
+{
+  "numFailedTestSuites": 1,
+  "numFailedTests": 3,
+  "numPassedTestSuites": 29,
+  "numPassedTests": 73,
+  "numPendingTestSuites": 0,
+  "numPendingTests": 1,
+  "numRuntimeErrorTestSuites": 0,
+  "numTodoTests": 0,
+  "numTotalTestSuites": 30,
+  "numTotalTests": 77,
+  "openHandles": [],
+  "snapshot": {
+    "added": 0,
+    "didUpdate": false,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0
+  },
+  "startTime": 1762366380975,
+  "success": false,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Validaciones"
+          ],
+          "duration": 9,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Validaciones Verificación básica de validaciones",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366417100,
+          "status": "passed",
+          "title": "Verificación básica de validaciones"
+        },
+        {
+          "ancestorTitles": [
+            "Validaciones"
+          ],
+          "duration": 2,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Validaciones Validación de correo electrónico",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366417109,
+          "status": "passed",
+          "title": "Validación de correo electrónico"
+        }
+      ],
+      "endTime": 1762366417113,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\validations.test.js",
+      "startTime": 1762366381911,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Pruebas de Registro de Usuario"
+          ],
+          "duration": 16,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de Registro de Usuario debe mostrar error cuando los campos están vacíos",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366417236,
+          "status": "passed",
+          "title": "debe mostrar error cuando los campos están vacíos"
+        },
+        {
+          "ancestorTitles": [
+            "Pruebas de Registro de Usuario"
+          ],
+          "duration": 4,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de Registro de Usuario debe mostrar error cuando las contraseñas no coinciden",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366417253,
+          "status": "passed",
+          "title": "debe mostrar error cuando las contraseñas no coinciden"
+        },
+        {
+          "ancestorTitles": [
+            "Pruebas de Registro de Usuario"
+          ],
+          "duration": 4,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de Registro de Usuario debe registrar al usuario correctamente",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1762366417257,
+          "status": "passed",
+          "title": "debe registrar al usuario correctamente"
+        },
+        {
+          "ancestorTitles": [
+            "Pruebas de Registro de Usuario"
+          ],
+          "duration": 2,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de Registro de Usuario debe manejar errores durante el registro",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1762366417261,
+          "status": "passed",
+          "title": "debe manejar errores durante el registro"
+        }
+      ],
+      "endTime": 1762366417266,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\userRegistration.test.js",
+      "startTime": 1762366381835,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Confirmación y Mensajes"
+          ],
+          "duration": 190,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Confirmación y Mensajes muestra mensaje de éxito correctamente",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366417449,
+          "status": "passed",
+          "title": "muestra mensaje de éxito correctamente"
+        },
+        {
+          "ancestorTitles": [
+            "Confirmación y Mensajes"
+          ],
+          "duration": 5,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Confirmación y Mensajes muestra mensaje de error correctamente",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366417640,
+          "status": "passed",
+          "title": "muestra mensaje de error correctamente"
+        },
+        {
+          "ancestorTitles": [
+            "Confirmación y Mensajes"
+          ],
+          "duration": 5,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Confirmación y Mensajes llama a onDismiss cuando se cierra el mensaje",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366417646,
+          "status": "passed",
+          "title": "llama a onDismiss cuando se cierra el mensaje"
+        },
+        {
+          "ancestorTitles": [
+            "Confirmación y Mensajes"
+          ],
+          "duration": 2,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Confirmación y Mensajes no renderiza nada cuando visible es false",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366417651,
+          "status": "passed",
+          "title": "no renderiza nada cuando visible es false"
+        }
+      ],
+      "endTime": 1762366417656,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\feedback.test.js",
+      "startTime": 1762366381900,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Pruebas de rendimiento"
+          ],
+          "duration": 99,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de rendimiento debe registrar métricas con el util y recuperarlas",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366417229,
+          "status": "passed",
+          "title": "debe registrar métricas con el util y recuperarlas"
+        },
+        {
+          "ancestorTitles": [
+            "Pruebas de rendimiento"
+          ],
+          "duration": 343,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de rendimiento debe medir el tiempo de ejecución de una operación",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366417329,
+          "status": "passed",
+          "title": "debe medir el tiempo de ejecución de una operación"
+        },
+        {
+          "ancestorTitles": [
+            "Pruebas de rendimiento"
+          ],
+          "duration": 73,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de rendimiento debe manejar grandes conjuntos de datos",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366417672,
+          "status": "passed",
+          "title": "debe manejar grandes conjuntos de datos"
+        },
+        {
+          "ancestorTitles": [
+            "Pruebas de rendimiento"
+          ],
+          "duration": 7,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de rendimiento debe manejar la creación masiva de reportes",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1762366417745,
+          "status": "passed",
+          "title": "debe manejar la creación masiva de reportes"
+        },
+        {
+          "ancestorTitles": [
+            "Pruebas de rendimiento"
+          ],
+          "duration": 61,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de rendimiento debe manejar múltiples usuarios accediendo simultáneamente",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366417752,
+          "status": "passed",
+          "title": "debe manejar múltiples usuarios accediendo simultáneamente"
+        }
+      ],
+      "endTime": 1762366417816,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\performance.test.js",
+      "startTime": 1762366381906,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "RNF-10 Accesibilidad - Aceptación"
+          ],
+          "duration": 54,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-10 Accesibilidad - Aceptación RoleSelectorScreen expone labels y roles accesibles en CTAs",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1762366417838,
+          "status": "passed",
+          "title": "RoleSelectorScreen expone labels y roles accesibles en CTAs"
+        }
+      ],
+      "endTime": 1762366417896,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\rnf10.accessibility.acceptance.test.js",
+      "startTime": 1762366381907,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "RNF-7 Escalabilidad - Aceptación"
+          ],
+          "duration": 394,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-7 Escalabilidad - Aceptación ExportService aplica filtro por zone cuando se especifica",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1762366417241,
+          "status": "passed",
+          "title": "ExportService aplica filtro por zone cuando se especifica"
+        },
+        {
+          "ancestorTitles": [
+            "RNF-7 Escalabilidad - Aceptación"
+          ],
+          "duration": 237,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-7 Escalabilidad - Aceptación ExportService no fuerza zona cuando no se especifica (flexible multi-distrito)",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366417635,
+          "status": "passed",
+          "title": "ExportService no fuerza zona cuando no se especifica (flexible multi-distrito)"
+        }
+      ],
+      "endTime": 1762366417874,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\rnf7.acceptance.test.js",
+      "startTime": 1762366381882,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "RNF-3 Usabilidad - Aceptación"
+          ],
+          "duration": 53,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-3 Usabilidad - Aceptación Login: CTA principal visible y validación muestra error claro con campos vacíos",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366417751,
+          "status": "passed",
+          "title": "Login: CTA principal visible y validación muestra error claro con campos vacíos"
+        },
+        {
+          "ancestorTitles": [
+            "RNF-3 Usabilidad - Aceptación"
+          ],
+          "duration": 128,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-3 Usabilidad - Aceptación Reportes: CTA \"Enviar Reporte\" visible y confirmación antes de enviar",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1762366417805,
+          "status": "passed",
+          "title": "Reportes: CTA \"Enviar Reporte\" visible y confirmación antes de enviar"
+        }
+      ],
+      "endTime": 1762366417936,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\rnf3.acceptance.test.js",
+      "startTime": 1762366381880,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Funciones de geolocalización"
+          ],
+          "duration": 18,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Funciones de geolocalización handleLocateMe debería solicitar permisos y obtener ubicación",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 4,
+          "retryReasons": [],
+          "startAt": 1762366417931,
+          "status": "passed",
+          "title": "handleLocateMe debería solicitar permisos y obtener ubicación"
+        },
+        {
+          "ancestorTitles": [
+            "Funciones de geolocalización"
+          ],
+          "duration": 4,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Funciones de geolocalización handleLocateMe debería manejar permisos denegados",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 4,
+          "retryReasons": [],
+          "startAt": 1762366417951,
+          "status": "passed",
+          "title": "handleLocateMe debería manejar permisos denegados"
+        },
+        {
+          "ancestorTitles": [
+            "Funciones de geolocalización"
+          ],
+          "duration": 3,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Funciones de geolocalización handleLocateMe debería manejar errores al obtener ubicación",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 4,
+          "retryReasons": [],
+          "startAt": 1762366417955,
+          "status": "passed",
+          "title": "handleLocateMe debería manejar errores al obtener ubicación"
+        }
+      ],
+      "endTime": 1762366417961,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\geolocation.test.js",
+      "startTime": 1762366381827,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Acceso a Reportes por Fecha y Tipo"
+          ],
+          "duration": 226,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Acceso a Reportes por Fecha y Tipo filtra reportes por tipo correctamente",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1762366417630,
+          "status": "passed",
+          "title": "filtra reportes por tipo correctamente"
+        },
+        {
+          "ancestorTitles": [
+            "Acceso a Reportes por Fecha y Tipo"
+          ],
+          "duration": 89,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Acceso a Reportes por Fecha y Tipo filtra reportes por rango de fechas correctamente",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1762366417857,
+          "status": "passed",
+          "title": "filtra reportes por rango de fechas correctamente"
+        },
+        {
+          "ancestorTitles": [
+            "Acceso a Reportes por Fecha y Tipo"
+          ],
+          "duration": 64,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Acceso a Reportes por Fecha y Tipo muestra mensaje cuando no hay resultados",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366417946,
+          "status": "passed",
+          "title": "muestra mensaje cuando no hay resultados"
+        }
+      ],
+      "endTime": 1762366418013,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\reportFilters.test.js",
+      "startTime": 1762366381835,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "RNF-9 Seguridad de Sesiones - Aceptación (almacenamiento)"
+          ],
+          "duration": 133,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-9 Seguridad de Sesiones - Aceptación (almacenamiento) secureStorage.removeItem borra datos sensibles en SecureStore y AsyncStorage",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366417627,
+          "status": "passed",
+          "title": "secureStorage.removeItem borra datos sensibles en SecureStore y AsyncStorage"
+        },
+        {
+          "ancestorTitles": [
+            "RNF-9 Seguridad de Sesiones - Aceptación (almacenamiento)"
+          ],
+          "duration": 250,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-9 Seguridad de Sesiones - Aceptación (almacenamiento) Claves sensibles definidas incluyen token de sesión en appConfig",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366417761,
+          "status": "passed",
+          "title": "Claves sensibles definidas incluyen token de sesión en appConfig"
+        }
+      ],
+      "endTime": 1762366418014,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\rnf9.acceptance.test.js",
+      "startTime": 1762366381889,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "RNF-2 Seguridad - Aceptación"
+          ],
+          "duration": 129,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-2 Seguridad - Aceptación Usa SecureStore para claves sensibles (user) y no AsyncStorage",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 6,
+          "retryReasons": [],
+          "startAt": 1762366417660,
+          "status": "passed",
+          "title": "Usa SecureStore para claves sensibles (user) y no AsyncStorage"
+        },
+        {
+          "ancestorTitles": [
+            "RNF-2 Seguridad - Aceptación"
+          ],
+          "duration": 250,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-2 Seguridad - Aceptación Configuración de producción usa HTTPS y lo exige",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1762366417791,
+          "status": "passed",
+          "title": "Configuración de producción usa HTTPS y lo exige"
+        }
+      ],
+      "endTime": 1762366418044,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\rnf2.acceptance.test.js",
+      "startTime": 1762366381913,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "RNF-8 Tolerancia a Errores - Aceptación"
+          ],
+          "duration": 129,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-8 Tolerancia a Errores - Aceptación robustOnSnapshot reintenta ante ERR_ABORTED y entrega datos",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 4,
+          "retryReasons": [],
+          "startAt": 1762366417921,
+          "status": "passed",
+          "title": "robustOnSnapshot reintenta ante ERR_ABORTED y entrega datos"
+        },
+        {
+          "ancestorTitles": [
+            "RNF-8 Tolerancia a Errores - Aceptación"
+          ],
+          "duration": 11,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-8 Tolerancia a Errores - Aceptación robustOnSnapshot delega a onError en errores no transitorios",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 4,
+          "retryReasons": [],
+          "startAt": 1762366418051,
+          "status": "passed",
+          "title": "robustOnSnapshot delega a onError en errores no transitorios"
+        }
+      ],
+      "endTime": 1762366418064,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\rnf8.acceptance.test.js",
+      "startTime": 1762366417144,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "RNF-6 Portabilidad - Aceptación"
+          ],
+          "duration": 4,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-6 Portabilidad - Aceptación minSdkVersion >= 26 en configuración de Android",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366418086,
+          "status": "passed",
+          "title": "minSdkVersion >= 26 en configuración de Android"
+        }
+      ],
+      "endTime": 1762366418092,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\rnf6.acceptance.test.js",
+      "startTime": 1762366417294,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Pruebas de Inicio de Sesión"
+          ],
+          "duration": 16,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de Inicio de Sesión debe mostrar error cuando los campos están vacíos",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366418162,
+          "status": "passed",
+          "title": "debe mostrar error cuando los campos están vacíos"
+        },
+        {
+          "ancestorTitles": [
+            "Pruebas de Inicio de Sesión"
+          ],
+          "duration": 6,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de Inicio de Sesión debe iniciar sesión correctamente",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1762366418179,
+          "status": "passed",
+          "title": "debe iniciar sesión correctamente"
+        },
+        {
+          "ancestorTitles": [
+            "Pruebas de Inicio de Sesión"
+          ],
+          "duration": 2,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de Inicio de Sesión debe manejar errores durante el inicio de sesión",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1762366418185,
+          "status": "passed",
+          "title": "debe manejar errores durante el inicio de sesión"
+        }
+      ],
+      "endTime": 1762366418190,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\login.test.js",
+      "startTime": 1762366381913,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "RNF-1 Aceptación (<= 3000ms)"
+          ],
+          "duration": 87,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-1 Aceptación (<= 3000ms) Envío de reporte (ReportScreen) registra métrica y cumple umbral",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366418134,
+          "status": "passed",
+          "title": "Envío de reporte (ReportScreen) registra métrica y cumple umbral"
+        },
+        {
+          "ancestorTitles": [
+            "RNF-1 Aceptación (<= 3000ms)"
+          ],
+          "duration": 12,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-1 Aceptación (<= 3000ms) Carga de notificaciones (NotificationsScreen) registra métrica y cumple umbral",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366418222,
+          "status": "passed",
+          "title": "Carga de notificaciones (NotificationsScreen) registra métrica y cumple umbral"
+        },
+        {
+          "ancestorTitles": [
+            "RNF-1 Aceptación (<= 3000ms)"
+          ],
+          "duration": 5,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-1 Aceptación (<= 3000ms) Carga inicial del mapa (AllReportsMapScreen) registra métrica y cumple umbral",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366418234,
+          "status": "passed",
+          "title": "Carga inicial del mapa (AllReportsMapScreen) registra métrica y cumple umbral"
+        }
+      ],
+      "endTime": 1762366418242,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\rnf1.acceptance.test.js",
+      "startTime": 1762366381887,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Flujo Completo de Usuario - Prueba de Aceptación"
+          ],
+          "duration": 8,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Flujo Completo de Usuario - Prueba de Aceptación Flujo completo: registro, login, crear reporte, ver reportes y logout",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 10,
+          "retryReasons": [],
+          "startAt": 1762366418503,
+          "status": "passed",
+          "title": "Flujo completo: registro, login, crear reporte, ver reportes y logout"
+        },
+        {
+          "ancestorTitles": [
+            "Flujo Completo de Usuario - Prueba de Aceptación"
+          ],
+          "duration": 1,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Flujo Completo de Usuario - Prueba de Aceptación Manejo de errores en el flujo de usuario",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366418512,
+          "status": "passed",
+          "title": "Manejo de errores en el flujo de usuario"
+        }
+      ],
+      "endTime": 1762366418515,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\userFlow.acceptance.test.js",
+      "startTime": 1762366417690,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "RNF-5 Confiabilidad - Aceptación"
+          ],
+          "duration": 83,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-5 Confiabilidad - Aceptación Degradación offline: no crashea y muestra error al enviar",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366418330,
+          "status": "passed",
+          "title": "Degradación offline: no crashea y muestra error al enviar"
+        },
+        {
+          "ancestorTitles": [
+            "RNF-5 Confiabilidad - Aceptación"
+          ],
+          "duration": 122,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-5 Confiabilidad - Aceptación Recuperación tras reconexión: reintento exitoso muestra éxito",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 4,
+          "retryReasons": [],
+          "startAt": 1762366418414,
+          "status": "passed",
+          "title": "Recuperación tras reconexión: reintento exitoso muestra éxito"
+        }
+      ],
+      "endTime": 1762366418539,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\rnf5.acceptance.test.js",
+      "startTime": 1762366381795,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Pruebas de UI/UX",
+            "Componentes básicos"
+          ],
+          "duration": 2,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de UI/UX Componentes básicos Verificación de estilos y dimensiones",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366418652,
+          "status": "passed",
+          "title": "Verificación de estilos y dimensiones"
+        },
+        {
+          "ancestorTitles": [
+            "Pruebas de UI/UX",
+            "Componentes básicos"
+          ],
+          "duration": 1,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de UI/UX Componentes básicos Verificación de responsive design",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1762366418655,
+          "status": "passed",
+          "title": "Verificación de responsive design"
+        }
+      ],
+      "endTime": 1762366418658,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\ui.test.js",
+      "startTime": 1762366417939,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "RNF-4 Mantenibilidad - Aceptación"
+          ],
+          "duration": 4,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-4 Mantenibilidad - Aceptación Estructura modular presente",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366418673,
+          "status": "passed",
+          "title": "Estructura modular presente"
+        },
+        {
+          "ancestorTitles": [
+            "RNF-4 Mantenibilidad - Aceptación"
+          ],
+          "duration": 2,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-4 Mantenibilidad - Aceptación TypeScript configurado y presente en devDependencies",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366418678,
+          "status": "passed",
+          "title": "TypeScript configurado y presente en devDependencies"
+        },
+        {
+          "ancestorTitles": [
+            "RNF-4 Mantenibilidad - Aceptación"
+          ],
+          "duration": 2,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-4 Mantenibilidad - Aceptación Configuración de pruebas lista y script test definido",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366418680,
+          "status": "passed",
+          "title": "Configuración de pruebas lista y script test definido"
+        },
+        {
+          "ancestorTitles": [
+            "RNF-4 Mantenibilidad - Aceptación"
+          ],
+          "duration": 2,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "RNF-4 Mantenibilidad - Aceptación Suite de pruebas con volumen mínimo",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366418682,
+          "status": "passed",
+          "title": "Suite de pruebas con volumen mínimo"
+        }
+      ],
+      "endTime": 1762366418685,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\rnf4.acceptance.test.js",
+      "startTime": 1762366417930,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Pruebas de seguridad"
+          ],
+          "duration": 2,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de seguridad debe verificar aspectos básicos de seguridad",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366418718,
+          "status": "passed",
+          "title": "debe verificar aspectos básicos de seguridad"
+        },
+        {
+          "ancestorTitles": [
+            "Pruebas de seguridad"
+          ],
+          "duration": 1,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de seguridad debe validar contraseñas seguras",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 4,
+          "retryReasons": [],
+          "startAt": 1762366418721,
+          "status": "passed",
+          "title": "debe validar contraseñas seguras"
+        }
+      ],
+      "endTime": 1762366418723,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\security.test.js",
+      "startTime": 1762366417989,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Hook useLocation"
+          ],
+          "duration": 3,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Hook useLocation debería funcionar correctamente",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366418744,
+          "status": "passed",
+          "title": "debería funcionar correctamente"
+        }
+      ],
+      "endTime": 1762366418750,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\useLocation.test.js",
+      "startTime": 1762366418047,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Flujo de Reportes - Integración"
+          ],
+          "duration": 2,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Flujo de Reportes - Integración Verificación básica de reportes",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366418746,
+          "status": "passed",
+          "title": "Verificación básica de reportes"
+        },
+        {
+          "ancestorTitles": [
+            "Flujo de Reportes - Integración"
+          ],
+          "duration": 1,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Flujo de Reportes - Integración Simulación de creación de reporte",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366418748,
+          "status": "passed",
+          "title": "Simulación de creación de reporte"
+        }
+      ],
+      "endTime": 1762366418750,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\reportFlow.integration.test.js",
+      "startTime": 1762366418009,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Pruebas de componentes"
+          ],
+          "duration": 3,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de componentes Verificación básica de componentes",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366418761,
+          "status": "passed",
+          "title": "Verificación básica de componentes"
+        },
+        {
+          "ancestorTitles": [
+            "Pruebas de componentes"
+          ],
+          "duration": 0,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Pruebas de componentes Simulación de botón de emergencia",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366418765,
+          "status": "passed",
+          "title": "Simulación de botón de emergencia"
+        }
+      ],
+      "endTime": 1762366418767,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\components.test.js",
+      "startTime": 1762366418045,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Flujo de Autenticación - Integración"
+          ],
+          "duration": 2,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Flujo de Autenticación - Integración Verificación básica de flujo de autenticación",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366418769,
+          "status": "passed",
+          "title": "Verificación básica de flujo de autenticación"
+        },
+        {
+          "ancestorTitles": [
+            "Flujo de Autenticación - Integración"
+          ],
+          "duration": 1,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Flujo de Autenticación - Integración Simulación de inicio de sesión exitoso",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366418772,
+          "status": "passed",
+          "title": "Simulación de inicio de sesión exitoso"
+        }
+      ],
+      "endTime": 1762366418773,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\authFlow.integration.test.js",
+      "startTime": 1762366418078,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Notificación Cambio de Estado"
+          ],
+          "duration": 132,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Notificación Cambio de Estado envía notificación cuando cambia el estado de un reporte",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366418641,
+          "status": "passed",
+          "title": "envía notificación cuando cambia el estado de un reporte"
+        },
+        {
+          "ancestorTitles": [
+            "Notificación Cambio de Estado"
+          ],
+          "duration": 2,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Notificación Cambio de Estado registra el dispositivo para recibir notificaciones",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366418774,
+          "status": "passed",
+          "title": "registra el dispositivo para recibir notificaciones"
+        }
+      ],
+      "endTime": 1762366418778,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\notifications.test.js",
+      "startTime": 1762366381862,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "useForm hook"
+          ],
+          "duration": 3,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "useForm hook Verificación básica de formularios",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366418793,
+          "status": "passed",
+          "title": "Verificación básica de formularios"
+        },
+        {
+          "ancestorTitles": [
+            "useForm hook"
+          ],
+          "duration": 0,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "useForm hook Simulación de manejo de formulario",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366418797,
+          "status": "passed",
+          "title": "Simulación de manejo de formulario"
+        }
+      ],
+      "endTime": 1762366418798,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\useForm.test.js",
+      "startTime": 1762366417982,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Ver Reportes Ciudadanos"
+          ],
+          "duration": 154,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Ver Reportes Ciudadanos carga y muestra los reportes en el mapa",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366420273,
+          "status": "passed",
+          "title": "carga y muestra los reportes en el mapa"
+        },
+        {
+          "ancestorTitles": [
+            "Ver Reportes Ciudadanos"
+          ],
+          "duration": 73,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Ver Reportes Ciudadanos muestra detalles del reporte al presionar un marcador",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366420428,
+          "status": "passed",
+          "title": "muestra detalles del reporte al presionar un marcador"
+        },
+        {
+          "ancestorTitles": [
+            "Ver Reportes Ciudadanos"
+          ],
+          "duration": 71,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Ver Reportes Ciudadanos navega al detalle del reporte al presionar en ver más",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366420501,
+          "status": "passed",
+          "title": "navega al detalle del reporte al presionar en ver más"
+        }
+      ],
+      "endTime": 1762366420574,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\viewCitizenReports.test.js",
+      "startTime": 1762366381816,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Cierre de Sesión"
+          ],
+          "duration": 55,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Cierre de Sesión muestra la información del perfil correctamente",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366420641,
+          "status": "passed",
+          "title": "muestra la información del perfil correctamente"
+        },
+        {
+          "ancestorTitles": [
+            "Cierre de Sesión"
+          ],
+          "duration": 16,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Cierre de Sesión cierra sesión correctamente al presionar el botón",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366420697,
+          "status": "passed",
+          "title": "cierra sesión correctamente al presionar el botón"
+        },
+        {
+          "ancestorTitles": [
+            "Cierre de Sesión"
+          ],
+          "duration": 19,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Cierre de Sesión muestra mensaje de error si falla el cierre de sesión",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366420713,
+          "status": "passed",
+          "title": "muestra mensaje de error si falla el cierre de sesión"
+        },
+        {
+          "ancestorTitles": [
+            "Cierre de Sesión"
+          ],
+          "duration": null,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Cierre de Sesión muestra diálogo de confirmación antes de cerrar sesión",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 0,
+          "retryReasons": [],
+          "startAt": 1762366420732,
+          "status": "pending",
+          "title": "muestra diálogo de confirmación antes de cerrar sesión"
+        }
+      ],
+      "endTime": 1762366420734,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\logout.test.js",
+      "startTime": 1762366381835,
+      "status": "focused",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Ver Mis Reportes"
+          ],
+          "duration": 1141,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Ver Mis Reportes muestra la lista de reportes del usuario correctamente",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 4,
+          "retryReasons": [],
+          "startAt": 1762366420762,
+          "status": "passed",
+          "title": "muestra la lista de reportes del usuario correctamente"
+        },
+        {
+          "ancestorTitles": [
+            "Ver Mis Reportes"
+          ],
+          "duration": 63,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Ver Mis Reportes navega al detalle del reporte al hacer clic en un reporte",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366421903,
+          "status": "passed",
+          "title": "navega al detalle del reporte al hacer clic en un reporte"
+        },
+        {
+          "ancestorTitles": [
+            "Ver Mis Reportes"
+          ],
+          "duration": 59,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Ver Mis Reportes muestra mensaje cuando no hay reportes",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366421966,
+          "status": "passed",
+          "title": "muestra mensaje cuando no hay reportes"
+        },
+        {
+          "ancestorTitles": [
+            "Ver Mis Reportes"
+          ],
+          "duration": 15,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Ver Mis Reportes muestra indicador de carga mientras se obtienen los reportes",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366422025,
+          "status": "passed",
+          "title": "muestra indicador de carga mientras se obtienen los reportes"
+        }
+      ],
+      "endTime": 1762366422041,
+      "message": "",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\viewMyReports.test.js",
+      "startTime": 1762366381883,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Cambiar Estado del Reporte"
+          ],
+          "duration": 1051,
+          "failing": false,
+          "failureDetails": [
+            {}
+          ],
+          "failureMessages": [
+            "Error: Found multiple elements with text: Se reporta robo de celular\n    at Object.<anonymous> (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\changeReportStatus.test.js:60:18)\n    at Generator.next (<anonymous>)\n    at asyncGeneratorStep (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:17)\n    at _next (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:17:9)\n    at D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:22:7\n    at new Promise (<anonymous>)\n    at Object.<anonymous> (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:14:12)\n    at Promise.finally.completed (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\jest-circus\\build\\jestAdapterInit.js:1557:28)\n    at new Promise (<anonymous>)\n    at callAsyncCircusFn (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\jest-circus\\build\\jestAdapterInit.js:1497:10)\n    at _callCircusTest (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\jest-circus\\build\\jestAdapterInit.js:1007:40)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at _runTest (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\jest-circus\\build\\jestAdapterInit.js:947:3)\n    at D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\jest-circus\\build\\jestAdapterInit.js:849:7\n    at _runTestsForDescribeBlock (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\jest-circus\\build\\jestAdapterInit.js:862:11)\n    at _runTestsForDescribeBlock (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\jest-circus\\build\\jestAdapterInit.js:857:11)\n    at run (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\jest-circus\\build\\jestAdapterInit.js:761:3)\n    at runAndTransformResultsToJestFormat (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\jest-circus\\build\\jestAdapterInit.js:1918:21)\n    at jestAdapter (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\jest-circus\\build\\runner.js:101:19)\n    at runTestInternal (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\jest-runner\\build\\testWorker.js:275:16)\n    at runTest (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\jest-runner\\build\\testWorker.js:343:7)\n    at Object.worker (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\jest-runner\\build\\testWorker.js:497:12)"
+          ],
+          "fullName": "Cambiar Estado del Reporte muestra los detalles del reporte correctamente",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 15,
+          "retryReasons": [],
+          "startAt": 1762366421087,
+          "status": "failed",
+          "title": "muestra los detalles del reporte correctamente"
+        },
+        {
+          "ancestorTitles": [
+            "Cambiar Estado del Reporte"
+          ],
+          "duration": 61,
+          "failing": false,
+          "failureDetails": [
+            {}
+          ],
+          "failureMessages": [
+            "Error: Unable to find an element with testID: status-picker\n\n\u001b[36m<View\u001b[39m\n  \u001b[33mstyle\u001b[39m=\u001b[32m{\n    {\n      \"opacity\": 0,\n    }\n  }\u001b[39m\n\u001b[36m>\u001b[39m\n  \u001b[36m<RCTScrollView>\u001b[39m\n    \u001b[36m<View>\u001b[39m\n      \u001b[36m<Text>\u001b[39m\n        \u001b[0mRobo en calle principal\u001b[0m\n      \u001b[36m</Text>\u001b[39m\n      \u001b[36m<Text>\u001b[39m\n        \u001b[0mEstado: \u001b[0m\n        \u001b[0mpendiente\u001b[0m\n      \u001b[36m</Text>\u001b[39m\n      \u001b[36m<Text>\u001b[39m\n        \u001b[0m📅 \u001b[0m\n        \u001b[0m5/11/2025\u001b[0m\n      \u001b[36m</Text>\u001b[39m\n      \u001b[36m<View>\u001b[39m\n        \u001b[36m<Text>\u001b[39m\n          \u001b[0mEstado actual:\u001b[0m\n        \u001b[36m</Text>\u001b[39m\n        \u001b[36m<Text>\u001b[39m\n          \u001b[0mpendiente\u001b[0m\n        \u001b[36m</Text>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View>\u001b[39m\n        \u001b[36m<Text>\u001b[39m\n          \u001b[0mDescripción:\u001b[0m\n        \u001b[36m</Text>\u001b[39m\n        \u001b[36m<Text>\u001b[39m\n          \u001b[0mSe reporta robo de celular\u001b[0m\n        \u001b[36m</Text>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View>\u001b[39m\n        \u001b[36m<Text>\u001b[39m\n          \u001b[0mImagen del Incidente:\u001b[0m\n        \u001b[36m</Text>\u001b[39m\n        \u001b[36m<View>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0m📷 Imagen no disponible\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View\u001b[39m\n        \u001b[33mpointerEvents\u001b[39m=\u001b[32m\"none\"\u001b[39m\n        \u001b[33mstyle\u001b[39m=\u001b[32m{\n          {\n            \"opacity\": 0,\n          }\n        }\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<View>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mReporte #\u001b[0m\n            \u001b[0m1\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mTipo: \u001b[0m\n            \u001b[0mrobo\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mEstado: \u001b[0m\n            \u001b[0mpendiente\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mFecha: \u001b[0m\n            \u001b[0m5/11/2025\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<View>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mImagen no disponible\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mDescripción\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mSe reporta robo de celular\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mUbicación: \u001b[0m\n            \u001b[0m-33.45\u001b[0m\n            \u001b[0m, \u001b[0m\n            \u001b[0m-70.67\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mGenerado por Seguridad Ciudadana\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View>\u001b[39m\n        \u001b[36m<Text>\u001b[39m\n          \u001b[0mUbicación del Incidente:\u001b[0m\n        \u001b[36m</Text>\u001b[39m\n        \u001b[36m<View>\u001b[39m\n          \u001b[36m<View />\u001b[39m\n          \u001b[36m<View\u001b[39m\n            \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0m📍\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View>\u001b[39m\n        \u001b[36m<Text>\u001b[39m\n          \u001b[0mActualizar Estado:\u001b[0m\n        \u001b[36m</Text>\u001b[39m\n        \u001b[36m<View\u001b[39m\n          \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n            {\n              \"disabled\": false,\n            }\n          }\u001b[39m\n          \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n          \u001b[33mtestID\u001b[39m=\u001b[32m\"update-status-button\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<View>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mGuardar Estado\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View\u001b[39m\n        \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n          {\n            \"disabled\": false,\n          }\n        }\u001b[39m\n        \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<View>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mCompartir Reporte\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View\u001b[39m\n        \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n          {\n            \"disabled\": false,\n          }\n        }\u001b[39m\n        \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<View>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mCompartir como imagen\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View\u001b[39m\n        \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n          {\n            \"disabled\": false,\n          }\n        }\u001b[39m\n        \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<View>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mIr al Chat\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n    \u001b[36m</View>\u001b[39m\n  \u001b[36m</RCTScrollView>\u001b[39m\n\u001b[36m</View>\u001b[39m\n    at Object.getByTestId (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\changeReportStatus.test.js:80:26)\n    at Generator.next (<anonymous>)\n    at asyncGeneratorStep (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:17)\n    at _next (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:17:9)"
+          ],
+          "fullName": "Cambiar Estado del Reporte permite a la autoridad cambiar el estado del reporte",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366422139,
+          "status": "failed",
+          "title": "permite a la autoridad cambiar el estado del reporte"
+        },
+        {
+          "ancestorTitles": [
+            "Cambiar Estado del Reporte"
+          ],
+          "duration": 58,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Cambiar Estado del Reporte no muestra opciones de cambio de estado para usuarios normales",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1762366422201,
+          "status": "passed",
+          "title": "no muestra opciones de cambio de estado para usuarios normales"
+        },
+        {
+          "ancestorTitles": [
+            "Cambiar Estado del Reporte"
+          ],
+          "duration": 64,
+          "failing": false,
+          "failureDetails": [
+            {}
+          ],
+          "failureMessages": [
+            "Error: Unable to find an element with testID: status-picker\n\n\u001b[36m<View\u001b[39m\n  \u001b[33mstyle\u001b[39m=\u001b[32m{\n    {\n      \"opacity\": 0,\n    }\n  }\u001b[39m\n\u001b[36m>\u001b[39m\n  \u001b[36m<RCTScrollView>\u001b[39m\n    \u001b[36m<View>\u001b[39m\n      \u001b[36m<Text>\u001b[39m\n        \u001b[0mRobo en calle principal\u001b[0m\n      \u001b[36m</Text>\u001b[39m\n      \u001b[36m<Text>\u001b[39m\n        \u001b[0mEstado: \u001b[0m\n        \u001b[0mpendiente\u001b[0m\n      \u001b[36m</Text>\u001b[39m\n      \u001b[36m<Text>\u001b[39m\n        \u001b[0m📅 \u001b[0m\n        \u001b[0m5/11/2025\u001b[0m\n      \u001b[36m</Text>\u001b[39m\n      \u001b[36m<View>\u001b[39m\n        \u001b[36m<Text>\u001b[39m\n          \u001b[0mEstado actual:\u001b[0m\n        \u001b[36m</Text>\u001b[39m\n        \u001b[36m<Text>\u001b[39m\n          \u001b[0mpendiente\u001b[0m\n        \u001b[36m</Text>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View>\u001b[39m\n        \u001b[36m<Text>\u001b[39m\n          \u001b[0mDescripción:\u001b[0m\n        \u001b[36m</Text>\u001b[39m\n        \u001b[36m<Text>\u001b[39m\n          \u001b[0mSe reporta robo de celular\u001b[0m\n        \u001b[36m</Text>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View>\u001b[39m\n        \u001b[36m<Text>\u001b[39m\n          \u001b[0mImagen del Incidente:\u001b[0m\n        \u001b[36m</Text>\u001b[39m\n        \u001b[36m<View>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0m📷 Imagen no disponible\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View\u001b[39m\n        \u001b[33mpointerEvents\u001b[39m=\u001b[32m\"none\"\u001b[39m\n        \u001b[33mstyle\u001b[39m=\u001b[32m{\n          {\n            \"opacity\": 0,\n          }\n        }\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<View>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mReporte #\u001b[0m\n            \u001b[0m1\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mTipo: \u001b[0m\n            \u001b[0mrobo\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mEstado: \u001b[0m\n            \u001b[0mpendiente\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mFecha: \u001b[0m\n            \u001b[0m5/11/2025\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<View>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mImagen no disponible\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mDescripción\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mSe reporta robo de celular\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mUbicación: \u001b[0m\n            \u001b[0m-33.45\u001b[0m\n            \u001b[0m, \u001b[0m\n            \u001b[0m-70.67\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mGenerado por Seguridad Ciudadana\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View>\u001b[39m\n        \u001b[36m<Text>\u001b[39m\n          \u001b[0mUbicación del Incidente:\u001b[0m\n        \u001b[36m</Text>\u001b[39m\n        \u001b[36m<View>\u001b[39m\n          \u001b[36m<View />\u001b[39m\n          \u001b[36m<View\u001b[39m\n            \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0m📍\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View>\u001b[39m\n        \u001b[36m<Text>\u001b[39m\n          \u001b[0mActualizar Estado:\u001b[0m\n        \u001b[36m</Text>\u001b[39m\n        \u001b[36m<View\u001b[39m\n          \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n            {\n              \"disabled\": false,\n            }\n          }\u001b[39m\n          \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n          \u001b[33mtestID\u001b[39m=\u001b[32m\"update-status-button\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<View>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mGuardar Estado\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View\u001b[39m\n        \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n          {\n            \"disabled\": false,\n          }\n        }\u001b[39m\n        \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<View>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mCompartir Reporte\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View\u001b[39m\n        \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n          {\n            \"disabled\": false,\n          }\n        }\u001b[39m\n        \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<View>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mCompartir como imagen\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n      \u001b[36m<View\u001b[39m\n        \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n          {\n            \"disabled\": false,\n          }\n        }\u001b[39m\n        \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<View>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mIr al Chat\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</View>\u001b[39m\n    \u001b[36m</View>\u001b[39m\n  \u001b[36m</RCTScrollView>\u001b[39m\n\u001b[36m</View>\u001b[39m\n    at Object.getByTestId (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\changeReportStatus.test.js:144:26)\n    at Generator.next (<anonymous>)\n    at asyncGeneratorStep (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:3:17)\n    at _next (D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\@babel\\runtime\\helpers\\asyncToGenerator.js:17:9)"
+          ],
+          "fullName": "Cambiar Estado del Reporte muestra error si la actualización de estado falla",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "startAt": 1762366422259,
+          "status": "failed",
+          "title": "muestra error si la actualización de estado falla"
+        }
+      ],
+      "endTime": 1762366422348,
+      "message": "\u001b[1m\u001b[31m  \u001b[1m● \u001b[22m\u001b[1mCambiar Estado del Reporte › muestra los detalles del reporte correctamente\u001b[39m\u001b[22m\n\n    Found multiple elements with text: Se reporta robo de celular\n\u001b[2m\u001b[22m\n\u001b[2m    \u001b[0m \u001b[90m 58 |\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 59 |\u001b[39m     \u001b[90m// Verificar que se muestren los detalles del reporte\u001b[39m\u001b[22m\n\u001b[2m    \u001b[31m\u001b[1m>\u001b[22m\u001b[2m\u001b[39m\u001b[90m 60 |\u001b[39m     \u001b[36mawait\u001b[39m waitFor(() \u001b[33m=>\u001b[39m {\u001b[22m\n\u001b[2m     \u001b[90m    |\u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[2m\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 61 |\u001b[39m       expect(getByText(\u001b[32m'Robo en calle principal'\u001b[39m))\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 62 |\u001b[39m       expect(getByText(\u001b[32m'Se reporta robo de celular'\u001b[39m))\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 63 |\u001b[39m       expect(getByText(\u001b[32m'Estado: pendiente'\u001b[39m))\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\u001b[0m\u001b[22m\n\u001b[2m\u001b[22m\n\u001b[2m      \u001b[2mat Object.<anonymous> (\u001b[22m\u001b[2m\u001b[0m\u001b[36m__tests__/changeReportStatus.test.js\u001b[39m\u001b[0m\u001b[2m:60:18)\u001b[22m\u001b[2m\u001b[22m\n\u001b[2m      \u001b[2mat asyncGeneratorStep (\u001b[22m\u001b[2mnode_modules/@babel/runtime/helpers/asyncToGenerator.js\u001b[2m:3:17)\u001b[22m\u001b[2m\u001b[22m\n\u001b[2m      \u001b[2mat _next (\u001b[22m\u001b[2mnode_modules/@babel/runtime/helpers/asyncToGenerator.js\u001b[2m:17:9)\u001b[22m\u001b[2m\u001b[22m\n\u001b[2m      \u001b[2mat \u001b[22m\u001b[2mnode_modules/@babel/runtime/helpers/asyncToGenerator.js\u001b[2m:22:7\u001b[22m\u001b[2m\u001b[22m\n\u001b[2m      \u001b[2mat Object.<anonymous> (\u001b[22m\u001b[2mnode_modules/@babel/runtime/helpers/asyncToGenerator.js\u001b[2m:14:12)\u001b[22m\u001b[2m\u001b[22m\n\n\u001b[1m\u001b[31m  \u001b[1m● \u001b[22m\u001b[1mCambiar Estado del Reporte › permite a la autoridad cambiar el estado del reporte\u001b[39m\u001b[22m\n\n    Unable to find an element with testID: status-picker\n\n    \u001b[36m<View\u001b[39m\n      \u001b[33mstyle\u001b[39m=\u001b[32m{\n        {\n          \"opacity\": 0,\n        }\n      }\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<RCTScrollView>\u001b[39m\n        \u001b[36m<View>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mRobo en calle principal\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mEstado: \u001b[0m\n            \u001b[0mpendiente\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0m📅 \u001b[0m\n            \u001b[0m5/11/2025\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<View>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mEstado actual:\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mpendiente\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mDescripción:\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mSe reporta robo de celular\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mImagen del Incidente:\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n            \u001b[36m<View>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0m📷 Imagen no disponible\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n            \u001b[36m</View>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View\u001b[39m\n            \u001b[33mpointerEvents\u001b[39m=\u001b[32m\"none\"\u001b[39m\n            \u001b[33mstyle\u001b[39m=\u001b[32m{\n              {\n                \"opacity\": 0,\n              }\n            }\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<View>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mReporte #\u001b[0m\n                \u001b[0m1\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mTipo: \u001b[0m\n                \u001b[0mrobo\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mEstado: \u001b[0m\n                \u001b[0mpendiente\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mFecha: \u001b[0m\n                \u001b[0m5/11/2025\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n              \u001b[36m<View>\u001b[39m\n                \u001b[36m<Text>\u001b[39m\n                  \u001b[0mImagen no disponible\u001b[0m\n                \u001b[36m</Text>\u001b[39m\n              \u001b[36m</View>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mDescripción\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mSe reporta robo de celular\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mUbicación: \u001b[0m\n                \u001b[0m-33.45\u001b[0m\n                \u001b[0m, \u001b[0m\n                \u001b[0m-70.67\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mGenerado por Seguridad Ciudadana\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n            \u001b[36m</View>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mUbicación del Incidente:\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n            \u001b[36m<View>\u001b[39m\n              \u001b[36m<View />\u001b[39m\n              \u001b[36m<View\u001b[39m\n                \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<Text>\u001b[39m\n                  \u001b[0m📍\u001b[0m\n                \u001b[36m</Text>\u001b[39m\n              \u001b[36m</View>\u001b[39m\n            \u001b[36m</View>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mActualizar Estado:\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n            \u001b[36m<View\u001b[39m\n              \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n                {\n                  \"disabled\": false,\n                }\n              }\u001b[39m\n              \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n              \u001b[33mtestID\u001b[39m=\u001b[32m\"update-status-button\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<View>\u001b[39m\n                \u001b[36m<Text>\u001b[39m\n                  \u001b[0mGuardar Estado\u001b[0m\n                \u001b[36m</Text>\u001b[39m\n              \u001b[36m</View>\u001b[39m\n            \u001b[36m</View>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View\u001b[39m\n            \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n              {\n                \"disabled\": false,\n              }\n            }\u001b[39m\n            \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<View>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mCompartir Reporte\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n            \u001b[36m</View>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View\u001b[39m\n            \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n              {\n                \"disabled\": false,\n              }\n            }\u001b[39m\n            \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<View>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mCompartir como imagen\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n            \u001b[36m</View>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View\u001b[39m\n            \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n              {\n                \"disabled\": false,\n              }\n            }\u001b[39m\n            \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<View>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mIr al Chat\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n            \u001b[36m</View>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</RCTScrollView>\u001b[39m\n    \u001b[36m</View>\u001b[39m\n\u001b[2m\u001b[22m\n\u001b[2m    \u001b[0m \u001b[90m 78 |\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 79 |\u001b[39m     \u001b[90m// Verificar que exista el selector de estado para autoridades\u001b[39m\u001b[22m\n\u001b[2m    \u001b[31m\u001b[1m>\u001b[22m\u001b[2m\u001b[39m\u001b[90m 80 |\u001b[39m     \u001b[36mconst\u001b[39m statusPicker \u001b[33m=\u001b[39m getByTestId(\u001b[32m'status-picker'\u001b[39m)\u001b[33m;\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[2m\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 81 |\u001b[39m     expect(statusPicker)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 82 |\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 83 |\u001b[39m     \u001b[90m// Simular cambio de estado\u001b[39m\u001b[0m\u001b[22m\n\u001b[2m\u001b[22m\n\u001b[2m      \u001b[2mat Object.getByTestId (\u001b[22m\u001b[2m\u001b[0m\u001b[36m__tests__/changeReportStatus.test.js\u001b[39m\u001b[0m\u001b[2m:80:26)\u001b[22m\u001b[2m\u001b[22m\n\u001b[2m      \u001b[2mat asyncGeneratorStep (\u001b[22m\u001b[2mnode_modules/@babel/runtime/helpers/asyncToGenerator.js\u001b[2m:3:17)\u001b[22m\u001b[2m\u001b[22m\n\u001b[2m      \u001b[2mat _next (\u001b[22m\u001b[2mnode_modules/@babel/runtime/helpers/asyncToGenerator.js\u001b[2m:17:9)\u001b[22m\u001b[2m\u001b[22m\n\n\u001b[1m\u001b[31m  \u001b[1m● \u001b[22m\u001b[1mCambiar Estado del Reporte › muestra error si la actualización de estado falla\u001b[39m\u001b[22m\n\n    Unable to find an element with testID: status-picker\n\n    \u001b[36m<View\u001b[39m\n      \u001b[33mstyle\u001b[39m=\u001b[32m{\n        {\n          \"opacity\": 0,\n        }\n      }\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<RCTScrollView>\u001b[39m\n        \u001b[36m<View>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mRobo en calle principal\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0mEstado: \u001b[0m\n            \u001b[0mpendiente\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<Text>\u001b[39m\n            \u001b[0m📅 \u001b[0m\n            \u001b[0m5/11/2025\u001b[0m\n          \u001b[36m</Text>\u001b[39m\n          \u001b[36m<View>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mEstado actual:\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mpendiente\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mDescripción:\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mSe reporta robo de celular\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mImagen del Incidente:\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n            \u001b[36m<View>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0m📷 Imagen no disponible\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n            \u001b[36m</View>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View\u001b[39m\n            \u001b[33mpointerEvents\u001b[39m=\u001b[32m\"none\"\u001b[39m\n            \u001b[33mstyle\u001b[39m=\u001b[32m{\n              {\n                \"opacity\": 0,\n              }\n            }\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<View>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mReporte #\u001b[0m\n                \u001b[0m1\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mTipo: \u001b[0m\n                \u001b[0mrobo\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mEstado: \u001b[0m\n                \u001b[0mpendiente\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mFecha: \u001b[0m\n                \u001b[0m5/11/2025\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n              \u001b[36m<View>\u001b[39m\n                \u001b[36m<Text>\u001b[39m\n                  \u001b[0mImagen no disponible\u001b[0m\n                \u001b[36m</Text>\u001b[39m\n              \u001b[36m</View>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mDescripción\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mSe reporta robo de celular\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mUbicación: \u001b[0m\n                \u001b[0m-33.45\u001b[0m\n                \u001b[0m, \u001b[0m\n                \u001b[0m-70.67\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mGenerado por Seguridad Ciudadana\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n            \u001b[36m</View>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mUbicación del Incidente:\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n            \u001b[36m<View>\u001b[39m\n              \u001b[36m<View />\u001b[39m\n              \u001b[36m<View\u001b[39m\n                \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<Text>\u001b[39m\n                  \u001b[0m📍\u001b[0m\n                \u001b[36m</Text>\u001b[39m\n              \u001b[36m</View>\u001b[39m\n            \u001b[36m</View>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View>\u001b[39m\n            \u001b[36m<Text>\u001b[39m\n              \u001b[0mActualizar Estado:\u001b[0m\n            \u001b[36m</Text>\u001b[39m\n            \u001b[36m<View\u001b[39m\n              \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n                {\n                  \"disabled\": false,\n                }\n              }\u001b[39m\n              \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n              \u001b[33mtestID\u001b[39m=\u001b[32m\"update-status-button\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<View>\u001b[39m\n                \u001b[36m<Text>\u001b[39m\n                  \u001b[0mGuardar Estado\u001b[0m\n                \u001b[36m</Text>\u001b[39m\n              \u001b[36m</View>\u001b[39m\n            \u001b[36m</View>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View\u001b[39m\n            \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n              {\n                \"disabled\": false,\n              }\n            }\u001b[39m\n            \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<View>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mCompartir Reporte\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n            \u001b[36m</View>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View\u001b[39m\n            \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n              {\n                \"disabled\": false,\n              }\n            }\u001b[39m\n            \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<View>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mCompartir como imagen\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n            \u001b[36m</View>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n          \u001b[36m<View\u001b[39m\n            \u001b[33maccessibilityState\u001b[39m=\u001b[32m{\n              {\n                \"disabled\": false,\n              }\n            }\u001b[39m\n            \u001b[33maccessible\u001b[39m=\u001b[32m{true}\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<View>\u001b[39m\n              \u001b[36m<Text>\u001b[39m\n                \u001b[0mIr al Chat\u001b[0m\n              \u001b[36m</Text>\u001b[39m\n            \u001b[36m</View>\u001b[39m\n          \u001b[36m</View>\u001b[39m\n        \u001b[36m</View>\u001b[39m\n      \u001b[36m</RCTScrollView>\u001b[39m\n    \u001b[36m</View>\u001b[39m\n\u001b[2m\u001b[22m\n\u001b[2m    \u001b[0m \u001b[90m 142 |\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 143 |\u001b[39m     \u001b[90m// Simular cambio de estado\u001b[39m\u001b[22m\n\u001b[2m    \u001b[31m\u001b[1m>\u001b[22m\u001b[2m\u001b[39m\u001b[90m 144 |\u001b[39m     \u001b[36mconst\u001b[39m statusPicker \u001b[33m=\u001b[39m getByTestId(\u001b[32m'status-picker'\u001b[39m)\u001b[33m;\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m     |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[2m\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 145 |\u001b[39m     fireEvent(statusPicker\u001b[33m,\u001b[39m \u001b[32m'onValueChange'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'resuelto'\u001b[39m)\u001b[33m;\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 146 |\u001b[39m     \u001b[22m\n\u001b[2m     \u001b[90m 147 |\u001b[39m     \u001b[90m// Presionar el botón de actualizar\u001b[39m\u001b[0m\u001b[22m\n\u001b[2m\u001b[22m\n\u001b[2m      \u001b[2mat Object.getByTestId (\u001b[22m\u001b[2m\u001b[0m\u001b[36m__tests__/changeReportStatus.test.js\u001b[39m\u001b[0m\u001b[2m:144:26)\u001b[22m\u001b[2m\u001b[22m\n\u001b[2m      \u001b[2mat asyncGeneratorStep (\u001b[22m\u001b[2mnode_modules/@babel/runtime/helpers/asyncToGenerator.js\u001b[2m:3:17)\u001b[22m\u001b[2m\u001b[22m\n\u001b[2m      \u001b[2mat _next (\u001b[22m\u001b[2mnode_modules/@babel/runtime/helpers/asyncToGenerator.js\u001b[2m:17:9)\u001b[22m\u001b[2m\u001b[22m\n",
+      "name": "D:\\TRABAJOS 10MO\\SeguridadAPP\\SeguridadCiudadanaApp\\__tests__\\changeReportStatus.test.js",
+      "startTime": 1762366381789,
+      "status": "failed",
+      "summary": ""
+    }
+  ],
+  "wasInterrupted": false
+}

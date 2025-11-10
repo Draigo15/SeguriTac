@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react-native';
-import '@testing-library/jest-native/extend-expect';
+// Nota: no usamos jest-native en este proyecto; removido para evitar error de módulo no encontrado
 
 // Mock de los servicios de autenticación
 jest.mock('../src/services/auth', () => ({
@@ -19,15 +19,22 @@ jest.mock('@react-navigation/native', () => ({
   }),
 }));
 
-// Componente simulado para pruebas
+// Componente simulado para pruebas (sin hooks de React)
 const LoginScreen = () => {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  const [error, setError] = React.useState('');
-  const [loading, setLoading] = React.useState(false);
+  const state = {
+    email: '',
+    password: '',
+    error: '',
+    loading: false,
+  };
+
+  const setEmail = (v) => { state.email = v; };
+  const setPassword = (v) => { state.password = v; };
+  const setError = (v) => { state.error = v; };
+  const setLoading = (v) => { state.loading = v; };
 
   const handleLogin = async () => {
-    if (!email || !password) {
+    if (!state.email || !state.password) {
       setError('Email y contraseña son obligatorios');
       return false;
     }
@@ -35,7 +42,7 @@ const LoginScreen = () => {
     setLoading(true);
     try {
       const authService = require('../src/services/auth');
-      const result = await authService.loginUser(email, password);
+      const result = await authService.loginUser(state.email, state.password);
       setLoading(false);
       return result;
     } catch (err) {
@@ -45,7 +52,12 @@ const LoginScreen = () => {
     }
   };
 
-  return { email, setEmail, password, setPassword, error, loading, handleLogin };
+  const api = { setEmail, setPassword, handleLogin };
+  Object.defineProperty(api, 'email', { get: () => state.email });
+  Object.defineProperty(api, 'password', { get: () => state.password });
+  Object.defineProperty(api, 'error', { get: () => state.error });
+  Object.defineProperty(api, 'loading', { get: () => state.loading });
+  return api;
 };
 
 describe('Pruebas de Inicio de Sesión', () => {

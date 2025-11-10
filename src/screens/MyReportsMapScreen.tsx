@@ -175,6 +175,7 @@ const MyReportsMapScreen = () => {
                   }))}
                   enableLocationTracking={true}
                   showUserLocation={hasPermission}
+                  showHeatmap={false}
                 />
               ) : (
                 <View style={styles.center}>

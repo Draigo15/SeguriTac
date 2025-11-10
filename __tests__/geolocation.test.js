@@ -7,7 +7,6 @@
 
 import React from 'react';
 import { render, fireEvent, act } from '@testing-library/react-native';
-import { Alert, Platform } from 'react-native';
 import * as Location from 'expo-location';
 
 // Mock de expo-location
@@ -28,6 +27,8 @@ jest.mock('react-native', () => ({
     alert: jest.fn(),
   },
 }));
+const { Alert, Platform } = require('react-native');
+let alertSpy;
 
 // Función handleLocateMe extraída para pruebas
 const createHandleLocateMe = (setUserLocation, mapRef) => async () => {
@@ -65,6 +66,7 @@ const createHandleLocateMe = (setUserLocation, mapRef) => async () => {
 describe('Funciones de geolocalización', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    alertSpy = jest.spyOn(Alert, 'alert');
   });
 
   test('handleLocateMe debería solicitar permisos y obtener ubicación', async () => {
@@ -127,7 +129,7 @@ describe('Funciones de geolocalización', () => {
     expect(Location.getCurrentPositionAsync).not.toHaveBeenCalled();
     
     // Verificar que se mostró una alerta
-    expect(Alert.alert).toHaveBeenCalledWith('Permiso denegado', 'No se puede acceder a tu ubicación.');
+    expect(alertSpy).toHaveBeenCalledWith('Permiso denegado', 'No se puede acceder a tu ubicación.');
     
     // Verificar que no se actualizó el estado
     expect(setUserLocation).not.toHaveBeenCalled();
@@ -153,7 +155,7 @@ describe('Funciones de geolocalización', () => {
     expect(Location.getCurrentPositionAsync).toHaveBeenCalled();
     
     // Verificar que se mostró una alerta de error
-    expect(Alert.alert).toHaveBeenCalledWith('Error', 'No se pudo obtener tu ubicación.');
+    expect(alertSpy).toHaveBeenCalledWith('Error', 'No se pudo obtener tu ubicación.');
     
     // Verificar que no se actualizó el estado
     expect(setUserLocation).not.toHaveBeenCalled();

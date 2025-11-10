@@ -38,5 +38,7 @@ allprojects {
         google()
         mavenCentral()
         maven { url 'https://www.jitpack.io' }
+        // Detox Android AAR repository (provided via npm)
+        maven { url "$rootDir/../node_modules/detox/Detox-android" }
     }
 }

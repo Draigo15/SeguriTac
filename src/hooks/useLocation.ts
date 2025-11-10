@@ -115,7 +115,7 @@ export const useLocation = (options: UseLocationOptions = {}): UseLocationReturn
         return false;
       }
     } catch (err) {
-      console.error('Error requesting location permission:', err);
+      console.warn('Error requesting location permission:', err);
       setError('Error al solicitar permisos de ubicación');
       setHasPermission(false);
       return false;
@@ -159,9 +159,10 @@ export const useLocation = (options: UseLocationOptions = {}): UseLocationReturn
       setLocation(locationData);
       return locationData;
     } catch (err) {
-      console.error('Error getting current location:', err);
+      console.warn('Error getting current location:', err);
       setError('No se pudo obtener la ubicación actual');
-      return null;
+      // Mantener comportamiento seguro: devolver última ubicación conocida si existe
+      return location;
     } finally {
       setLoading(false);
     }
@@ -203,7 +204,7 @@ export const useLocation = (options: UseLocationOptions = {}): UseLocationReturn
 
       setWatchSubscription(subscription);
     } catch (err) {
-      console.error('Error watching location:', err);
+      console.warn('Error watching location:', err);
       setError('No se pudo iniciar el seguimiento de ubicación');
     }
   }, [hasPermission, requestPermission, config.enableHighAccuracy, watchSubscription]);

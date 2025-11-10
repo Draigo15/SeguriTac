@@ -8,6 +8,7 @@
  * Usa las variables de entorno del archivo .env
  */
 import { FIREBASE_CONFIG } from '../../env';
+import { Platform } from 'react-native';
 
 export const firebaseConfig = FIREBASE_CONFIG;
 
@@ -15,9 +16,9 @@ export const firebaseConfig = FIREBASE_CONFIG;
  * URLs de la API backend
  */
 export const apiConfig = {
-  baseUrl: __DEV__ 
-    ? 'http://localhost:3000/api' 
-    : 'https://api.seguridad-ciudadana.com/api',
+  baseUrl: __DEV__
+    ? (Platform.OS === 'android' ? 'http://10.0.2.2:3000/api' : 'http://localhost:3000/api')
+    : 'https://seguridad-ciudadana-backend.onrender.com/api',
   // Afirmación de HTTPS en producción
   get isHttpsRequired() {
     return !__DEV__;

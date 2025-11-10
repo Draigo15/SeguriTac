@@ -5,7 +5,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import Toast from 'react-native-toast-message';
 import AnimatedScreen from '../components/AnimatedScreen';
 import { colors, spacing } from '../theme';
-import { sendEmailOtp, verifyEmailOtp } from '../services/mfaEmail';
+import { sendOtp as sendEmailOtp, verifyOtp as verifyEmailOtp } from '../services/authBackend';
 import { RootStackParamList } from '../navigation/types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RouteProp } from '@react-navigation/native';
@@ -21,6 +21,7 @@ const MFAEmailVerifyScreen: React.FC = () => {
   const [code, setCode] = useState('');
   const [loading, setLoading] = useState(false);
   const [devHint, setDevHint] = useState<string | undefined>(undefined);
+  const [resendCooldown, setResendCooldown] = useState<number>(30);
 
   useEffect(() => {
     const init = async () => {
@@ -38,6 +39,12 @@ const MFAEmailVerifyScreen: React.FC = () => {
       Toast.show({ type: 'info', text1: 'Código enviado', text2: 'Revisa tu correo para el OTP' });
     };
     init();
+    // Iniciar temporizador para reenvío
+    setResendCooldown(30);
+    const interval = setInterval(() => {
+      setResendCooldown(prev => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => clearInterval(interval);
   }, [email]);
 
   const handleVerify = async () => {
@@ -63,6 +70,7 @@ const MFAEmailVerifyScreen: React.FC = () => {
   };
 
   const resend = async () => {
+    if (resendCooldown > 0) return;
     setLoading(true);
     const res = await sendEmailOtp(email);
     setLoading(false);
@@ -72,6 +80,7 @@ const MFAEmailVerifyScreen: React.FC = () => {
     }
     setDevHint(res.devHint);
     Toast.show({ type: 'info', text1: 'Código reenviado', text2: 'Revisa tu correo nuevamente' });
+    setResendCooldown(30);
   };
 
   return (
@@ -90,13 +99,15 @@ const MFAEmailVerifyScreen: React.FC = () => {
           keyboardType="numeric"
           maxLength={6}
           style={styles.input}
+          mode="outlined"
         />
 
-        <Button mode="contained" onPress={handleVerify} loading={loading} disabled={loading} style={styles.button}>
+        <Button mode="contained" onPress={handleVerify} loading={loading} disabled={loading || code.length < 6} style={styles.button}
+        >
           Verificar código
         </Button>
-        <Button mode="text" onPress={resend} disabled={loading}>
-          Reenviar código
+        <Button mode="text" onPress={resend} disabled={loading || resendCooldown > 0}>
+          {resendCooldown > 0 ? `Reenviar en ${resendCooldown}s` : 'Reenviar código'}
         </Button>
       </View>
     </AnimatedScreen>
@@ -122,6 +133,9 @@ const styles = StyleSheet.create({
   },
   input: {
     marginBottom: spacing.md,
+    textAlign: 'center',
+    fontSize: 20,
+    letterSpacing: 6,
   },
   button: {
     marginBottom: spacing.sm,

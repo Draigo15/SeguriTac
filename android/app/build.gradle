@@ -93,6 +93,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0.0"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     signingConfigs {
         debug {
@@ -116,15 +117,35 @@ android {
             crunchPngs (findProperty('android.enablePngCrunchInReleaseBuilds')?.toBoolean() ?: true)
         }
     }
-    packagingOptions {
+    // AGP 8+ packaging block to ensure resource exclusions apply to androidTest
+    packaging {
         jniLibs {
             useLegacyPackaging (findProperty('expo.useLegacyPackaging')?.toBoolean() ?: false)
+        }
+        resources {
+            pickFirsts += [
+                'META-INF/LICENSE.md',
+                'META-INF/NOTICE.md'
+            ]
+            excludes += [
+                'META-INF/*',
+                'META-INF/AL2.0',
+                'META-INF/LGPL2.1',
+                'META-INF/LICENSE',
+                'META-INF/LICENSE*',
+                'META-INF/LICENSE.md',
+                'META-INF/NOTICE',
+                'META-INF/NOTICE*',
+                'META-INF/NOTICE.md',
+                'META-INF/DEPENDENCIES'
+            ]
         }
     }
     androidResources {
         ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~'
     }
 }
+
 
 // Apply static values from `gradle.properties` to the `android.packagingOptions`
 // Accepts values in comma delimited lists, example:
@@ -173,6 +194,58 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    // Detox Android instrumentation test dependencies
+    androidTestImplementation('androidx.test:runner:1.5.2') {
+        exclude group: 'org.junit.jupiter'
+        exclude group: 'org.junit.platform'
+    }
+    androidTestImplementation('androidx.test:rules:1.5.0') {
+        exclude group: 'org.junit.jupiter'
+        exclude group: 'org.junit.platform'
+    }
+    androidTestImplementation 'junit:junit:4.13.2'
+    // Depend on Detox AAR provided via the npm module repository
+    androidTestImplementation('com.wix:detox:+') {
+        exclude group: 'org.junit.jupiter'
+        exclude group: 'org.junit.platform'
+    }
 }
 
 apply plugin: 'com.google.gms.google-services'
+
+// Exclude JUnit 5 platform from androidTest runtime to avoid packaging duplicates
+configurations {
+    // Global safeguard to avoid JUnit 5 artifacts leaking into androidTest
+    all {
+        exclude group: 'org.junit.jupiter'
+        exclude group: 'org.junit.platform'
+    }
+    androidTestCompileClasspath {
+        exclude group: 'org.junit.jupiter'
+        exclude group: 'org.junit.platform'
+    }
+    androidTestRuntimeClasspath {
+        exclude group: 'org.junit.jupiter'
+        exclude group: 'org.junit.platform'
+    }
+}
+
+// Ensure packaging excludes also apply to androidTest variant under AGP 8
+androidComponents {
+    onVariants(selector().withName('debugAndroidTest')) { variant ->
+        variant.packaging.resources.excludes.addAll([
+            'META-INF/LICENSE.md',
+            'META-INF/NOTICE.md',
+            'META-INF/AL2.0',
+            'META-INF/LGPL2.1',
+            'META-INF/LICENSE',
+            'META-INF/NOTICE',
+            'META-INF/DEPENDENCIES'
+        ])
+        variant.packaging.resources.pickFirsts.addAll([
+            'META-INF/LICENSE.md',
+            'META-INF/NOTICE.md'
+        ])
+    }
+}

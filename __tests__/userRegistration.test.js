@@ -2,6 +2,7 @@
  * Pruebas unitarias para el Registro de Usuario
  */
 
+// Nota: Evitamos hooks de React aquí para simplificar las pruebas unitarias.
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react-native';
 import '@testing-library/jest-native/extend-expect';
@@ -18,30 +19,39 @@ jest.mock('@react-navigation/native', () => ({
   }),
 }));
 
-// Componente simulado para pruebas
+// Componente simulado para pruebas (sin hooks de React)
 const RegisterScreen = () => {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  const [confirmPassword, setConfirmPassword] = React.useState('');
-  const [name, setName] = React.useState('');
-  const [error, setError] = React.useState('');
-  const [loading, setLoading] = React.useState(false);
+  const state = {
+    email: '',
+    password: '',
+    confirmPassword: '',
+    name: '',
+    error: '',
+    loading: false,
+  };
+
+  const setEmail = (v) => { state.email = v; };
+  const setPassword = (v) => { state.password = v; };
+  const setConfirmPassword = (v) => { state.confirmPassword = v; };
+  const setName = (v) => { state.name = v; };
+  const setError = (v) => { state.error = v; };
+  const setLoading = (v) => { state.loading = v; };
 
   const handleRegister = async () => {
-    if (!email || !password || !confirmPassword || !name) {
+    if (!state.email || !state.password || !state.confirmPassword || !state.name) {
       setError('Todos los campos son obligatorios');
-      return;
+      return false;
     }
 
-    if (password !== confirmPassword) {
+    if (state.password !== state.confirmPassword) {
       setError('Las contraseñas no coinciden');
-      return;
+      return false;
     }
 
     setLoading(true);
     try {
       const authService = require('../src/services/auth');
-      await authService.registerUser(email, password, name);
+      await authService.registerUser(state.email, state.password, state.name);
       setLoading(false);
       return true;
     } catch (err) {
@@ -51,7 +61,14 @@ const RegisterScreen = () => {
     }
   };
 
-  return { email, setEmail, password, setPassword, confirmPassword, setConfirmPassword, name, setName, error, loading, handleRegister };
+  const api = { setEmail, setPassword, setConfirmPassword, setName, handleRegister };
+  Object.defineProperty(api, 'email', { get: () => state.email });
+  Object.defineProperty(api, 'password', { get: () => state.password });
+  Object.defineProperty(api, 'confirmPassword', { get: () => state.confirmPassword });
+  Object.defineProperty(api, 'name', { get: () => state.name });
+  Object.defineProperty(api, 'error', { get: () => state.error });
+  Object.defineProperty(api, 'loading', { get: () => state.loading });
+  return api;
 };
 
 describe('Pruebas de Registro de Usuario', () => {

@@ -27,6 +27,17 @@ jest.mock('expo-device', () => ({
   osVersion: '1.0.0',
 }));
 
+// Mock para @react-native-community/netinfo
+jest.mock('@react-native-community/netinfo', () => ({
+  addEventListener: jest.fn(),
+  fetch: jest.fn().mockResolvedValue({
+    type: 'wifi',
+    isConnected: true,
+    isInternetReachable: true,
+    details: {},
+  }),
+}));
+
 // Mock para expo-notifications
 jest.mock('expo-notifications', () => ({
   setNotificationHandler: jest.fn(),
@@ -71,26 +82,55 @@ jest.mock('react-native', () => {
   return rn;
 });
 
+// Mock para react-native-reanimated (evita dependencias nativas en animaciones)
+jest.mock('react-native-reanimated', () => {
+  const Reanimated = require('react-native-reanimated/mock');
+  // Stubs encadenables para transiciones usadas en la app
+  const mkTransition = () => {
+    const api = {
+      duration: jest.fn(() => api),
+      delay: jest.fn(() => api),
+      springify: jest.fn(() => api),
+      withCallback: jest.fn(() => api),
+    };
+    return api;
+  };
+  return {
+    ...Reanimated,
+    FadeInDown: mkTransition(),
+    FadeInUp: mkTransition(),
+    ZoomIn: mkTransition(),
+  };
+});
+const Reanimated = require('react-native-reanimated');
+Reanimated.default.addWhitelistedUIProps({});
+
 // Mock para @react-navigation/native
 jest.mock('@react-navigation/native', () => {
+  const navigationSingleton = {
+    navigate: jest.fn(),
+    goBack: jest.fn(),
+    reset: jest.fn(),
+  };
   return {
-    useNavigation: jest.fn().mockReturnValue({
-      navigate: jest.fn(),
-      goBack: jest.fn(),
-    }),
-    useRoute: jest.fn().mockReturnValue({
-      params: {},
-    }),
+    useNavigation: jest.fn().mockImplementation(() => navigationSingleton),
+    useRoute: jest.fn().mockReturnValue({ params: {} }),
   };
 });
 
-// Mock para expo-constants
+// Mock para expo-constants (evita dependencias nativas y alinea con uso de expoConfig)
 jest.mock('expo-constants', () => ({
+  __esModule: true,
   default: {
-    manifest: {
+    expoConfig: {
       extra: {
         apiUrl: 'https://mock-api-url.com',
       },
+    },
+  },
+  expoConfig: {
+    extra: {
+      apiUrl: 'https://mock-api-url.com',
     },
   },
 }));
@@ -102,10 +142,83 @@ jest.mock('@react-native-async-storage/async-storage', () => ({
   removeItem: jest.fn(),
 }));
 
+// Mock para expo-secure-store (evita requireNativeModule en entorno de pruebas)
+jest.mock('expo-secure-store', () => ({
+  getItemAsync: jest.fn(async () => null),
+  setItemAsync: jest.fn(async () => {}),
+  deleteItemAsync: jest.fn(async () => {}),
+}));
+
+// Mock para react-native-view-shot (captura de vistas)
+jest.mock('react-native-view-shot', () => {
+  const React = require('react');
+  const View = ({ children }) => children || null;
+  const forwardRef = (component) => component;
+  const ViewShot = forwardRef(View);
+  ViewShot.capture = async () => '';
+  return {
+    __esModule: true,
+    default: ViewShot,
+  };
+});
+
+// Mock para expo-sharing
+jest.mock('expo-sharing', () => ({
+  __esModule: true,
+  isAvailableAsync: async () => true,
+  shareAsync: async () => {},
+}));
+
+// Mock para expo-file-system
+jest.mock('expo-file-system', () => ({
+  __esModule: true,
+  cacheDirectory: '/tmp/',
+  EncodingType: { Base64: 'base64' },
+  writeAsStringAsync: async () => {},
+}));
+
 // Configuración global para suprimir advertencias de console.error y console.warn durante las pruebas
+// Permitir logs reales durante pruebas para facilitar diagnóstico
 global.console = {
   ...console,
-  error: jest.fn(),
-  warn: jest.fn(),
-  log: jest.fn(),
+  error: console.error,
+  warn: console.warn,
+  log: console.log,
 };
+
+// Mock para @expo/vector-icons (evita dependencia de expo-font y EventEmitter)
+jest.mock('@expo/vector-icons', () => ({
+  Ionicons: () => null,
+}));
+
+// Mock para react-native-webview (evita renderizado real de WebView)
+jest.mock('react-native-webview', () => ({
+  WebView: () => null,
+}));
+
+// Mock para @react-native-picker/picker
+jest.mock('@react-native-picker/picker', () => {
+  const React = require('react');
+  const { View, Text } = require('react-native');
+  const Picker = ({ children, testID, onValueChange, selectedValue }) => (
+    React.createElement(View, { testID, onValueChange, selectedValue }, children)
+  );
+  Picker.Item = ({ label, value }) => (
+    React.createElement(Text, { accessibilityLabel: label, value }, label)
+  );
+  return { Picker };
+});
+
+// Mock básico para react-native-paper ActivityIndicator
+jest.mock('react-native-paper', () => {
+  const ActivityIndicator = () => null;
+  return { ActivityIndicator };
+});
+
+// Mock para expo-modules-core (evita referencias a EventEmitter y módulos nativos)
+jest.mock('expo-modules-core', () => ({
+  __esModule: true,
+  EventEmitter: class {},
+  NativeModulesProxy: {},
+  requireOptionalNativeModule: () => ({}),
+}));

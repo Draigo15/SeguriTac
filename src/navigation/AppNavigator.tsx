@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Platform } from 'react-native';
 import { logMetric } from '../utils/metrics';
+import Constants from 'expo-constants';
 
 // Importamos las transiciones personalizadas
 import {
@@ -66,7 +67,7 @@ const AppNavigator = () => {
       }}
     >
       <Stack.Navigator
-        initialRouteName="AuthLoading"
+        initialRouteName={Constants.expoConfig?.extra?.detoxE2E ? 'Login' : 'AuthLoading'}
         screenOptions={{
           headerStyle: {
             backgroundColor: '#002B7F',

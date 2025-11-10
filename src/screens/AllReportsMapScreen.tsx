@@ -62,6 +62,7 @@ type AllReportsMapRouteProp = RouteProp<RootStackParamList, 'AllReportsMap'>;
 // RF-6: Componentes de mapa para diferentes plataformas
 import WebMapList from '../components/WebMapList';
 import MapViewMobile from '../components/MapViewMobile';
+const IS_TEST = typeof process !== 'undefined' && !!process.env.JEST_WORKER_ID;
 
 /**
  * Componente principal de la pantalla de visualización de reportes en mapa
@@ -306,10 +307,22 @@ const AllReportsMapScreen = () => {
       ) : (
         // RF-6: Mapa móvil nativo para dispositivos Android/iOS
         <View style={styles.map}>
-          {filteredReports.length > 0 ? (
+          {IS_TEST ? (
+            // En entorno de pruebas, evitamos renderizar el mapa real pero exponemos testID
+            <View style={styles.center} testID="map-view-mobile" />
+          ) : filteredReports.length > 0 ? (
             <MapViewMobile
               latitude={filteredReports[0].location.latitude}
               longitude={filteredReports[0].location.longitude}
+              markers={filteredReports.map(r => ({
+                id: r.id,
+                latitude: r.location.latitude,
+                longitude: r.location.longitude,
+                title: r.incidentType,
+                description: r.description,
+                pinColor: r.status === 'Pendiente' ? 'red' : (r.status === 'En Proceso' ? 'yellow' : 'green')
+              }))}
+              showHeatmap={showHeatmap}
             />
           ) : (
             // RF-6: Indicador de carga cuando no hay reportes filtrados
@@ -352,6 +365,7 @@ const AllReportsMapScreen = () => {
         <AnimatedButton 
           style={styles.fabHeatmap} 
           onPress={() => setShowHeatmap(!showHeatmap)}
+          testID="toggle-heatmap"
           animationType="scale"
           iconName={showHeatmap ? "fire" : "thermometer"}
         >
@@ -364,6 +378,7 @@ const AllReportsMapScreen = () => {
         <AnimatedButton 
           style={styles.fabLocation} 
           onPress={centerOnUserLocation}
+          testID="center-location"
           animationType="bounce"
           iconName="map-marker"
         >

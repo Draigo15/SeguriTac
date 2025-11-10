@@ -102,10 +102,16 @@ const LoginMethodScreen = () => {
 
           await new Promise(resolve => setTimeout(resolve, 500)); // ✅ Delay para que se vea el Toast
 
-          if (userData.role === 'autoridad') {
-            navigation.reset({ index: 0, routes: [{ name: 'AuthorityDashboard' }] });
+          // Navegación condicionada por configuración MFA
+          const mfaEnabled = !!(userData?.settings?.mfaEnabled);
+          if (mfaEnabled) {
+            navigation.navigate('MFAEmailVerify', { email: user.email || '', role });
           } else {
-            navigation.reset({ index: 0, routes: [{ name: 'Home' }] });
+            if (userData.role === 'autoridad') {
+              navigation.reset({ index: 0, routes: [{ name: 'AuthorityDashboard' }] });
+            } else {
+              navigation.reset({ index: 0, routes: [{ name: 'Home' }] });
+            }
           }
         }
       }

@@ -238,7 +238,7 @@ const AuthorityDashboardScreen = () => {
 
   return (
     <AnimatedScreen animationType="fade" duration={500}>
-      <View style={styles.container}>
+      <View style={styles.container} testID="dashboard-authority">
         {/* Header */}
         <View style={styles.header}>
           <TouchableOpacity 

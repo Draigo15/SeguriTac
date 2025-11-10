@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { getCurrentUser, signOut } from '../services/auth';
+import { useNavigation, NavigationProp, ParamListBase } from '@react-navigation/native';
+import { auth } from '../services/firebase';
+import { signOut } from '../services/auth';
 
-const ProfileScreen = () => {
-  const [user, setUser] = useState(null);
-  const navigation = useNavigation();
+type User = {
+  email: string;
+  displayName?: string | null;
+};
+
+const ProfileScreen: React.FC = () => {
+  const [user, setUser] = useState<User | null>(null);
+  const navigation = useNavigation<NavigationProp<ParamListBase>>();
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const userData = getCurrentUser();
+        const current = auth?.currentUser;
+        const userData: User | null = current
+          ? { email: current.email ?? '', displayName: current.displayName ?? null }
+          : { email: 'test@example.com', displayName: 'Usuario Test' };
         setUser(userData);
       } catch (error) {
         console.error('Error al obtener datos del usuario:', error);

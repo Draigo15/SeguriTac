@@ -26,6 +26,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { RootStackParamList } from '../navigation/types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RouteProp } from '@react-navigation/native';
+import Constants from 'expo-constants';
 
 // Firebase - Autenticación y base de datos
 import { signInWithEmailAndPassword } from 'firebase/auth';
@@ -76,9 +77,10 @@ const LoginScreen = () => {
   // Hooks de navegación
   const navigation = useNavigation<LoginScreenNav>();
   const route = useRoute<LoginScreenRoute>();
+  const isDetoxE2E = !!Constants.expoConfig?.extra?.detoxE2E;
   
   // Obtener el rol desde los parámetros de navegación (por defecto: ciudadano)
-  const { role } = route.params ?? { role: 'ciudadano' };
+  const { role } = route.params ?? { role: isDetoxE2E ? 'autoridad' : 'ciudadano' };
 
   // Hook de formulario optimizado para autenticación
   const {
@@ -144,6 +146,24 @@ const LoginScreen = () => {
     setSubmitting(true);
 
     try {
+      // Bypass de login en modo Detox E2E para evitar dependencias externas
+      // Nota: bandera leída también en la cabecera del componente
+      if (isDetoxE2E) {
+        const fakeUser = { uid: 'e2e-user', email: values.email || 'autoridad@ciudad.com' } as any;
+        const userRole = 'autoridad';
+        await secureStorage.setItem('user', JSON.stringify({ ...fakeUser, role: userRole }));
+
+        Toast.show({
+          type: 'success',
+          text1: 'Inicio de sesión (E2E)',
+          text2: `Bienvenido, ${userRole}`,
+        });
+
+        await new Promise(resolve => setTimeout(resolve, 300));
+        navigation.navigate('AuthorityDashboard');
+        return;
+      }
+
       // Paso 1: Autenticación con Firebase Auth
       const userCredential = await signInWithEmailAndPassword(auth, values.email, values.password);
       const user = userCredential.user;
@@ -224,8 +244,17 @@ const LoginScreen = () => {
       // Esperar para que el Toast sea visible antes de navegar
       await new Promise(resolve => setTimeout(resolve, 500));
 
-      // Paso 6: Requiere verificación OTP por email antes de continuar
-      navigation.navigate('MFAEmailVerify', { email: user.email || '', role: userData.role });
+      // Paso 6: Navegación condicionada por configuración MFA
+      const mfaEnabled = !!(userData?.settings?.mfaEnabled);
+      if (mfaEnabled) {
+        navigation.navigate('MFAEmailVerify', { email: user.email || '', role: userData.role });
+      } else {
+        if (userData.role === 'autoridad') {
+          navigation.navigate('AuthorityDashboard');
+        } else {
+          navigation.navigate('Home');
+        }
+      }
 
     } catch (error: any) {
       // Manejo de errores específicos de Firebase Auth y Firestore
@@ -315,6 +344,7 @@ const LoginScreen = () => {
           label="Correo electrónico"
           {...getFieldProps('email')}
           mode="outlined"
+          testID="login-email"
           keyboardType="email-address" // Teclado optimizado para emails
           autoCapitalize="none" // Evitar capitalización automática
           left={<TextInput.Icon icon="email-outline" />}
@@ -341,6 +371,7 @@ const LoginScreen = () => {
           {...getFieldProps('password')}
           secureTextEntry={secure} // Controla la visibilidad de la contraseña
           mode="outlined"
+          testID="login-password"
           style={commonInputs.loginInput}
           left={<TextInput.Icon icon="lock-outline" />}
           right={
@@ -376,6 +407,7 @@ const LoginScreen = () => {
             style={commonButtons.loginButton}
             contentStyle={{ paddingVertical: 8 }}
             labelStyle={commonButtons.buttonText}
+            testID="login-submit"
           >
             Iniciar Sesión
           </Button>

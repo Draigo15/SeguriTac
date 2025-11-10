@@ -37,6 +37,7 @@ interface SettingsData {
   locationSharing: boolean;
   emergencyAlerts: boolean;
   dataCollection: boolean;
+  mfaEnabled: boolean;
 }
 
 const SettingsScreen = () => {
@@ -46,6 +47,7 @@ const SettingsScreen = () => {
     locationSharing: true,
     emergencyAlerts: true,
     dataCollection: false,
+    mfaEnabled: false,
   });
   const [loading, setLoading] = useState(false);
 
@@ -65,7 +67,8 @@ const SettingsScreen = () => {
       if (docSnap.exists()) {
         const userData = docSnap.data();
         if (userData.settings) {
-          setSettings(userData.settings);
+          // Mezclar con valores por defecto para evitar undefined en nuevas claves
+          setSettings(prev => ({ ...prev, ...userData.settings }));
         }
       }
 
@@ -282,6 +285,21 @@ const SettingsScreen = () => {
         {/* Privacidad */}
         <SectionHeader title="Privacidad y Seguridad" delay={300} />
         
+        <SettingItem
+          title="Verificación en dos pasos"
+          subtitle="Solicitar código al iniciar sesión"
+          icon="shield-key-outline"
+          delay={325}
+          rightComponent={
+            <Switch
+              value={settings.mfaEnabled}
+              onValueChange={(value) => updateSetting('mfaEnabled', value)}
+              trackColor={{ false: colors.gray300, true: colors.primary }}
+              thumbColor={settings.mfaEnabled ? colors.white : colors.gray500}
+            />
+          }
+        />
+
         <SettingItem
           title="Compartir Ubicación"
           subtitle="Permitir compartir ubicación en reportes"

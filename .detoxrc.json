@@ -1,0 +1,22 @@
+{
+  "apps": {
+    "android.debug": {
+      "type": "android.apk",
+      "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+      "testBinaryPath": "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "build": "cmd /C set DETOX_E2E=true && cd android && gradlew.bat assembleDebug assembleAndroidTest -DtestBuildType=debug"
+    }
+  },
+  "devices": {
+    "emulator.pixel4": {
+      "type": "android.emulator",
+      "device": { "avdName": "Pixel_4" }
+    }
+  },
+  "configurations": {
+    "android.emu.debug": {
+      "device": "emulator.pixel4",
+      "app": "android.debug"
+    }
+  }
+}

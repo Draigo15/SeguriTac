@@ -32,6 +32,7 @@ interface AnimatedButtonProps {
   animationType?: 'scale' | 'bounce' | 'highlight';
   children?: React.ReactNode;
   disableAndroidShadow?: boolean;
+  testID?: string;
 }
 
 /**
@@ -51,6 +52,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   animationType = 'scale',
   children,
    disableAndroidShadow = false, 
+  testID,
 }) => {
   // Valores compartidos para las animaciones
   const scale = useSharedValue(1);
@@ -119,6 +121,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
       onPressOut={handlePressOut}
       onPress={onPress}
       disabled={disabled}
+      testID={testID}
     >
       <Animated.View
         style={[

@@ -15,6 +15,8 @@ import Animated, { FadeIn, ZoomIn } from 'react-native-reanimated';
 import { auth, db } from '../services/firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import { secureStorage } from '../services/secureStorage';
+import { validateSession, getSessionToken } from '../services/authBackend';
+import { appConfig } from '../config/appConfig';
 import { User } from 'firebase/auth';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'AuthLoading'>;
@@ -23,12 +25,31 @@ const AuthLoadingScreen = () => {
   const navigation = useNavigation<NavigationProp>();
 
   useEffect(() => {
+    // Primero validar sesión de backend si existe token
+    (async () => {
+      try {
+        const token = await getSessionToken();
+        if (token) {
+          const status = await validateSession();
+          if (!status.valid) {
+            // Limpiar token inválido para evitar estados inconsistentes
+            await secureStorage.removeItem(appConfig.storage.keys.userToken);
+          }
+        }
+      } catch (e) {
+        // No bloquear carga por errores de red
+      }
+    })();
+
     const unsubscribe = auth.onAuthStateChanged(async (user: User | null) => {
       if (user) {
         try {
           const userDoc = await getDoc(doc(db, 'users', user.uid));
           const storedUser = await secureStorage.getItem('user');
           const storedRole = storedUser ? JSON.parse(storedUser).role : null;
+
+          // Si hay token backend válido, la redirección será inmediata tras validar rol
+          const backendStatus = await validateSession().catch(() => ({ valid: false }));
 
           if (userDoc.exists()) {
             const role = userDoc.data().role;
@@ -42,7 +63,19 @@ const AuthLoadingScreen = () => {
               return;
             }
 
-            // ✅ Redirección segura
+            // ✅ Redirección segura (si sesión backend válida, priorizar acceso)
+            if (backendStatus.valid) {
+              if (role === 'ciudadano') {
+                navigation.reset({ index: 0, routes: [{ name: 'Home' }] });
+              } else if (role === 'autoridad') {
+                navigation.reset({ index: 0, routes: [{ name: 'AuthorityDashboard' }] });
+              } else {
+                navigation.reset({ index: 0, routes: [{ name: 'RoleSelector' }] });
+              }
+              return;
+            }
+
+            // Si la sesión backend no es válida, continuar flujo normal
             if (role === 'ciudadano') {
               navigation.reset({ index: 0, routes: [{ name: 'Home' }] });
             } else if (role === 'autoridad') {

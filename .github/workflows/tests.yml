@@ -1,0 +1,32 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        working-directory: SeguridadCiudadanaApp
+        run: npm ci
+
+      - name: Run Jest in CI and save JSON
+        working-directory: SeguridadCiudadanaApp
+        run: npm run test:ci
+
+      - name: Upload Jest results artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jest-results
+          path: SeguridadCiudadanaApp/jest-results.run.json

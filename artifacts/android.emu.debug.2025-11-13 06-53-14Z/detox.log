@@ -1,0 +1,1087 @@
+01:53:14.624 detox[19896] [90mB[39m [33mlifecycle[39m node_modules\detox\local-cli\cli.js test --configuration android.emu.debug --config e2e/jest.config.js --record-logs all --record-videos all --take-screenshots all -l trace
+  data: {
+    "id": "2b227ada-7df4-8687-8fa3-73ed3fe1245b",
+    "detoxConfig": {
+      "configurationName": "android.emu.debug",
+      "apps": {
+        "default": {
+          "type": "android.apk",
+          "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+          "testBinaryPath": "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+          "build": "cmd /C D:\\SeguridadAPP\\SeguridadCiudadanaApp\\android\\gradlew.bat -p D:\\SeguridadAPP\\SeguridadCiudadanaApp\\android assembleDebug assembleAndroidTest -DtestBuildType=debug"
+        }
+      },
+      "artifacts": {
+        "rootDir": "artifacts\\android.emu.debug.2025-11-13 06-53-14Z",
+        "plugins": {
+          "log": {
+            "enabled": true,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "screenshot": {
+            "enabled": true,
+            "shouldTakeAutomaticSnapshots": true,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "video": {
+            "enabled": true,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "instruments": {
+            "enabled": false,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "uiHierarchy": {
+            "enabled": false,
+            "keepOnlyFailedTestsArtifacts": false
+          }
+        },
+        "pathBuilder": {
+          "rootDir": "artifacts"
+        }
+      },
+      "behavior": {
+        "init": {
+          "keepLockFile": false,
+          "reinstallApp": true,
+          "exposeGlobals": true
+        },
+        "cleanup": {
+          "shutdownDevice": false
+        },
+        "launchApp": "auto"
+      },
+      "cli": {
+        "recordLogs": "all",
+        "takeScreenshots": "all",
+        "recordVideos": "all",
+        "configuration": "android.emu.debug",
+        "loglevel": "trace",
+        "start": true
+      },
+      "commands": [
+        {
+          "appName": "default",
+          "build": "cmd /C D:\\SeguridadAPP\\SeguridadCiudadanaApp\\android\\gradlew.bat -p D:\\SeguridadAPP\\SeguridadCiudadanaApp\\android assembleDebug assembleAndroidTest -DtestBuildType=debug"
+        }
+      ],
+      "device": {
+        "type": "android.emulator",
+        "device": {
+          "avdName": "Pixel_6_API34"
+        }
+      },
+      "logger": {
+        "level": "trace",
+        "overrideConsole": true,
+        "options": {
+          "showLoggerName": true,
+          "showPid": true,
+          "showLevel": false,
+          "showMetadata": false,
+          "basepath": "D:\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\detox\\src",
+          "prefixers": {},
+          "stringifiers": {}
+        }
+      },
+      "testRunner": {
+        "retries": 0,
+        "forwardEnv": true,
+        "detached": false,
+        "bail": false,
+        "noRetryArgs": [
+          "shard"
+        ],
+        "jest": {
+          "setupTimeout": 300000,
+          "teardownTimeout": 30000,
+          "retryAfterCircusRetries": false,
+          "reportWorkerAssign": true
+        },
+        "args": {
+          "$0": "jest",
+          "_": [],
+          "config": "e2e/jest.config.js",
+          "--": []
+        }
+      },
+      "session": {
+        "autoStart": true,
+        "debugSynchronization": 10000
+      }
+    },
+    "detoxIPCServer": "primary-19896",
+    "testResults": [],
+    "testSessionIndex": 0,
+    "workersCount": 0
+  }
+01:53:14.648 detox[19896] [90mi[39m [33mipc[39m Server path not specified, so defaulting to ipc.config.socketRoot + ipc.config.appspace + ipc.config.id /tmp/detox.primary-19896
+01:53:14.651 detox[19896] [90mi[39m [33mipc[39m starting server on  /tmp/detox.primary-19896 
+01:53:14.651 detox[19896] [90mi[39m [33mipc[39m starting TLS server false
+01:53:14.651 detox[19896] [90mi[39m [33mipc[39m starting server as Unix || Windows Socket
+01:53:14.655 detox[19896] [90mi[39m [33mws-server[39m Detox server listening on localhost:59377...
+01:53:14.661 detox[19896] [90mi[39m [33mlifecycle[39m Serialized the session state at: C:\Users\carus\AppData\Local\Temp\2b227ada-7df4-8687-8fa3-73ed3fe1245b.detox.json
+01:53:14.663 detox[19896] [90mB[39m [33mlifecycle[39m DETOX_CONFIGURATION="android.emu.debug" DETOX_LOGLEVEL="trace" DETOX_RECORD_LOGS="all" DETOX_RECORD_VIDEOS="all" DETOX_TAKE_SCREENSHOTS="all" jest --config e2e/jest.config.js
+01:53:15.765 detox[9912] [90mB[39m [33mlifecycle[39m e2e\smoke.e2e.js
+01:53:15.802 detox[9912] [90mB[39m [33mlifecycle[39m set up environment
+01:53:15.825 detox[9912] [90mi[39m [33mipc[39m Service path not specified, so defaulting to ipc.config.socketRoot + ipc.config.appspace + id 
+01:53:15.825 detox[9912] [90mi[39m [33mipc[39m requested connection to  primary-19896 /tmp/detox.primary-19896
+01:53:15.826 detox[9912] [90mi[39m [33mipc[39m Connecting client on Unix Socket : /tmp/detox.primary-19896
+01:53:15.827 detox[19896] [90mi[39m [33mipc[39m ## socket connection to server detected ##
+01:53:15.828 detox[9912] [90mi[39m [33mipc[39m retrying reset
+01:53:15.830 detox[9912] [90mi[39m [33mipc[39m dispatching event to  primary-19896 /tmp/detox.primary-19896  :  registerContext , { id: 'secondary-9912' }
+01:53:15.832 detox[19896] [90mi[39m [33mipc[39m received event of :  registerContext { id: 'secondary-9912' }
+01:53:15.832 detox[19896] [90mi[39m [33mipc[39m dispatching event to socket  :  registerContextDone {
+  testResults: [],
+  testSessionIndex: 0,
+  unsafe_earlyTeardown: undefined
+}
+01:53:15.834 detox[9912] [90mi[39m [33mipc[39m ## received events ##
+01:53:15.834 detox[9912] [90mi[39m [33mipc[39m detected event registerContextDone { testResults: [], testSessionIndex: 0 }
+01:53:15.835 detox[19896] [90mi[39m [33mipc[39m received event of :  registerWorker { workerId: 'w1' }
+01:53:15.835 detox[9912] [90mi[39m [33mipc[39m dispatching event to  primary-19896 /tmp/detox.primary-19896  :  registerWorker , { workerId: 'w1' }
+01:53:15.836 detox[19896] [90mi[39m [33mipc[39m dispatching event to socket  :  registerWorkerDone { workersCount: 1 }
+01:53:15.836 detox[19896] [90mi[39m [33mipc[39m broadcasting event to all known sockets listening to  \\.\pipe\tmp-detox.primary-19896  :   sessionStateUpdate { workersCount: 1 }
+01:53:15.836 detox[9912] [90mi[39m [33mipc[39m ## received events ##
+01:53:15.837 detox[9912] [90mi[39m [33mipc[39m detected event registerWorkerDone { workersCount: 1 }
+01:53:16.314 detox[9912] [90mi[39m [33mipc[39m ## received events ##
+01:53:16.315 detox[9912] [90mi[39m [33mipc[39m detected event sessionStateUpdate { workersCount: 1 }
+01:53:16.318 detox[19896] [90mB[39m [33mws-server[39m[33m@59378[39m connection :59377<->:59378
+01:53:16.320 detox[9912] [90mi[39m [33mws-client[39m opened web socket to: ws://localhost:59377
+01:53:16.323 detox[9912] [90mi[39m [33mws-client[39m send message
+  data: {"type":"login","params":{"sessionId":"0f925b8e-6789-b2f1-ee3a-68520aca44aa","role":"tester"},"messageId":0}
+01:53:16.324 detox[19896] [90mi[39m [33mws-server[39m[33m@59378[39m get
+  data: {"type":"login","params":{"sessionId":"0f925b8e-6789-b2f1-ee3a-68520aca44aa","role":"tester"},"messageId":0}
+01:53:16.324 detox[19896] [90mi[39m [33mws-server[39m created session 0f925b8e-6789-b2f1-ee3a-68520aca44aa
+01:53:16.325 detox[19896] [90mi[39m [33mws-server[39m[33m@59378[39m send
+  data: {
+    "type": "loginSuccess",
+    "params": {
+      "testerConnected": true,
+      "appConnected": false
+    },
+    "messageId": 0
+  }
+01:53:16.326 detox[19896] [90mi[39m [33mws-server[39m tester joined session 0f925b8e-6789-b2f1-ee3a-68520aca44aa
+01:53:16.327 detox[9912] [90mi[39m [33mws-client[39m get message
+  data: {"type":"loginSuccess","params":{"testerConnected":true,"appConnected":false},"messageId":0}
+   
+01:53:16.404 detox[9912] [90mi[39m [33mipc[39m dispatching event to  primary-19896 /tmp/detox.primary-19896  :  allocateDevice , {
+  deviceConfig: { type: 'android.emulator', device: { avdName: 'Pixel_6_API34' } }
+}
+01:53:16.405 detox[19896] [90mi[39m [33mipc[39m received event of :  allocateDevice {
+  deviceConfig: { type: 'android.emulator', device: { avdName: 'Pixel_6_API34' } }
+}
+01:53:16.464 detox[19896] [90mB[39m [33mdevice[39m init
+  args: ()
+01:53:16.469 detox[19896] [90mE[39m [33mdevice[39m init
+01:53:16.469 detox[19896] [90mB[39m [33mdevice[39m[33m@0[39m allocate
+  data: {
+    "type": "android.emulator",
+    "device": {
+      "avdName": "Pixel_6_API34"
+    }
+  }
+01:53:16.693 detox[19896] [90mi[39m [33mdevice[39m Detected emulator binary version { major: 36, minor: 2, patch: 12, toString: [Function: toString] }
+01:53:16.785 detox[19896] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE"  devices
+01:53:16.838 detox[19896] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m List of devices attached
+emulator-10656	device
+
+
+01:53:16.840 detox[19896] [90mi[39m [33mdevice[39m[90m:TELNET_CONNECTING[39m port: 10656, host: localhost
+01:53:16.850 detox[19896] [90mi[39m [33mdevice[39m[90m:DEVICE_LOOKUP[39m Found a matching & free device emulator-10656
+01:53:16.852 detox[19896] [90mi[39m [33mdevice[39m settled on emulator-10656 (Pixel_6_API34)
+  data: {
+    "id": "emulator-10656",
+    "adbName": "emulator-10656",
+    "name": "emulator-10656 (Pixel_6_API34)"
+  }
+01:53:16.852 detox[19896] [90mE[39m [33mdevice[39m[33m@0[39m allocate
+01:53:16.853 detox[19896] [90mB[39m [33mdevice[39m[33m@0[39m post-allocate: emulator-10656
+  data: {
+    "id": "emulator-10656",
+    "adbName": "emulator-10656",
+    "name": "emulator-10656 (Pixel_6_API34)"
+  }
+01:53:16.853 detox[19896] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "getprop dev.bootcomplete"
+01:53:16.895 detox[19896] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 1
+
+01:53:16.896 detox[19896] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "getprop ro.build.version.sdk"
+01:53:16.937 detox[19896] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 34
+
+01:53:16.937 detox[19896] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "settings put global animator_duration_scale 0"
+01:53:16.983 detox[19896] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 
+01:53:16.983 detox[19896] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "settings put global window_animation_scale 0"
+01:53:17.028 detox[19896] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 
+01:53:17.028 detox[19896] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "settings put global transition_animation_scale 0"
+01:53:17.074 detox[19896] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 
+01:53:17.075 detox[19896] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "dumpsys power | grep \"^[ ]*m[UW].*=\""
+01:53:17.159 detox[19896] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m   mWakefulness=Awake
+  mWakefulnessChanging=false
+  mWakeLockSummary=0x0
+  mWakeUpWhenPluggedOrUnpluggedConfig=false
+  mWakeUpWhenPluggedOrUnpluggedInTheaterModeConfig=false
+  mDreamsBatteryLevelMinimumWhenPoweredConfig=-1
+  mDreamsBatteryLevelMinimumWhenNotPoweredConfig=15
+  mScreenBrightnessOverrideFromWindowManager=NaN
+  mUserActivityTimeoutOverrideFromWindowManager=-1
+  mUserInactiveOverrideFromWindowManager=false
+  mUserId=0
+  mWakeLockSummary=0x0
+  mUserInteractionBackoffMillis=60000
+
+01:53:17.159 detox[19896] [90mE[39m [33mdevice[39m[33m@0[39m post-allocate: emulator-10656
+01:53:17.159 detox[19896] [90mi[39m [33mipc[39m dispatching event to socket  :  allocateDeviceDone {
+  deviceCookie: {
+    id: 'emulator-10656',
+    adbName: 'emulator-10656',
+    name: 'emulator-10656 (Pixel_6_API34)'
+  }
+}
+01:53:17.160 detox[9912] [90mi[39m [33mipc[39m ## received events ##
+01:53:17.161 detox[9912] [90mi[39m [33mipc[39m detected event allocateDeviceDone {
+  deviceCookie: {
+    id: 'emulator-10656',
+    adbName: 'emulator-10656',
+    name: 'emulator-10656 (Pixel_6_API34)'
+  }
+}
+01:53:17.213 detox[9912] [90mB[39m [33martifacts-manager[39m onBootDevice
+  args: ({"deviceId":"emulator-10656"})
+01:53:17.215 detox[9912] [90mE[39m [33martifacts-manager[39m onBootDevice
+01:53:17.215 detox[9912] [90mB[39m [33mdevice[39m installUtilBinaries
+  args: ()
+01:53:17.216 detox[9912] [90mE[39m [33mdevice[39m installUtilBinaries
+01:53:17.216 detox[9912] [90mB[39m [33mdevice[39m selectApp
+  args: ("default")
+01:53:17.221 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\build-tools\36.1.0-rc1\aapt.EXE" dump badging "D:\SeguridadAPP\SeguridadCiudadanaApp\android\app\build\outputs\apk\debug\app-debug.apk"
+01:53:17.257 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m package: name='com.tuapp.seguritacapp' versionCode='1' versionName='1.0.0' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'
+sdkVersion:'26'
+targetSdkVersion:'34'
+uses-permission: name='android.permission.SYSTEM_ALERT_WINDOW'
+uses-permission: name='android.permission.ACCESS_COARSE_LOCATION'
+uses-permission: name='android.permission.ACCESS_FINE_LOCATION'
+uses-permission: name='android.permission.CAMERA'
+uses-permission: name='android.permission.INTERNET'
+uses-permission: name='android.permission.READ_EXTERNAL_STORAGE'
+uses-permission: name='android.permission.RECORD_AUDIO'
+uses-permission: name='android.permission.VIBRATE'
+uses-permission: name='android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission: name='android.permission.ACCESS_NETWORK_STATE'
+uses-permission: name='android.permission.ACCESS_WIFI_STATE'
+uses-permission: name='android.permission.READ_MEDIA_IMAGES'
+uses-permission: name='android.permission.READ_MEDIA_VIDEO'
+uses-permission: name='android.permission.READ_MEDIA_AUDIO'
+uses-permission: name='android.permission.READ_MEDIA_VISUAL_USER_SELECTED'
+uses-permission: name='android.permission.RECEIVE_BOOT_COMPLETED'
+uses-permission: name='android.permission.POST_NOTIFICATIONS'
+uses-permission: name='android.permission.USE_BIOMETRIC'
+uses-permission: name='android.permission.USE_FINGERPRINT'
+uses-permission: name='android.permission.WAKE_LOCK'
+uses-permission: name='com.google.android.c2dm.permission.RECEIVE'
+uses-permission: name='android.permission.FOREGROUND_SERVICE'
+uses-permission: name='com.tuapp.seguritacapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'
+uses-permission: name='com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE'
+uses-permission: name='com.google.android.providers.gsf.permission.READ_GSERVICES'
+uses-permission: name='com.google.android.gms.permission.ACTIVITY_RECOGNITION'
+uses-permission: name='com.sec.android.provider.badge.permission.READ'
+uses-permission: name='com.sec.android.provider.badge.permission.WRITE'
+uses-permission: name='com.htc.launcher.permission.READ_SETTINGS'
+uses-permission: name='com.htc.launcher.permission.UPDATE_SHORTCUT'
+uses-permission: name='com.sonyericsson.home.permission.BROADCAST_BADGE'
+uses-permission: name='com.sonymobile.home.permission.PROVIDER_INSERT_BADGE'
+uses-permission: name='com.anddoes.launcher.permission.UPDATE_COUNT'
+uses-permission: name='com.majeur.launcher.permission.UPDATE_BADGE'
+uses-permission: name='com.huawei.android.launcher.permission.CHANGE_BADGE'
+uses-permission: name='com.huawei.android.launcher.permission.READ_SETTINGS'
+uses-permission: name='com.huawei.android.launcher.permission.WRITE_SETTINGS'
+uses-permission: name='android.permission.READ_APP_BADGE'
+uses-permission: name='com.oppo.launcher.permission.READ_SETTINGS'
+uses-permission: name='com.oppo.launcher.permission.WRITE_SETTINGS'
+uses-permission: name='me.everything.badger.permission.BADGE_COUNT_READ'
+uses-permission: name='me.everything.badger.permission.BADGE_COUNT_WRITE'
+application-label:'SeguridadCiudadanaApp'
+application-label-af:'SeguridadCiudadanaApp'
+application-label-am:'SeguridadCiudadanaApp'
+application-label-ar:'SeguridadCiudadanaApp'
+application-label-as:'SeguridadCiudadanaApp'
+application-label-az:'SeguridadCiudadanaApp'
+application-label-be:'SeguridadCiudadanaApp'
+application-label-bg:'SeguridadCiudadanaApp'
+application-label-bn:'SeguridadCiudadanaApp'
+application-label-bs:'SeguridadCiudadanaApp'
+application-label-ca:'SeguridadCiudadanaApp'
+application-label-cs:'SeguridadCiudadanaApp'
+application-label-da:'SeguridadCiudadanaApp'
+application-label-de:'SeguridadCiudadanaApp'
+application-label-el:'SeguridadCiudadanaApp'
+application-label-en-AU:'SeguridadCiudadanaApp'
+application-label-en-CA:'SeguridadCiudadanaApp'
+application-label-en-GB:'SeguridadCiudadanaApp'
+application-label-en-IN:'SeguridadCiudadanaApp'
+application-label-en-XC:'SeguridadCiudadanaApp'
+application-label-es:'SeguridadCiudadanaApp'
+application-label-es-419:'SeguridadCiudadanaApp'
+application-label-es-ES:'SeguridadCiudadanaApp'
+application-label-es-GT:'SeguridadCiudadanaApp'
+application-label-es-US:'SeguridadCiudadanaApp'
+application-label-et:'SeguridadCiudadanaApp'
+application-label-eu:'SeguridadCiudadanaApp'
+application-label-fa:'SeguridadCiudadanaApp'
+application-label-fi:'SeguridadCiudadanaApp'
+application-label-fr:'SeguridadCiudadanaApp'
+application-label-fr-CA:'SeguridadCiudadanaApp'
+application-label-gl:'SeguridadCiudadanaApp'
+application-label-gu:'SeguridadCiudadanaApp'
+application-label-he:'SeguridadCiudadanaApp'
+application-label-hi:'SeguridadCiudadanaApp'
+application-label-hr:'SeguridadCiudadanaApp'
+application-label-hu:'SeguridadCiudadanaApp'
+application-label-hy:'SeguridadCiudadanaApp'
+application-label-id:'SeguridadCiudadanaApp'
+application-label-in:'SeguridadCiudadanaApp'
+application-label-is:'SeguridadCiudadanaApp'
+application-label-it:'SeguridadCiudadanaApp'
+application-label-iw:'SeguridadCiudadanaApp'
+application-label-ja:'SeguridadCiudadanaApp'
+application-label-ka:'SeguridadCiudadanaApp'
+application-label-kk:'SeguridadCiudadanaApp'
+application-label-km:'SeguridadCiudadanaApp'
+application-label-kn:'SeguridadCiudadanaApp'
+application-label-ko:'SeguridadCiudadanaApp'
+application-label-ky:'SeguridadCiudadanaApp'
+application-label-lo:'SeguridadCiudadanaApp'
+application-label-lt:'SeguridadCiudadanaApp'
+application-label-lv:'SeguridadCiudadanaApp'
+application-label-mk:'SeguridadCiudadanaApp'
+application-label-ml:'SeguridadCiudadanaApp'
+application-label-mn:'SeguridadCiudadanaApp'
+application-label-mr:'SeguridadCiudadanaApp'
+application-label-ms:'SeguridadCiudadanaApp'
+application-label-my:'SeguridadCiudadanaApp'
+application-label-nb:'SeguridadCiudadanaApp'
+application-label-ne:'SeguridadCiudadanaApp'
+application-label-nl:'SeguridadCiudadanaApp'
+application-label-or:'SeguridadCiudadanaApp'
+application-label-pa:'SeguridadCiudadanaApp'
+application-label-pl:'SeguridadCiudadanaApp'
+application-label-pt:'SeguridadCiudadanaApp'
+application-label-pt-BR:'SeguridadCiudadanaApp'
+application-label-pt-PT:'SeguridadCiudadanaApp'
+application-label-ro:'SeguridadCiudadanaApp'
+application-label-ru:'SeguridadCiudadanaApp'
+application-label-ru-RU:'SeguridadCiudadanaApp'
+application-label-si:'SeguridadCiudadanaApp'
+application-label-sk:'SeguridadCiudadanaApp'
+application-label-sl:'SeguridadCiudadanaApp'
+application-label-sq:'SeguridadCiudadanaApp'
+application-label-sr:'SeguridadCiudadanaApp'
+application-label-sr-Latn:'SeguridadCiudadanaApp'
+application-label-sv:'SeguridadCiudadanaApp'
+application-label-sw:'SeguridadCiudadanaApp'
+application-label-ta:'SeguridadCiudadanaApp'
+application-label-te:'SeguridadCiudadanaApp'
+application-label-th:'SeguridadCiudadanaApp'
+application-label-tl:'SeguridadCiudadanaApp'
+application-label-tr:'SeguridadCiudadanaApp'
+application-label-uk:'SeguridadCiudadanaApp'
+application-label-ur:'SeguridadCiudadanaApp'
+application-label-uz:'SeguridadCiudadanaApp'
+application-label-vi:'SeguridadCiudadanaApp'
+application-label-zh:'SeguridadCiudadanaApp'
+application-label-zh-CN:'SeguridadCiudadanaApp'
+application-label-zh-HK:'SeguridadCiudadanaApp'
+application-label-zh-TW:'SeguridadCiudadanaApp'
+application-label-zu:'SeguridadCiudadanaApp'
+application-icon-120:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-160:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-240:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-320:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-480:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-640:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-65534:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application: label='SeguridadCiudadanaApp' icon='res/mipmap-anydpi-v26/ic_launcher.xml'
+application-debuggable
+launchable-activity: name='com.tuapp.seguritacapp.MainActivity'  label='' icon=''
+uses-library-not-required:'org.apache.http.legacy'
+uses-library-not-required:'androidx.camera.extensions.impl'
+feature-group: label=''
+  uses-gl-es: '0x20000'
+  uses-feature: name='android.hardware.camera'
+  uses-implied-feature: name='android.hardware.camera' reason='requested android.permission.CAMERA permission'
+  uses-feature: name='android.hardware.faketouch'
+  uses-implied-feature: name='android.hardware.faketouch' reason='default feature for all apps'
+  uses-feature: name='android.hardware.location'
+  uses-implied-feature: name='android.hardware.location' reason='requested android.permission.ACCESS_COARSE_LOCATION permission, and requested android.permission.ACCESS_FINE_LOCATION permission'
+  uses-feature: name='android.hardware.microphone'
+  uses-implied-feature: name='android.hardware.microphone' reason='requested android.permission.RECORD_AUDIO permission'
+  uses-feature: name='android.hardware.screen.portrait'
+  uses-implied-feature: name='android.hardware.screen.portrait' reason='one or more activities have specified a portrait orientation'
+  uses-feature: name='android.hardware.wifi'
+  uses-implied-feature: name='android.hardware.wifi' reason='requested android.permission.ACCESS_WIFI_STATE permission'
+main
+other-activities
+other-receivers
+other-services
+supports-screens: 'small' 'normal' 'large' 'xlarge'
+supports-any-density: 'true'
+locales: '--_--' 'af' 'am' 'ar' 'as' 'az' 'be' 'bg' 'bn' 'bs' 'ca' 'cs' 'da' 'de' 'el' 'en-AU' 'en-CA' 'en-GB' 'en-IN' 'en-XC' 'es' 'es-419' 'es-ES' 'es-GT' 'es-US' 'et' 'eu' 'fa' 'fi' 'fr' 'fr-CA' 'gl' 'gu' 'he' 'hi' 'hr' 'hu' 'hy' 'id' 'in' 'is' 'it' 'iw' 'ja' 'ka' 'kk' 'km' 'kn' 'ko' 'ky' 'lo' 'lt' 'lv' 'mk' 'ml' 'mn' 'mr' 'ms' 'my' 'nb' 'ne' 'nl' 'or' 'pa' 'pl' 'pt' 'pt-BR' 'pt-PT' 'ro' 'ru' 'ru-RU' 'si' 'sk' 'sl' 'sq' 'sr' 'sr-Latn' 'sv' 'sw' 'ta' 'te' 'th' 'tl' 'tr' 'uk' 'ur' 'uz' 'vi' 'zh' 'zh-CN' 'zh-HK' 'zh-TW' 'zu'
+densities: '120' '160' '240' '320' '480' '640' '65534'
+native-code: 'arm64-v8a' 'armeabi-v7a' 'x86' 'x86_64'
+
+01:53:17.259 detox[9912] [90mE[39m [33mdevice[39m selectApp
+01:53:17.260 detox[9912] [90mB[39m [33mdevice[39m uninstallApp
+  args: ()
+01:53:17.260 detox[9912] [90mB[39m [33martifacts-manager[39m onBeforeUninstallApp
+  args: ({"deviceId":"emulator-10656","bundleId":"com.tuapp.seguritacapp"})
+01:53:17.261 detox[9912] [90mE[39m [33martifacts-manager[39m onBeforeUninstallApp
+01:53:17.261 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "pm list packages com.tuapp.seguritacapp"
+01:53:17.307 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m package:com.tuapp.seguritacapp
+package:com.tuapp.seguritacapp.test
+
+01:53:17.308 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 uninstall com.tuapp.seguritacapp
+01:53:17.486 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m Success
+
+01:53:17.487 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "pm list packages com.tuapp.seguritacapp.test"
+01:53:17.561 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m package:com.tuapp.seguritacapp.test
+
+01:53:17.562 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 uninstall com.tuapp.seguritacapp.test
+01:53:17.694 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m Success
+
+01:53:17.695 detox[9912] [90mE[39m [33mdevice[39m uninstallApp
+01:53:17.695 detox[9912] [90mB[39m [33mdevice[39m selectApp
+  args: ("default")
+01:53:17.697 detox[9912] [90mB[39m [33mdevice[39m terminateApp
+  args: ()
+01:53:17.697 detox[9912] [90mB[39m [33martifacts-manager[39m onBeforeTerminateApp
+  args: ({"deviceId":"emulator-10656","bundleId":"com.tuapp.seguritacapp"})
+01:53:17.698 detox[9912] [90mE[39m [33martifacts-manager[39m onBeforeTerminateApp
+01:53:17.698 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "am force-stop com.tuapp.seguritacapp"
+01:53:17.769 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 
+01:53:17.769 detox[9912] [90mB[39m [33martifacts-manager[39m onTerminateApp
+  args: ({"deviceId":"emulator-10656","bundleId":"com.tuapp.seguritacapp"})
+01:53:17.770 detox[9912] [90mE[39m [33martifacts-manager[39m onTerminateApp
+01:53:17.770 detox[9912] [90mE[39m [33mdevice[39m terminateApp
+01:53:17.770 detox[9912] [90mE[39m [33mdevice[39m selectApp
+01:53:17.771 detox[9912] [90mB[39m [33mdevice[39m installApp
+  args: ()
+01:53:17.772 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\build-tools\36.1.0-rc1\aapt.EXE" dump xmlstrings "D:\SeguridadAPP\SeguridadCiudadanaApp\android\app\build\outputs\apk\debug\app-debug.apk" AndroidManifest.xml
+01:53:17.798 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m String pool of 249 unique UTF-16 non-sorted strings, 249 entries and 0 styles using 20308 bytes:
+String #0: theme
+String #1: label
+String #2: icon
+String #3: name
+String #4: permission
+String #5: protectionLevel
+String #6: enabled
+String #7: debuggable
+String #8: exported
+String #9: taskAffinity
+String #10: excludeFromRecents
+String #11: authorities
+String #12: initOrder
+String #13: grantUriPermissions
+String #14: priority
+String #15: launchMode
+String #16: screenOrientation
+String #17: configChanges
+String #18: value
+String #19: resource
+String #20: mimeType
+String #21: scheme
+String #22: host
+String #23: minSdkVersion
+String #24: versionCode
+String #25: versionName
+String #26: windowSoftInputMode
+String #27: noHistory
+String #28: targetSdkVersion
+String #29: allowBackup
+String #30: glEsVersion
+String #31: required
+String #32: supportsRtl
+String #33: extractNativeLibs
+String #34: usesCleartextTraffic
+String #35: directBootAware
+String #36: roundIcon
+String #37: compileSdkVersion
+String #38: compileSdkVersionCodename
+String #39: appComponentFactory
+String #40: foregroundServiceType
+String #41: requestLegacyExternalStorage
+String #42: 
+String #43: */*
+String #44: 1.0.0
+String #45: 15
+String #46: AIzaSyBdVl-cTICSwYKrZ95SuvNw7dbMuDt1KG0
+String #47: ALWAYS
+String #48: action
+String #49: activity
+String #50: android
+String #51: android.intent.action.ACTION_POWER_CONNECTED
+String #52: android.intent.action.ACTION_POWER_DISCONNECTED
+String #53: android.intent.action.BATTERY_LOW
+String #54: android.intent.action.BATTERY_OKAY
+String #55: android.intent.action.BOOT_COMPLETED
+String #56: android.intent.action.DEVICE_STORAGE_LOW
+String #57: android.intent.action.DEVICE_STORAGE_OK
+String #58: android.intent.action.GET_CONTENT
+String #59: android.intent.action.MAIN
+String #60: android.intent.action.MY_PACKAGE_REPLACED
+String #61: android.intent.action.OPEN_DOCUMENT_TREE
+String #62: android.intent.action.QUICKBOOT_POWERON
+String #63: android.intent.action.REBOOT
+String #64: android.intent.action.SEND
+String #65: android.intent.action.TIMEZONE_CHANGED
+String #66: android.intent.action.TIME_SET
+String #67: android.intent.action.VIEW
+String #68: android.intent.category.BROWSABLE
+String #69: android.intent.category.DEFAULT
+String #70: android.intent.category.LAUNCHER
+String #71: android.intent.category.OPENABLE
+String #72: android.media.action.ACTION_VIDEO_CAPTURE
+String #73: android.media.action.IMAGE_CAPTURE
+String #74: android.net.conn.CONNECTIVITY_CHANGE
+String #75: android.permission.ACCESS_COARSE_LOCATION
+String #76: android.permission.ACCESS_FINE_LOCATION
+String #77: android.permission.ACCESS_NETWORK_STATE
+String #78: android.permission.ACCESS_WIFI_STATE
+String #79: android.permission.BIND_JOB_SERVICE
+String #80: android.permission.CAMERA
+String #81: android.permission.DUMP
+String #82: android.permission.FOREGROUND_SERVICE
+String #83: android.permission.INTERNET
+String #84: android.permission.POST_NOTIFICATIONS
+String #85: android.permission.READ_APP_BADGE
+String #86: android.permission.READ_EXTERNAL_STORAGE
+String #87: android.permission.READ_MEDIA_AUDIO
+String #88: android.permission.READ_MEDIA_IMAGES
+String #89: android.permission.READ_MEDIA_VIDEO
+String #90: android.permission.READ_MEDIA_VISUAL_USER_SELECTED
+String #91: android.permission.RECEIVE_BOOT_COMPLETED
+String #92: android.permission.RECORD_AUDIO
+String #93: android.permission.SYSTEM_ALERT_WINDOW
+String #94: android.permission.USE_BIOMETRIC
+String #95: android.permission.USE_FINGERPRINT
+String #96: android.permission.VIBRATE
+String #97: android.permission.WAKE_LOCK
+String #98: android.permission.WRITE_EXTERNAL_STORAGE
+String #99: android.support.FILE_PROVIDER_PATHS
+String #100: android.support.customtabs.action.CustomTabsService
+String #101: androidx.camera.camera2.Camera2Config$DefaultProvider
+String #102: androidx.camera.core.impl.MetadataHolderService
+String #103: androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER
+String #104: androidx.camera.extensions.action.VENDOR_ACTION
+String #105: androidx.camera.extensions.impl
+String #106: androidx.core.app.CoreComponentFactory
+String #107: androidx.emoji2.text.EmojiCompatInitializer
+String #108: androidx.lifecycle.ProcessLifecycleInitializer
+String #109: androidx.profileinstaller.ProfileInstallReceiver
+String #110: androidx.profileinstaller.ProfileInstallerInitializer
+String #111: androidx.profileinstaller.action.BENCHMARK_OPERATION
+String #112: androidx.profileinstaller.action.INSTALL_PROFILE
+String #113: androidx.profileinstaller.action.SAVE_PROFILE
+String #114: androidx.profileinstaller.action.SKIP_FILE
+String #115: androidx.room.MultiInstanceInvalidationService
+String #116: androidx.startup
+String #117: androidx.startup.InitializationProvider
+String #118: androidx.work.WorkManagerInitializer
+String #119: androidx.work.diagnostics.REQUEST_DIAGNOSTICS
+String #120: androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy
+String #121: androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy
+String #122: androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy
+String #123: androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy
+String #124: androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver
+String #125: androidx.work.impl.background.systemalarm.RescheduleReceiver
+String #126: androidx.work.impl.background.systemalarm.SystemAlarmService
+String #127: androidx.work.impl.background.systemalarm.UpdateProxies
+String #128: androidx.work.impl.background.systemjob.SystemJobService
+String #129: androidx.work.impl.diagnostics.DiagnosticsReceiver
+String #130: androidx.work.impl.foreground.SystemForegroundService
+String #131: androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver
+String #132: application
+String #133: backend:com.google.android.datatransport.cct.CctBackendFactory
+String #134: category
+String #135: cct
+String #136: com.anddoes.launcher.permission.UPDATE_COUNT
+String #137: com.canhub.cropper.CropFileProvider
+String #138: com.canhub.cropper.CropImageActivity
+String #139: com.facebook.react.devsupport.DevSettingsActivity
+String #140: com.facebook.soloader.enabled
+String #141: com.google.android.apps.maps
+String #142: com.google.android.c2dm.intent.RECEIVE
+String #143: com.google.android.c2dm.permission.RECEIVE
+String #144: com.google.android.c2dm.permission.SEND
+String #145: com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+String #146: com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+String #147: com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+String #148: com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+String #149: com.google.android.geo.API_KEY
+String #150: com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED
+String #151: com.google.android.gms.common.api.GoogleApiActivity
+String #152: com.google.android.gms.metadata.MODULE_DEPENDENCIES
+String #153: com.google.android.gms.metadata.ModuleDependencies
+String #154: com.google.android.gms.permission.ACTIVITY_RECOGNITION
+String #155: com.google.android.gms.version
+String #156: com.google.android.providers.gsf.permission.READ_GSERVICES
+String #157: com.google.firebase.MESSAGING_EVENT
+String #158: com.google.firebase.components.ComponentDiscoveryService
+String #159: com.google.firebase.components.ComponentRegistrar
+String #160: com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar
+String #161: com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar
+String #162: com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar
+String #163: com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
+String #164: com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar
+String #165: com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar
+String #166: com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar
+String #167: com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar
+String #168: com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar
+String #169: com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar
+String #170: com.google.firebase.iid.FirebaseInstanceIdReceiver
+String #171: com.google.firebase.messaging.FirebaseMessagingService
+String #172: com.google.firebase.provider.FirebaseInitProvider
+String #173: com.google.mlkit.common.internal.MlKitComponentDiscoveryService
+String #174: com.google.mlkit.common.internal.MlKitInitProvider
+String #175: com.htc.intent.action.QUICKBOOT_POWERON
+String #176: com.htc.launcher.permission.READ_SETTINGS
+String #177: com.htc.launcher.permission.UPDATE_SHORTCUT
+String #178: com.huawei.android.launcher.permission.CHANGE_BADGE
+String #179: com.huawei.android.launcher.permission.READ_SETTINGS
+String #180: com.huawei.android.launcher.permission.WRITE_SETTINGS
+String #181: com.majeur.launcher.permission.UPDATE_BADGE
+String #182: com.oppo.launcher.permission.READ_SETTINGS
+String #183: com.oppo.launcher.permission.WRITE_SETTINGS
+String #184: com.reactnativecommunity.webview.RNCWebViewFileProvider
+String #185: com.sec.android.provider.badge.permission.READ
+String #186: com.sec.android.provider.badge.permission.WRITE
+String #187: com.sonyericsson.home.permission.BROADCAST_BADGE
+String #188: com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
+String #189: com.tuapp.seguritacapp
+String #190: com.tuapp.seguritacapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+String #191: com.tuapp.seguritacapp.FileSystemFileProvider
+String #192: com.tuapp.seguritacapp.ImagePickerFileProvider
+String #193: com.tuapp.seguritacapp.MainActivity
+String #194: com.tuapp.seguritacapp.MainApplication
+String #195: com.tuapp.seguritacapp.SharingFileProvider
+String #196: com.tuapp.seguritacapp.androidx-startup
+String #197: com.tuapp.seguritacapp.cropper.fileprovider
+String #198: com.tuapp.seguritacapp.fileprovider
+String #199: com.tuapp.seguritacapp.firebaseinitprovider
+String #200: com.tuapp.seguritacapp.mlkitinitprovider
+String #201: data
+String #202: exp+seguridadciudadanaapp
+String #203: expo-dev-launcher
+String #204: expo-dev-menu
+String #205: expo-development-client
+String #206: expo.modules.adapters.react.apploader.RNHeadlessAppLoader
+String #207: expo.modules.devlauncher.launcher.DevLauncherActivity
+String #208: expo.modules.devlauncher.launcher.errors.DevLauncherErrorActivity
+String #209: expo.modules.devmenu.DevMenuActivity
+String #210: expo.modules.filesystem.FileSystemFileProvider
+String #211: expo.modules.imagepicker.fileprovider.ImagePickerFileProvider
+String #212: expo.modules.location.services.LocationTaskService
+String #213: expo.modules.notifications.NOTIFICATION_EVENT
+String #214: expo.modules.notifications.service.ExpoFirebaseMessagingService
+String #215: expo.modules.notifications.service.NotificationForwarderActivity
+String #216: expo.modules.notifications.service.NotificationsService
+String #217: expo.modules.sharing.SharingFileProvider
+String #218: expo.modules.updates.ENABLED
+String #219: expo.modules.updates.EXPO_UPDATES_CHECK_ON_LAUNCH
+String #220: expo.modules.updates.EXPO_UPDATES_LAUNCH_WAIT_MS
+String #221: host.exp.exponent
+String #222: http://schemas.android.com/apk/res/android
+String #223: https
+String #224: intent
+String #225: intent-filter
+String #226: io.nlopez.smartlocation.activity.providers.ActivityGooglePlayServicesProvider$ActivityRecognitionService
+String #227: io.nlopez.smartlocation.geocoding.providers.AndroidGeocodingProvider$AndroidGeocodingService
+String #228: io.nlopez.smartlocation.geofencing.providers.GeofencingGooglePlayServicesProvider$GeofencingService
+String #229: manifest
+String #230: me.everything.badger.permission.BADGE_COUNT_READ
+String #231: me.everything.badger.permission.BADGE_COUNT_WRITE
+String #232: meta-data
+String #233: org.apache.http.legacy
+String #234: org.unimodules.core.AppLoader#react-native-headless
+String #235: package
+String #236: permission
+String #237: photopicker_activity:0:required
+String #238: platformBuildVersionCode
+String #239: platformBuildVersionName
+String #240: provider
+String #241: queries
+String #242: receiver
+String #243: seguridadciudadanaapp
+String #244: service
+String #245: uses-feature
+String #246: uses-library
+String #247: uses-permission
+String #248: uses-sdk
+
+01:53:17.801 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\build-tools\36.1.0-rc1\aapt.EXE" dump xmlstrings "D:\SeguridadAPP\SeguridadCiudadanaApp\android\app\build\outputs\apk\androidTest\debug\app-debug-androidTest.apk" AndroidManifest.xml
+01:53:17.829 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m String pool of 43 unique UTF-16 non-sorted strings, 43 entries and 0 styles using 2140 bytes:
+String #0: theme
+String #1: label
+String #2: name
+String #3: debuggable
+String #4: exported
+String #5: priority
+String #6: targetPackage
+String #7: handleProfiling
+String #8: functionalTest
+String #9: minSdkVersion
+String #10: targetSdkVersion
+String #11: extractNativeLibs
+String #12: compileSdkVersion
+String #13: compileSdkVersionCodename
+String #14: 15
+String #15: Tests for com.tuapp.seguritacapp
+String #16: activity
+String #17: android
+String #18: android.intent.category.LAUNCHER
+String #19: android.permission.REORDER_TASKS
+String #20: android.test.runner
+String #21: androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity
+String #22: androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity
+String #23: androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity
+String #24: androidx.test.orchestrator
+String #25: androidx.test.services
+String #26: application
+String #27: category
+String #28: com.google.android.apps.common.testing.services
+String #29: com.tuapp.seguritacapp
+String #30: com.tuapp.seguritacapp.test
+String #31: com.wix.detox.DetoxJUnitRunner
+String #32: http://schemas.android.com/apk/res/android
+String #33: instrumentation
+String #34: intent-filter
+String #35: manifest
+String #36: package
+String #37: platformBuildVersionCode
+String #38: platformBuildVersionName
+String #39: queries
+String #40: uses-library
+String #41: uses-permission
+String #42: uses-sdk
+
+01:53:17.830 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "rm -fr /data/local/tmp/detox"
+01:53:17.886 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 
+01:53:17.886 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "mkdir -p /data/local/tmp/detox"
+01:53:17.934 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 
+01:53:17.935 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 push "D:\SeguridadAPP\SeguridadCiudadanaApp\android\app\build\outputs\apk\debug\app-debug.apk" "/data/local/tmp/detox/Application.apk"
+01:53:18.750 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m D:\SeguridadAPP\SeguridadCiudadanaApp\android\app\build\outputs\apk\debug\app-debug.apk: 1 file pushed, 0 skipped. 240.1 MB/s (170876961 bytes in 0.679s)
+
+01:53:18.750 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "getprop ro.build.version.sdk"
+01:53:18.789 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 34
+
+01:53:18.794 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_CMD[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell pm install -r -g -t /data/local/tmp/detox/Application.apk
+01:53:19.581 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_STDOUT[39m Success
+
+01:53:19.585 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_END[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell pm install -r -g -t /data/local/tmp/detox/Application.apk exited with code #0
+01:53:19.586 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 push "D:\SeguridadAPP\SeguridadCiudadanaApp\android\app\build\outputs\apk\androidTest\debug\app-debug-androidTest.apk" "/data/local/tmp/detox/Test.apk"
+01:53:19.646 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m D:\SeguridadAPP\SeguridadCiudadanaApp\android\app\build\outputs\apk\androidTest\debug\app-debug-androidTest.apk: 1 file pushed, 0 skipped. 325.9 MB/s (4218863 bytes in 0.012s)
+
+01:53:19.650 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_CMD[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell pm install -r -g -t /data/local/tmp/detox/Test.apk
+01:53:19.881 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_STDOUT[39m Success
+
+01:53:19.884 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_END[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell pm install -r -g -t /data/local/tmp/detox/Test.apk exited with code #0
+01:53:19.884 detox[9912] [90mE[39m [33mdevice[39m installApp
+01:53:19.885 detox[9912] [90mB[39m [33mdevice[39m selectApp
+  args: ("default")
+01:53:19.885 detox[9912] [90mB[39m [33mdevice[39m terminateApp
+  args: ()
+01:53:19.886 detox[9912] [90mB[39m [33martifacts-manager[39m onBeforeTerminateApp
+  args: ({"deviceId":"emulator-10656","bundleId":"com.tuapp.seguritacapp"})
+01:53:19.886 detox[9912] [90mE[39m [33martifacts-manager[39m onBeforeTerminateApp
+01:53:19.886 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "am force-stop com.tuapp.seguritacapp"
+01:53:19.959 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 
+01:53:19.959 detox[9912] [90mB[39m [33martifacts-manager[39m onTerminateApp
+  args: ({"deviceId":"emulator-10656","bundleId":"com.tuapp.seguritacapp"})
+01:53:19.959 detox[9912] [90mE[39m [33martifacts-manager[39m onTerminateApp
+01:53:19.960 detox[9912] [90mE[39m [33mdevice[39m terminateApp
+01:53:19.960 detox[9912] [90mE[39m [33mdevice[39m selectApp
+01:53:19.960 detox[9912] [90mE[39m [33mlifecycle[39m set up environment
+01:53:20.262 detox[9912] [90mi[39m [33mlifecycle[39m smoke.e2e.js is assigned to emulator-10656 (Pixel_6_API34)
+01:53:20.263 detox[9912] [90mB[39m [33mlifecycle[39m run the tests
+01:53:20.264 detox[9912] [90mB[39m [33martifacts-manager[39m onRunDescribeStart
+  args: ({"name":"ROOT_DESCRIBE_BLOCK"})
+01:53:20.264 detox[9912] [90mE[39m [33martifacts-manager[39m onRunDescribeStart
+01:53:20.265 detox[9912] [90mB[39m [33mlifecycle[39m Smoke
+01:53:20.265 detox[9912] [90mB[39m [33martifacts-manager[39m onRunDescribeStart
+  args: ({"name":"Smoke"})
+01:53:20.266 detox[9912] [90mE[39m [33martifacts-manager[39m onRunDescribeStart
+01:53:20.266 detox[9912] [90mB[39m [33mlifecycle[39m launches
+01:53:20.267 detox[9912] [90mi[39m [33mlifecycle[39m Smoke: launches
+01:53:20.269 detox[9912] [90mB[39m [33martifacts-manager[39m onTestStart
+  args: ({"title":"launches","fullName":"Smoke launches","status":"running","invocations":1})
+01:53:20.270 detox[9912] [90mi[39m [33martifact[39m[90m:ARTIFACT_START[39m starting ADBLogcatRecording
+01:53:20.275 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_CMD[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell "logcat -f /sdcard/15316389_0.log"
+01:53:20.276 detox[9912] [90mi[39m [33martifact[39m[90m:ARTIFACT_START[39m starting ADBScreencapRecording
+01:53:20.276 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "screencap /sdcard/15316389_1.png"
+01:53:20.285 detox[9912] [90mi[39m [33martifact[39m[90m:ARTIFACT_START[39m starting ADBVideoRecording
+01:53:20.290 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_CMD[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell screenrecord /sdcard/15316389_2.mp4
+01:53:20.585 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell du /sdcard/15316389_0.log
+01:53:20.594 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell du /sdcard/15316389_2.mp4
+01:53:20.635 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 4	/sdcard/15316389_0.log
+
+01:53:20.637 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 8	/sdcard/15316389_2.mp4
+
+01:53:21.030 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 
+01:53:21.030 detox[9912] [90mi[39m [33martifact[39m[90m:ARTIFACT_STOP[39m stopping ADBScreencapRecording
+01:53:21.031 detox[9912] [90mE[39m [33martifacts-manager[39m onTestStart
+01:53:21.031 detox[9912] [90mB[39m [33mlifecycle[39m beforeEach
+01:53:21.032 detox[9912] [90mE[39m [33mlifecycle[39m beforeEach
+01:53:21.032 detox[9912] [90mB[39m [33mlifecycle[39m test_fn
+01:53:21.037 detox[9912] [90mB[39m [33mdevice[39m launchApp
+  args: ({"newInstance":true})
+01:53:21.037 detox[9912] [90mB[39m [33mdevice[39m terminateApp
+  args: ("com.tuapp.seguritacapp")
+01:53:21.038 detox[9912] [90mB[39m [33martifacts-manager[39m onBeforeTerminateApp
+  args: ({"deviceId":"emulator-10656","bundleId":"com.tuapp.seguritacapp"})
+01:53:21.038 detox[9912] [90mE[39m [33martifacts-manager[39m onBeforeTerminateApp
+01:53:21.038 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "am force-stop com.tuapp.seguritacapp"
+01:53:21.082 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 
+01:53:21.082 detox[9912] [90mB[39m [33martifacts-manager[39m onTerminateApp
+  args: ({"deviceId":"emulator-10656","bundleId":"com.tuapp.seguritacapp"})
+01:53:21.083 detox[9912] [90mE[39m [33martifacts-manager[39m onTerminateApp
+01:53:21.083 detox[9912] [90mE[39m [33mdevice[39m terminateApp
+01:53:21.084 detox[9912] [90mB[39m [33martifacts-manager[39m onBeforeLaunchApp
+  args: ({"deviceId":"emulator-10656","bundleId":"com.tuapp.seguritacapp","launchArgs":{"detoxServer":"ws://localhost:59377","detoxSessionId":"0f925b8e-6789-b2f1-ee3a-68520aca44aa"}})
+01:53:21.084 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "date +\"%m-%d %T.000\""
+01:53:21.130 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 11-13 06:53:20.000
+
+01:53:21.131 detox[9912] [90mE[39m [33martifacts-manager[39m onBeforeLaunchApp
+01:53:21.131 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 reverse tcp:59377 tcp:59377
+01:53:21.161 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 59377
+
+01:53:21.162 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "pm list instrumentation"
+01:53:21.206 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m instrumentation:com.tuapp.seguritacapp.test/com.wix.detox.DetoxJUnitRunner (target=com.tuapp.seguritacapp)
+
+01:53:21.211 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_CMD[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell am instrument -w -r -e detoxServer ws://localhost:59377 -e detoxSessionId 0f925b8e-6789-b2f1-ee3a-68520aca44aa -e debug false com.tuapp.seguritacapp.test/com.wix.detox.DetoxJUnitRunner
+01:53:21.722 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "ps | grep \"com\.tuapp\.seguritacapp$\""
+01:53:21.799 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m u0_a200       8862   359   14771020 104408 0                   0 R com.tuapp.seguritacapp
+
+01:53:21.799 detox[9912] [90mB[39m [33martifacts-manager[39m onLaunchApp
+  args: ({"deviceId":"emulator-10656","bundleId":"com.tuapp.seguritacapp","launchArgs":{"detoxServer":"ws://localhost:59377","detoxSessionId":"0f925b8e-6789-b2f1-ee3a-68520aca44aa"},"pid":8862})
+01:53:21.800 detox[9912] [90mi[39m [33martifact[39m[90m:ARTIFACT_START[39m starting ADBLogcatRecording
+01:53:21.800 detox[9912] [90mi[39m [33martifact[39m[90m:ARTIFACT_STOP[39m stopping ADBLogcatRecording
+01:53:21.800 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "date +\"%m-%d %T.000\""
+01:53:21.849 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 11-13 06:53:20.000
+
+01:53:21.861 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_KILL[39m sending SIGINT to: C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell logcat -f /sdcard/15316389_0.log
+01:53:21.864 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_END[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell "logcat -f /sdcard/15316389_0.log" terminated with SIGINT
+01:53:21.868 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_CMD[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell "logcat -T \"11-13 06:53:20.000\" --pid=8862 -f /sdcard/15316389_0.log"
+01:53:21.869 detox[9912] [90mE[39m [33martifacts-manager[39m onLaunchApp
+01:53:22.177 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell du /sdcard/15316389_0.log
+01:53:22.212 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 11284	/sdcard/15316389_0.log
+
+01:53:23.152 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_STDOUT[39m INSTRUMENTATION_STATUS: class=com.tuapp.seguritacapp.DetoxTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+com.tuapp.seguritacapp.DetoxTest:
+INSTRUMENTATION_STATUS: test=runDetoxTests
+INSTRUMENTATION_STATUS_CODE: 1
+
+01:53:26.040 detox[9912] [90mB[39m [33martifacts-manager[39m onTestFnFailure
+  args: ({"error":"Exceeded timeout of 5000 ms for a test.\nAdd a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."})
+01:53:26.041 detox[9912] [90mi[39m [33martifact[39m[90m:ARTIFACT_START[39m starting ADBScreencapRecording
+01:53:26.041 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "screencap /sdcard/15316389_3.png"
+01:53:26.442 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 
+01:53:26.442 detox[9912] [90mi[39m [33martifact[39m[90m:ARTIFACT_STOP[39m stopping ADBScreencapRecording
+01:53:26.442 detox[9912] [90mE[39m [33martifacts-manager[39m onTestFnFailure
+01:53:26.443 detox[9912] [90mE[39m [33mlifecycle[39m test_fn
+  error: 'Exceeded timeout of 5000 ms for a test.\n' +
+    'Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout.'
+01:53:26.444 detox[9912] [90mB[39m [33martifacts-manager[39m onTestDone
+  args: ({"title":"launches","fullName":"Smoke launches","status":"failed","invocations":1,"timedOut":true})
+01:53:26.445 detox[9912] [90mi[39m [33martifact[39m[90m:ARTIFACT_STOP[39m stopping ADBLogcatRecording
+01:53:26.445 detox[9912] [90mi[39m [33martifact[39m[90m:ARTIFACT_START[39m starting ADBScreencapRecording
+01:53:26.445 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "screencap /sdcard/15316389_4.png"
+01:53:26.453 detox[9912] [90mi[39m [33martifact[39m[90m:ARTIFACT_STOP[39m stopping ADBVideoRecording
+01:53:26.453 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "date +\"%m-%d %T.000\""
+01:53:26.457 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_KILL[39m sending SIGINT to: C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell screenrecord /sdcard/15316389_2.mp4
+01:53:26.459 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_END[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell screenrecord /sdcard/15316389_2.mp4 terminated with SIGINT
+01:53:26.461 detox[9912] [90mi[39m [33martifacts-manager[39m Suppressed error inside function call.
+  error: TypeError: this._pathBuilder.buildPathForTestArtifact is not a function
+      at Object.preparePathForArtifact (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\ArtifactsManager.js:73:48)
+      at ADBScreenrecorderPlugin.preparePathForTestArtifact (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\video\VideoArtifactPlugin.js:9:21)
+      at D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\templates\plugin\WholeTestRecorderPlugin.js:64:48
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+01:53:26.494 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 11-13 06:53:25.000
+
+01:53:26.495 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_KILL[39m sending SIGINT to: C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell logcat -T "11-13 06:53:20.000" --pid=8862 -f /sdcard/15316389_0.log
+01:53:26.497 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_END[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell "logcat -T \"11-13 06:53:20.000\" --pid=8862 -f /sdcard/15316389_0.log" terminated with SIGINT
+01:53:26.498 detox[9912] [90mi[39m [33martifacts-manager[39m Suppressed error inside function call.
+  error: TypeError: this._pathBuilder.buildPathForTestArtifact is not a function
+      at Object.preparePathForArtifact (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\ArtifactsManager.js:73:48)
+      at ADBLogcatPlugin.preparePathForTestArtifact (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\log\LogArtifactPlugin.js:49:21)
+      at D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\templates\plugin\WholeTestRecorderPlugin.js:64:48
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+01:53:26.813 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 
+01:53:26.813 detox[9912] [90mi[39m [33martifact[39m[90m:ARTIFACT_STOP[39m stopping ADBScreencapRecording
+01:53:26.814 detox[9912] [90mE[39m [33martifacts-manager[39m onTestDone
+01:53:26.814 detox[9912] [90mi[39m [33mws-client[39m[90m:APP_UNREACHABLE[39m Detox can't seem to connect to the test app(s)!
+
+HINT: 
+
+The test app might have crashed prematurely, or has had trouble setting up the connection.
+Refer to our troubleshooting guide, for full details: https://wix.github.io/Detox/docs/troubleshooting/running-tests#tests-execution-hangs 
+
+
+
+01:53:26.815 detox[9912] [90mi[39m [33martifacts-manager[39m Suppressed error inside function call.
+  error: TypeError: this._pathBuilder.buildPathForTestArtifact is not a function
+      at Object.preparePathForArtifact (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\ArtifactsManager.js:73:48)
+      at ADBScreencapPlugin.preparePathForSnapshot (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\screenshot\ScreenshotArtifactPlugin.js:19:21)
+      at D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\templates\plugin\TwoSnapshotsPerTestPlugin.js:133:49
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+01:53:26.816 detox[9912] [90mE[39m [33mlifecycle[39m launches
+01:53:26.816 detox[9912] [90mi[39m [33martifacts-manager[39m Suppressed error inside function call.
+  error: TypeError: this._pathBuilder.buildPathForTestArtifact is not a function
+      at Object.preparePathForArtifact (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\ArtifactsManager.js:73:48)
+      at ADBScreencapPlugin.preparePathForSnapshot (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\screenshot\ScreenshotArtifactPlugin.js:19:21)
+      at D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\templates\plugin\TwoSnapshotsPerTestPlugin.js:133:49
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+01:53:26.816 detox[9912] [90mi[39m [33mlifecycle[39m Smoke: launches [FAIL]
+01:53:26.817 detox[9912] [90mi[39m [33martifacts-manager[39m Suppressed error inside function call.
+  error: TypeError: this._pathBuilder.buildPathForTestArtifact is not a function
+      at Object.preparePathForArtifact (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\ArtifactsManager.js:73:48)
+      at ADBScreencapPlugin.preparePathForSnapshot (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\screenshot\ScreenshotArtifactPlugin.js:19:21)
+      at D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\templates\plugin\TwoSnapshotsPerTestPlugin.js:133:49
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+01:53:26.822 detox[9912] [90mB[39m [33martifacts-manager[39m onRunDescribeFinish
+  args: ({"name":"Smoke"})
+01:53:26.822 detox[9912] [90mE[39m [33martifacts-manager[39m onRunDescribeFinish
+01:53:26.823 detox[9912] [90mE[39m [33mlifecycle[39m Smoke
+01:53:26.823 detox[9912] [90mB[39m [33martifacts-manager[39m onRunDescribeFinish
+  args: ({"name":"ROOT_DESCRIBE_BLOCK"})
+01:53:26.823 detox[9912] [90mE[39m [33martifacts-manager[39m onRunDescribeFinish
+01:53:26.824 detox[9912] [90mE[39m [33mlifecycle[39m run the tests
+01:53:26.839 detox[9912] [90mB[39m [33mlifecycle[39m tear down environment
+01:53:26.840 detox[9912] [90mB[39m [33martifacts-manager[39m onBeforeCleanup
+  args: ()
+01:53:26.841 detox[9912] [90mi[39m [33martifact[39m[90m:ARTIFACT_START[39m starting ADBScreencapRecording
+01:53:26.841 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell "screencap /sdcard/15316389_5.png"
+01:53:26.849 detox[9912] [90mi[39m [33martifacts-manager[39m Suppressed error inside function call.
+  error: TypeError: this._pathBuilder.buildPathForTestArtifact is not a function
+      at Object.preparePathForArtifact (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\ArtifactsManager.js:73:48)
+      at D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\log\LogArtifactPlugin.js:21:20
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+01:53:26.961 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 shell du /sdcard/15316389_2.mp4
+01:53:26.997 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 308	/sdcard/15316389_2.mp4
+
+01:53:29.146 detox[19896] [90mB[39m [33mws-server[39m[33m@59520[39m connection :59377<->:59520
+01:53:29.148 detox[19896] [90mi[39m [33mws-server[39m[33m@59520[39m get
+  data: {"messageId":0,"type":"login","params":{"role":"app","sessionId":"0f925b8e-6789-b2f1-ee3a-68520aca44aa"}}
+01:53:29.149 detox[19896] [90mi[39m [33mws-server[39m[33m@59520[39m send
+  data: {
+    "messageId": 0,
+    "type": "loginSuccess",
+    "params": {
+      "testerConnected": true,
+      "appConnected": true
+    }
+  }
+01:53:29.149 detox[19896] [90mi[39m [33mws-server[39m app joined session 0f925b8e-6789-b2f1-ee3a-68520aca44aa
+01:53:29.149 detox[19896] [90mi[39m [33mws-server[39m[33m@59378[39m send
+  data: {
+    "type": "appConnected"
+  }
+01:53:29.150 detox[9912] [90mi[39m [33mws-client[39m get message
+  data: {"type":"appConnected"}
+   
+01:53:29.152 detox[19896] [90mi[39m [33mws-server[39m[33m@59378[39m get
+  data: {"type":"isReady","params":{},"messageId":-1000}
+01:53:29.152 detox[19896] [90mi[39m [33mws-server[39m[33m@59520[39m send
+  data: {
+    "type": "isReady",
+    "params": {},
+    "messageId": -1000
+  }
+01:53:29.152 detox[9912] [90mi[39m [33mws-client[39m send message
+  data: {"type":"isReady","params":{},"messageId":-1000}
+01:53:32.870 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 
+01:53:32.870 detox[9912] [90mi[39m [33martifact[39m[90m:ARTIFACT_STOP[39m stopping ADBScreencapRecording
+01:53:32.871 detox[9912] [90mi[39m [33martifacts-manager[39m Suppressed error inside function call.
+  error: TypeError: this._pathBuilder.buildPathForTestArtifact is not a function
+      at Object.preparePathForArtifact (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\ArtifactsManager.js:73:48)
+      at ADBScreencapPlugin.preparePathForSnapshot (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\screenshot\ScreenshotArtifactPlugin.js:19:21)
+      at D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\templates\plugin\TwoSnapshotsPerTestPlugin.js:133:49
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+01:53:32.871 detox[9912] [90mE[39m [33martifacts-manager[39m onBeforeCleanup
+01:53:32.872 detox[9912] [90mi[39m [33mws-client[39m[90m:PENDING_REQUESTS[39m The app has not responded to the network requests below:
+  (id = -1000) isReady: {}
+
+Unresponded network requests might result in timeout errors in Detox tests.
+
+01:53:32.874 detox[19896] [90mi[39m [33mws-server[39m[33m@59378[39m get
+  data: {"type":"cleanup","params":{"stopRunner":true},"messageId":-49642}
+01:53:32.874 detox[19896] [90mi[39m [33mws-server[39m[33m@59520[39m send
+  data: {
+    "type": "cleanup",
+    "params": {
+      "stopRunner": true
+    },
+    "messageId": -49642
+  }
+01:53:32.874 detox[9912] [90mi[39m [33mws-client[39m send message
+  data: {"type":"cleanup","params":{"stopRunner":true},"messageId":-49642}
+01:53:37.876 detox[9912] [90mi[39m [33mws-client[39m[90m:ERROR[39m The pending request #-49642 ("cleanup") has been rejected due to the following error:
+
+The tester has not received a response within 5000ms timeout to the message:
+
+Cleanup {
+  type: 'cleanup',
+  params: [Object],
+  messageId: -49642
+}
+01:53:37.878 detox[19896] [90mi[39m [33mws-server[39m tester exited session 0f925b8e-6789-b2f1-ee3a-68520aca44aa
+01:53:37.878 detox[19896] [90mi[39m [33mws-server[39m[33m@59520[39m send
+  data: {
+    "type": "testerDisconnected",
+    "messageId": -1
+  }
+01:53:37.878 detox[19896] [90mE[39m [33mws-server[39m[33m@59378[39m connection :59377<->:59378
+01:53:37.891 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_KILL[39m sending SIGINT to: C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell am instrument -w -r -e detoxServer ws://localhost:59377 -e detoxSessionId 0f925b8e-6789-b2f1-ee3a-68520aca44aa -e debug false com.tuapp.seguritacapp.test/com.wix.detox.DetoxJUnitRunner
+01:53:37.893 detox[9912] [90mi[39m [33mchild-process[39m[90m:SPAWN_END[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-10656 shell am instrument -w -r -e detoxServer ws://localhost:59377 -e detoxSessionId 0f925b8e-6789-b2f1-ee3a-68520aca44aa -e debug false com.tuapp.seguritacapp.test/com.wix.detox.DetoxJUnitRunner terminated with SIGINT
+01:53:37.894 detox[9912] [90mi[39m [33mdevice[39m An error occurred while waiting for the app to become ready. Waiting for disconnection...
+  error: Failed to run application on the device
+  
+  HINT: Most likely, your tests have timed out and called detox.cleanup() while it was waiting for "ready" message (over WebSocket) from the instrumentation process.
+01:53:37.894 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_CMD[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-10656 reverse --remove tcp:59377
+01:53:37.903 detox[19896] [90mi[39m [33mipc[39m received event of :  deallocateDevice {
+  deviceCookie: {
+    id: 'emulator-10656',
+    adbName: 'emulator-10656',
+    name: 'emulator-10656 (Pixel_6_API34)'
+  }
+}
+01:53:37.903 detox[9912] [90mi[39m [33mipc[39m dispatching event to  primary-19896 /tmp/detox.primary-19896  :  deallocateDevice , {
+  deviceCookie: {
+    id: 'emulator-10656',
+    adbName: 'emulator-10656',
+    name: 'emulator-10656 (Pixel_6_API34)'
+  }
+}
+01:53:37.904 detox[19896] [90mB[39m [33mdevice[39m[33m@0[39m free: emulator-10656
+  data: {}
+01:53:37.925 detox[9912] [90mi[39m [33mchild-process[39m[90m:EXEC_SUCCESS[39m 
+01:53:41.453 detox[19896] [90mE[39m [33mdevice[39m[33m@0[39m free: emulator-10656
+01:53:41.453 detox[19896] [90mi[39m [33mipc[39m dispatching event to socket  :  deallocateDeviceDone {}
+01:53:41.454 detox[19896] [90mi[39m [33mws-server[39m app exited session 0f925b8e-6789-b2f1-ee3a-68520aca44aa
+01:53:41.454 detox[19896] [90mE[39m [33mws-server[39m[33m@59520[39m connection :59377<->:59520
+01:53:41.454 detox[9912] [90mi[39m [33mipc[39m ## received events ##
+01:53:41.454 detox[9912] [90mi[39m [33mipc[39m detected event deallocateDeviceDone {}
+01:53:41.455 detox[19896] [90mi[39m [33mipc[39m socket disconnected secondary-9912
+01:53:41.455 detox[9912] [90mi[39m [33mipc[39m connection closed primary-19896 /tmp/detox.primary-19896 0 tries remaining of 0
+01:53:41.455 detox[9912] [90mi[39m [33mipc[39m secondary-9912 exceeded connection rety amount of  or stopRetrying flag set.
+01:53:41.456 detox[9912] [90mE[39m [33mlifecycle[39m tear down environment
+01:53:41.456 detox[9912] [90mE[39m [33mlifecycle[39m e2e\smoke.e2e.js
+01:53:41.477 detox[19896] [90mE[39m [33mlifecycle[39m Command failed with exit code = 1:
+DETOX_CONFIGURATION="android.emu.debug" DETOX_LOGLEVEL="trace" DETOX_RECORD_LOGS="all" DETOX_RECORD_VIDEOS="all" DETOX_TAKE_SCREENSHOTS="all" jest --config e2e/jest.config.js
+01:53:41.478 detox[19896] [90mB[39m [33mdevice[39m cleanup
+  args: ()
+01:53:41.553 detox[19896] [90mE[39m [33mdevice[39m cleanup
+01:53:41.554 detox[19896] [90mi[39m [33mws-server[39m Detox server has been closed gracefully
+01:53:41.555 detox[19896] [90mE[39m [33mlifecycle[39m node_modules\detox\local-cli\cli.js test --configuration android.emu.debug --config e2e/jest.config.js --record-logs all --record-videos all --take-screenshots all -l trace

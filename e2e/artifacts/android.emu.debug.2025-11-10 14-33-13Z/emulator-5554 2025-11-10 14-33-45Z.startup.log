@@ -1,0 +1,568 @@
+--------- beginning of main
+11-10 14:33:24.611 12385 12385 I pp.seguritacapp: Late-enabling -Xcheck:jni
+11-10 14:33:24.670 12385 12385 I pp.seguritacapp: Using CollectorTypeCMC GC.
+11-10 14:33:24.671 12385 12385 W pp.seguritacapp: Unexpected CPU variant for x86: x86_64.
+11-10 14:33:24.671 12385 12385 W pp.seguritacapp: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+11-10 14:33:24.701 12385 12385 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+11-10 14:33:24.749 12385 12385 D CompatChangeReporter: Compat change id reported: 242716250; UID 10223; state: ENABLED
+--------- beginning of system
+11-10 14:33:24.775 12385 12385 W ActivityThread: Package uses different ABI(s) than its instrumentation: package[com.tuapp.seguritacapp]: x86_64, null instrumentation[com.tuapp.seguritacapp.test]: null, null
+11-10 14:33:24.778 12385 12385 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+11-10 14:33:24.785 12385 12385 W pp.seguritacapp: ClassLoaderContext shared library size mismatch. Expected=2, found=1 (PCL[]{PCL[/system/framework/android.test.base.jar*2789897741]#PCL[/system/framework/android.test.mock.jar*3361312393]} | PCL[]{PCL[/system/framework/org.apache.http.legacy.jar*4247870504]})
+11-10 14:33:24.791 12385 12385 W pp.seguritacapp: ClassLoaderContext classpath size mismatch. expected=0, found=1 (PCL[] | PCL[/system/framework/android.test.runner.jar*895143020]{PCL[/system/framework/org.apache.http.legacy.jar*4247870504]})
+11-10 14:33:24.797 12385 12385 W pp.seguritacapp: ClassLoaderContext classpath size mismatch. expected=0, found=2 (PCL[] | PCL[/system/framework/android.test.runner.jar*895143020:/system/framework/android.test.mock.jar*3361312393]{PCL[/system/framework/org.apache.http.legacy.jar*4247870504]})
+11-10 14:33:25.269 12385 12385 D nativeloader: Configuring clns-9 for other apk /system/framework/android.test.runner.jar:/system/framework/android.test.mock.jar:/system/framework/android.test.base.jar:/data/app/~~Uws0SWHJieyFgaUQmwMbCw==/com.tuapp.seguritacapp.test-aNwi4SrXcYYxoh9BmkovEA==/base.apk:/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~Uws0SWHJieyFgaUQmwMbCw==/com.tuapp.seguritacapp.test-aNwi4SrXcYYxoh9BmkovEA==/lib/x86_64:/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/lib/x86_64:/data/app/~~Uws0SWHJieyFgaUQmwMbCw==/com.tuapp.seguritacapp.test-aNwi4SrXcYYxoh9BmkovEA==/base.apk!/lib/x86_64:/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.tuapp.seguritacapp
+11-10 14:33:25.292 12385 12385 I pp.seguritacapp: AssetManager2(0x70d3768adbb8) locale list changing from [] to [en-US]
+11-10 14:33:25.322 12385 12385 V GraphicsEnvironment: Currently set values for:
+11-10 14:33:25.322 12385 12385 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-10 14:33:25.323 12385 12385 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-10 14:33:25.323 12385 12385 V GraphicsEnvironment: com.tuapp.seguritacapp is not listed in per-application setting
+11-10 14:33:25.323 12385 12385 V GraphicsEnvironment: ANGLE allowlist from config: com.dreamgames.royalmatch com.dts.freefiremax com.dxx.firenow com.gramgames.mergedragons com.ludo.king com.mojang.minecraftpe com.my.defense com.nintendo.zaka com.os.airforce com.playrix.fishdomdd.gplay io.teslatech.callbreak jp.konami.prospia net.peakgames.toonblast
+11-10 14:33:25.323 12385 12385 V GraphicsEnvironment: com.tuapp.seguritacapp is not listed in ANGLE allowlist or settings, returning default
+11-10 14:33:25.323 12385 12385 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-10 14:33:25.331 12385 12385 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-10 14:33:25.332 12385 12385 D nativeloader: Configuring clns-10 for other apk /system/framework/android.test.mock.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~Uws0SWHJieyFgaUQmwMbCw==/com.tuapp.seguritacapp.test-aNwi4SrXcYYxoh9BmkovEA==/lib/x86_64:/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/lib/x86_64, permitted_path=/data:/mnt/expand
+11-10 14:33:25.332 12385 12385 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-10 14:33:25.333 12385 12385 D nativeloader: Configuring clns-11 for other apk /system/framework/android.test.runner.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~Uws0SWHJieyFgaUQmwMbCw==/com.tuapp.seguritacapp.test-aNwi4SrXcYYxoh9BmkovEA==/lib/x86_64:/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/lib/x86_64, permitted_path=/data:/mnt/expand
+11-10 14:33:25.334 12385 12385 W pp.seguritacapp: ClassLoaderContext shared library size mismatch. Expected=2, found=3 (PCL[]{PCL[/system/framework/android.test.base.jar*2789897741]#PCL[/system/framework/android.test.mock.jar*3361312393]} | PCL[]{PCL[/system/framework/android.test.base.jar*2789897741]#PCL[/system/framework/android.test.mock.jar*3361312393]#PCL[/system/framework/android.test.runner.jar*895143020]{PCL[/system/framework/android.test.base.jar*2789897741]#PCL[/system/framework/android.test.mock.jar*3361312393]}};PCL[/system/framework/android.test.runner.jar*895143020:/system/framework/android.test.mock.jar*3361312393:/system/framework/android.test.base.jar*2789897741:/data/app/~~Uws0SWHJieyFgaUQmwMbCw==/com.tuapp.seguritacapp.test-aNwi4SrXcYYxoh9BmkovEA==/base.apk*3771997839:/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk*1520878972]{PCL[/system/framework/org.apache.http.legacy.jar*4247870504]})
+11-10 14:33:25.335 12385 12385 W pp.seguritacapp: ClassLoaderContext classpath size mismatch. expected=0, found=1 (PCL[] | PCL[/system/framework/android.test.runner.jar*895143020]{PCL[/system/framework/android.test.base.jar*2789897741]#PCL[/system/framework/android.test.mock.jar*3361312393]#PCL[/system/framework/android.test.runner.jar*895143020]{PCL[/system/framework/android.test.base.jar*2789897741]#PCL[/system/framework/android.test.mock.jar*3361312393]}};PCL[/system/framework/android.test.runner.jar*895143020:/system/framework/android.test.mock.jar*3361312393:/system/framework/android.test.base.jar*2789897741:/data/app/~~Uws0SWHJieyFgaUQmwMbCw==/com.tuapp.seguritacapp.test-aNwi4SrXcYYxoh9BmkovEA==/base.apk*3771997839:/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk*1520878972]{PCL[/system/framework/org.apache.http.legacy.jar*4247870504]})
+11-10 14:33:25.335 12385 12385 W pp.seguritacapp: ClassLoaderContext classpath size mismatch. expected=0, found=2 (PCL[] | PCL[/system/framework/android.test.runner.jar*895143020:/system/framework/android.test.mock.jar*3361312393]{PCL[/system/framework/android.test.base.jar*2789897741]#PCL[/system/framework/android.test.mock.jar*3361312393]#PCL[/system/framework/android.test.runner.jar*895143020]{PCL[/system/framework/android.test.base.jar*2789897741]#PCL[/system/framework/android.test.mock.jar*3361312393]}};PCL[/system/framework/android.test.runner.jar*895143020:/system/framework/android.test.mock.jar*3361312393:/system/framework/android.test.base.jar*2789897741:/data/app/~~Uws0SWHJieyFgaUQmwMbCw==/com.tuapp.seguritacapp.test-aNwi4SrXcYYxoh9BmkovEA==/base.apk*3771997839:/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk*1520878972]{PCL[/system/framework/org.apache.http.legacy.jar*4247870504]})
+11-10 14:33:25.677 12385 12385 I pp.seguritacapp: AssetManager2(0x70d3768b0458) locale list changing from [] to [en-US]
+11-10 14:33:25.695 12385 12385 I AndroidJUnitRunner: newApplication com.tuapp.seguritacapp.MainApplication
+11-10 14:33:25.975 12385 12385 I FirebaseApp: Device unlocked: initializing all Firebase APIs for app [DEFAULT]
+11-10 14:33:26.011 12385 12385 I FirebaseInitProvider: FirebaseApp initialization successful
+11-10 14:33:26.094 12385 12385 D WM-WrkMgrInitializer: Initializing WorkManager with default configuration.
+11-10 14:33:26.148 12385 12385 I AndroidJUnitRunner: onCreate Bundle[mParcelledData.dataSize=532]
+11-10 14:33:26.151 12385 12385 D AndroidJUnitRunner: Use the raw file system for managing file I/O.
+11-10 14:33:26.159 12385 12420 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+11-10 14:33:26.207 12385 12385 V TestEventClient: No service name argument was given (testDiscoveryService, testRunEventService or orchestratorService)
+11-10 14:33:26.207 12385 12421 D AndroidJUnitRunner: onStart is called.
+11-10 14:33:26.214 12385 12385 W SoLoader: Initializing SoLoader: 0
+11-10 14:33:26.218 12385 12385 W SoLoader: Recording new base apk path: /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk
+11-10 14:33:26.218 12385 12385 W SoLoader: Previously recorded 0 base apk paths.
+11-10 14:33:26.223 12385 12385 I SoLoader: Preparing SO source: DirectorySoSource[root = /vendor/lib64 flags = 2]
+11-10 14:33:26.223 12385 12385 I SoLoader: Preparing SO source: DirectorySoSource[root = /system/lib64 flags = 2]
+11-10 14:33:26.223 12385 12385 I SoLoader: Preparing SO source: DirectApkSoSource[root = [/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64]]
+11-10 14:33:26.274 12385 12385 I SoLoader: Preparing SO source: ApplicationSoSource[DirectorySoSource[root = /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/lib/x86_64 flags = 0]]
+11-10 14:33:26.275 12385 12385 I SoLoader: init finish: 4 SO sources prepared
+11-10 14:33:26.275 12385 12385 W SoLoader: SoLoader initialized: 8
+11-10 14:33:26.342 12385 12385 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/libc++_shared.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex): ok
+11-10 14:33:26.365 12385 12385 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/libjsi.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex): ok
+11-10 14:33:26.378 12385 12385 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/libfbjni.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex): ok
+11-10 14:33:26.434 12385 12385 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/libreactnative.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex): ok
+11-10 14:33:26.435 12385 12385 D jni_lib_merge: Entering merged library JNI_OnLoad.
+11-10 14:33:26.435 12385 12385 D jni_lib_merge: Preparing 12 pre-merged libs (including stub)
+11-10 14:33:26.435 12385 12385 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x70d2de45ea60
+11-10 14:33:26.435 12385 12385 D jni_lib_merge: Preparing to register libmapbufferjni_so.  onload_func: 0x70d2de539bb0
+11-10 14:33:26.435 12385 12385 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x70d2de68bfe0
+11-10 14:33:26.435 12385 12385 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x70d2de697b90
+11-10 14:33:26.435 12385 12385 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x70d2de708b00
+11-10 14:33:26.435 12385 12385 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x70d2de913460
+11-10 14:33:26.435 12385 12385 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x70d2de96f750
+11-10 14:33:26.435 12385 12385 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x70d2de9bceb0
+11-10 14:33:26.435 12385 12385 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x70d2dea8b410
+11-10 14:33:26.435 12385 12385 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x70d2deaa5bd0
+11-10 14:33:26.435 12385 12385 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x70d2deab3950
+11-10 14:33:26.435 12385 12385 D jni_lib_merge: About to register 11 actual methods.
+11-10 14:33:26.464 12385 12385 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/libreact_codegen_rnscreens.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex): ok
+11-10 14:33:26.464 12385 12385 D jni_lib_merge: Entering merged library JNI_OnLoad.
+11-10 14:33:26.464 12385 12385 D jni_lib_merge: Preparing 12 pre-merged libs (including stub)
+11-10 14:33:26.464 12385 12385 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x70d2de45ea60
+11-10 14:33:26.464 12385 12385 D jni_lib_merge: Preparing to register libmapbufferjni_so.  onload_func: 0x70d2de539bb0
+11-10 14:33:26.464 12385 12385 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x70d2de68bfe0
+11-10 14:33:26.464 12385 12385 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x70d2de697b90
+11-10 14:33:26.464 12385 12385 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x70d2de708b00
+11-10 14:33:26.464 12385 12385 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x70d2de913460
+11-10 14:33:26.464 12385 12385 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x70d2de96f750
+11-10 14:33:26.464 12385 12385 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x70d2de9bceb0
+11-10 14:33:26.464 12385 12385 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x70d2dea8b410
+11-10 14:33:26.464 12385 12385 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x70d2deaa5bd0
+11-10 14:33:26.464 12385 12385 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x70d2deab3950
+11-10 14:33:26.464 12385 12385 D jni_lib_merge: About to register 11 actual methods.
+11-10 14:33:26.483 12385 12385 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/libreact_codegen_rnsvg.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex): ok
+11-10 14:33:26.484 12385 12385 D jni_lib_merge: Entering merged library JNI_OnLoad.
+11-10 14:33:26.484 12385 12385 D jni_lib_merge: Preparing 12 pre-merged libs (including stub)
+11-10 14:33:26.484 12385 12385 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x70d2de45ea60
+11-10 14:33:26.484 12385 12385 D jni_lib_merge: Preparing to register libmapbufferjni_so.  onload_func: 0x70d2de539bb0
+11-10 14:33:26.484 12385 12385 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x70d2de68bfe0
+11-10 14:33:26.484 12385 12385 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x70d2de697b90
+11-10 14:33:26.484 12385 12385 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x70d2de708b00
+11-10 14:33:26.484 12385 12385 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x70d2de913460
+11-10 14:33:26.484 12385 12385 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x70d2de96f750
+11-10 14:33:26.484 12385 12385 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x70d2de9bceb0
+11-10 14:33:26.484 12385 12385 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x70d2dea8b410
+11-10 14:33:26.484 12385 12385 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x70d2deaa5bd0
+11-10 14:33:26.484 12385 12385 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x70d2deab3950
+11-10 14:33:26.484 12385 12385 D jni_lib_merge: About to register 11 actual methods.
+11-10 14:33:26.490 12385 12385 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/libreact_codegen_safeareacontext.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex): ok
+11-10 14:33:26.499 12385 12385 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/libreact_codegen_rnpicker.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex): ok
+11-10 14:33:26.499 12385 12385 D jni_lib_merge: Entering merged library JNI_OnLoad.
+11-10 14:33:26.499 12385 12385 D jni_lib_merge: Preparing 12 pre-merged libs (including stub)
+11-10 14:33:26.499 12385 12385 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x70d2de45ea60
+11-10 14:33:26.499 12385 12385 D jni_lib_merge: Preparing to register libmapbufferjni_so.  onload_func: 0x70d2de539bb0
+11-10 14:33:26.499 12385 12385 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x70d2de68bfe0
+11-10 14:33:26.499 12385 12385 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x70d2de697b90
+11-10 14:33:26.499 12385 12385 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x70d2de708b00
+11-10 14:33:26.499 12385 12385 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x70d2de913460
+11-10 14:33:26.499 12385 12385 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x70d2de96f750
+11-10 14:33:26.499 12385 12385 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x70d2de9bceb0
+11-10 14:33:26.499 12385 12385 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x70d2dea8b410
+11-10 14:33:26.499 12385 12385 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x70d2deaa5bd0
+11-10 14:33:26.499 12385 12385 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x70d2deab3950
+11-10 14:33:26.499 12385 12385 D jni_lib_merge: About to register 11 actual methods.
+11-10 14:33:26.523 12385 12385 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/libappmodules.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex): ok
+11-10 14:33:26.803 12385 12385 I Choreographer: Skipped 42 frames!  The application may be doing too much work on its main thread.
+11-10 14:33:26.836 12385 12421 I InstrConnection: Could not send broadcast or register receiver (isolatedProcess?)
+11-10 14:33:26.850 12385 12421 D TestRequestBuilder: Using class path scanning to discover tests
+11-10 14:33:26.850 12385 12421 I TestRequestBuilder: Scanning classpath to find tests in paths [/data/app/~~Uws0SWHJieyFgaUQmwMbCw==/com.tuapp.seguritacapp.test-aNwi4SrXcYYxoh9BmkovEA==/base.apk]
+11-10 14:33:26.851 12385 12421 W pp.seguritacapp: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+11-10 14:33:27.327 12385 12421 I TestRunner: run started: 1 tests
+11-10 14:33:27.330 12385 12421 I TestRunner: started: runDetoxTests(com.tuapp.seguritacapp.DetoxTest)
+11-10 14:33:27.341 12385 12421 I Detox   : Detox server connection details: url=ws://localhost:54702, sessionId=f965ed91-fdef-ddcd-6523-8e3004610b2b
+11-10 14:33:27.358 12385 12421 W FileTestStorage: Output properties is not supported.
+11-10 14:33:27.359 12385 12421 I Tracing : Tracer added: class androidx.test.platform.tracing.AndroidXTracer
+11-10 14:33:27.384 12385 12421 D EventInjectionStrategy: Creating injection strategy with input manager.
+11-10 14:33:27.386 12385 12421 I pp.seguritacapp: hiddenapi: Accessing hidden method Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager; (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/InputManagerEventInjectionStrategy; (domain=app) using reflection: allowed
+11-10 14:33:27.388 12385 12421 I pp.seguritacapp: hiddenapi: Accessing hidden method Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/InputManagerEventInjectionStrategy; (domain=app) using reflection: allowed
+11-10 14:33:27.388 12385 12421 I pp.seguritacapp: hiddenapi: Accessing hidden field Landroid/hardware/input/InputManager;->INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH:I (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/InputManagerEventInjectionStrategy; (domain=app) using reflection: allowed
+11-10 14:33:27.406 12385 12421 I pp.seguritacapp: hiddenapi: Accessing hidden field Ljava/lang/reflect/Field;->accessFlags:I (runtime_flags=0, domain=core-platform, api=unsupported) from Lorg/joor/Reflect; (domain=app) using reflection: allowed
+11-10 14:33:27.411 12385 12421 I Detox   : Connecting to server...
+11-10 14:33:27.411 12385 12421 I DetoxWSClient: At connectToServer
+11-10 14:33:27.429 12385 12435 D DetoxWSClient: At onOpen
+11-10 14:33:27.429 12385 12435 I DetoxWSClient: Sending out action 'login' (ID #0)
+11-10 14:33:27.429 12385 12435 I Detox   : Connected to server!
+11-10 14:33:27.432 12385 12435 D DetoxWSClient: Received action 'loginSuccess' (ID #0, params={"testerConnected":true,"appConnected":true})
+11-10 14:33:27.433 12385 12431 I DetoxDispatcher: Handling action 'loginSuccess' (ID #0)...
+11-10 14:33:27.433 12385 12431 I DetoxDispatcher: Done with action 'loginSuccess'
+11-10 14:33:27.433 12385 12421 I Detox   : Launching the tested activity!
+11-10 14:33:27.481 12385 12435 D DetoxWSClient: Received action 'isReady' (ID #-1000, params={})
+11-10 14:33:27.481 12385 12431 I DetoxDispatcher: Handling action 'isReady' (ID #-1000)...
+11-10 14:33:27.599 12385 12439 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+11-10 14:33:27.610 12385 12385 I pp.seguritacapp: AssetManager2(0x70d3768af198) locale list changing from [] to [en-US]
+11-10 14:33:27.746 12385 12439 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+11-10 14:33:27.748 12385 12439 I EGL_emulation: Opening libGLESv2_emulation.so
+11-10 14:33:27.751 12385 12439 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+11-10 14:33:27.752 12385 12439 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-10 14:33:27.798 12385 12385 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+11-10 14:33:27.798 12385 12385 I pp.seguritacapp: AssetManager2(0x70d3768ad898) locale list changing from [] to [en-US]
+11-10 14:33:27.805 12385 12385 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@7626e9a in: PRE_ON_CREATE
+11-10 14:33:27.844 12385 12385 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+11-10 14:33:27.872 12385 12385 I pp.seguritacapp: hiddenapi: Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+11-10 14:33:27.872 12385 12385 I pp.seguritacapp: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+11-10 14:33:27.884 12385 12385 W HWUI    : Image decoding logging dropped!
+11-10 14:33:27.893 12385 12385 I ExpoDevMenu: Set new dev-menu delegate: class expo.modules.devmenu.DevMenuDefaultDelegate
+11-10 14:33:27.900 12385 12385 I expo-notifications: ExpoNotificationLifeCycleListener.onCreate::
+11-10 14:33:27.900 12385 12385 I expo-notifications: launchArgs
+11-10 14:33:27.900 12385 12385 I expo-notifications:   detoxURLOverride: exp+seguridadciudadanaapp://expo-development-client/?url=http%3A%2F%2F10.0.2.2%3A8081
+11-10 14:33:27.900 12385 12385 I expo-notifications:   detoxServer: ws://localhost:54702
+11-10 14:33:27.900 12385 12385 I expo-notifications:   detoxSessionId: f965ed91-fdef-ddcd-6523-8e3004610b2b
+11-10 14:33:27.900 12385 12385 I expo-notifications:   detoxEnableSynchronization: 0
+11-10 14:33:27.903 12385 12385 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@7626e9a in: CREATED
+11-10 14:33:27.904 12385 12385 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@7626e9a in: STARTED
+11-10 14:33:27.912 12385 12385 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@7626e9a in: RESUMED
+11-10 14:33:27.930 12385 12385 W HWUI    : Unknown dataspace 0
+11-10 14:33:28.069 12385 12385 D InsetsController: hide(ime(), fromIme=false)
+11-10 14:33:28.069 12385 12385 I ImeTracker: com.tuapp.seguritacapp:8e056c7d: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+11-10 14:33:28.140 12385 12385 I ExpoDevMenu: Set new dev-menu delegate: class expo.modules.devmenu.DevMenuDefaultDelegate
+11-10 14:33:28.163 12385 12385 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@7626e9a in: PAUSED
+11-10 14:33:28.198 12385 12385 I pp.seguritacapp: AssetManager2(0x70d3768ac5d8) locale list changing from [] to [en-US]
+11-10 14:33:28.208 12385 12385 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@e59b90a in: PRE_ON_CREATE
+11-10 14:33:28.260 12385 12385 W unknown:BridgelessReact: ReactHost{0}.startSurface(surfaceId = 0): Schedule
+11-10 14:33:28.260 12385 12385 W unknown:BridgelessReact: ReactHost{0}.attachSurface(surfaceId = 0)
+11-10 14:33:28.264 12385 12458 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask()
+11-10 14:33:28.264 12385 12458 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Start
+11-10 14:33:28.264 12385 12458 D Detox.RNMarker: REACT_BRIDGELESS_LOADING_START (null)
+11-10 14:33:28.264 12385 12458 W unknown:BridgelessReact: ReactHost{0}.getJSBundleLoader()
+11-10 14:33:28.264 12385 12458 W unknown:BridgelessReact: ReactHost{0}.isMetroRunning()
+11-10 14:33:28.272 12385 12385 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@e59b90a in: CREATED
+11-10 14:33:28.273 12385 12385 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@e59b90a in: STARTED
+11-10 14:33:28.274 12385 12385 W unknown:BridgelessReact: ReactHost{0}.onHostResume(activity)
+11-10 14:33:28.274 12385 12385 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@e59b90a in: RESUMED
+11-10 14:33:28.279 12385 12385 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-10 14:33:28.287 12385 12459 W unknown:BridgelessReact: ReactHost{0}.isMetroRunning(): Async result = true
+11-10 14:33:28.288 12385 12458 W unknown:BridgelessReact: ReactHost{0}.loadJSBundleFromMetro()
+11-10 14:33:28.289 12385 12458 D Detox.RNMarker: DOWNLOAD_START (null)
+11-10 14:33:28.379 12385 12385 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@7626e9a in: STOPPED
+11-10 14:33:28.380 12385 12385 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@7626e9a in: DESTROYED
+11-10 14:33:28.380 12385 12385 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda13@c421daa
+11-10 14:33:28.381 12385 12385 D ViewRootImpl: Skipping stats log for color mode
+11-10 14:33:28.470 12385 12385 W unknown:BridgelessReact: ReactHost{0}.raiseSoftException(onWindowFocusChange(hasFocus = "true")): Tried to access onWindowFocusChange while context is not ready
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: Unhandled SoftException
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: com.facebook.react.bridge.ReactNoCrashSoftException: raiseSoftException(onWindowFocusChange(hasFocus = "true")): Tried to access onWindowFocusChange while context is not ready
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.raiseSoftException(ReactHostImpl.java:942)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.raiseSoftException(ReactHostImpl.java:935)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.onWindowFocusChange(ReactHostImpl.java:716)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at com.facebook.react.ReactDelegate.onWindowFocusChanged(ReactDelegate.java:204)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at com.facebook.react.ReactActivityDelegate.onWindowFocusChanged(ReactActivityDelegate.java:189)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at expo.modules.ReactActivityDelegateWrapper.onWindowFocusChanged(ReactActivityDelegateWrapper.kt:298)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at com.facebook.react.ReactActivity.onWindowFocusChanged(ReactActivity.java:138)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at androidx.appcompat.view.WindowCallbackWrapper.onWindowFocusChanged(WindowCallbackWrapper.java:125)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at com.android.internal.policy.DecorView.onWindowFocusChanged(DecorView.java:1818)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at android.view.View.dispatchWindowFocusChanged(View.java:16952)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at android.view.ViewGroup.dispatchWindowFocusChanged(ViewGroup.java:1530)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at android.view.ViewRootImpl.dispatchFocusEvent(ViewRootImpl.java:4872)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at android.view.ViewRootImpl.handleWindowFocusChanged(ViewRootImpl.java:4776)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at android.view.ViewRootImpl.-$$Nest$mhandleWindowFocusChanged(Unknown Source:0)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at android.view.ViewRootImpl$ViewRootHandler.handleMessageImpl(ViewRootImpl.java:7016)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at android.view.ViewRootImpl$ViewRootHandler.handleMessage(ViewRootImpl.java:6926)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at android.os.Handler.dispatchMessage(Handler.java:110)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at android.os.Looper.loopOnce(Looper.java:248)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at android.os.Looper.loop(Looper.java:338)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at java.lang.reflect.Method.invoke(Native Method)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+11-10 14:33:28.473 12385 12385 E unknown:ReactHost: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+11-10 14:33:28.489 12385 12385 D InsetsController: hide(ime(), fromIme=false)
+11-10 14:33:28.490 12385 12385 I ImeTracker: com.tuapp.seguritacapp:e66cc9c9: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+11-10 14:33:28.574 12385 12389 I pp.seguritacapp: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+11-10 14:33:31.257 12385 12460 D Detox.RNMarker: DOWNLOAD_END ({"url":"http:\/\/10.0.2.2:8081\/index.ts.bundle?platform=android&dev=true&hot=false&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&unstable_transformProfile=hermes-stable","filesChangedCount":0})
+11-10 14:33:31.257 12385 12385 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda13@5305ac5
+11-10 14:33:31.257 12385 12460 W unknown:BridgelessReact: ReactHost{0}.loadJSBundleFromMetro(): Creating BundleLoader
+11-10 14:33:31.259 12385 12458 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactContext(): Creating BridgelessReactContext
+11-10 14:33:31.263 12385 12458 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Creating ReactInstance
+11-10 14:33:31.304 12385 12458 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/libhermes.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex): ok
+11-10 14:33:31.306 12385 12458 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/libhermestooling.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex): ok
+11-10 14:33:31.306 12385 12458 D jni_lib_merge: Entering merged library JNI_OnLoad.
+11-10 14:33:31.306 12385 12458 D jni_lib_merge: Preparing 4 pre-merged libs (including stub)
+11-10 14:33:31.307 12385 12458 D jni_lib_merge: Preparing to register libhermes_executor_so.  onload_func: 0x70d2d27b32a0
+11-10 14:33:31.307 12385 12458 D jni_lib_merge: Preparing to register libhermesinstancejni_so.  onload_func: 0x70d2d27e5190
+11-10 14:33:31.307 12385 12458 D jni_lib_merge: Preparing to register libjsijniprofiler_so.  onload_func: 0x70d2d27e7150
+11-10 14:33:31.307 12385 12458 D jni_lib_merge: About to register 3 actual methods.
+11-10 14:33:31.773 12385 12390 W pp.seguritacapp: Cleared Reference was only reachable from finalizer (only reported once)
+11-10 14:33:32.061 12385 12458 I ExpoModulesCore: ✅ AppContext was initialized
+11-10 14:33:32.166 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.166 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderStyle'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderStyle'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderEndColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderTopColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderLeftColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderBlockColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderRightColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderStartColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderBottomColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderEndEndRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderTopEndRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderBlockEndColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderTopLeftRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderEndStartRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderStartEndRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderTopRightRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderTopStartRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.172 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderBlockStartColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.173 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderBottomEndRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.173 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderBottomLeftRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.173 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderStartStartRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.173 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderBottomRightRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.173 12385 12458 W ReactNativeJNI: Component property map contains multiple entries for 'borderBottomStartRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.205 12385 12470 D ProfileInstaller: Installing profile for com.tuapp.seguritacapp
+11-10 14:33:32.267 12385 12458 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Loading JS Bundle
+11-10 14:33:32.268 12385 12458 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Calling DevSupportManagerBase.onNewReactContextCreated(reactContext)
+11-10 14:33:32.269 12385 12465 D Detox.RNMarker: RUN_JS_BUNDLE_START (/index.ts.bundle?platform=android&dev=true&hot=false&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&unstable_transformProfile=hermes-stable)
+11-10 14:33:32.273 12385 12385 W unknown:BridgelessReact: ReactContext.onHostResume()
+11-10 14:33:32.275 12385 12385 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Executing ReactInstanceEventListeners
+11-10 14:33:32.275 12385 12385 I ExpoDevMenu: Delegate's context was loaded.
+11-10 14:33:32.278 12385 12385 W SoLoader: SoLoader already initialized
+11-10 14:33:32.291 12385 12385 W DevLauncher: java.lang.NoSuchFieldException: No field mOverrideColorScheme in class Lcom/facebook/react/modules/appearance/AppearanceModule; (declaration of 'com.facebook.react.modules.appearance.AppearanceModule' appears in /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at java.lang.Class.getDeclaredField(Native Method)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at expo.modules.devlauncher.helpers.DevLauncherReflectionExtensionsKt.setProtectedDeclaredField(DevLauncherReflectionExtensions.kt:21)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at expo.modules.devlauncher.launcher.loaders.DevLauncherExpoAppLoader.applyUserInterfaceStyle(DevLauncherExpoAppLoader.kt:51)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at expo.modules.devlauncher.launcher.loaders.DevLauncherExpoAppLoader.onReactContext(DevLauncherExpoAppLoader.kt:39)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at expo.modules.devlauncher.launcher.loaders.DevLauncherAppLoader$createOnDelegateWillBeCreatedListener$1$2.onReactContextInitialized(DevLauncherAppLoader.kt:57)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at com.facebook.react.runtime.ReactHostImpl.lambda$getOrCreateReactInstanceTask$23(ReactHostImpl.java:1199)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at com.facebook.react.runtime.ReactHostImpl.$r8$lambda$_DltxGexC_ZtRzEC625dZXiL8zo(Unknown Source:0)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at com.facebook.react.runtime.ReactHostImpl$$ExternalSyntheticLambda44.then(D8$$SyntheticClass:0)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at com.facebook.react.runtime.internal.bolts.Task$7.run(Task.java:423)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at com.facebook.react.runtime.internal.bolts.Executors$ImmediateExecutor.execute(Executors.kt:41)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at com.facebook.react.runtime.internal.bolts.Task.completeImmediately(Task.java:418)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at com.facebook.react.runtime.internal.bolts.Task.continueWith(Task.java:288)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at com.facebook.react.runtime.internal.bolts.Task.continueWith(Task.java:299)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at com.facebook.react.runtime.internal.bolts.Task$5.then(Task.java:354)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at com.facebook.react.runtime.internal.bolts.Task$5.then(Task.java:346)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at com.facebook.react.runtime.internal.bolts.Task$8.run(Task.java:460)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at android.os.Handler.handleCallback(Handler.java:995)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at android.os.Handler.dispatchMessage(Handler.java:103)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at android.os.Looper.loopOnce(Looper.java:248)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at android.os.Looper.loop(Looper.java:338)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at java.lang.reflect.Method.invoke(Native Method)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+11-10 14:33:32.291 12385 12385 W DevLauncher: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+11-10 14:33:32.292 12385 12385 I DetoxRNLoading: Got new RN-context through listener
+11-10 14:33:32.292 12385 12458 W unknown:BridgelessReact: ReactHost{0}.startSurface(surfaceId = 0): Execute
+11-10 14:33:32.295 12385 12473 W unknown:BridgelessReact: ReactHost{1}.getOrCreateStartTask(): Schedule
+11-10 14:33:32.295 12385 12473 W unknown:BridgelessReact: ReactHost{1}.getOrCreateReactInstanceTask()
+11-10 14:33:32.295 12385 12473 W unknown:BridgelessReact: ReactHost{1}.getOrCreateReactInstanceTask(): Start
+11-10 14:33:32.295 12385 12473 D Detox.RNMarker: REACT_BRIDGELESS_LOADING_START (null)
+11-10 14:33:32.295 12385 12473 W unknown:BridgelessReact: ReactHost{1}.getJSBundleLoader()
+11-10 14:33:32.296 12385 12473 W unknown:BridgelessReact: ReactHost{1}.getOrCreateReactContext(): Creating BridgelessReactContext
+11-10 14:33:32.296 12385 12473 W unknown:BridgelessReact: ReactHost{1}.getOrCreateReactInstanceTask(): Creating ReactInstance
+11-10 14:33:32.309 12385 12385 I pp.seguritacapp: hiddenapi: Accessing hidden method Landroid/os/MessageQueue;->next()Landroid/os/Message; (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/Interrogator; (domain=app) using reflection: allowed
+11-10 14:33:32.309 12385 12385 I pp.seguritacapp: hiddenapi: Accessing hidden field Landroid/os/MessageQueue;->mMessages:Landroid/os/Message; (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/Interrogator; (domain=app) using reflection: allowed
+11-10 14:33:32.309 12385 12385 I pp.seguritacapp: hiddenapi: Accessing hidden method Landroid/os/Message;->recycleUnchecked()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/Interrogator; (domain=app) using reflection: allowed
+11-10 14:33:32.313 12385 12385 W unknown:BridgelessReact: ReactHost{0}.onUserLeaveHint(activity)
+11-10 14:33:32.313 12385 12385 W unknown:BridgelessReact: ReactHost{0}.onHostPause(activity)
+11-10 14:33:32.313 12385 12385 W unknown:BridgelessReact: ReactContext.onHostPause()
+11-10 14:33:32.314 12385 12385 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@e59b90a in: PAUSED
+11-10 14:33:32.322 12385 12473 I ExpoModulesCore: ✅ AppContext was initialized
+11-10 14:33:32.329 12385 12385 I pp.seguritacapp: AssetManager2(0x70d3768b9418) locale list changing from [] to [en-US]
+11-10 14:33:32.331 12385 12385 D LifecycleMonitor: Lifecycle status change: expo.modules.devmenu.DevMenuActivity@21d0ad4 in: PRE_ON_CREATE
+11-10 14:33:32.337 12385 12385 W unknown:BridgelessReact: ReactHost{1}.startSurface(surfaceId = 0): Schedule
+11-10 14:33:32.337 12385 12385 W unknown:BridgelessReact: ReactHost{1}.attachSurface(surfaceId = 0)
+11-10 14:33:32.356 12385 12385 D LifecycleMonitor: Lifecycle status change: expo.modules.devmenu.DevMenuActivity@21d0ad4 in: CREATED
+11-10 14:33:32.357 12385 12385 W unknown:ReactNative: Packager connection already open, nooping.
+11-10 14:33:32.357 12385 12385 D LifecycleMonitor: Lifecycle status change: expo.modules.devmenu.DevMenuActivity@21d0ad4 in: STARTED
+11-10 14:33:32.357 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.357 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderStyle'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.357 12385 12385 W unknown:BridgelessReact: ReactHost{1}.onHostResume(activity)
+11-10 14:33:32.357 12385 12385 W unknown:BridgelessReact: ReactContext.onHostResume()
+11-10 14:33:32.358 12385 12385 D LifecycleMonitor: Lifecycle status change: expo.modules.devmenu.DevMenuActivity@21d0ad4 in: RESUMED
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderStyle'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderEndColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderTopColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderLeftColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderBlockColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderRightColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderStartColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderBottomColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderEndEndRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderTopEndRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderBlockEndColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderTopLeftRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderEndStartRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderStartEndRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderTopRightRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderTopStartRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.366 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderBlockStartColor'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.367 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderBottomEndRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.367 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderBottomLeftRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.367 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderStartStartRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.367 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderBottomRightRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.367 12385 12473 W ReactNativeJNI: Component property map contains multiple entries for 'borderBottomStartRadius'. Ensure all calls to convertRawProp use a consistent prefix, name and suffix.
+11-10 14:33:32.388 12385 12473 W unknown:BridgelessReact: ReactHost{1}.getOrCreateReactInstanceTask(): Loading JS Bundle
+11-10 14:33:32.406 12385 12385 I Detox   : Wait is over: App is now idle!
+11-10 14:33:32.406 12385 12431 I DetoxWSClient: Sending out action 'ready' (ID #-1000)
+11-10 14:33:32.409 12385 12431 I DetoxDispatcher: Done with action 'isReady'
+11-10 14:33:32.424 12385 12474 D Detox.RNMarker: RUN_JS_BUNDLE_START (EXDevMenuApp.android.js)
+11-10 14:33:32.425 12385 12473 W unknown:BridgelessReact: ReactHost{1}.getOrCreateReactInstanceTask(): Calling DevSupportManagerBase.onNewReactContextCreated(reactContext)
+11-10 14:33:32.426 12385 12473 W unknown:BridgelessReact: ReactHost{1}.getOrCreateReactInstanceTask()
+11-10 14:33:32.428 12385 12385 W unknown:BridgelessReact: ReactContext.onHostResume()
+11-10 14:33:32.429 12385 12385 W unknown:BridgelessReact: ReactHost{1}.getOrCreateReactInstanceTask(): Executing ReactInstanceEventListeners
+11-10 14:33:32.429 12385 12473 W unknown:BridgelessReact: ReactHost{1}.startSurface(surfaceId = 0): Execute
+11-10 14:33:32.445 12385 12385 D InsetsController: hide(ime(), fromIme=false)
+11-10 14:33:32.445 12385 12385 I ImeTracker: com.tuapp.seguritacapp:cff952b2: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+11-10 14:33:32.573 12385 12474 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/libexpo-modules-core.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex): ok
+11-10 14:33:32.590 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class expo.modules.kotlin.views.GroupViewManagerWrapper
+11-10 14:33:32.595 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.uimanager.LayoutShadowNode
+11-10 14:33:32.612 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.safeareaview.ReactSafeAreaViewManager
+11-10 14:33:32.613 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.safeareaview.ReactSafeAreaViewShadowNode
+11-10 14:33:32.627 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.modal.ReactModalHostManager
+11-10 14:33:32.640 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.frescosupport.FrescoBasedReactTextInlineImageViewManager
+11-10 14:33:32.641 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.frescosupport.FrescoBasedReactTextInlineImageShadowNode
+11-10 14:33:32.651 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ReactProgressBarViewManager
+11-10 14:33:32.651 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ProgressBarShadowNode
+11-10 14:33:32.659 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollViewManager
+11-10 14:33:32.680 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.image.ReactImageManager
+11-10 14:33:32.699 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextViewManager
+11-10 14:33:32.702 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextShadowNode
+11-10 14:33:32.710 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollContainerViewManager
+11-10 14:33:32.713 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.unimplementedview.ReactUnimplementedViewManager
+11-10 14:33:32.720 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactScrollViewManager
+11-10 14:33:32.727 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.view.ReactViewManager
+11-10 14:33:32.735 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.drawer.ReactDrawerLayoutManager
+11-10 14:33:32.742 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchManager
+11-10 14:33:32.743 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchManager$ReactSwitchShadowNode
+11-10 14:33:32.746 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactVirtualTextViewManager
+11-10 14:33:32.746 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactVirtualTextShadowNode
+11-10 14:33:32.753 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.swiperefresh.SwipeRefreshLayoutManager
+11-10 14:33:32.758 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactRawTextManager
+11-10 14:33:32.758 12385 12465 D CompatChangeReporter: Compat change id reported: 289878283; UID 10223; state: ENABLED
+11-10 14:33:32.759 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactRawTextShadowNode
+11-10 14:33:32.779 12385 12466 I pp.seguritacapp: AssetManager2(0x70d3768c1a78) locale list changing from [] to [en-US]
+11-10 14:33:32.779 12385 12466 I WebViewFactory: Loading com.google.android.webview version 133.0.6943.137 (code 694313738)
+11-10 14:33:32.780 12385 12466 I pp.seguritacapp: AssetManager2(0x70d3768c6258) locale list changing from [] to [en-US]
+11-10 14:33:32.780 12385 12466 I pp.seguritacapp: AssetManager2(0x70d3768c3ff8) locale list changing from [] to [en-US]
+11-10 14:33:32.781 12385 12466 I pp.seguritacapp: AssetManager2(0x70d3768c5c18) locale list changing from [] to [en-US]
+11-10 14:33:32.781 12385 12466 I pp.seguritacapp: AssetManager2(0x70d3768c3378) locale list changing from [] to [en-US]
+11-10 14:33:32.781 12385 12466 I pp.seguritacapp: AssetManager2(0x70d3768ce8b8) locale list changing from [] to [en-US]
+11-10 14:33:32.782 12385 12466 V ResourcesManager: The following library key has been added: ResourcesKey{ mHash=3e131997 mResDir=null mSplitDirs=[] mOverlayDirs=[] mLibDirs=[/data/app/~~nxIzNTNk-9juzieP2H14bw==/com.google.android.webview-8Ofj1MShe1sfVlVeR-7jYw==/WebViewGoogle.apk,/data/app/~~NUV24JfAbMsvCZ3y-B3LCQ==/com.google.android.trichromelibrary_694313738-b-_y91Ev7XotJG5HsxpYGA==/TrichromeLibrary.apk,/system_ext/framework/androidx.window.extensions.jar] mDisplayId=0 mOverrideConfig=v36 mCompatInfo={440dpi always-compat} mLoaders=[]}
+11-10 14:33:32.784 12385 12466 W pp.seguritacapp: Failed to find entry 'classes.dex': Entry not found
+11-10 14:33:32.790 12385 12390 W pp.seguritacapp: Suspending all threads took: 7.079ms
+11-10 14:33:32.797 12385 12466 D nativeloader: Configuring clns-12 for other apk /data/app/~~NUV24JfAbMsvCZ3y-B3LCQ==/com.google.android.trichromelibrary_694313738-b-_y91Ev7XotJG5HsxpYGA==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~nxIzNTNk-9juzieP2H14bw==/com.google.android.webview-8Ofj1MShe1sfVlVeR-7jYw==/lib/x86_64:/data/app/~~nxIzNTNk-9juzieP2H14bw==/com.google.android.webview-8Ofj1MShe1sfVlVeR-7jYw==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~NUV24JfAbMsvCZ3y-B3LCQ==/com.google.android.trichromelibrary_694313738-b-_y91Ev7XotJG5HsxpYGA==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+11-10 14:33:32.808 12385 12466 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+11-10 14:33:32.817 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputManager
+11-10 14:33:32.820 12385 12474 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputShadowNode
+11-10 14:33:32.822 12385 12466 D nativeloader: Configuring clns-13 for other apk /data/app/~~nxIzNTNk-9juzieP2H14bw==/com.google.android.webview-8Ofj1MShe1sfVlVeR-7jYw==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~nxIzNTNk-9juzieP2H14bw==/com.google.android.webview-8Ofj1MShe1sfVlVeR-7jYw==/lib/x86_64:/data/app/~~nxIzNTNk-9juzieP2H14bw==/com.google.android.webview-8Ofj1MShe1sfVlVeR-7jYw==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~NUV24JfAbMsvCZ3y-B3LCQ==/com.google.android.trichromelibrary_694313738-b-_y91Ev7XotJG5HsxpYGA==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+11-10 14:33:32.823 12385 12390 I pp.seguritacapp: Background concurrent mark compact GC freed 4702KB AllocSpace bytes, 8(400KB) LOS objects, 49% free, 9329KB/18MB, paused 8.718ms,3.753ms total 66.687ms
+11-10 14:33:32.904 12385 12466 I cr_WVCFactoryProvider: version=133.0.6943.137 (694313738) minSdkVersion=29 isBundle=false multiprocess=true packageId=2
+11-10 14:33:32.916 12385 12466 D nativeloader: Load /data/app/~~NUV24JfAbMsvCZ3y-B3LCQ==/com.google.android.trichromelibrary_694313738-b-_y91Ev7XotJG5HsxpYGA==/TrichromeLibrary.apk!/lib/x86_64/libmonochrome_64.so using class loader ns clns-13 (caller=/data/app/~~nxIzNTNk-9juzieP2H14bw==/com.google.android.webview-8Ofj1MShe1sfVlVeR-7jYw==/WebViewGoogle.apk): ok
+11-10 14:33:32.926 12385 12466 D nativeloader: Load /system/lib64/libwebviewchromium_plat_support.so using class loader ns clns-13 (caller=/data/app/~~nxIzNTNk-9juzieP2H14bw==/com.google.android.webview-8Ofj1MShe1sfVlVeR-7jYw==/WebViewGoogle.apk): ok
+11-10 14:33:32.942 12385 12483 I chromium: [1110/143332.938324:INFO:variations_seed_loader.cc(67)] Failed to open file for reading.: No such file or directory (2)
+11-10 14:33:32.942 12385 12483 I chromium: [1110/143332.942668:INFO:variations_seed_loader.cc(67)] Failed to open file for reading.: No such file or directory (2)
+11-10 14:33:32.962 12385 12466 I cr_LibraryLoader: Successfully loaded native library
+11-10 14:33:32.966 12385 12466 I cr_CachingUmaRecorder: Flushed 6 samples from 6 histograms, 0 samples were dropped.
+11-10 14:33:33.011 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapUrlTileManager
+11-10 14:33:33.012 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenFooterManager
+11-10 14:33:33.013 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapManager
+11-10 14:33:33.014 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenContainerViewManager
+11-10 14:33:33.014 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapMarkerManager
+11-10 14:33:33.015 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapLocalTileManager
+11-10 14:33:33.016 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ModalScreenViewManager
+11-10 14:33:33.017 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapPolylineManager
+11-10 14:33:33.018 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapCircleManager
+11-10 14:33:33.018 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaViewManager
+11-10 14:33:33.019 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaViewShadowNode
+11-10 14:33:33.019 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenViewManager
+11-10 14:33:33.021 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class expo.modules.kotlin.views.SimpleViewManagerWrapper
+11-10 14:33:33.022 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackViewManager
+11-10 14:33:33.028 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.airbnb.android.react.lottie.LottieAnimationViewManager
+11-10 14:33:33.029 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapCalloutManager
+11-10 14:33:33.029 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaProviderManager
+11-10 14:33:33.030 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.SearchBarManager
+11-10 14:33:33.031 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapGradientPolylineManager
+11-10 14:33:33.031 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapHeatmapManager
+11-10 14:33:33.031 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.reactnativecommunity.webview.RNCWebViewManager
+11-10 14:33:33.034 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class org.reactnative.maskedview.RNCMaskedViewManager
+11-10 14:33:33.034 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapWMSTileManager
+11-10 14:33:33.035 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackHeaderConfigViewManager
+11-10 14:33:33.035 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenContentWrapperManager
+11-10 14:33:33.036 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapPolygonManager
+11-10 14:33:33.036 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackHeaderSubviewManager
+11-10 14:33:33.037 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.reactnativecommunity.picker.ReactDialogPickerManager
+11-10 14:33:33.038 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.reactnativecommunity.picker.ReactPickerShadowNode
+11-10 14:33:33.038 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapOverlayManager
+11-10 14:33:33.039 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.reactnativecommunity.picker.ReactDropdownPickerManager
+11-10 14:33:33.158 12385 12474 W BridgelessReactContext: [WARNING] Bridgeless doesn't support CatalystInstance. Accessing an API that's not part of the new architecture is not encouraged usage.
+11-10 14:33:33.161 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$DefsViewManager
+11-10 14:33:33.161 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.VirtualViewManager$RenderableShadowNode
+11-10 14:33:33.166 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.debuggingoverlay.DebuggingOverlayManager
+11-10 14:33:33.169 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeMergeManager
+11-10 14:33:33.175 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$LinearGradientManager
+11-10 14:33:33.177 12385 12474 I ExpoModulesCore: ✅ JSI interop was installed
+11-10 14:33:33.177 12385 12474 I ExpoModulesCore: ✅ Constants were exported
+11-10 14:33:33.180 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeGaussianBlurManager
+11-10 14:33:33.194 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeColorMatrixManager
+11-10 14:33:33.197 12385 12474 D Detox.RNMarker: RUN_JS_BUNDLE_END (EXDevMenuApp.android.js)
+11-10 14:33:33.197 12385 12474 I ReactNativeJS: Running "main"
+11-10 14:33:33.204 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$ClipPathViewManager
+11-10 14:33:33.210 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$SymbolManager
+11-10 14:33:33.216 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$PatternManager
+11-10 14:33:33.221 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeBlendManager
+11-10 14:33:33.230 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.SvgViewManager
+11-10 14:33:33.238 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$UseViewManager
+11-10 14:33:33.243 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$CircleViewManager
+11-10 14:33:33.250 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$TSpanViewManager
+11-10 14:33:33.255 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FilterManager
+11-10 14:33:33.260 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$MarkerManager
+11-10 14:33:33.267 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.gesturehandler.react.RNGestureHandlerButtonViewManager
+11-10 14:33:33.276 12385 12474 D Detox.RNMarker: REACT_BRIDGELESS_LOADING_END (null)
+11-10 14:33:33.277 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$ForeignObjectManager
+11-10 14:33:33.283 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$EllipseViewManager
+11-10 14:33:33.289 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$LineViewManager
+11-10 14:33:33.297 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeFloodManager
+11-10 14:33:33.303 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$GroupViewManager
+11-10 14:33:33.311 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$TextViewManager
+11-10 14:33:33.316 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$ImageViewManager
+11-10 14:33:33.325 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$RadialGradientManager
+11-10 14:33:33.330 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$MaskManager
+11-10 14:33:33.337 12385 12385 D Detox.RNMarker: CONTENT_APPEARED (main)
+11-10 14:33:33.341 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$RectViewManager
+11-10 14:33:33.346 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$TextPathViewManager
+11-10 14:33:33.354 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeOffsetManager
+11-10 14:33:33.358 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$PathViewManager
+11-10 14:33:33.381 12385 12465 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.gesturehandler.react.RNGestureHandlerRootViewManager
+11-10 14:33:33.382 12385 12385 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.uimanager.RootViewManager
+11-10 14:33:33.387 12385 12492 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/libimagepipeline.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex): ok
+11-10 14:33:33.416 12385 12493 W HWUI    : Image decoding logging dropped!
+11-10 14:33:33.470 12385 12474 W HWUI    : Image decoding logging dropped!
+11-10 14:33:33.470 12385 12474 W HWUI    : Image decoding logging dropped!
+11-10 14:33:33.477 12385 12474 W HWUI    : Image decoding logging dropped!
+11-10 14:33:33.494 12385 12465 I ReactNativeJS: Bridgeless mode is enabled
+11-10 14:33:33.509 12385 12465 W BridgelessReactContext: [WARNING] Bridgeless doesn't support CatalystInstance. Accessing an API that's not part of the new architecture is not encouraged usage.
+11-10 14:33:33.510 12385 12465 I ExpoModulesCore: ✅ JSI interop was installed
+11-10 14:33:33.512 12385 12465 W ExpoModulesCore: ⚠️ JSI interop was already installed
+11-10 14:33:33.529 12385 12385 I pp.seguritacapp: hiddenapi: Accessing hidden field Landroid/widget/ScrollView;->mScroller:Landroid/widget/OverScroller; (runtime_flags=0, domain=platform, api=unsupported) from Lcom/facebook/react/views/scroll/ReactScrollView; (domain=app) using reflection: allowed
+11-10 14:33:33.544 12385 12496 W HWUI    : Image decoding logging dropped!
+11-10 14:33:33.547 12385 12494 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.548 12385 12494 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.549 12385 12494 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.549 12385 12497 W HWUI    : Image decoding logging dropped!
+11-10 14:33:33.550 12385 12494 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.550 12385 12494 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.550 12385 12494 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.550 12385 12497 W HWUI    : Image decoding logging dropped!
+11-10 14:33:33.550 12385 12494 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.551 12385 12494 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.551 12385 12494 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.551 12385 12494 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.551 12385 12494 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.551 12385 12494 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.553 12385 12497 W HWUI    : Image decoding logging dropped!
+11-10 14:33:33.555 12385 12497 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.556 12385 12497 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.557 12385 12497 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.557 12385 12497 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.557 12385 12497 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.557 12385 12497 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.562 12385 12497 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.562 12385 12465 I expo-notifications: NotificationsEmitter.onNotificationResponseIntentReceived:
+11-10 14:33:33.562 12385 12465 I expo-notifications: actionIdentifier: expo.modules.notifications.actions.DEFAULT
+11-10 14:33:33.562 12385 12465 I expo-notifications: notification
+11-10 14:33:33.562 12385 12465 I expo-notifications:   date: 0
+11-10 14:33:33.562 12385 12465 I expo-notifications:   request
+11-10 14:33:33.562 12385 12465 I expo-notifications:     identifier: (null)
+11-10 14:33:33.562 12385 12465 I expo-notifications:     trigger
+11-10 14:33:33.562 12385 12465 I expo-notifications:       type: push
+11-10 14:33:33.562 12385 12465 I expo-notifications:       channelId: (null)
+11-10 14:33:33.562 12385 12465 I expo-notifications:     content
+11-10 14:33:33.562 12385 12465 I expo-notifications:       data
+11-10 14:33:33.562 12385 12465 I expo-notifications:         launchArgs
+11-10 14:33:33.562 12385 12465 I expo-notifications:           detoxURLOverride: exp+seguridadciudadanaapp://expo-development-client/?url=http%3A%2F%2F10.0.2.2%3A8081
+11-10 14:33:33.562 12385 12465 I expo-notifications:           detoxServer: ws://localhost:54702
+11-10 14:33:33.562 12385 12465 I expo-notifications:           detoxSessionId: f965ed91-fdef-ddcd-6523-8e3004610b2b
+11-10 14:33:33.562 12385 12465 I expo-notifications:           detoxEnableSynchronization: 0
+11-10 14:33:33.562 12385 12465 I expo-notifications:       title: (null)
+11-10 14:33:33.562 12385 12497 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+11-10 14:33:33.563 12385 12497 W unknown:ProgressiveDecoder: unknown image format, {uri: res:/2131623936, firstEncodedBytes: 03000800C00100000100, length: 448}
+11-10 14:33:33.564 12385 12497 W HWUI    : Image decoding logging dropped!
+11-10 14:33:33.564 12385 12493 W HWUI    : Image decoding logging dropped!
+11-10 14:33:33.564 12385 12498 W HWUI    : Image decoding logging dropped!
+11-10 14:33:33.564 12385 12496 W HWUI    : Image decoding logging dropped!
+11-10 14:33:33.569 12385 12497 W HWUI    : Image decoding logging dropped!
+11-10 14:33:33.573 12385 12465 I ExpoModulesCore: ✅ Constants were exported
+11-10 14:33:33.749 12385 12465 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/librnscreens.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes2.dex): ok
+11-10 14:33:33.804 12385 12465 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/libworklets.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex): ok
+11-10 14:33:33.810 12385 12465 D nativeloader: Load /data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!/lib/x86_64/libreanimated.so using class loader ns clns-9 (caller=/data/app/~~HhcoA-g6Zvged_v0032zgg==/com.tuapp.seguritacapp-rlcXY0UGVc30IkaQO5G5mg==/base.apk!classes5.dex): ok
+11-10 14:33:33.814 12385 12465 W pp.seguritacapp: CheckJNI: method to register "installJSIBindings" not in the given class. This is slow, consider changing your RegisterNatives calls.
+11-10 14:33:33.830 12385 12465 W BridgelessReactContext: [WARNING] Bridgeless doesn't support CatalystInstance. Accessing an API that's not part of the new architecture is not encouraged usage.
+11-10 14:33:34.259 12385 12465 W ReactNativeJS: '[2025-11-10T14:33:34.255Z]  @firebase/auth:', 'Auth (11.9.0): \nYou are initializing Firebase Auth for React Native without providing\nAsyncStorage. Auth state will default to memory persistence and will not\npersist between sessions. In order to persist auth state, install the package\n"@react-native-async-storage/async-storage" and provide it to\ninitializeAuth:\n\nimport { initializeAuth, getReactNativePersistence } from \'firebase/auth\';\nimport ReactNativeAsyncStorage from \'@react-native-async-storage/async-storage\';\nconst auth = initializeAuth(app, {\n  persistence: getReactNativePersistence(ReactNativeAsyncStorage)\n});\n'
+11-10 14:33:34.285 12385 12465 I ReactNativeJS: ✅ Firestore inicializado con configuración básica
+11-10 14:33:34.289 12385 12465 I ReactNativeJS: ✅ Firebase inicializado correctamente
+11-10 14:33:34.291 12385 12465 I ReactNativeJS: '📱 Proyecto:', 'seguritacapp'
+11-10 14:33:34.304 12385 12465 V AsyncStorageExpoMigration: No scoped database found
+11-10 14:33:34.419 12385 12435 D DetoxWSClient: Received action 'invoke' (ID #1, params={"target":{"type":"Class","value":"com.wix.detox.Detox"},"method":"startActivityFromUrl","args":["exp+seguridadciudadanaapp:\/\/login"]})
+11-10 14:33:34.420 12385 12431 I DetoxDispatcher: Handling action 'invoke' (ID #1)...
+11-10 14:33:34.441 12385 12431 D Detox   : class com.wix.detox.Detox, startActivityFromUrl, [exp+seguridadciudadanaapp://login]
+11-10 14:33:34.456 12385 12431 W ActivityTestRule: Activity wasn't created yet or already stopped
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: Test exception
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: java.lang.reflect.InvocationTargetException
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at java.lang.reflect.Method.invoke(Native Method)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at org.apache.commons.lang3.reflect.MethodUtils.invokeStaticMethod(MethodUtils.java:443)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at org.apache.commons.lang3.reflect.MethodUtils.invokeStaticMethod(MethodUtils.java:405)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at com.wix.invoke.types.ClassTarget.execute(ClassTarget.java:23)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at com.wix.invoke.types.Target.invoke(Target.java:59)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at com.wix.invoke.MethodInvocation.invoke(MethodInvocation.java:35)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at com.wix.invoke.MethodInvocation.invoke(MethodInvocation.java:26)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at com.wix.invoke.MethodInvocation.invoke(MethodInvocation.java:20)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.InvokeActionHandler.handle(DetoxActionHandlers.kt:54)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor.executeAction$lambda$2$lambda$1(DetoxActionsDispatcher.kt:76)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor.$r8$lambda$GVbB7LHtBHxNHGbgYnHJ6YrwCqs(Unknown Source:0)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at android.os.Handler.handleCallback(Handler.java:995)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at android.os.Handler.dispatchMessage(Handler.java:103)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at android.os.Looper.loopOnce(Looper.java:248)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at android.os.Looper.loop(Looper.java:338)
+11-10 14:33:34.456 12385 12431 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor._init_$lambda$0(

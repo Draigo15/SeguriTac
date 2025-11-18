@@ -1,0 +1,22 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Escudo principal -->
+  <path d="M100 20 L160 50 L160 120 C160 150 130 180 100 180 C70 180 40 150 40 120 L40 50 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+  
+  <!-- Símbolo de seguridad -->
+  <circle cx="100" cy="80" r="25" fill="#002B7F"/>
+  
+  <!-- Checkmark de seguridad -->
+  <path d="M90 80 L97 87 L110 74" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Texto "SEGURIDAD" -->
+  <text x="100" y="130" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#002B7F" text-anchor="middle">SEGURIDAD</text>
+  
+  <!-- Texto "TACNA" -->
+  <text x="100" y="145" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#002B7F" text-anchor="middle">TACNA</text>
+  
+  <!-- Elementos decorativos -->
+  <circle cx="70" cy="60" r="3" fill="#002B7F" opacity="0.6"/>
+  <circle cx="130" cy="60" r="3" fill="#002B7F" opacity="0.6"/>
+  <circle cx="70" cy="140" r="2" fill="#002B7F" opacity="0.4"/>
+  <circle cx="130" cy="140" r="2" fill="#002B7F" opacity="0.4"/>
+</svg>

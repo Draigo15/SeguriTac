@@ -1,0 +1,127 @@
+10:47:40.211 detox[20828] [90mB[39m [33mlifecycle[39m node_modules\detox\local-cli\cli.js test --configuration android.emu.debug --config e2e/jest.config.js --record-logs all --record-videos all --take-screenshots all -l trace e2e/auth.fullflow.e2e.test.js
+  data: {
+    "id": "75eede36-7cfb-7c83-8f2a-4db5ea6c4d77",
+    "detoxConfig": {
+      "configurationName": "android.emu.debug",
+      "apps": {
+        "default": {
+          "type": "android.apk",
+          "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+          "testBinaryPath": "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+          "build": "cmd /C D:\\SeguridadAPP\\SeguridadCiudadanaApp\\android\\gradlew.bat -p D:\\SeguridadAPP\\SeguridadCiudadanaApp\\android assembleDebug assembleAndroidTest -DtestBuildType=debug"
+        }
+      },
+      "artifacts": {
+        "rootDir": "artifacts\\android.emu.debug.2025-11-14 15-47-40Z",
+        "plugins": {
+          "log": {
+            "enabled": true,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "screenshot": {
+            "enabled": true,
+            "shouldTakeAutomaticSnapshots": true,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "video": {
+            "enabled": true,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "instruments": {
+            "enabled": false,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "uiHierarchy": {
+            "enabled": false,
+            "keepOnlyFailedTestsArtifacts": false
+          }
+        }
+      },
+      "behavior": {
+        "init": {
+          "keepLockFile": false,
+          "reinstallApp": true,
+          "exposeGlobals": true
+        },
+        "cleanup": {
+          "shutdownDevice": false
+        },
+        "launchApp": "auto"
+      },
+      "cli": {
+        "recordLogs": "all",
+        "takeScreenshots": "all",
+        "recordVideos": "all",
+        "configuration": "android.emu.debug",
+        "loglevel": "trace",
+        "start": true
+      },
+      "commands": [
+        {
+          "appName": "default",
+          "build": "cmd /C D:\\SeguridadAPP\\SeguridadCiudadanaApp\\android\\gradlew.bat -p D:\\SeguridadAPP\\SeguridadCiudadanaApp\\android assembleDebug assembleAndroidTest -DtestBuildType=debug"
+        }
+      ],
+      "device": {
+        "type": "android.emulator",
+        "device": {
+          "avdName": "Pixel_6_API34"
+        }
+      },
+      "logger": {
+        "level": "trace",
+        "overrideConsole": true,
+        "options": {
+          "showLoggerName": true,
+          "showPid": true,
+          "showLevel": false,
+          "showMetadata": false,
+          "basepath": "D:\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\detox\\src",
+          "prefixers": {},
+          "stringifiers": {}
+        }
+      },
+      "testRunner": {
+        "retries": 0,
+        "forwardEnv": true,
+        "detached": false,
+        "bail": false,
+        "noRetryArgs": [
+          "shard"
+        ],
+        "jest": {
+          "setupTimeout": 300000,
+          "teardownTimeout": 30000,
+          "retryAfterCircusRetries": false,
+          "reportWorkerAssign": true
+        },
+        "args": {
+          "$0": "jest",
+          "_": [
+            "e2e/auth.fullflow.e2e.test.js"
+          ],
+          "config": "e2e/jest.config.js",
+          "--": []
+        }
+      },
+      "session": {
+        "autoStart": true,
+        "debugSynchronization": 10000
+      }
+    },
+    "detoxIPCServer": "primary-20828",
+    "testResults": [],
+    "testSessionIndex": 0,
+    "workersCount": 0
+  }
+10:47:40.462 detox[20828] [90mi[39m [33mipc[39m Server path not specified, so defaulting to ipc.config.socketRoot + ipc.config.appspace + ipc.config.id /tmp/detox.primary-20828
+10:47:40.463 detox[20828] [90mi[39m [33mipc[39m starting server on  /tmp/detox.primary-20828 
+10:47:40.463 detox[20828] [90mi[39m [33mipc[39m starting TLS server false
+10:47:40.464 detox[20828] [90mi[39m [33mipc[39m starting server as Unix || Windows Socket
+10:47:40.467 detox[20828] [90mi[39m [33mws-server[39m Detox server listening on localhost:55964...
+10:47:40.473 detox[20828] [90mi[39m [33mlifecycle[39m Serialized the session state at: C:\Users\carus\AppData\Local\Temp\75eede36-7cfb-7c83-8f2a-4db5ea6c4d77.detox.json
+10:47:40.475 detox[20828] [90mB[39m [33mlifecycle[39m DETOX_CONFIGURATION="android.emu.debug" DETOX_LOGLEVEL="trace" DETOX_RECORD_LOGS="all" DETOX_RECORD_VIDEOS="all" DETOX_TAKE_SCREENSHOTS="all" jest --config e2e/jest.config.js e2e/auth.fullflow.e2e.test.js
+10:47:40.493 detox[20828] [90mE[39m [33mlifecycle[39m Command failed with exit code = 1:
+DETOX_CONFIGURATION="android.emu.debug" DETOX_LOGLEVEL="trace" DETOX_RECORD_LOGS="all" DETOX_RECORD_VIDEOS="all" DETOX_TAKE_SCREENSHOTS="all" jest --config e2e/jest.config.js e2e/auth.fullflow.e2e.test.js
+10:47:40.494 detox[20828] [90mi[39m [33mws-server[39m Detox server has been closed gracefully
+10:47:40.496 detox[20828] [90mE[39m [33mlifecycle[39m node_modules\detox\local-cli\cli.js test --configuration android.emu.debug --config e2e/jest.config.js --record-logs all --record-videos all --take-screenshots all -l trace e2e/auth.fullflow.e2e.test.js

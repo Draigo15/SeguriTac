@@ -1,0 +1,597 @@
+--------- beginning of main
+11-14 16:11:45.337  9254  9254 I pp.seguritacapp: Late-enabling -Xcheck:jni
+11-14 16:11:45.349  9254  9254 I pp.seguritacapp: Using CollectorTypeCC GC.
+11-14 16:11:45.349  9254  9254 W pp.seguritacapp: Unexpected CPU variant for x86: x86_64.
+11-14 16:11:45.349  9254  9254 W pp.seguritacapp: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+11-14 16:11:45.401  9254  9254 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10202; state: ENABLED
+11-14 16:11:45.402  9254  9254 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10202; state: ENABLED
+--------- beginning of system
+11-14 16:11:45.407  9254  9254 W ActivityThread: Package uses different ABI(s) than its instrumentation: package[com.tuapp.seguritacapp]: x86_64, null instrumentation[com.tuapp.seguritacapp.test]: null, null
+11-14 16:11:45.411  9254  9254 D nativeloader: Configuring clns-6 for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/lib/x86_64:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/lib/x86_64:/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk!/lib/x86_64:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.tuapp.seguritacapp
+11-14 16:11:45.413  9254  9254 W pp.seguritacapp: ClassLoaderContext shared library size mismatch. Expected=2, found=1 (PCL[]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]} | PCL[]{PCL[/system/framework/org.apache.http.legacy.jar*365604908]})
+11-14 16:11:45.415  9254  9254 W pp.seguritacapp: ClassLoaderContext classpath size mismatch. expected=0, found=1 (PCL[] | PCL[/system/framework/android.test.runner.jar*4168958247]{PCL[/system/framework/org.apache.http.legacy.jar*365604908]})
+11-14 16:11:45.417  9254  9254 W pp.seguritacapp: ClassLoaderContext classpath size mismatch. expected=0, found=2 (PCL[] | PCL[/system/framework/android.test.runner.jar*4168958247:/system/framework/android.test.mock.jar*3186112116]{PCL[/system/framework/org.apache.http.legacy.jar*365604908]})
+11-14 16:11:45.417  9254  9254 W ziparchive: Unable to open '/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.dm': No such file or directory
+11-14 16:11:45.417  9254  9254 W ziparchive: Unable to open '/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.dm': No such file or directory
+11-14 16:11:45.459  9254  9254 W ziparchive: Unable to open '/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.dm': No such file or directory
+11-14 16:11:45.459  9254  9254 W ziparchive: Unable to open '/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.dm': No such file or directory
+11-14 16:11:45.707  9254  9254 D nativeloader: Configuring clns-7 for other apk /system/framework/android.test.runner.jar:/system/framework/android.test.mock.jar:/system/framework/android.test.base.jar:/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/lib/x86_64:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/lib/x86_64:/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk!/lib/x86_64:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.tuapp.seguritacapp
+11-14 16:11:45.719  9254  9254 V GraphicsEnvironment: Currently set values for:
+11-14 16:11:45.719  9254  9254 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-14 16:11:45.719  9254  9254 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-14 16:11:45.720  9254  9254 V GraphicsEnvironment: ANGLE GameManagerService for com.tuapp.seguritacapp: false
+11-14 16:11:45.720  9254  9254 V GraphicsEnvironment: com.tuapp.seguritacapp is not listed in per-application setting
+11-14 16:11:45.720  9254  9254 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-14 16:11:45.723  9254  9254 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-14 16:11:45.726  9254  9254 D nativeloader: Configuring clns-8 for other apk /system/framework/android.test.mock.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/lib/x86_64:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/lib/x86_64, permitted_path=/data:/mnt/expand
+11-14 16:11:45.731  9254  9254 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-14 16:11:45.732  9254  9254 D nativeloader: Configuring clns-9 for other apk /system/framework/android.test.runner.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/lib/x86_64:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/lib/x86_64, permitted_path=/data:/mnt/expand
+11-14 16:11:45.733  9254  9254 W pp.seguritacapp: ClassLoaderContext shared library size mismatch. Expected=2, found=3 (PCL[]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]} | PCL[]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]#PCL[/system/framework/android.test.runner.jar*4168958247]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]}};PCL[/system/framework/android.test.runner.jar*4168958247:/system/framework/android.test.mock.jar*3186112116:/system/framework/android.test.base.jar*836642756:/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk*710614376:/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk!classes2.dex*314750459:/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk!classes3.dex*2150330680:/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk!classes4.dex*3754422716:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk*3735652970:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes2.dex*2846272409:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes3.dex*568552958:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes4.dex*3366001543:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes5.dex*401369396:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes6.dex*4234121696:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes7.dex*2649428190]{PCL[/system/framework/org.apache.http.legacy.jar*365604908]})
+11-14 16:11:45.734  9254  9254 W pp.seguritacapp: ClassLoaderContext classpath size mismatch. expected=0, found=1 (PCL[] | PCL[/system/framework/android.test.runner.jar*4168958247]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]#PCL[/system/framework/android.test.runner.jar*4168958247]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]}};PCL[/system/framework/android.test.runner.jar*4168958247:/system/framework/android.test.mock.jar*3186112116:/system/framework/android.test.base.jar*836642756:/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk*710614376:/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk!classes2.dex*314750459:/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk!classes3.dex*2150330680:/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk!classes4.dex*3754422716:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk*3735652970:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes2.dex*2846272409:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes3.dex*568552958:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes4.dex*3366001543:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes5.dex*401369396:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes6.dex*4234121696:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes7.dex*2649428190]{PCL[/system/framework/org.apache.http.legacy.jar*365604908]})
+11-14 16:11:45.735  9254  9254 W pp.seguritacapp: ClassLoaderContext classpath size mismatch. expected=0, found=2 (PCL[] | PCL[/system/framework/android.test.runner.jar*4168958247:/system/framework/android.test.mock.jar*3186112116]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]#PCL[/system/framework/android.test.runner.jar*4168958247]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]}};PCL[/system/framework/android.test.runner.jar*4168958247:/system/framework/android.test.mock.jar*3186112116:/system/framework/android.test.base.jar*836642756:/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk*710614376:/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk!classes2.dex*314750459:/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk!classes3.dex*2150330680:/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk!classes4.dex*3754422716:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk*3735652970:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes2.dex*2846272409:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes3.dex*568552958:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes4.dex*3366001543:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes5.dex*401369396:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes6.dex*4234121696:/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes7.dex*2649428190]{PCL[/system/framework/org.apache.http.legacy.jar*365604908]})
+11-14 16:11:45.735  9254  9254 W ziparchive: Unable to open '/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.dm': No such file or directory
+11-14 16:11:45.735  9254  9254 W ziparchive: Unable to open '/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.dm': No such file or directory
+11-14 16:11:45.774  9254  9254 W ziparchive: Unable to open '/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.dm': No such file or directory
+11-14 16:11:45.774  9254  9254 W ziparchive: Unable to open '/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.dm': No such file or directory
+11-14 16:11:46.005  9254  9254 I AndroidJUnitRunner: newApplication com.tuapp.seguritacapp.MainApplication
+11-14 16:11:46.058  9254  9254 D CompatibilityChangeReporter: Compat change id reported: 183155436; UID 10202; state: ENABLED
+11-14 16:11:46.067  9254  9254 I FirebaseApp: Device unlocked: initializing all Firebase APIs for app [DEFAULT]
+11-14 16:11:46.076  9254  9254 I FirebaseInitProvider: FirebaseApp initialization successful
+11-14 16:11:46.092  9254  9254 D WM-WrkMgrInitializer: Initializing WorkManager with default configuration.
+11-14 16:11:46.107  9254  9254 I AndroidJUnitRunner: onCreate Bundle[mParcelledData.dataSize=588]
+11-14 16:11:46.108  9254  9254 D AndroidJUnitRunner: Use the raw file system for managing file I/O.
+11-14 16:11:46.118  9254  9254 V TestEventClient: No service name argument was given (testDiscoveryService, testRunEventService or orchestratorService)
+11-14 16:11:46.118  9254  9301 D AndroidJUnitRunner: onStart is called.
+11-14 16:11:46.120  9254  9254 W SoLoader: Initializing SoLoader: 0
+11-14 16:11:46.121  9254  9254 W SoLoader: Recording new base apk path: /data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk
+11-14 16:11:46.121  9254  9254 W SoLoader: Previously recorded 0 base apk paths.
+11-14 16:11:46.122  9254  9254 I SoLoader: Preparing SO source: DirectorySoSource[root = /vendor/lib64 flags = 2]
+11-14 16:11:46.122  9254  9254 I SoLoader: Preparing SO source: DirectorySoSource[root = /system/lib64 flags = 2]
+11-14 16:11:46.122  9254  9254 I SoLoader: Preparing SO source: DirectApkSoSource[root = [/data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!/lib/x86_64]]
+11-14 16:11:46.141  9254  9296 D TrafficStats: tagSocket(77) with statsTag=0x8001, statsUid=-1
+11-14 16:11:46.143  9254  9297 D CompatibilityChangeReporter: Compat change id reported: 160794467; UID 10202; state: ENABLED
+11-14 16:11:46.161  9254  9254 I SoLoader: Preparing SO source: ApplicationSoSource[DirectorySoSource[root = /data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/lib/x86_64 flags = 0]]
+11-14 16:11:46.161  9254  9254 I SoLoader: init finish: 4 SO sources prepared
+11-14 16:11:46.162  9254  9254 W SoLoader: SoLoader initialized: 8
+11-14 16:11:46.181  9254  9301 I InstrConnection: Could not send broadcast or register receiver (isolatedProcess?)
+11-14 16:11:46.184  9254  9301 D TestRequestBuilder: Using class path scanning to discover tests
+11-14 16:11:46.184  9254  9301 I TestRequestBuilder: Scanning classpath to find tests in paths [/data/app/~~dg5H2JJhYSITky8fDIMbSg==/com.tuapp.seguritacapp.test-68y86Z8RagPjf-kyBD3uQQ==/base.apk]
+11-14 16:11:46.184  9254  9301 W pp.seguritacapp: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+11-14 16:11:46.843  9254  9301 I TestRunner: run started: 1 tests
+11-14 16:11:46.844  9254  9301 I TestRunner: started: runDetoxTests(com.tuapp.seguritacapp.DetoxTest)
+11-14 16:11:46.847  9254  9301 I Detox   : Detox server connection details: url=ws://localhost:64908, sessionId=0fad6b6e-339b-1116-7a07-23498c92b46a
+11-14 16:11:46.850  9254  9301 W FileTestStorage: Output properties is not supported.
+11-14 16:11:46.851  9254  9301 I Tracing : Tracer added: class androidx.test.platform.tracing.AndroidXTracer
+11-14 16:11:46.854  9254  9301 D EventInjectionStrategy: Creating injection strategy with input manager.
+11-14 16:11:46.854  9254  9301 W pp.seguritacapp: Accessing hidden method Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager; (unsupported, reflection, allowed)
+11-14 16:11:46.855  9254  9301 W pp.seguritacapp: Accessing hidden method Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z (unsupported, reflection, allowed)
+11-14 16:11:46.855  9254  9301 W pp.seguritacapp: Accessing hidden field Landroid/hardware/input/InputManager;->INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH:I (unsupported, reflection, allowed)
+11-14 16:11:46.861  9254  9301 W pp.seguritacapp: Accessing hidden field Ljava/lang/reflect/Field;->accessFlags:I (unsupported, reflection, allowed)
+11-14 16:11:46.862  9254  9301 I Detox   : Connecting to server...
+11-14 16:11:46.862  9254  9301 I DetoxWSClient: At connectToServer
+11-14 16:11:46.890  9254  9313 D TrafficStats: tagSocket(98) with statsTag=0xffffffff, statsUid=-1
+11-14 16:11:46.897  9254  9313 D DetoxWSClient: At onOpen
+11-14 16:11:46.897  9254  9313 I DetoxWSClient: Sending out action 'login' (ID #0)
+11-14 16:11:46.897  9254  9313 I Detox   : Connected to server!
+11-14 16:11:46.900  9254  9313 D DetoxWSClient: Received action 'loginSuccess' (ID #0, params={"testerConnected":true,"appConnected":true})
+11-14 16:11:46.901  9254  9309 I DetoxDispatcher: Handling action 'loginSuccess' (ID #0)...
+11-14 16:11:46.901  9254  9309 I DetoxDispatcher: Done with action 'loginSuccess'
+11-14 16:11:46.901  9254  9301 I Detox   : Launching the tested activity!
+11-14 16:11:46.929  9254  9322 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-14 16:11:46.933  9254  9322 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-14 16:11:46.937  9254  9322 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-14 16:11:46.946  9254  9313 D DetoxWSClient: Received action 'isReady' (ID #-1000, params={})
+11-14 16:11:46.946  9254  9309 I DetoxDispatcher: Handling action 'isReady' (ID #-1000)...
+11-14 16:11:46.950  9254  9254 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+11-14 16:11:46.954  9254  9254 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@61ed606 in: PRE_ON_CREATE
+11-14 16:11:47.000  9254  9254 W pp.seguritacapp: Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (unsupported, reflection, allowed)
+11-14 16:11:47.000  9254  9254 W pp.seguritacapp: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (unsupported, reflection, allowed)
+11-14 16:11:47.010  9254  9254 I ExpoDevMenu: Set new dev-menu delegate: class expo.modules.devmenu.DevMenuDefaultDelegate
+11-14 16:11:47.013  9254  9254 D Detox.RNMarker: BUILD_REACT_INSTANCE_MANAGER_START (null)
+11-14 16:11:47.016  9254  9254 W SoLoader: SoLoader already initialized
+11-14 16:11:47.024  9254  9254 D Detox.RNMarker: BUILD_REACT_INSTANCE_MANAGER_END (null)
+11-14 16:11:47.025  9254  9254 W SoLoader: SoLoader already initialized
+11-14 16:11:47.047  9254  9332 D TrafficStats: tagSocket(105) with statsTag=0xffffffff, statsUid=-1
+11-14 16:11:47.066  9254  9254 D jni_lib_merge: Entering merged library JNI_OnLoad.
+11-14 16:11:47.066  9254  9254 D jni_lib_merge: Preparing 12 pre-merged libs (including stub)
+11-14 16:11:47.066  9254  9254 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x7bde5341ca60
+11-14 16:11:47.066  9254  9254 D jni_lib_merge: Preparing to register libmapbufferjni_so.  onload_func: 0x7bde534f7bb0
+11-14 16:11:47.066  9254  9254 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x7bde53649fe0
+11-14 16:11:47.066  9254  9254 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x7bde53655b90
+11-14 16:11:47.066  9254  9254 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x7bde536c6b00
+11-14 16:11:47.066  9254  9254 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x7bde538d1460
+11-14 16:11:47.066  9254  9254 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x7bde5392d750
+11-14 16:11:47.066  9254  9254 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x7bde5397aeb0
+11-14 16:11:47.066  9254  9254 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x7bde53a49410
+11-14 16:11:47.066  9254  9254 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x7bde53a63bd0
+11-14 16:11:47.066  9254  9254 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x7bde53a71950
+11-14 16:11:47.066  9254  9254 D jni_lib_merge: About to register 11 actual methods.
+11-14 16:11:47.069  9254  9254 I expo-notifications: ExpoNotificationLifeCycleListener.onCreate::
+11-14 16:11:47.069  9254  9254 I expo-notifications: launchArgs
+11-14 16:11:47.069  9254  9254 I expo-notifications:   detoxURLOverride: seguridadciudadanaapp://expo-development-client/?url=http%3A%2F%2F10.0.2.2%3A8081&role=ciudadano&disableBypass=1
+11-14 16:11:47.069  9254  9254 I expo-notifications:   detoxServer: ws://localhost:64908
+11-14 16:11:47.069  9254  9254 I expo-notifications:   detoxSessionId: 0fad6b6e-339b-1116-7a07-23498c92b46a
+11-14 16:11:47.069  9254  9254 I expo-notifications:   detoxEnableSynchronization: 0
+11-14 16:11:47.071  9254  9254 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@61ed606 in: CREATED
+11-14 16:11:47.073  9254  9254 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@61ed606 in: STARTED
+11-14 16:11:47.075  9254  9254 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@61ed606 in: RESUMED
+11-14 16:11:47.077  9254  9334 D TrafficStats: tagSocket(108) with statsTag=0xffffffff, statsUid=-1
+11-14 16:11:47.077  9254  9254 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10202; state: DISABLED
+11-14 16:11:47.079  9254  9254 W OpenGLRenderer: Unknown dataspace 0
+11-14 16:11:47.137  9254  9320 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+11-14 16:11:47.137  9254  9320 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-14 16:11:47.178  9254  9320 I Gralloc4: mapper 4.x is not supported
+11-14 16:11:47.192  9254  9320 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-14 16:11:47.224  9254  9254 I ExpoDevMenu: Set new dev-menu delegate: class expo.modules.devmenu.DevMenuDefaultDelegate
+11-14 16:11:47.237  9254  9254 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@61ed606 in: PAUSED
+11-14 16:11:47.261  9254  9254 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@1d42e75 in: PRE_ON_CREATE
+11-14 16:11:47.265  9254  9343 D TrafficStats: tagSocket(125) with statsTag=0xffffffff, statsUid=-1
+11-14 16:11:47.272  9254  9344 D TrafficStats: tagSocket(126) with statsTag=0xffffffff, statsUid=-1
+11-14 16:11:47.278  9254  9254 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@1d42e75 in: CREATED
+11-14 16:11:47.281  9254  9254 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@1d42e75 in: STARTED
+11-14 16:11:47.282  9254  9254 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@1d42e75 in: RESUMED
+11-14 16:11:47.318  9254  9345 D TrafficStats: tagSocket(127) with statsTag=0xffffffff, statsUid=-1
+11-14 16:11:47.331  9254  9320 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-14 16:11:47.351  9254  9254 D Detox.RNMarker: DOWNLOAD_START (null)
+11-14 16:11:47.356  9254  9347 D TrafficStats: tagSocket(132) with statsTag=0xffffffff, statsUid=-1
+11-14 16:11:47.373  9254  9254 D CompatibilityChangeReporter: Compat change id reported: 210923482; UID 10202; state: ENABLED
+11-14 16:11:47.388  9254  9254 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@61ed606 in: STOPPED
+11-14 16:11:47.389  9254  9254 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@61ed606 in: DESTROYED
+11-14 16:11:47.389  9254  9254 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@f42a74e
+11-14 16:11:47.410  9254  9320 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-14 16:11:48.965  9254  9254 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@baf94e6
+11-14 16:11:48.967  9254  9347 D Detox.RNMarker: DOWNLOAD_END ({"url":"http:\/\/10.0.2.2:8081\/index.ts.bundle?platform=android&dev=true&hot=false&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&unstable_transformProfile=hermes-stable","filesChangedCount":0})
+11-14 16:11:48.971  9254  9254 D Detox.RNMarker: REACT_BRIDGE_LOADING_START (null)
+11-14 16:11:48.981  9254  9390 D jni_lib_merge: Entering merged library JNI_OnLoad.
+11-14 16:11:48.981  9254  9390 D jni_lib_merge: Preparing 4 pre-merged libs (including stub)
+11-14 16:11:48.982  9254  9390 D jni_lib_merge: Preparing to register libhermes_executor_so.  onload_func: 0x7bde58ee42a0
+11-14 16:11:48.982  9254  9390 D jni_lib_merge: Preparing to register libhermesinstancejni_so.  onload_func: 0x7bde58f16190
+11-14 16:11:48.982  9254  9390 D jni_lib_merge: Preparing to register libjsijniprofiler_so.  onload_func: 0x7bde58f18150
+11-14 16:11:48.982  9254  9390 D jni_lib_merge: About to register 3 actual methods.
+11-14 16:11:48.983  9254  9390 D Detox.RNMarker: CREATE_REACT_CONTEXT_START (HermesExecutorDebug)
+11-14 16:11:48.984  9254  9390 D Detox.RNMarker: PROCESS_PACKAGES_START (null)
+11-14 16:11:48.986  9254  9390 D Detox.RNMarker: CREATE_MODULE_START (JSCHeapCapture)
+11-14 16:11:48.986  9254  9390 D Detox.RNMarker: CREATE_MODULE_END (JSCHeapCapture)
+11-14 16:11:48.988  9254  9390 D Detox.RNMarker: CREATE_MODULE_START (FrescoModule)
+11-14 16:11:48.988  9254  9390 D Detox.RNMarker: CREATE_MODULE_END (FrescoModule)
+11-14 16:11:49.351  9254  9390 I ExpoModulesCore: ✅ AppContext was initialized
+11-14 16:11:49.356  9254  9390 D Detox.RNMarker: PROCESS_PACKAGES_END (null)
+11-14 16:11:49.357  9254  9390 D Detox.RNMarker: CREATE_CATALYST_INSTANCE_START (null)
+11-14 16:11:49.362  9254  9390 D Detox.RNMarker: CREATE_CATALYST_INSTANCE_END (null)
+11-14 16:11:49.363  9254  9395 D Detox.RNMarker: CREATE_REACT_CONTEXT_END (null)
+11-14 16:11:49.363  9254  9390 D Detox.RNMarker: PRE_RUN_JS_BUNDLE_START (null)
+11-14 16:11:49.363  9254  9395 D Detox.RNMarker: RUN_JS_BUNDLE_START (/index.ts.bundle?platform=android&dev=true&hot=false&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&unstable_transformProfile=hermes-stable)
+11-14 16:11:49.366  9254  9254 W unknown:ReactNative: Packager connection already open, nooping.
+11-14 16:11:49.367  9254  9396 D Detox.RNMarker: CREATE_MODULE_START (UIManager)
+11-14 16:11:49.404  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.debuggingoverlay.DebuggingOverlayManager
+11-14 16:11:49.410  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.uimanager.LayoutShadowNode
+11-14 16:11:49.413  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.drawer.ReactDrawerLayoutManager
+11-14 16:11:49.415  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollViewManager
+11-14 16:11:49.418  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollContainerViewManager
+11-14 16:11:49.420  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ReactProgressBarViewManager
+11-14 16:11:49.421  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ProgressBarShadowNode
+11-14 16:11:49.422  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactScrollViewManager
+11-14 16:11:49.425  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchManager
+11-14 16:11:49.427  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchManager$ReactSwitchShadowNode
+11-14 16:11:49.428  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.safeareaview.ReactSafeAreaViewManager
+11-14 16:11:49.429  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.safeareaview.ReactSafeAreaViewShadowNode
+11-14 16:11:49.430  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.swiperefresh.SwipeRefreshLayoutManager
+11-14 16:11:49.432  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.frescosupport.FrescoBasedReactTextInlineImageViewManager
+11-14 16:11:49.432  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.frescosupport.FrescoBasedReactTextInlineImageShadowNode
+11-14 16:11:49.434  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.image.ReactImageManager
+11-14 16:11:49.436  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.modal.ReactModalHostManager
+11-14 16:11:49.438  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactRawTextManager
+11-14 16:11:49.438  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactRawTextShadowNode
+11-14 16:11:49.439  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputManager
+11-14 16:11:49.444  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputShadowNode
+11-14 16:11:49.447  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextViewManager
+11-14 16:11:49.449  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextShadowNode
+11-14 16:11:49.450  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.view.ReactViewManager
+11-14 16:11:49.453  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactVirtualTextViewManager
+11-14 16:11:49.454  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactVirtualTextShadowNode
+11-14 16:11:49.455  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.unimplementedview.ReactUnimplementedViewManager
+11-14 16:11:49.456  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class org.reactnative.maskedview.RNCMaskedViewManager
+11-14 16:11:49.457  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.reactnativecommunity.picker.ReactDialogPickerManager
+11-14 16:11:49.459  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.reactnativecommunity.picker.ReactPickerShadowNode
+11-14 16:11:49.460  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.reactnativecommunity.picker.ReactDropdownPickerManager
+11-14 16:11:49.462  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class expo.modules.kotlin.views.GroupViewManagerWrapper
+11-14 16:11:49.465  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class expo.modules.kotlin.views.SimpleViewManagerWrapper
+11-14 16:11:49.468  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.airbnb.android.react.lottie.LottieAnimationViewManager
+11-14 16:11:49.470  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.gesturehandler.react.RNGestureHandlerRootViewManager
+11-14 16:11:49.471  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.gesturehandler.react.RNGestureHandlerButtonViewManager
+11-14 16:11:49.473  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapManager
+11-14 16:11:49.476  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapMarkerManager
+11-14 16:11:49.479  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapCalloutManager
+11-14 16:11:49.480  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapPolylineManager
+11-14 16:11:49.481  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapGradientPolylineManager
+11-14 16:11:49.483  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapPolygonManager
+11-14 16:11:49.484  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapCircleManager
+11-14 16:11:49.486  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapUrlTileManager
+11-14 16:11:49.488  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapWMSTileManager
+11-14 16:11:49.489  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapLocalTileManager
+11-14 16:11:49.491  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapOverlayManager
+11-14 16:11:49.492  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.rnmaps.maps.MapHeatmapManager
+11-14 16:11:49.494  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaProviderManager
+11-14 16:11:49.495  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaViewManager
+11-14 16:11:49.496  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaViewShadowNode
+11-14 16:11:49.497  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenContainerViewManager
+11-14 16:11:49.498  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenViewManager
+11-14 16:11:49.501  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ModalScreenViewManager
+11-14 16:11:49.502  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackViewManager
+11-14 16:11:49.503  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackHeaderConfigViewManager
+11-14 16:11:49.505  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackHeaderSubviewManager
+11-14 16:11:49.506  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.SearchBarManager
+11-14 16:11:49.508  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenFooterManager
+11-14 16:11:49.510  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenContentWrapperManager
+11-14 16:11:49.512  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$DefsViewManager
+11-14 16:11:49.521  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.VirtualViewManager$RenderableShadowNode
+11-14 16:11:49.530  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeMergeManager
+11-14 16:11:49.539  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$LinearGradientManager
+11-14 16:11:49.555  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeGaussianBlurManager
+11-14 16:11:49.558  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeColorMatrixManager
+11-14 16:11:49.560  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$ClipPathViewManager
+11-14 16:11:49.566  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$SymbolManager
+11-14 16:11:49.572  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$PatternManager
+11-14 16:11:49.577  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeBlendManager
+11-14 16:11:49.579  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.SvgViewManager
+11-14 16:11:49.582  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$UseViewManager
+11-14 16:11:49.588  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$CircleViewManager
+11-14 16:11:49.591  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$TSpanViewManager
+11-14 16:11:49.597  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FilterManager
+11-14 16:11:49.599  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$MarkerManager
+11-14 16:11:49.603  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$ForeignObjectManager
+11-14 16:11:49.610  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$EllipseViewManager
+11-14 16:11:49.613  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$LineViewManager
+11-14 16:11:49.616  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeFloodManager
+11-14 16:11:49.617  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$GroupViewManager
+11-14 16:11:49.622  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$TextViewManager
+11-14 16:11:49.626  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$ImageViewManager
+11-14 16:11:49.629  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$RadialGradientManager
+11-14 16:11:49.631  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (NativePerformanceObserverCxx)
+11-14 16:11:49.631  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$MaskManager
+11-14 16:11:49.634  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (NativePerformanceCxx)
+11-14 16:11:49.634  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$RectViewManager
+11-14 16:11:49.637  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$TextPathViewManager
+11-14 16:11:49.637  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (PlatformConstants)
+11-14 16:11:49.638  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (PlatformConstants)
+11-14 16:11:49.638  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (PlatformConstants)
+11-14 16:11:49.642  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeOffsetManager
+11-14 16:11:49.643  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.horcrux.svg.RenderableViewManager$PathViewManager
+11-14 16:11:49.645  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (PlatformConstants)
+11-14 16:11:49.646  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.reactnativecommunity.webview.RNCWebViewManager
+11-14 16:11:49.648  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (DevSettings)
+11-14 16:11:49.649  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (DevSettings)
+11-14 16:11:49.649  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (DevSettings)
+11-14 16:11:49.650  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (DevSettings)
+11-14 16:11:49.651  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (LogBox)
+11-14 16:11:49.651  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (LogBox)
+11-14 16:11:49.651  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (LogBox)
+11-14 16:11:49.652  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (LogBox)
+11-14 16:11:49.653  9254  9396 D Detox.RNMarker: CREATE_MODULE_END (UIManager)
+11-14 16:11:49.654  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (SourceCode)
+11-14 16:11:49.654  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (SourceCode)
+11-14 16:11:49.654  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (SourceCode)
+11-14 16:11:49.655  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (SourceCode)
+11-14 16:11:49.658  9254  9396 D Detox.RNMarker: REACT_BRIDGE_LOADING_END (null)
+11-14 16:11:49.660  9254  9254 I ExpoDevMenu: Delegate's context was loaded.
+11-14 16:11:49.663  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (NativeReactNativeFeatureFlagsCxx)
+11-14 16:11:49.667  9254  9254 D Detox.RNMarker: CREATE_MODULE_START (Appearance)
+11-14 16:11:49.667  9254  9254 D Detox.RNMarker: CREATE_MODULE_END (Appearance)
+11-14 16:11:49.668  9254  9416 D TrafficStats: tagSocket(6) with statsTag=0xffffffff, statsUid=-1
+11-14 16:11:49.671  9254  9254 W DevLauncher: java.lang.NoSuchFieldException: No field mOverrideColorScheme in class Lcom/facebook/react/modules/appearance/AppearanceModule; (declaration of 'com.facebook.react.modules.appearance.AppearanceModule' appears in /data/app/~~5momp_2OeIKor78waQJs_A==/com.tuapp.seguritacapp-z1N2Iobrmj7B62O3YEHk7Q==/base.apk!classes5.dex)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at java.lang.Class.getDeclaredField(Native Method)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at expo.modules.devlauncher.helpers.DevLauncherReflectionExtensionsKt.setProtectedDeclaredField(DevLauncherReflectionExtensions.kt:21)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at expo.modules.devlauncher.launcher.loaders.DevLauncherExpoAppLoader.applyUserInterfaceStyle(DevLauncherExpoAppLoader.kt:51)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at expo.modules.devlauncher.launcher.loaders.DevLauncherExpoAppLoader.onReactContext(DevLauncherExpoAppLoader.kt:39)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at expo.modules.devlauncher.launcher.loaders.DevLauncherAppLoader$createOnDelegateWillBeCreatedListener$1$2.onReactContextInitialized(DevLauncherAppLoader.kt:57)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at com.facebook.react.ReactInstanceManager.lambda$setupReactContext$3(ReactInstanceManager.java:1291)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at com.facebook.react.ReactInstanceManager.$r8$lambda$pu7uI5W8XB5vLxNQmijLRH5XPtQ(Unknown Source:0)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at com.facebook.react.ReactInstanceManager$$ExternalSyntheticLambda4.run(D8$$SyntheticClass:0)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at android.os.Handler.handleCallback(Handler.java:958)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at android.os.Looper.loopOnce(Looper.java:205)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at android.os.Looper.loop(Looper.java:294)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at java.lang.reflect.Method.invoke(Native Method)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+11-14 16:11:49.671  9254  9254 W DevLauncher: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+11-14 16:11:49.671  9254  9254 D Detox.RNMarker: BUILD_REACT_INSTANCE_MANAGER_START (null)
+11-14 16:11:49.671  9254  9254 W SoLoader: SoLoader already initialized
+11-14 16:11:49.676  9254  9254 D Detox.RNMarker: BUILD_REACT_INSTANCE_MANAGER_END (null)
+11-14 16:11:49.676  9254  9254 W SoLoader: SoLoader already initialized
+11-14 16:11:49.677  9254  9254 D Detox.RNMarker: REACT_BRIDGE_LOADING_START (null)
+11-14 16:11:49.677  9254  9417 D Detox.RNMarker: CREATE_REACT_CONTEXT_START (HermesExecutorDebug)
+11-14 16:11:49.679  9254  9417 D Detox.RNMarker: PROCESS_PACKAGES_START (null)
+11-14 16:11:49.688  9254  9417 D Detox.RNMarker: CREATE_MODULE_START (FrescoModule)
+11-14 16:11:49.688  9254  9254 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@1d42e75 in: PAUSED
+11-14 16:11:49.688  9254  9417 D Detox.RNMarker: CREATE_MODULE_END (FrescoModule)
+11-14 16:11:49.699  9254  9417 I ExpoModulesCore: ✅ AppContext was initialized
+11-14 16:11:49.700  9254  9417 D Detox.RNMarker: PROCESS_PACKAGES_END (null)
+11-14 16:11:49.700  9254  9417 D Detox.RNMarker: CREATE_CATALYST_INSTANCE_START (null)
+11-14 16:11:49.703  9254  9254 D LifecycleMonitor: Lifecycle status change: expo.modules.devmenu.DevMenuActivity@d5275d7 in: PRE_ON_CREATE
+11-14 16:11:49.708  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (Timing)
+11-14 16:11:49.708  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (Timing)
+11-14 16:11:49.711  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (Timing)
+11-14 16:11:49.714  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (Timing)
+11-14 16:11:49.724  9254  9254 D LifecycleMonitor: Lifecycle status change: expo.modules.devmenu.DevMenuActivity@d5275d7 in: CREATED
+11-14 16:11:49.727  9254  9254 D LifecycleMonitor: Lifecycle status change: expo.modules.devmenu.DevMenuActivity@d5275d7 in: STARTED
+11-14 16:11:49.728  9254  9254 D LifecycleMonitor: Lifecycle status change: expo.modules.devmenu.DevMenuActivity@d5275d7 in: RESUMED
+11-14 16:11:49.732  9254  9425 D TrafficStats: tagSocket(149) with statsTag=0xffffffff, statsUid=-1
+11-14 16:11:49.737  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (DevToolsSettingsManager)
+11-14 16:11:49.737  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (DevToolsSettingsManager)
+11-14 16:11:49.738  9254  9417 D Detox.RNMarker: CREATE_CATALYST_INSTANCE_END (null)
+11-14 16:11:49.738  9254  9417 D Detox.RNMarker: PRE_RUN_JS_BUNDLE_START (null)
+11-14 16:11:49.738  9254  9421 D Detox.RNMarker: CREATE_REACT_CONTEXT_END (null)
+11-14 16:11:49.738  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (DevToolsSettingsManager)
+11-14 16:11:49.745  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (DevToolsSettingsManager)
+11-14 16:11:49.746  9254  9421 D Detox.RNMarker: RUN_JS_BUNDLE_START (EXDevMenuApp.android.js)
+11-14 16:11:49.747  9254  9422 D Detox.RNMarker: CREATE_MODULE_START (UIManager)
+11-14 16:11:49.748  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (AppState)
+11-14 16:11:49.748  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (AppState)
+11-14 16:11:49.748  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (AppState)
+11-14 16:11:49.749  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (AppState)
+11-14 16:11:49.753  9254  9254 D Detox.RNMarker: CREATE_MODULE_START (DeviceInfo)
+11-14 16:11:49.753  9254  9254 D Detox.RNMarker: CREATE_MODULE_END (DeviceInfo)
+11-14 16:11:49.762  9254  9320 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-14 16:11:49.764  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (BlobModule)
+11-14 16:11:49.765  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (BlobModule)
+11-14 16:11:49.767  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (BlobModule)
+11-14 16:11:49.769  9254  9422 D Detox.RNMarker: CREATE_MODULE_END (UIManager)
+11-14 16:11:49.771  9254  9422 D Detox.RNMarker: REACT_BRIDGE_LOADING_END (null)
+11-14 16:11:49.776  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (BlobModule)
+11-14 16:11:49.788  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (WebSocketModule)
+11-14 16:11:49.788  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (WebSocketModule)
+11-14 16:11:49.790  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (WebSocketModule)
+11-14 16:11:49.791  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (WebSocketModule)
+11-14 16:11:49.839  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (Networking)
+11-14 16:11:49.839  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (Networking)
+11-14 16:11:49.849  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (Networking)
+11-14 16:11:49.851  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (Networking)
+11-14 16:11:49.852  9254  9396 I WebViewFactory: Loading com.google.android.webview version 113.0.5672.136 (code 567263637)
+11-14 16:11:49.862  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (NativePerformanceCxx)
+11-14 16:11:49.864  9254  9396 W ziparchive: Unable to open '/data/app/~~bhUVnFOAnuGoWQ9w6zmW3Q==/com.google.android.trichromelibrary_567263637--OyXGzkvsKMHQm4_eeFJMQ==/TrichromeLibrary.dm': No such file or directory
+11-14 16:11:49.864  9254  9396 W ziparchive: Unable to open '/data/app/~~bhUVnFOAnuGoWQ9w6zmW3Q==/com.google.android.trichromelibrary_567263637--OyXGzkvsKMHQm4_eeFJMQ==/TrichromeLibrary.dm': No such file or directory
+11-14 16:11:49.865  9254  9396 W pp.seguritacapp: Entry not found
+11-14 16:11:49.867  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (RedBox)
+11-14 16:11:49.870  9254  9396 D nativeloader: Configuring clns-10 for other apk /data/app/~~bhUVnFOAnuGoWQ9w6zmW3Q==/com.google.android.trichromelibrary_567263637--OyXGzkvsKMHQm4_eeFJMQ==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~jUQqhEaB6XRvePmQJVz5IQ==/com.google.android.webview-eGVsrZR5Ul84j39ZyjNL0A==/lib/x86_64:/data/app/~~jUQqhEaB6XRvePmQJVz5IQ==/com.google.android.webview-eGVsrZR5Ul84j39ZyjNL0A==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~bhUVnFOAnuGoWQ9w6zmW3Q==/com.google.android.trichromelibrary_567263637--OyXGzkvsKMHQm4_eeFJMQ==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+11-14 16:11:49.885  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (NativeReactNativeFeatureFlagsCxx)
+11-14 16:11:49.896  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (RedBox)
+11-14 16:11:49.898  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (BugReporting)
+11-14 16:11:49.902  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (HeadlessJsTaskSupport)
+11-14 16:11:49.902  9254  9421 D Detox.RNMarker: CREATE_MODULE_START (HeadlessJsTaskSupport)
+11-14 16:11:49.903  9254  9396 D nativeloader: Configuring clns-11 for other apk /data/app/~~jUQqhEaB6XRvePmQJVz5IQ==/com.google.android.webview-eGVsrZR5Ul84j39ZyjNL0A==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~jUQqhEaB6XRvePmQJVz5IQ==/com.google.android.webview-eGVsrZR5Ul84j39ZyjNL0A==/lib/x86_64:/data/app/~~jUQqhEaB6XRvePmQJVz5IQ==/com.google.android.webview-eGVsrZR5Ul84j39ZyjNL0A==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~bhUVnFOAnuGoWQ9w6zmW3Q==/com.google.android.trichromelibrary_567263637--OyXGzkvsKMHQm4_eeFJMQ==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+11-14 16:11:49.903  9254  9421 D Detox.RNMarker: CREATE_MODULE_END (HeadlessJsTaskSupport)
+11-14 16:11:49.905  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (HeadlessJsTaskSupport)
+11-14 16:11:49.915  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (DevLoadingView)
+11-14 16:11:49.915  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (DevLoadingView)
+11-14 16:11:49.916  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (DevLoadingView)
+11-14 16:11:49.918  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (DevLoadingView)
+11-14 16:11:49.935  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (BugReporting)
+11-14 16:11:49.937  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (PlatformConstants)
+11-14 16:11:49.938  9254  9421 D Detox.RNMarker: CREATE_MODULE_START (PlatformConstants)
+11-14 16:11:49.939  9254  9421 D Detox.RNMarker: CREATE_MODULE_END (PlatformConstants)
+11-14 16:11:49.944  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (PlatformConstants)
+11-14 16:11:49.949  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (HeadlessJsTaskSupport)
+11-14 16:11:49.949  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (HeadlessJsTaskSupport)
+11-14 16:11:49.949  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (HeadlessJsTaskSupport)
+11-14 16:11:49.950  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (HeadlessJsTaskSupport)
+11-14 16:11:49.955  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (SourceCode)
+11-14 16:11:49.955  9254  9421 D Detox.RNMarker: CREATE_MODULE_START (SourceCode)
+11-14 16:11:49.956  9254  9421 D Detox.RNMarker: CREATE_MODULE_END (SourceCode)
+11-14 16:11:49.956  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (SourceCode)
+11-14 16:11:49.959  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (DeviceInfo)
+11-14 16:11:49.963  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (DeviceInfo)
+11-14 16:11:49.972  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (DeviceInfo)
+11-14 16:11:49.972  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (UIManager)
+11-14 16:11:49.972  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (DeviceInfo)
+11-14 16:11:49.972  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (DeviceInfo)
+11-14 16:11:49.978  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (DeviceInfo)
+11-14 16:11:49.990  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (UIManager)
+11-14 16:11:50.038  9254  9396 W pp.seguritacapp: Accessing hidden method Landroid/os/Trace;->isTagEnabled(J)Z (unsupported, reflection, allowed)
+11-14 16:11:50.038  9254  9396 W pp.seguritacapp: Accessing hidden method Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V (unsupported, reflection, allowed)
+11-14 16:11:50.038  9254  9396 W pp.seguritacapp: Accessing hidden method Landroid/os/Trace;->traceEnd(J)V (unsupported, reflection, allowed)
+11-14 16:11:50.038  9254  9396 W pp.seguritacapp: Accessing hidden method Landroid/os/Trace;->asyncTraceBegin(JLjava/lang/String;I)V (unsupported, reflection, allowed)
+11-14 16:11:50.039  9254  9396 W pp.seguritacapp: Accessing hidden method Landroid/os/Trace;->asyncTraceEnd(JLjava/lang/String;I)V (unsupported, reflection, allowed)
+11-14 16:11:50.054  9254  9396 I cr_WVCFactoryProvider: Loaded version=113.0.5672.136 minSdkVersion=29 isBundle=false multiprocess=true packageId=2
+11-14 16:11:50.111  9254  9433 I cr_VariationsUtils: Failed reading seed file "/data/user/0/com.tuapp.seguritacapp/app_webview/variations_seed_new"
+11-14 16:11:50.111  9254  9433 I cr_VariationsUtils: Failed reading seed file "/data/user/0/com.tuapp.seguritacapp/app_webview/variations_seed"
+11-14 16:11:50.112  9254  9433 I cr_VariationsUtils: Requesting new seed from IVariationsSeedServer
+11-14 16:11:50.137  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (UIManager)
+11-14 16:11:50.151  9254  9396 I cr_LibraryLoader: Successfully loaded native library
+11-14 16:11:50.152  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (DeviceEventManager)
+11-14 16:11:50.152  9254  9421 D Detox.RNMarker: CREATE_MODULE_START (DeviceEventManager)
+11-14 16:11:50.153  9254  9421 D Detox.RNMarker: CREATE_MODULE_END (DeviceEventManager)
+11-14 16:11:50.153  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (DeviceEventManager)
+11-14 16:11:50.155  9254  9396 I cr_CachingUmaRecorder: Flushed 9 samples from 9 histograms.
+11-14 16:11:50.165  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (RNSModule)
+11-14 16:11:50.180  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (NativeAnimatedModule)
+11-14 16:11:50.180  9254  9421 D Detox.RNMarker: CREATE_MODULE_START (NativeAnimatedModule)
+11-14 16:11:50.183  9254  9421 D Detox.RNMarker: CREATE_MODULE_END (NativeAnimatedModule)
+11-14 16:11:50.186  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (NativeAnimatedModule)
+11-14 16:11:50.242  9254  9396 D CompatibilityChangeReporter: Compat change id reported: 289878283; UID 10202; state: ENABLED
+11-14 16:11:50.247  9254  9440 D TrafficStats: tagSocket(159) with statsTag=0xffffffff, statsUid=-1
+11-14 16:11:50.283  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (SoundManager)
+11-14 16:11:50.284  9254  9421 D Detox.RNMarker: CREATE_MODULE_START (SoundManager)
+11-14 16:11:50.284  9254  9421 D Detox.RNMarker: CREATE_MODULE_END (SoundManager)
+11-14 16:11:50.285  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (SoundManager)
+11-14 16:11:50.551  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (ImageLoader)
+11-14 16:11:50.551  9254  9421 D Detox.RNMarker: CREATE_MODULE_START (ImageLoader)
+11-14 16:11:50.553  9254  9421 D Detox.RNMarker: CREATE_MODULE_END (ImageLoader)
+11-14 16:11:50.555  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (ImageLoader)
+11-14 16:11:50.642  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (EXDevLauncherExtension)
+11-14 16:11:50.644  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (EXDevLauncherExtension)
+11-14 16:11:50.649  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (NativeUnimoduleProxy)
+11-14 16:11:50.691  9254  9421 I ExpoModulesCore: ✅ JSI interop was installed
+11-14 16:11:50.691  9254  9421 I ExpoModulesCore: ✅ Constants were exported
+11-14 16:11:50.693  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (NativeUnimoduleProxy)
+11-14 16:11:50.710  9254  9421 D Detox.RNMarker: RUN_JS_BUNDLE_END (EXDevMenuApp.android.js)
+11-14 16:11:50.711  9254  9421 I ReactNativeJS: Running "main"
+11-14 16:11:50.727  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (Timing)
+11-14 16:11:50.727  9254  9421 D Detox.RNMarker: CREATE_MODULE_START (Timing)
+11-14 16:11:50.727  9254  9421 D Detox.RNMarker: CREATE_MODULE_END (Timing)
+11-14 16:11:50.728  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (Timing)
+11-14 16:11:50.742  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (Appearance)
+11-14 16:11:50.742  9254  9421 D Detox.RNMarker: CREATE_MODULE_START (Appearance)
+11-14 16:11:50.742  9254  9421 D Detox.RNMarker: CREATE_MODULE_END (Appearance)
+11-14 16:11:50.743  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (Appearance)
+11-14 16:11:50.765  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (UIManager)
+11-14 16:11:50.797  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (SoundManager)
+11-14 16:11:50.797  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (SoundManager)
+11-14 16:11:50.798  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (SoundManager)
+11-14 16:11:50.800  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (SoundManager)
+11-14 16:11:50.812  9254  9254 D Detox.RNMarker: CONTENT_APPEARED (main)
+11-14 16:11:50.817  9254  9320 D EGL_emulation: app_time_stats: avg=47.29ms min=12.59ms max=689.58ms count=22
+11-14 16:11:50.832  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (ImageLoader)
+11-14 16:11:50.832  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (ImageLoader)
+11-14 16:11:50.832  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (ImageLoader)
+11-14 16:11:50.833  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (ImageLoader)
+11-14 16:11:50.836  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (IntentAndroid)
+11-14 16:11:50.836  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (IntentAndroid)
+11-14 16:11:50.836  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (IntentAndroid)
+11-14 16:11:50.837  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (IntentAndroid)
+11-14 16:11:50.838  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (LinkingManager)
+11-14 16:11:50.845  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (DeviceEventManager)
+11-14 16:11:50.845  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (DeviceEventManager)
+11-14 16:11:50.846  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (DeviceEventManager)
+11-14 16:11:50.846  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (DeviceEventManager)
+11-14 16:11:50.847  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (FrameRateLogger)
+11-14 16:11:50.848  9254  9421 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (KeyboardObserver)
+11-14 16:11:50.866  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (ReanimatedModule)
+11-14 16:11:50.866  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (ReanimatedModule)
+11-14 16:11:50.866  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (ReanimatedModule)
+11-14 16:11:50.867  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (ReanimatedModule)
+11-14 16:11:50.897  9254  9395 W pp.seguritacapp: CheckJNI: method to register "installJSIBindings" not in the given class. This is slow, consider changing your RegisterNatives calls.
+11-14 16:11:50.899  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (RNGestureHandlerModule)
+11-14 16:11:50.900  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (RNGestureHandlerModule)
+11-14 16:11:51.039  9254  9254 D CompatibilityChangeReporter: Compat change id reported: 171228096; UID 10202; state: ENABLED
+11-14 16:11:51.040  9254  9254 W pp.seguritacapp: Accessing hidden field Landroid/widget/ScrollView;->mScroller:Landroid/widget/OverScroller; (unsupported, reflection, allowed)
+11-14 16:11:51.059  9254  9445 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.059  9254  9445 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.059  9254  9445 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.059  9254  9445 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.060  9254  9445 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.061  9254  9445 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.061  9254  9445 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.061  9254  9445 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.062  9254  9445 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.063  9254  9445 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.063  9254  9445 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.063  9254  9445 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.063  9254  9443 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.064  9254  9443 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.064  9254  9443 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.064  9254  9443 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.064  9254  9443 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.065  9254  9443 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.065  9254  9443 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.065  9254  9443 D OpenGLRenderer: --- Failed to create image decoder with message 'unimplemented'
+11-14 16:11:51.067  9254  9443 W unknown:ProgressiveDecoder: unknown image format, {uri: res:/2131623938, firstEncodedBytes: 03000800C00100000100, length: 448}
+11-14 16:11:51.086  9254  9254 D AutofillManager: notifyViewEnteredForFillDialog:1073741825
+11-14 16:11:51.090  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (NativeAnimatedModule)
+11-14 16:11:51.091  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (NativeAnimatedModule)
+11-14 16:11:51.091  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (NativeAnimatedModule)
+11-14 16:11:51.092  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (NativeAnimatedModule)
+11-14 16:11:51.109  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (FrameRateLogger)
+11-14 16:11:51.114  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (KeyboardObserver)
+11-14 16:11:51.167  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (ExpoModulesCore)
+11-14 16:11:51.167  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (ExpoModulesCore)
+11-14 16:11:51.169  9254  9395 I ExpoModulesCore: ✅ JSI interop was installed
+11-14 16:11:51.169  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (NativeUnimoduleProxy)
+11-14 16:11:51.170  9254  9395 W ExpoModulesCore: ⚠️ JSI interop was already installed
+11-14 16:11:51.178  9254  9395 I expo-notifications: NotificationsEmitter.onNotificationResponseIntentReceived:
+11-14 16:11:51.178  9254  9395 I expo-notifications: actionIdentifier: expo.modules.notifications.actions.DEFAULT
+11-14 16:11:51.178  9254  9395 I expo-notifications: notification
+11-14 16:11:51.178  9254  9395 I expo-notifications:   date: 0
+11-14 16:11:51.178  9254  9395 I expo-notifications:   request
+11-14 16:11:51.178  9254  9395 I expo-notifications:     identifier: (null)
+11-14 16:11:51.178  9254  9395 I expo-notifications:     trigger
+11-14 16:11:51.178  9254  9395 I expo-notifications:       type: push
+11-14 16:11:51.178  9254  9395 I expo-notifications:       channelId: (null)
+11-14 16:11:51.178  9254  9395 I expo-notifications:     content
+11-14 16:11:51.178  9254  9395 I expo-notifications:       data
+11-14 16:11:51.178  9254  9395 I expo-notifications:         launchArgs
+11-14 16:11:51.178  9254  9395 I expo-notifications:           detoxURLOverride: seguridadciudadanaapp://expo-development-client/?url=http%3A%2F%2F10.0.2.2%3A8081&role=ciudadano&disableBypass=1
+11-14 16:11:51.178  9254  9395 I expo-notifications:           detoxServer: ws://localhost:64908
+11-14 16:11:51.178  9254  9395 I expo-notifications:           detoxSessionId: 0fad6b6e-339b-1116-7a07-23498c92b46a
+11-14 16:11:51.178  9254  9395 I expo-notifications:           detoxEnableSynchronization: 0
+11-14 16:11:51.178  9254  9395 I expo-notifications:       title: (null)
+11-14 16:11:51.181  9254  9395 I ExpoModulesCore: ✅ Constants were exported
+11-14 16:11:51.183  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (NativeUnimoduleProxy)
+11-14 16:11:51.193  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (EXDevLauncher)
+11-14 16:11:51.198  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (EXDevLauncher)
+11-14 16:11:51.271  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (RNCSafeAreaContext)
+11-14 16:11:51.271  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (RNCSafeAreaContext)
+11-14 16:11:51.272  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (RNCSafeAreaContext)
+11-14 16:11:51.272  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (RNCSafeAreaContext)
+11-14 16:11:51.285  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (RNSModule)
+11-14 16:11:51.286  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (RNSModule)
+11-14 16:11:51.289  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (RNSModule)
+11-14 16:11:51.502  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (RNCNetInfo)
+11-14 16:11:51.503  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (RNCNetInfo)
+11-14 16:11:51.511  9254  9395 W ReactNativeJS: '[2025-11-14T16:11:51.506Z]  @firebase/auth:', 'Auth (11.9.0): \nYou are initializing Firebase Auth for React Native without providing\nAsyncStorage. Auth state will default to memory persistence and will not\npersist between sessions. In order to persist auth state, install the package\n"@react-native-async-storage/async-storage" and provide it to\ninitializeAuth:\n\nimport { initializeAuth, getReactNativePersistence } from \'firebase/auth\';\nimport ReactNativeAsyncStorage from \'@react-native-async-storage/async-storage\';\nconst auth = initializeAuth(app, {\n  persistence: getReactNativePersistence(ReactNativeAsyncStorage)\n});\n'
+11-14 16:11:51.524  9254  9395 I ReactNativeJS: ✅ Firestore inicializado con configuración básica
+11-14 16:11:51.527  9254  9395 I ReactNativeJS: ✅ Firebase inicializado correctamente
+11-14 16:11:51.528  9254  9395 I ReactNativeJS: '📱 Proyecto:', 'seguritacapp'
+11-14 16:11:51.532  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (PlatformLocalStorage)
+11-14 16:11:51.532  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (RNC_AsyncSQLiteDBStorage)
+11-14 16:11:51.532  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (RNCAsyncStorage)
+11-14 16:11:51.533  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (RNCAsyncStorage)
+11-14 16:11:51.533  9254  9395 V AsyncStorageExpoMigration: No scoped database found
+11-14 16:11:51.534  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (RNCAsyncStorage)
+11-14 16:11:51.534  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (RNCAsyncStorage)
+11-14 16:11:51.603  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (RNVectorIconsManager)
+11-14 16:11:51.603  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (RNVectorIconsModule)
+11-14 16:11:51.607  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (RNVectorIconsManager)
+11-14 16:11:51.607  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (RNVectorIconsModule)
+11-14 16:11:51.662  9254  9451 D ProfileInstaller: Installing profile for com.tuapp.seguritacapp
+11-14 16:11:51.732  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (I18nManager)
+11-14 16:11:51.733  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (I18nManager)
+11-14 16:11:51.733  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (I18nManager)
+11-14 16:11:51.734  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (I18nManager)
+11-14 16:11:51.879  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (RNViewShot)
+11-14 16:11:51.879  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (RNViewShot)
+11-14 16:11:51.879  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (RNViewShot)
+11-14 16:11:51.880  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (RNViewShot)
+11-14 16:11:51.922  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (RNCWebViewModule)
+11-14 16:11:51.922  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (RNCWebViewModule)
+11-14 16:11:51.923  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (RNCWebViewModule)
+11-14 16:11:51.923  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (RNCWebViewModule)
+11-14 16:11:52.217  9254  9395 W ReactNativeJS: [Reanimated] Reduced motion setting is enabled on this device. This warning is visible only in the development mode. Some animations will be disabled by default. You can override the behavior for individual animations, see https://docs.swmansion.com/react-native-reanimated/docs/guides/troubleshooting#reduced-motion-setting-is-enabled-on-this-device.
+11-14 16:11:52.220  9254  9395 D Detox.RNMarker: RUN_JS_BUNDLE_END (/index.ts.bundle?platform=android&dev=true&hot=false&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&unstable_transformProfile=hermes-stable)
+11-14 16:11:52.226  9254  9395 I ReactNativeJS: Running "main" with {"rootTag":11}
+11-14 16:11:52.228  9254  9452 D TrafficStats: tagSocket(139) with statsTag=0xffffffff, statsUid=-1
+11-14 16:11:52.289  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (Appearance)
+11-14 16:11:52.289  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (Appearance)
+11-14 16:11:52.336  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (StatusBarManager)
+11-14 16:11:52.336  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (StatusBarManager)
+11-14 16:11:52.336  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (StatusBarManager)
+11-14 16:11:52.338  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (StatusBarManager)
+11-14 16:11:52.435  9254  9396 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-14 16:11:52.441  9254  9318 W SurfaceComposerClient: Sync transaction timed out waiting for commit callback.
+11-14 16:11:52.443  9254  9254 D DetoxRNLoading: Got new RN-context directly and immediately
+11-14 16:11:52.444  9254  9309 W pp.seguritacapp: Long monitor contention with owner Instr: com.wix.detox.DetoxJUnitRunner (9301) at void com.wix.detox.DetoxMain.launchActivityOnCue(android.content.Context, com.wix.detox.ActivityLaunchHelper)(DetoxMain.kt:53) waiters=0 in void com.wix.detox.DetoxMain$setupActionHandlers$SynchronizedActionHandler.handle(java.lang.String, long) for 5.497s
+11-14 16:11:52.445  9254  9254 W pp.seguritacapp: Accessing hidden method Landroid/os/MessageQueue;->next()Landroid/os/Message; (unsupported, reflection, allowed)
+11-14 16:11:52.445  9254  9254 W pp.seguritacapp: Accessing hidden field Landroid/os/MessageQueue;->mMessages:Landroid/os/Message; (unsupported, reflection, allowed)
+11-14 16:11:52.445  9254  9254 W pp.seguritacapp: Accessing hidden method Landroid/os/Message;->recycleUnchecked()V (unsupported, reflection, allowed)
+11-14 16:11:52.446  9254  9254 I Detox   : Wait is over: App is now idle!
+11-14 16:11:52.446  9254  9309 I DetoxWSClient: Sending out action 'ready' (ID #-1000)
+11-14 16:11:52.447  9254  9309 I DetoxDispatcher: Done with action 'isReady'
+11-14 16:11:52.472  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackHeaderConfigShadowNode
+11-14 16:11:52.479  9254  9396 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreensShadowNode
+11-14 16:11:52.524  9254  9325 D TrafficStats: tagSocket(192) with statsTag=0xffffffff, statsUid=-1
+11-14 16:11:52.599  9254  9395 I ReactNativeJS: [METRIC] navigation_ready_ms=385ms {"initialRoute":"AuthLoading"}
+11-14 16:11:52.603  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (AccessibilityInfo)
+11-14 16:11:52.603  9254  9395 D Detox.RNMarker: CREATE_MODULE_START (AccessibilityInfo)
+11-14 16:11:52.604  9254  9395 D Detox.RNMarker: CREATE_MODULE_END (AccessibilityInfo)
+11-14 16:11:52.605  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_END (AccessibilityInfo)
+11-14 16:11:52.606  9254  9395 D Detox.RNMarker: NATIVE_MODULE_SETUP_START (AccessibilityManager)
+11-14 16:11:52.607  9254  9395 I ReactNativeJS: [METRIC] cold_start_first_render_ms=393ms {"platform":"android"}
+11-14 16:11:52.611  9254  9320 D EGL_emulation: app_time_stats: avg=250.80ms min=1.27ms max=1417.76ms count=7
+11-14 16:11:52.693  9254  9395 I ReactNativeJS: 📱 Dispositivo conectado - sincronizando datos
+11-14 16:11:52.732  9254  9395 I ReactNativeJS: ✅ Red de Firestore habilitada
+11-14 16:11:52.732  9254  9395 I ReactNativeJS: ✅ Red de Firestore habilitada
+11-14 16:11:52.733  9254  9395 I ReactNativeJS: 📱 Dispositivo conectado - sincronizando datos
+11-14 16:11:52.734  9254  9395 I ReactNativeJS: 📱 Dispositivo conectado - sincronizando datos
+11-14 16:11:52.734  9254  9395 I ReactNativeJS: ✅ Red de Firestore habilitada
+11-14 16:11:52.734  9254  9395 I ReactNativeJS: ✅ Red de Firestore habilitada
+11-14 16:11:52.735  9254  9395 I ReactNativ

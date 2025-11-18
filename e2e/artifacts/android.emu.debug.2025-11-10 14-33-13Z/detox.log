@@ -1,0 +1,1284 @@
+09:33:13.939 detox[18488] [90mi[39m Detected a deprecated "runnerConfig" property (string).
+09:33:13.941 detox[18488] [90mi[39m Detected a deprecated "testRunner" property (string).
+09:33:13.941 detox[18488] [90mi[39m Please migrate your Detox config according to the guide:
+https://wix.github.io/Detox/docs/guide/migration
+
+09:33:13.945 detox[18488] [90mB[39m node_modules\detox\local-cli\cli.js test -c android.emu.debug --record-logs all --record-videos failing --artifacts-location e2e/artifacts --take-screenshots failing --headless
+  data: {
+    "id": "d835cfa7-de71-3fbc-d562-d7773815feab",
+    "detoxConfig": {
+      "configurationName": "android.emu.debug",
+      "apps": {
+        "default": {
+          "type": "android.apk",
+          "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+          "testBinaryPath": "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+          "build": "cmd /C set DETOX_E2E=true && cd android && gradlew.bat assembleDebug assembleAndroidTest -DtestBuildType=debug",
+          "reversePorts": [
+            8081
+          ]
+        }
+      },
+      "artifacts": {
+        "rootDir": "e2e\\artifacts\\android.emu.debug.2025-11-10 14-33-13Z",
+        "plugins": {
+          "log": {
+            "enabled": true,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "screenshot": {
+            "enabled": true,
+            "shouldTakeAutomaticSnapshots": true,
+            "keepOnlyFailedTestsArtifacts": true
+          },
+          "video": {
+            "enabled": true,
+            "keepOnlyFailedTestsArtifacts": true
+          },
+          "instruments": {
+            "enabled": false,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "uiHierarchy": {
+            "enabled": false,
+            "keepOnlyFailedTestsArtifacts": false
+          }
+        }
+      },
+      "behavior": {
+        "init": {
+          "keepLockFile": false,
+          "reinstallApp": true,
+          "exposeGlobals": true
+        },
+        "cleanup": {
+          "shutdownDevice": false
+        },
+        "launchApp": "auto"
+      },
+      "cli": {
+        "artifactsLocation": "e2e/artifacts",
+        "recordLogs": "all",
+        "takeScreenshots": "failing",
+        "recordVideos": "failing",
+        "configuration": "android.emu.debug",
+        "headless": true,
+        "start": true
+      },
+      "commands": [
+        {
+          "appName": "default",
+          "build": "cmd /C set DETOX_E2E=true && cd android && gradlew.bat assembleDebug assembleAndroidTest -DtestBuildType=debug"
+        }
+      ],
+      "device": {
+        "type": "android.emulator",
+        "device": {
+          "avdName": "Pixel_4"
+        },
+        "headless": true
+      },
+      "logger": {
+        "level": "info",
+        "overrideConsole": true,
+        "options": {
+          "showLoggerName": true,
+          "showPid": true,
+          "showLevel": false,
+          "showMetadata": false,
+          "basepath": "D:\\Proyectos\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\detox\\src",
+          "prefixers": {},
+          "stringifiers": {}
+        }
+      },
+      "testRunner": {
+        "retries": 0,
+        "forwardEnv": false,
+        "detached": false,
+        "bail": false,
+        "noRetryArgs": [
+          "shard"
+        ],
+        "jest": {
+          "setupTimeout": 300000,
+          "teardownTimeout": 30000,
+          "retryAfterCircusRetries": false,
+          "reportWorkerAssign": true
+        },
+        "args": {
+          "$0": "jest",
+          "_": [],
+          "config": "e2e/jest.config.js",
+          "--": []
+        }
+      },
+      "session": {
+        "autoStart": true,
+        "debugSynchronization": 10000
+      }
+    },
+    "detoxIPCServer": "primary-18488",
+    "testResults": [],
+    "testSessionIndex": 0,
+    "workersCount": 0
+  }
+09:33:13.964 detox[18488] [90mi[39m Server path not specified, so defaulting to ipc.config.socketRoot + ipc.config.appspace + ipc.config.id /tmp/detox.primary-18488
+09:33:13.967 detox[18488] [90mi[39m starting server on  /tmp/detox.primary-18488 
+09:33:13.967 detox[18488] [90mi[39m starting TLS server false
+09:33:13.967 detox[18488] [90mi[39m starting server as Unix || Windows Socket
+09:33:13.971 detox[18488] [90mi[39m Detox server listening on localhost:54702...
+09:33:13.977 detox[18488] [90mi[39m Serialized the session state at: C:\Users\carus\AppData\Local\Temp\d835cfa7-de71-3fbc-d562-d7773815feab.detox.json
+09:33:13.978 detox[18488] [90mB[39m DETOX_E2E="true" jest --config e2e/jest.config.js
+09:33:15.510 detox[18184] [90mB[39m e2e\login.e2e.test.js
+09:33:15.546 detox[18184] [90mB[39m set up environment
+09:33:15.567 detox[18184] [90mi[39m Service path not specified, so defaulting to ipc.config.socketRoot + ipc.config.appspace + id 
+09:33:15.567 detox[18184] [90mi[39m requested connection to  primary-18488 /tmp/detox.primary-18488
+09:33:15.567 detox[18184] [90mi[39m Connecting client on Unix Socket : /tmp/detox.primary-18488
+09:33:15.568 detox[18488] [90mi[39m ## socket connection to server detected ##
+09:33:15.569 detox[18184] [90mi[39m retrying reset
+09:33:15.570 detox[18184] [90mi[39m dispatching event to  primary-18488 /tmp/detox.primary-18488  :  registerContext , { id: 'secondary-18184' }
+09:33:15.572 detox[18488] [90mi[39m received event of :  registerContext { id: 'secondary-18184' }
+09:33:15.572 detox[18488] [90mi[39m dispatching event to socket  :  registerContextDone {
+  testResults: [],
+  testSessionIndex: 0,
+  unsafe_earlyTeardown: undefined
+}
+09:33:15.581 detox[18184] [90mi[39m ## received events ##
+09:33:15.581 detox[18184] [90mi[39m detected event registerContextDone { testResults: [], testSessionIndex: 0 }
+09:33:15.581 detox[18184] [90mi[39m dispatching event to  primary-18488 /tmp/detox.primary-18488  :  registerWorker , { workerId: 'w1' }
+09:33:15.582 detox[18184] [90mi[39m ## received events ##
+09:33:15.582 detox[18184] [90mi[39m detected event registerWorkerDone { workersCount: 1 }
+09:33:15.582 detox[18488] [90mi[39m received event of :  registerWorker { workerId: 'w1' }
+09:33:15.582 detox[18488] [90mi[39m dispatching event to socket  :  registerWorkerDone { workersCount: 1 }
+09:33:15.582 detox[18488] [90mi[39m broadcasting event to all known sockets listening to  \\.\pipe\tmp-detox.primary-18488  :   sessionStateUpdate { workersCount: 1 }
+09:33:15.967 detox[18184] [90mi[39m ## received events ##
+09:33:15.967 detox[18184] [90mi[39m detected event sessionStateUpdate { workersCount: 1 }
+09:33:15.971 detox[18488] [90mB[39m connection :54702<->:54705
+09:33:15.972 detox[18184] [90mi[39m opened web socket to: ws://localhost:54702
+09:33:15.974 detox[18184] [90mi[39m send message
+  data: {"type":"login","params":{"sessionId":"f965ed91-fdef-ddcd-6523-8e3004610b2b","role":"tester"},"messageId":0}
+09:33:15.975 detox[18488] [90mi[39m get
+  data: {"type":"login","params":{"sessionId":"f965ed91-fdef-ddcd-6523-8e3004610b2b","role":"tester"},"messageId":0}
+09:33:15.976 detox[18488] [90mi[39m created session f965ed91-fdef-ddcd-6523-8e3004610b2b
+09:33:15.976 detox[18488] [90mi[39m send
+  data: {
+    "type": "loginSuccess",
+    "params": {
+      "testerConnected": true,
+      "appConnected": false
+    },
+    "messageId": 0
+  }
+09:33:15.977 detox[18184] [90mi[39m get message
+  data: {"type":"loginSuccess","params":{"testerConnected":true,"appConnected":false},"messageId":0}
+   
+09:33:15.977 detox[18488] [90mi[39m tester joined session f965ed91-fdef-ddcd-6523-8e3004610b2b
+09:33:16.056 detox[18184] [90mi[39m dispatching event to  primary-18488 /tmp/detox.primary-18488  :  allocateDevice , {
+  deviceConfig: {
+    type: 'android.emulator',
+    device: { avdName: 'Pixel_4' },
+    headless: true
+  }
+}
+09:33:16.056 detox[18488] [90mi[39m received event of :  allocateDevice {
+  deviceConfig: {
+    type: 'android.emulator',
+    device: { avdName: 'Pixel_4' },
+    headless: true
+  }
+}
+09:33:16.116 detox[18488] [90mB[39m init
+  args: ()
+09:33:16.120 detox[18488] [90mE[39m init
+09:33:16.120 detox[18488] [90mB[39m allocate
+  data: {
+    "type": "android.emulator",
+    "device": {
+      "avdName": "Pixel_4"
+    },
+    "headless": true
+  }
+09:33:16.272 detox[18488] [90mi[39m Detected emulator binary version { major: 36, minor: 2, patch: 12, toString: [Function: toString] }
+09:33:16.274 detox[18488] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE"  devices
+09:33:16.303 detox[18488] [90mi[39m List of devices attached
+emulator-5554	device
+
+
+09:33:16.304 detox[18488] [90mi[39m port: 5554, host: localhost
+09:33:16.314 detox[18488] [90mi[39m Found a matching & free device emulator-5554
+09:33:16.315 detox[18488] [90mi[39m settled on emulator-5554 (Pixel_4)
+  data: {
+    "id": "emulator-5554",
+    "adbName": "emulator-5554",
+    "name": "emulator-5554 (Pixel_4)"
+  }
+09:33:16.315 detox[18488] [90mE[39m allocate
+09:33:16.315 detox[18488] [90mB[39m post-allocate: emulator-5554
+  data: {
+    "id": "emulator-5554",
+    "adbName": "emulator-5554",
+    "name": "emulator-5554 (Pixel_4)"
+  }
+09:33:16.316 detox[18488] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "getprop dev.bootcomplete"
+09:33:16.368 detox[18488] [90mi[39m 1
+
+09:33:16.368 detox[18488] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "getprop ro.build.version.sdk"
+09:33:16.407 detox[18488] [90mi[39m 36
+
+09:33:16.407 detox[18488] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "settings put global animator_duration_scale 0"
+09:33:16.464 detox[18488] [90mi[39m 
+09:33:16.464 detox[18488] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "settings put global window_animation_scale 0"
+09:33:16.511 detox[18488] [90mi[39m 
+09:33:16.511 detox[18488] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "settings put global transition_animation_scale 0"
+09:33:16.565 detox[18488] [90mi[39m 
+09:33:16.565 detox[18488] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "dumpsys power | grep \"^[ ]*m[UW].*=\""
+09:33:16.633 detox[18184] [90mi[39m ## received events ##
+09:33:16.633 detox[18184] [90mi[39m detected event allocateDeviceDone {
+  deviceCookie: {
+    id: 'emulator-5554',
+    adbName: 'emulator-5554',
+    name: 'emulator-5554 (Pixel_4)'
+  }
+}
+09:33:16.633 detox[18488] [90mi[39m   mWakefulness=Awake
+  mWakefulnessChanging=false
+  mUseAutoSuspend=true
+  mWakeLockSummary=0x23
+  mWakeUpWhenPluggedOrUnpluggedConfig=false
+  mWakeUpWhenPluggedOrUnpluggedInTheaterModeConfig=false
+  mDreamsBatteryLevelMinimumWhenPoweredConfig=-1
+  mDreamsBatteryLevelMinimumWhenNotPoweredConfig=15
+  mUserActivityTimeoutOverrideFromWindowManager=-1
+  mUserInactiveOverrideFromWindowManager=false
+  mUseNormalBrightnessForDoze=false
+  mUserId=0
+  mWakeLockSummary=0x23
+  mUserInteractionBackoffMillis=60000
+
+09:33:16.633 detox[18488] [90mE[39m post-allocate: emulator-5554
+09:33:16.633 detox[18488] [90mi[39m dispatching event to socket  :  allocateDeviceDone {
+  deviceCookie: {
+    id: 'emulator-5554',
+    adbName: 'emulator-5554',
+    name: 'emulator-5554 (Pixel_4)'
+  }
+}
+09:33:16.685 detox[18184] [90mB[39m onBootDevice
+  args: ({"deviceId":"emulator-5554"})
+09:33:16.686 detox[18184] [90mE[39m onBootDevice
+09:33:16.686 detox[18184] [90mB[39m installUtilBinaries
+  args: ()
+09:33:16.686 detox[18184] [90mE[39m installUtilBinaries
+09:33:16.687 detox[18184] [90mB[39m selectApp
+  args: ("default")
+09:33:16.690 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\build-tools\36.1.0-rc1\aapt.EXE" dump badging "D:\Proyectos\SeguridadAPP\SeguridadCiudadanaApp\android\app\build\outputs\apk\debug\app-debug.apk"
+09:33:16.717 detox[18184] [90mi[39m package: name='com.tuapp.seguritacapp' versionCode='1' versionName='1.0.0' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'
+sdkVersion:'26'
+targetSdkVersion:'34'
+uses-permission: name='android.permission.SYSTEM_ALERT_WINDOW'
+uses-permission: name='android.permission.ACCESS_COARSE_LOCATION'
+uses-permission: name='android.permission.ACCESS_FINE_LOCATION'
+uses-permission: name='android.permission.CAMERA'
+uses-permission: name='android.permission.INTERNET'
+uses-permission: name='android.permission.READ_EXTERNAL_STORAGE'
+uses-permission: name='android.permission.RECORD_AUDIO'
+uses-permission: name='android.permission.VIBRATE'
+uses-permission: name='android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission: name='android.permission.ACCESS_NETWORK_STATE'
+uses-permission: name='android.permission.ACCESS_WIFI_STATE'
+uses-permission: name='android.permission.READ_MEDIA_IMAGES'
+uses-permission: name='android.permission.READ_MEDIA_VIDEO'
+uses-permission: name='android.permission.READ_MEDIA_AUDIO'
+uses-permission: name='android.permission.READ_MEDIA_VISUAL_USER_SELECTED'
+uses-permission: name='android.permission.RECEIVE_BOOT_COMPLETED'
+uses-permission: name='android.permission.POST_NOTIFICATIONS'
+uses-permission: name='android.permission.USE_BIOMETRIC'
+uses-permission: name='android.permission.USE_FINGERPRINT'
+uses-permission: name='android.permission.WAKE_LOCK'
+uses-permission: name='com.google.android.c2dm.permission.RECEIVE'
+uses-permission: name='android.permission.FOREGROUND_SERVICE'
+uses-permission: name='com.tuapp.seguritacapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'
+uses-permission: name='com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE'
+uses-permission: name='com.google.android.providers.gsf.permission.READ_GSERVICES'
+uses-permission: name='com.google.android.gms.permission.ACTIVITY_RECOGNITION'
+uses-permission: name='com.sec.android.provider.badge.permission.READ'
+uses-permission: name='com.sec.android.provider.badge.permission.WRITE'
+uses-permission: name='com.htc.launcher.permission.READ_SETTINGS'
+uses-permission: name='com.htc.launcher.permission.UPDATE_SHORTCUT'
+uses-permission: name='com.sonyericsson.home.permission.BROADCAST_BADGE'
+uses-permission: name='com.sonymobile.home.permission.PROVIDER_INSERT_BADGE'
+uses-permission: name='com.anddoes.launcher.permission.UPDATE_COUNT'
+uses-permission: name='com.majeur.launcher.permission.UPDATE_BADGE'
+uses-permission: name='com.huawei.android.launcher.permission.CHANGE_BADGE'
+uses-permission: name='com.huawei.android.launcher.permission.READ_SETTINGS'
+uses-permission: name='com.huawei.android.launcher.permission.WRITE_SETTINGS'
+uses-permission: name='android.permission.READ_APP_BADGE'
+uses-permission: name='com.oppo.launcher.permission.READ_SETTINGS'
+uses-permission: name='com.oppo.launcher.permission.WRITE_SETTINGS'
+uses-permission: name='me.everything.badger.permission.BADGE_COUNT_READ'
+uses-permission: name='me.everything.badger.permission.BADGE_COUNT_WRITE'
+application-label:'SeguridadCiudadanaApp'
+application-label-af:'SeguridadCiudadanaApp'
+application-label-am:'SeguridadCiudadanaApp'
+application-label-ar:'SeguridadCiudadanaApp'
+application-label-as:'SeguridadCiudadanaApp'
+application-label-az:'SeguridadCiudadanaApp'
+application-label-be:'SeguridadCiudadanaApp'
+application-label-bg:'SeguridadCiudadanaApp'
+application-label-bn:'SeguridadCiudadanaApp'
+application-label-bs:'SeguridadCiudadanaApp'
+application-label-ca:'SeguridadCiudadanaApp'
+application-label-cs:'SeguridadCiudadanaApp'
+application-label-da:'SeguridadCiudadanaApp'
+application-label-de:'SeguridadCiudadanaApp'
+application-label-el:'SeguridadCiudadanaApp'
+application-label-en-AU:'SeguridadCiudadanaApp'
+application-label-en-CA:'SeguridadCiudadanaApp'
+application-label-en-GB:'SeguridadCiudadanaApp'
+application-label-en-IN:'SeguridadCiudadanaApp'
+application-label-en-XC:'SeguridadCiudadanaApp'
+application-label-es:'SeguridadCiudadanaApp'
+application-label-es-419:'SeguridadCiudadanaApp'
+application-label-es-ES:'SeguridadCiudadanaApp'
+application-label-es-GT:'SeguridadCiudadanaApp'
+application-label-es-US:'SeguridadCiudadanaApp'
+application-label-et:'SeguridadCiudadanaApp'
+application-label-eu:'SeguridadCiudadanaApp'
+application-label-fa:'SeguridadCiudadanaApp'
+application-label-fi:'SeguridadCiudadanaApp'
+application-label-fr:'SeguridadCiudadanaApp'
+application-label-fr-CA:'SeguridadCiudadanaApp'
+application-label-gl:'SeguridadCiudadanaApp'
+application-label-gu:'SeguridadCiudadanaApp'
+application-label-he:'SeguridadCiudadanaApp'
+application-label-hi:'SeguridadCiudadanaApp'
+application-label-hr:'SeguridadCiudadanaApp'
+application-label-hu:'SeguridadCiudadanaApp'
+application-label-hy:'SeguridadCiudadanaApp'
+application-label-id:'SeguridadCiudadanaApp'
+application-label-in:'SeguridadCiudadanaApp'
+application-label-is:'SeguridadCiudadanaApp'
+application-label-it:'SeguridadCiudadanaApp'
+application-label-iw:'SeguridadCiudadanaApp'
+application-label-ja:'SeguridadCiudadanaApp'
+application-label-ka:'SeguridadCiudadanaApp'
+application-label-kk:'SeguridadCiudadanaApp'
+application-label-km:'SeguridadCiudadanaApp'
+application-label-kn:'SeguridadCiudadanaApp'
+application-label-ko:'SeguridadCiudadanaApp'
+application-label-ky:'SeguridadCiudadanaApp'
+application-label-lo:'SeguridadCiudadanaApp'
+application-label-lt:'SeguridadCiudadanaApp'
+application-label-lv:'SeguridadCiudadanaApp'
+application-label-mk:'SeguridadCiudadanaApp'
+application-label-ml:'SeguridadCiudadanaApp'
+application-label-mn:'SeguridadCiudadanaApp'
+application-label-mr:'SeguridadCiudadanaApp'
+application-label-ms:'SeguridadCiudadanaApp'
+application-label-my:'SeguridadCiudadanaApp'
+application-label-nb:'SeguridadCiudadanaApp'
+application-label-ne:'SeguridadCiudadanaApp'
+application-label-nl:'SeguridadCiudadanaApp'
+application-label-or:'SeguridadCiudadanaApp'
+application-label-pa:'SeguridadCiudadanaApp'
+application-label-pl:'SeguridadCiudadanaApp'
+application-label-pt:'SeguridadCiudadanaApp'
+application-label-pt-BR:'SeguridadCiudadanaApp'
+application-label-pt-PT:'SeguridadCiudadanaApp'
+application-label-ro:'SeguridadCiudadanaApp'
+application-label-ru:'SeguridadCiudadanaApp'
+application-label-ru-RU:'SeguridadCiudadanaApp'
+application-label-si:'SeguridadCiudadanaApp'
+application-label-sk:'SeguridadCiudadanaApp'
+application-label-sl:'SeguridadCiudadanaApp'
+application-label-sq:'SeguridadCiudadanaApp'
+application-label-sr:'SeguridadCiudadanaApp'
+application-label-sr-Latn:'SeguridadCiudadanaApp'
+application-label-sv:'SeguridadCiudadanaApp'
+application-label-sw:'SeguridadCiudadanaApp'
+application-label-ta:'SeguridadCiudadanaApp'
+application-label-te:'SeguridadCiudadanaApp'
+application-label-th:'SeguridadCiudadanaApp'
+application-label-tl:'SeguridadCiudadanaApp'
+application-label-tr:'SeguridadCiudadanaApp'
+application-label-uk:'SeguridadCiudadanaApp'
+application-label-ur:'SeguridadCiudadanaApp'
+application-label-uz:'SeguridadCiudadanaApp'
+application-label-vi:'SeguridadCiudadanaApp'
+application-label-zh:'SeguridadCiudadanaApp'
+application-label-zh-CN:'SeguridadCiudadanaApp'
+application-label-zh-HK:'SeguridadCiudadanaApp'
+application-label-zh-TW:'SeguridadCiudadanaApp'
+application-label-zu:'SeguridadCiudadanaApp'
+application-icon-120:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-160:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-240:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-320:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-480:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-640:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-65534:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application: label='SeguridadCiudadanaApp' icon='res/mipmap-anydpi-v26/ic_launcher.xml'
+application-debuggable
+launchable-activity: name='com.tuapp.seguritacapp.MainActivity'  label='' icon=''
+uses-library-not-required:'org.apache.http.legacy'
+uses-library-not-required:'androidx.camera.extensions.impl'
+feature-group: label=''
+  uses-gl-es: '0x20000'
+  uses-feature: name='android.hardware.camera'
+  uses-implied-feature: name='android.hardware.camera' reason='requested android.permission.CAMERA permission'
+  uses-feature: name='android.hardware.faketouch'
+  uses-implied-feature: name='android.hardware.faketouch' reason='default feature for all apps'
+  uses-feature: name='android.hardware.location'
+  uses-implied-feature: name='android.hardware.location' reason='requested android.permission.ACCESS_COARSE_LOCATION permission, and requested android.permission.ACCESS_FINE_LOCATION permission'
+  uses-feature: name='android.hardware.microphone'
+  uses-implied-feature: name='android.hardware.microphone' reason='requested android.permission.RECORD_AUDIO permission'
+  uses-feature: name='android.hardware.screen.portrait'
+  uses-implied-feature: name='android.hardware.screen.portrait' reason='one or more activities have specified a portrait orientation'
+  uses-feature: name='android.hardware.wifi'
+  uses-implied-feature: name='android.hardware.wifi' reason='requested android.permission.ACCESS_WIFI_STATE permission'
+main
+other-activities
+other-receivers
+other-services
+supports-screens: 'small' 'normal' 'large' 'xlarge'
+supports-any-density: 'true'
+locales: '--_--' 'af' 'am' 'ar' 'as' 'az' 'be' 'bg' 'bn' 'bs' 'ca' 'cs' 'da' 'de' 'el' 'en-AU' 'en-CA' 'en-GB' 'en-IN' 'en-XC' 'es' 'es-419' 'es-ES' 'es-GT' 'es-US' 'et' 'eu' 'fa' 'fi' 'fr' 'fr-CA' 'gl' 'gu' 'he' 'hi' 'hr' 'hu' 'hy' 'id' 'in' 'is' 'it' 'iw' 'ja' 'ka' 'kk' 'km' 'kn' 'ko' 'ky' 'lo' 'lt' 'lv' 'mk' 'ml' 'mn' 'mr' 'ms' 'my' 'nb' 'ne' 'nl' 'or' 'pa' 'pl' 'pt' 'pt-BR' 'pt-PT' 'ro' 'ru' 'ru-RU' 'si' 'sk' 'sl' 'sq' 'sr' 'sr-Latn' 'sv' 'sw' 'ta' 'te' 'th' 'tl' 'tr' 'uk' 'ur' 'uz' 'vi' 'zh' 'zh-CN' 'zh-HK' 'zh-TW' 'zu'
+densities: '120' '160' '240' '320' '480' '640' '65534'
+native-code: 'arm64-v8a' 'armeabi-v7a' 'x86' 'x86_64'
+
+09:33:16.718 detox[18184] [90mE[39m selectApp
+09:33:16.718 detox[18184] [90mB[39m uninstallApp
+  args: ()
+09:33:16.718 detox[18184] [90mB[39m onBeforeUninstallApp
+  args: ({"deviceId":"emulator-5554","bundleId":"com.tuapp.seguritacapp"})
+09:33:16.718 detox[18184] [90mE[39m onBeforeUninstallApp
+09:33:16.718 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "pm list packages com.tuapp.seguritacapp"
+09:33:16.771 detox[18184] [90mi[39m package:com.tuapp.seguritacapp
+package:com.tuapp.seguritacapp.test
+
+09:33:16.771 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 uninstall com.tuapp.seguritacapp
+09:33:17.016 detox[18184] [90mi[39m Success
+
+09:33:17.016 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "pm list packages com.tuapp.seguritacapp.test"
+09:33:17.117 detox[18184] [90mi[39m package:com.tuapp.seguritacapp.test
+
+09:33:17.118 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 uninstall com.tuapp.seguritacapp.test
+09:33:17.386 detox[18184] [90mi[39m Success
+
+09:33:17.387 detox[18184] [90mE[39m uninstallApp
+09:33:17.387 detox[18184] [90mB[39m selectApp
+  args: ("default")
+09:33:17.388 detox[18184] [90mB[39m terminateApp
+  args: ()
+09:33:17.388 detox[18184] [90mB[39m onBeforeTerminateApp
+  args: ({"deviceId":"emulator-5554","bundleId":"com.tuapp.seguritacapp"})
+09:33:17.388 detox[18184] [90mE[39m onBeforeTerminateApp
+09:33:17.388 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "am force-stop com.tuapp.seguritacapp"
+09:33:17.519 detox[18184] [90mi[39m 
+09:33:17.519 detox[18184] [90mB[39m onTerminateApp
+  args: ({"deviceId":"emulator-5554","bundleId":"com.tuapp.seguritacapp"})
+09:33:17.519 detox[18184] [90mE[39m onTerminateApp
+09:33:17.520 detox[18184] [90mE[39m terminateApp
+09:33:17.520 detox[18184] [90mE[39m selectApp
+09:33:17.520 detox[18184] [90mB[39m installApp
+  args: ()
+09:33:17.520 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\build-tools\36.1.0-rc1\aapt.EXE" dump xmlstrings "D:\Proyectos\SeguridadAPP\SeguridadCiudadanaApp\android\app\build\outputs\apk\debug\app-debug.apk" AndroidManifest.xml
+09:33:17.545 detox[18184] [90mi[39m String pool of 247 unique UTF-16 non-sorted strings, 247 entries and 0 styles using 20240 bytes:
+String #0: theme
+String #1: label
+String #2: icon
+String #3: name
+String #4: permission
+String #5: protectionLevel
+String #6: enabled
+String #7: debuggable
+String #8: exported
+String #9: taskAffinity
+String #10: excludeFromRecents
+String #11: authorities
+String #12: initOrder
+String #13: grantUriPermissions
+String #14: priority
+String #15: launchMode
+String #16: screenOrientation
+String #17: configChanges
+String #18: value
+String #19: resource
+String #20: mimeType
+String #21: scheme
+String #22: minSdkVersion
+String #23: versionCode
+String #24: versionName
+String #25: windowSoftInputMode
+String #26: noHistory
+String #27: targetSdkVersion
+String #28: allowBackup
+String #29: glEsVersion
+String #30: required
+String #31: supportsRtl
+String #32: extractNativeLibs
+String #33: usesCleartextTraffic
+String #34: directBootAware
+String #35: roundIcon
+String #36: compileSdkVersion
+String #37: compileSdkVersionCodename
+String #38: appComponentFactory
+String #39: foregroundServiceType
+String #40: requestLegacyExternalStorage
+String #41: 
+String #42: */*
+String #43: 1.0.0
+String #44: 15
+String #45: AIzaSyBdVl-cTICSwYKrZ95SuvNw7dbMuDt1KG0
+String #46: ALWAYS
+String #47: action
+String #48: activity
+String #49: android
+String #50: android.intent.action.ACTION_POWER_CONNECTED
+String #51: android.intent.action.ACTION_POWER_DISCONNECTED
+String #52: android.intent.action.BATTERY_LOW
+String #53: android.intent.action.BATTERY_OKAY
+String #54: android.intent.action.BOOT_COMPLETED
+String #55: android.intent.action.DEVICE_STORAGE_LOW
+String #56: android.intent.action.DEVICE_STORAGE_OK
+String #57: android.intent.action.GET_CONTENT
+String #58: android.intent.action.MAIN
+String #59: android.intent.action.MY_PACKAGE_REPLACED
+String #60: android.intent.action.OPEN_DOCUMENT_TREE
+String #61: android.intent.action.QUICKBOOT_POWERON
+String #62: android.intent.action.REBOOT
+String #63: android.intent.action.SEND
+String #64: android.intent.action.TIMEZONE_CHANGED
+String #65: android.intent.action.TIME_SET
+String #66: android.intent.action.VIEW
+String #67: android.intent.category.BROWSABLE
+String #68: android.intent.category.DEFAULT
+String #69: android.intent.category.LAUNCHER
+String #70: android.intent.category.OPENABLE
+String #71: android.media.action.ACTION_VIDEO_CAPTURE
+String #72: android.media.action.IMAGE_CAPTURE
+String #73: android.net.conn.CONNECTIVITY_CHANGE
+String #74: android.permission.ACCESS_COARSE_LOCATION
+String #75: android.permission.ACCESS_FINE_LOCATION
+String #76: android.permission.ACCESS_NETWORK_STATE
+String #77: android.permission.ACCESS_WIFI_STATE
+String #78: android.permission.BIND_JOB_SERVICE
+String #79: android.permission.CAMERA
+String #80: android.permission.DUMP
+String #81: android.permission.FOREGROUND_SERVICE
+String #82: android.permission.INTERNET
+String #83: android.permission.POST_NOTIFICATIONS
+String #84: android.permission.READ_APP_BADGE
+String #85: android.permission.READ_EXTERNAL_STORAGE
+String #86: android.permission.READ_MEDIA_AUDIO
+String #87: android.permission.READ_MEDIA_IMAGES
+String #88: android.permission.READ_MEDIA_VIDEO
+String #89: android.permission.READ_MEDIA_VISUAL_USER_SELECTED
+String #90: android.permission.RECEIVE_BOOT_COMPLETED
+String #91: android.permission.RECORD_AUDIO
+String #92: android.permission.SYSTEM_ALERT_WINDOW
+String #93: android.permission.USE_BIOMETRIC
+String #94: android.permission.USE_FINGERPRINT
+String #95: android.permission.VIBRATE
+String #96: android.permission.WAKE_LOCK
+String #97: android.permission.WRITE_EXTERNAL_STORAGE
+String #98: android.support.FILE_PROVIDER_PATHS
+String #99: android.support.customtabs.action.CustomTabsService
+String #100: androidx.camera.camera2.Camera2Config$DefaultProvider
+String #101: androidx.camera.core.impl.MetadataHolderService
+String #102: androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER
+String #103: androidx.camera.extensions.action.VENDOR_ACTION
+String #104: androidx.camera.extensions.impl
+String #105: androidx.core.app.CoreComponentFactory
+String #106: androidx.emoji2.text.EmojiCompatInitializer
+String #107: androidx.lifecycle.ProcessLifecycleInitializer
+String #108: androidx.profileinstaller.ProfileInstallReceiver
+String #109: androidx.profileinstaller.ProfileInstallerInitializer
+String #110: androidx.profileinstaller.action.BENCHMARK_OPERATION
+String #111: androidx.profileinstaller.action.INSTALL_PROFILE
+String #112: androidx.profileinstaller.action.SAVE_PROFILE
+String #113: androidx.profileinstaller.action.SKIP_FILE
+String #114: androidx.room.MultiInstanceInvalidationService
+String #115: androidx.startup
+String #116: androidx.startup.InitializationProvider
+String #117: androidx.work.WorkManagerInitializer
+String #118: androidx.work.diagnostics.REQUEST_DIAGNOSTICS
+String #119: androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy
+String #120: androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy
+String #121: androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy
+String #122: androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy
+String #123: androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver
+String #124: androidx.work.impl.background.systemalarm.RescheduleReceiver
+String #125: androidx.work.impl.background.systemalarm.SystemAlarmService
+String #126: androidx.work.impl.background.systemalarm.UpdateProxies
+String #127: androidx.work.impl.background.systemjob.SystemJobService
+String #128: androidx.work.impl.diagnostics.DiagnosticsReceiver
+String #129: androidx.work.impl.foreground.SystemForegroundService
+String #130: androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver
+String #131: application
+String #132: backend:com.google.android.datatransport.cct.CctBackendFactory
+String #133: category
+String #134: cct
+String #135: com.anddoes.launcher.permission.UPDATE_COUNT
+String #136: com.canhub.cropper.CropFileProvider
+String #137: com.canhub.cropper.CropImageActivity
+String #138: com.facebook.react.devsupport.DevSettingsActivity
+String #139: com.facebook.soloader.enabled
+String #140: com.google.android.apps.maps
+String #141: com.google.android.c2dm.intent.RECEIVE
+String #142: com.google.android.c2dm.permission.RECEIVE
+String #143: com.google.android.c2dm.permission.SEND
+String #144: com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+String #145: com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+String #146: com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+String #147: com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+String #148: com.google.android.geo.API_KEY
+String #149: com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED
+String #150: com.google.android.gms.common.api.GoogleApiActivity
+String #151: com.google.android.gms.metadata.MODULE_DEPENDENCIES
+String #152: com.google.android.gms.metadata.ModuleDependencies
+String #153: com.google.android.gms.permission.ACTIVITY_RECOGNITION
+String #154: com.google.android.gms.version
+String #155: com.google.android.providers.gsf.permission.READ_GSERVICES
+String #156: com.google.firebase.MESSAGING_EVENT
+String #157: com.google.firebase.components.ComponentDiscoveryService
+String #158: com.google.firebase.components.ComponentRegistrar
+String #159: com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar
+String #160: com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar
+String #161: com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar
+String #162: com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
+String #163: com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar
+String #164: com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar
+String #165: com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar
+String #166: com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar
+String #167: com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar
+String #168: com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar
+String #169: com.google.firebase.iid.FirebaseInstanceIdReceiver
+String #170: com.google.firebase.messaging.FirebaseMessagingService
+String #171: com.google.firebase.provider.FirebaseInitProvider
+String #172: com.google.mlkit.common.internal.MlKitComponentDiscoveryService
+String #173: com.google.mlkit.common.internal.MlKitInitProvider
+String #174: com.htc.intent.action.QUICKBOOT_POWERON
+String #175: com.htc.launcher.permission.READ_SETTINGS
+String #176: com.htc.launcher.permission.UPDATE_SHORTCUT
+String #177: com.huawei.android.launcher.permission.CHANGE_BADGE
+String #178: com.huawei.android.launcher.permission.READ_SETTINGS
+String #179: com.huawei.android.launcher.permission.WRITE_SETTINGS
+String #180: com.majeur.launcher.permission.UPDATE_BADGE
+String #181: com.oppo.launcher.permission.READ_SETTINGS
+String #182: com.oppo.launcher.permission.WRITE_SETTINGS
+String #183: com.reactnativecommunity.webview.RNCWebViewFileProvider
+String #184: com.sec.android.provider.badge.permission.READ
+String #185: com.sec.android.provider.badge.permission.WRITE
+String #186: com.sonyericsson.home.permission.BROADCAST_BADGE
+String #187: com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
+String #188: com.tuapp.seguritacapp
+String #189: com.tuapp.seguritacapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+String #190: com.tuapp.seguritacapp.FileSystemFileProvider
+String #191: com.tuapp.seguritacapp.ImagePickerFileProvider
+String #192: com.tuapp.seguritacapp.MainActivity
+String #193: com.tuapp.seguritacapp.MainApplication
+String #194: com.tuapp.seguritacapp.SharingFileProvider
+String #195: com.tuapp.seguritacapp.androidx-startup
+String #196: com.tuapp.seguritacapp.cropper.fileprovider
+String #197: com.tuapp.seguritacapp.fileprovider
+String #198: com.tuapp.seguritacapp.firebaseinitprovider
+String #199: com.tuapp.seguritacapp.mlkitinitprovider
+String #200: data
+String #201: exp+seguridadciudadanaapp
+String #202: expo-dev-launcher
+String #203: expo-dev-menu
+String #204: expo.modules.adapters.react.apploader.RNHeadlessAppLoader
+String #205: expo.modules.devlauncher.launcher.DevLauncherActivity
+String #206: expo.modules.devlauncher.launcher.errors.DevLauncherErrorActivity
+String #207: expo.modules.devmenu.DevMenuActivity
+String #208: expo.modules.filesystem.FileSystemFileProvider
+String #209: expo.modules.imagepicker.fileprovider.ImagePickerFileProvider
+String #210: expo.modules.location.services.LocationTaskService
+String #211: expo.modules.notifications.NOTIFICATION_EVENT
+String #212: expo.modules.notifications.service.ExpoFirebaseMessagingService
+String #213: expo.modules.notifications.service.NotificationForwarderActivity
+String #214: expo.modules.notifications.service.NotificationsService
+String #215: expo.modules.sharing.SharingFileProvider
+String #216: expo.modules.updates.ENABLED
+String #217: expo.modules.updates.EXPO_UPDATES_CHECK_ON_LAUNCH
+String #218: expo.modules.updates.EXPO_UPDATES_LAUNCH_WAIT_MS
+String #219: host.exp.exponent
+String #220: http://schemas.android.com/apk/res/android
+String #221: https
+String #222: intent
+String #223: intent-filter
+String #224: io.nlopez.smartlocation.activity.providers.ActivityGooglePlayServicesProvider$ActivityRecognitionService
+String #225: io.nlopez.smartlocation.geocoding.providers.AndroidGeocodingProvider$AndroidGeocodingService
+String #226: io.nlopez.smartlocation.geofencing.providers.GeofencingGooglePlayServicesProvider$GeofencingService
+String #227: manifest
+String #228: me.everything.badger.permission.BADGE_COUNT_READ
+String #229: me.everything.badger.permission.BADGE_COUNT_WRITE
+String #230: meta-data
+String #231: org.apache.http.legacy
+String #232: org.unimodules.core.AppLoader#react-native-headless
+String #233: package
+String #234: permission
+String #235: photopicker_activity:0:required
+String #236: platformBuildVersionCode
+String #237: platformBuildVersionName
+String #238: provider
+String #239: queries
+String #240: receiver
+String #241: seguridadciudadanaapp
+String #242: service
+String #243: uses-feature
+String #244: uses-library
+String #245: uses-permission
+String #246: uses-sdk
+
+09:33:17.545 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\build-tools\36.1.0-rc1\aapt.EXE" dump xmlstrings "D:\Proyectos\SeguridadAPP\SeguridadCiudadanaApp\android\app\build\outputs\apk\androidTest\debug\app-debug-androidTest.apk" AndroidManifest.xml
+09:33:17.569 detox[18184] [90mi[39m String pool of 43 unique UTF-16 non-sorted strings, 43 entries and 0 styles using 2156 bytes:
+String #0: theme
+String #1: label
+String #2: name
+String #3: debuggable
+String #4: exported
+String #5: priority
+String #6: targetPackage
+String #7: handleProfiling
+String #8: functionalTest
+String #9: minSdkVersion
+String #10: targetSdkVersion
+String #11: extractNativeLibs
+String #12: compileSdkVersion
+String #13: compileSdkVersionCodename
+String #14: 15
+String #15: Tests for com.tuapp.seguritacapp
+String #16: activity
+String #17: android
+String #18: android.intent.category.LAUNCHER
+String #19: android.permission.REORDER_TASKS
+String #20: android.test.runner
+String #21: androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity
+String #22: androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity
+String #23: androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity
+String #24: androidx.test.orchestrator
+String #25: androidx.test.runner.AndroidJUnitRunner
+String #26: androidx.test.services
+String #27: application
+String #28: category
+String #29: com.google.android.apps.common.testing.services
+String #30: com.tuapp.seguritacapp
+String #31: com.tuapp.seguritacapp.test
+String #32: http://schemas.android.com/apk/res/android
+String #33: instrumentation
+String #34: intent-filter
+String #35: manifest
+String #36: package
+String #37: platformBuildVersionCode
+String #38: platformBuildVersionName
+String #39: queries
+String #40: uses-library
+String #41: uses-permission
+String #42: uses-sdk
+
+09:33:17.570 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "rm -fr /data/local/tmp/detox"
+09:33:17.631 detox[18184] [90mi[39m 
+09:33:17.631 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "mkdir -p /data/local/tmp/detox"
+09:33:17.675 detox[18184] [90mi[39m 
+09:33:17.675 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 push "D:\Proyectos\SeguridadAPP\SeguridadCiudadanaApp\android\app\build\outputs\apk\debug\app-debug.apk" "/data/local/tmp/detox/Application.apk"
+09:33:18.849 detox[18184] [90mi[39m D:\Proyectos\SeguridadAPP\SeguridadCiudadanaApp\android\app\build\outputs\apk\debug\app-debug.apk: 1 file pushed, 0 skipped. 262.7 MB/s (243016175 bytes in 0.882s)
+
+09:33:18.849 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "getprop ro.build.version.sdk"
+09:33:18.893 detox[18184] [90mi[39m 36
+
+09:33:18.898 detox[18184] [90mi[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell pm install -r -g -t /data/local/tmp/detox/Application.apk
+09:33:22.070 detox[18184] [90mi[39m Success
+
+09:33:22.072 detox[18184] [90mi[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell pm install -r -g -t /data/local/tmp/detox/Application.apk exited with code #0
+09:33:22.073 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 push "D:\Proyectos\SeguridadAPP\SeguridadCiudadanaApp\android\app\build\outputs\apk\androidTest\debug\app-debug-androidTest.apk" "/data/local/tmp/detox/Test.apk"
+09:33:22.138 detox[18184] [90mi[39m D:\Proyectos\SeguridadAPP\SeguridadCiudadanaApp\android\app\build\outputs\apk\androidTest\debug\app-debug-androidTest.apk: 1 file pushed, 0 skipped. 331.0 MB/s (4195111 bytes in 0.012s)
+
+09:33:22.142 detox[18184] [90mi[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell pm install -r -g -t /data/local/tmp/detox/Test.apk
+09:33:23.254 detox[18184] [90mi[39m Success
+
+09:33:23.256 detox[18184] [90mi[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell pm install -r -g -t /data/local/tmp/detox/Test.apk exited with code #0
+09:33:23.256 detox[18184] [90mB[39m reverseTcpPort
+  args: (8081)
+09:33:23.256 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 reverse tcp:8081 tcp:8081
+09:33:23.287 detox[18184] [90mi[39m 
+09:33:23.287 detox[18184] [90mE[39m reverseTcpPort
+09:33:23.287 detox[18184] [90mE[39m installApp
+09:33:23.287 detox[18184] [90mB[39m selectApp
+  args: ("default")
+09:33:23.287 detox[18184] [90mB[39m terminateApp
+  args: ()
+09:33:23.287 detox[18184] [90mB[39m onBeforeTerminateApp
+  args: ({"deviceId":"emulator-5554","bundleId":"com.tuapp.seguritacapp"})
+09:33:23.288 detox[18184] [90mE[39m onBeforeTerminateApp
+09:33:23.288 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "am force-stop com.tuapp.seguritacapp"
+09:33:23.365 detox[18184] [90mi[39m 
+09:33:23.365 detox[18184] [90mB[39m onTerminateApp
+  args: ({"deviceId":"emulator-5554","bundleId":"com.tuapp.seguritacapp"})
+09:33:23.366 detox[18184] [90mE[39m onTerminateApp
+09:33:23.366 detox[18184] [90mE[39m terminateApp
+09:33:23.366 detox[18184] [90mE[39m selectApp
+09:33:23.366 detox[18184] [90mE[39m set up environment
+09:33:23.847 detox[18184] [90mi[39m login.e2e.test.js is assigned to emulator-5554 (Pixel_4)
+09:33:23.849 detox[18184] [90mB[39m run the tests
+09:33:23.849 detox[18184] [90mB[39m onRunDescribeStart
+  args: ({"name":"ROOT_DESCRIBE_BLOCK"})
+09:33:23.850 detox[18184] [90mE[39m onRunDescribeStart
+09:33:23.850 detox[18184] [90mB[39m beforeAll
+09:33:23.852 detox[18184] [90mB[39m launchApp
+  args: ({"newInstance":true,"launchArgs":{"detoxEnableSynchronization":0},"url":"exp+seguridadciudadanaapp://expo-development-client/?url=http%3A%2F%2F10.0.2.2%3A8081"})
+09:33:23.853 detox[18184] [90mB[39m terminateApp
+  args: ("com.tuapp.seguritacapp")
+09:33:23.853 detox[18184] [90mB[39m onBeforeTerminateApp
+  args: ({"deviceId":"emulator-5554","bundleId":"com.tuapp.seguritacapp"})
+09:33:23.853 detox[18184] [90mE[39m onBeforeTerminateApp
+09:33:23.853 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "am force-stop com.tuapp.seguritacapp"
+09:33:23.934 detox[18184] [90mi[39m 
+09:33:23.934 detox[18184] [90mB[39m onTerminateApp
+  args: ({"deviceId":"emulator-5554","bundleId":"com.tuapp.seguritacapp"})
+09:33:23.934 detox[18184] [90mE[39m onTerminateApp
+09:33:23.934 detox[18184] [90mE[39m terminateApp
+09:33:23.935 detox[18184] [90mB[39m onBeforeLaunchApp
+  args: ({"deviceId":"emulator-5554","bundleId":"com.tuapp.seguritacapp","launchArgs":{"detoxServer":"ws://localhost:54702","detoxSessionId":"f965ed91-fdef-ddcd-6523-8e3004610b2b","detoxEnableSynchronization":0,"detoxURLOverride":"exp+seguridadciudadanaapp://expo-development-client/?url=http%3A%2F%2F10.0.2.2%3A8081"}})
+09:33:23.935 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "date +\"%m-%d %T.000\""
+09:33:24.006 detox[18184] [90mi[39m 11-10 14:33:23.000
+
+09:33:24.006 detox[18184] [90mE[39m onBeforeLaunchApp
+09:33:24.006 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 reverse tcp:54702 tcp:54702
+09:33:24.037 detox[18184] [90mi[39m 54702
+
+09:33:24.038 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "pm list instrumentation"
+09:33:24.098 detox[18184] [90mi[39m instrumentation:com.tuapp.seguritacapp.test/androidx.test.runner.AndroidJUnitRunner (target=com.tuapp.seguritacapp)
+
+09:33:24.102 detox[18184] [90mi[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell am instrument -w -r -e detoxServer ws://localhost:54702 -e detoxSessionId f965ed91-fdef-ddcd-6523-8e3004610b2b -e detoxEnableSynchronization 0 -e detoxURLOverride 'exp+seguridadciudadanaapp://expo-development-client/?url=http%3A%2F%2F10.0.2.2%3A8081' -e debug false com.tuapp.seguritacapp.test/androidx.test.runner.AndroidJUnitRunner
+09:33:24.610 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "ps | grep \"com\.tuapp\.seguritacapp$\""
+09:33:25.798 detox[18184] [90mi[39m u0_a223      12385   476   17356840 131284 0                   0 R com.tuapp.seguritacapp
+
+09:33:25.799 detox[18184] [90mB[39m onLaunchApp
+  args: ({"deviceId":"emulator-5554","bundleId":"com.tuapp.seguritacapp","launchArgs":{"detoxServer":"ws://localhost:54702","detoxSessionId":"f965ed91-fdef-ddcd-6523-8e3004610b2b","detoxEnableSynchronization":0,"detoxURLOverride":"exp+seguridadciudadanaapp://expo-development-client/?url=http%3A%2F%2F10.0.2.2%3A8081"},"pid":12385})
+09:33:25.799 detox[18184] [90mi[39m starting ADBLogcatRecording
+09:33:25.803 detox[18184] [90mi[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell "logcat -T \"11-10 14:33:23.000\" --pid=12385 -f /sdcard/9331637_0.log"
+09:33:25.804 detox[18184] [90mE[39m onLaunchApp
+09:33:26.117 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell du /sdcard/9331637_0.log
+09:33:26.163 detox[18184] [90mi[39m 4	/sdcard/9331637_0.log
+
+09:33:27.933 detox[18184] [90mi[39m INSTRUMENTATION_STATUS: class=com.tuapp.seguritacapp.DetoxTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+com.tuapp.seguritacapp.DetoxTest:
+INSTRUMENTATION_STATUS: test=runDetoxTests
+INSTRUMENTATION_STATUS_CODE: 1
+
+09:33:28.029 detox[18488] [90mB[39m connection :54702<->:54810
+09:33:28.032 detox[18488] [90mi[39m get
+  data: {"messageId":0,"type":"login","params":{"role":"app","sessionId":"f965ed91-fdef-ddcd-6523-8e3004610b2b"}}
+09:33:28.033 detox[18184] [90mi[39m get message
+  data: {"type":"appConnected"}
+   
+09:33:28.033 detox[18488] [90mi[39m send
+  data: {
+    "messageId": 0,
+    "type": "loginSuccess",
+    "params": {
+      "testerConnected": true,
+      "appConnected": true
+    }
+  }
+09:33:28.033 detox[18488] [90mi[39m app joined session f965ed91-fdef-ddcd-6523-8e3004610b2b
+09:33:28.033 detox[18488] [90mi[39m send
+  data: {
+    "type": "appConnected"
+  }
+09:33:28.034 detox[18184] [90mi[39m send message
+  data: {"type":"isReady","params":{},"messageId":-1000}
+09:33:28.034 detox[18488] [90mi[39m get
+  data: {"type":"isReady","params":{},"messageId":-1000}
+09:33:28.035 detox[18488] [90mi[39m send
+  data: {
+    "type": "isReady",
+    "params": {},
+    "messageId": -1000
+  }
+09:33:33.012 detox[18488] [90mi[39m get
+  data: {"messageId":-1000,"type":"ready","params":{}}
+09:33:33.012 detox[18488] [90mi[39m send
+  data: {
+    "messageId": -1000,
+    "type": "ready",
+    "params": {}
+  }
+09:33:33.013 detox[18184] [90mi[39m get message
+  data: {"messageId":-1000,"type":"ready","params":{}}
+   
+09:33:33.013 detox[18184] [90mB[39m onAppReady
+  args: ({"deviceId":"emulator-5554","bundleId":"com.tuapp.seguritacapp","pid":12385})
+09:33:33.014 detox[18184] [90mE[39m onAppReady
+09:33:33.014 detox[18184] [90mE[39m launchApp
+09:33:35.018 detox[18184] [90mB[39m openURL
+  args: ({"url":"exp+seguridadciudadanaapp://login"})
+09:33:35.019 detox[18184] [90mi[39m send message
+  data: {"type":"invoke","params":{"target":{"type":"Class","value":"com.wix.detox.Detox"},"method":"startActivityFromUrl","args":["exp+seguridadciudadanaapp://login"]},"messageId":1}
+09:33:35.020 detox[18488] [90mi[39m get
+  data: {"type":"invoke","params":{"target":{"type":"Class","value":"com.wix.detox.Detox"},"method":"startActivityFromUrl","args":["exp+seguridadciudadanaapp://login"]},"messageId":1}
+09:33:35.020 detox[18488] [90mi[39m send
+  data: {
+    "type": "invoke",
+    "params": {
+      "target": {
+        "type": "Class",
+        "value": "com.wix.detox.Detox"
+      },
+      "method": "startActivityFromUrl",
+      "args": [
+        "exp+seguridadciudadanaapp://login"
+      ]
+    },
+    "messageId": 1
+  }
+09:33:35.064 detox[18184] [90mi[39m get message
+  data: {"messageId":1,"type":"testFailed","params":{"details":"Attempt to invoke virtual method 'java.lang.Class java.lang.Object.getClass()' on a null object reference\n","viewHierarchy":null}}
+   
+09:33:35.064 detox[18488] [90mi[39m get
+  data: {"messageId":1,"type":"testFailed","params":{"details":"Attempt to invoke virtual method 'java.lang.Class java.lang.Object.getClass()' on a null object reference\n","viewHierarchy":null}}
+09:33:35.064 detox[18488] [90mi[39m send
+  data: {
+    "messageId": 1,
+    "type": "testFailed",
+    "params": {
+      "details": "Attempt to invoke virtual method 'java.lang.Class java.lang.Object.getClass()' on a null object reference\n",
+      "viewHierarchy": null
+    }
+  }
+09:33:35.065 detox[18184] [90mE[39m openURL
+  error: Test Failed: Attempt to invoke virtual method 'java.lang.Class java.lang.Object.getClass()' on a null object reference
+  
+09:33:35.065 detox[18184] [90mE[39m beforeAll
+09:33:35.066 detox[18184] [90mB[39m Login autoridad - flujo básico
+09:33:35.066 detox[18184] [90mB[39m onRunDescribeStart
+  args: ({"name":"Login autoridad - flujo básico"})
+09:33:35.066 detox[18184] [90mE[39m onRunDescribeStart
+09:33:35.067 detox[18184] [90mB[39m permite login y muestra el dashboard de autoridad
+09:33:35.067 detox[18184] [90mi[39m Login autoridad - flujo básico: permite login y muestra el dashboard de autoridad
+09:33:35.070 detox[18184] [90mB[39m onTestStart
+  args: ({"title":"permite login y muestra el dashboard de autoridad","fullName":"Login autoridad - flujo básico permite login y muestra el dashboard de autoridad","status":"running","invocations":1})
+09:33:35.070 detox[18184] [90mi[39m stopping ADBLogcatRecording
+09:33:35.070 detox[18184] [90mi[39m starting ADBScreencapRecording
+09:33:35.070 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "screencap /sdcard/9331637_1.png"
+09:33:35.078 detox[18184] [90mi[39m starting ADBVideoRecording
+09:33:35.083 detox[18184] [90mi[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell screenrecord /sdcard/9331637_2.mp4
+09:33:35.083 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "date +\"%m-%d %T.000\""
+09:33:35.206 detox[18184] [90mi[39m 11-10 14:33:34.000
+
+09:33:35.220 detox[18184] [90mi[39m sending SIGINT to: C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell logcat -T "11-10 14:33:23.000" --pid=12385 -f /sdcard/9331637_0.log
+09:33:35.223 detox[18184] [90mi[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell "logcat -T \"11-10 14:33:23.000\" --pid=12385 -f /sdcard/9331637_0.log" terminated with SIGINT
+09:33:35.223 detox[18184] [90mi[39m starting ADBLogcatRecording
+09:33:35.227 detox[18184] [90mi[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell "logcat -T \"11-10 14:33:34.000\" --pid=12385 -f /sdcard/9331637_3.log"
+09:33:35.396 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell du /sdcard/9331637_2.mp4
+09:33:35.454 detox[18184] [90mi[39m 4	/sdcard/9331637_2.mp4
+
+09:33:35.538 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell du /sdcard/9331637_3.log
+09:33:35.592 detox[18184] [90mi[39m 4	/sdcard/9331637_3.log
+
+09:33:35.870 detox[18184] [90mi[39m 
+09:33:35.870 detox[18184] [90mi[39m stopping ADBScreencapRecording
+09:33:35.870 detox[18184] [90mE[39m onTestStart
+09:33:35.870 detox[18184] [90mB[39m beforeEach
+09:33:35.871 detox[18184] [90mE[39m beforeEach
+09:33:35.871 detox[18184] [90mB[39m test_fn
+09:33:35.873 detox[18184] [90mi[39m send message
+  data: {"type":"invoke","params":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxAssertion"},"method":"waitForAssertMatcher","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"androidx.test.espresso.Espresso"},"method":"onView","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForShallowAccessibilityLabel","args":["login-email-input",{"type":"boolean","value":false}]}}]}},{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForSufficientlyVisible","args":[{"type":"Integer","value":75}]}},{"type":"Double","value":8}]},"messageId":2}
+09:33:35.874 detox[18488] [90mi[39m get
+  data: {"type":"invoke","params":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxAssertion"},"method":"waitForAssertMatcher","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"androidx.test.espresso.Espresso"},"method":"onView","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForShallowAccessibilityLabel","args":["login-email-input",{"type":"boolean","value":false}]}}]}},{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForSufficientlyVisible","args":[{"type":"Integer","value":75}]}},{"type":"Double","value":8}]},"messageId":2}
+09:33:35.874 detox[18488] [90mi[39m send
+  data: {
+    "type": "invoke",
+    "params": {
+      "target": {
+        "type": "Class",
+        "value": "com.wix.detox.espresso.DetoxAssertion"
+      },
+      "method": "waitForAssertMatcher",
+      "args": [
+        {
+          "type": "Invocation",
+          "value": {
+            "target": {
+              "type": "Class",
+              "value": "androidx.test.espresso.Espresso"
+            },
+            "method": "onView",
+            "args": [
+              {
+                "type": "Invocation",
+                "value": {
+                  "target": {
+                    "type": "Class",
+                    "value": "com.wix.detox.espresso.DetoxMatcher"
+                  },
+                  "method": "matcherForShallowAccessibilityLabel",
+                  "args": [
+                    "login-email-input",
+                    {
+                      "type": "boolean",
+                      "value": false
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "Invocation",
+          "value": {
+            "target": {
+              "type": "Class",
+              "value": "com.wix.detox.espresso.DetoxMatcher"
+            },
+            "method": "matcherForSufficientlyVisible",
+            "args": [
+              {
+                "type": "Integer",
+                "value": 75
+              }
+            ]
+          }
+        },
+        {
+          "type": "Double",
+          "value": 8
+        }
+      ]
+    },
+    "messageId": 2
+  }
+09:33:35.875 detox[18184] [90mB[39m undefined with timeout (8000 ms)
+  data: {
+    "target": {
+      "type": "Class",
+      "value": "com.wix.detox.espresso.DetoxAssertion"
+    },
+    "method": "waitForAssertMatcher",
+    "args": [
+      {
+        "type": "Invocation",
+        "value": {
+          "target": {
+            "type": "Class",
+            "value": "androidx.test.espresso.Espresso"
+          },
+          "method": "onView",
+          "args": [
+            {
+              "type": "Invocation",
+              "value": {
+                "target": {
+                  "type": "Class",
+                  "value": "com.wix.detox.espresso.DetoxMatcher"
+                },
+                "method": "matcherForShallowAccessibilityLabel",
+                "args": [
+                  "login-email-input",
+                  {
+                    "type": "boolean",
+                    "value": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Invocation",
+        "value": {
+          "target": {
+            "type": "Class",
+            "value": "com.wix.detox.espresso.DetoxMatcher"
+          },
+          "method": "matcherForSufficientlyVisible",
+          "args": [
+            {
+              "type": "Integer",
+              "value": 75
+            }
+          ]
+        }
+      },
+      {
+        "type": "Double",
+        "value": 8
+      }
+    ]
+  }
+09:33:43.924 detox[18488] [90mi[39m get
+  data: {"messageId":2,"type":"testFailed","params":{"details":"8.0sec timeout expired without matching of given matcher: (view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() covers at least <75> percent of the view's area)\n","viewHierarchy":null}}
+09:33:43.924 detox[18488] [90mi[39m send
+  data: {
+    "messageId": 2,
+    "type": "testFailed",
+    "params": {
+      "details": "8.0sec timeout expired without matching of given matcher: (view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() covers at least <75> percent of the view's area)\n",
+      "viewHierarchy": null
+    }
+  }
+09:33:43.925 detox[18184] [90mi[39m get message
+  data: {"messageId":2,"type":"testFailed","params":{"details":"8.0sec timeout expired without matching of given matcher: (view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() covers at least <75> percent of the view's area)\n","viewHierarchy":null}}
+   
+09:33:43.925 detox[18184] [90mE[39m undefined with timeout (8000 ms)
+  error: Test Failed: 8.0sec timeout expired without matching of given matcher: (view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() covers at least <75> percent of the view's area)
+  
+09:33:43.925 detox[18184] [90mB[39m onTestFnFailure
+  args: ({"error":{"name":"DetoxRuntimeError"}})
+09:33:43.926 detox[18184] [90mi[39m starting ADBScreencapRecording
+09:33:43.926 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "screencap /sdcard/9331637_4.png"
+09:33:44.285 detox[18184] [90mi[39m 
+09:33:44.285 detox[18184] [90mi[39m stopping ADBScreencapRecording
+09:33:44.285 detox[18184] [90mE[39m onTestFnFailure
+09:33:44.285 detox[18184] [90mE[39m test_fn
+  error: Test Failed: 8.0sec timeout expired without matching of given matcher: (view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() covers at least <75> percent of the view's area)
+  
+09:33:44.286 detox[18184] [90mB[39m onTestDone
+  args: ({"title":"permite login y muestra el dashboard de autoridad","fullName":"Login autoridad - flujo básico permite login y muestra el dashboard de autoridad","status":"failed","invocations":1,"timedOut":false})
+09:33:44.286 detox[18184] [90mi[39m stopping ADBLogcatRecording
+09:33:44.287 detox[18184] [90mi[39m starting ADBScreencapRecording
+09:33:44.287 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "screencap /sdcard/9331637_5.png"
+09:33:44.294 detox[18184] [90mi[39m stopping ADBVideoRecording
+09:33:44.294 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "date +\"%m-%d %T.000\""
+09:33:44.298 detox[18184] [90mi[39m sending SIGINT to: C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell screenrecord /sdcard/9331637_2.mp4
+09:33:44.300 detox[18184] [90mi[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell screenrecord /sdcard/9331637_2.mp4 terminated with SIGINT
+09:33:44.302 detox[18184] [90mi[39m saving ADBVideoRecording to: e2e\artifacts\android.emu.debug.2025-11-10 14-33-13Z\✗ Login autoridad - flujo básico permite login y muestra el dashboard de autoridad\test.mp4
+09:33:44.336 detox[18184] [90mi[39m 11-10 14:33:43.000
+
+09:33:44.344 detox[18184] [90mi[39m sending SIGINT to: C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell logcat -T "11-10 14:33:34.000" --pid=12385 -f /sdcard/9331637_3.log
+09:33:44.346 detox[18184] [90mi[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell "logcat -T \"11-10 14:33:34.000\" --pid=12385 -f /sdcard/9331637_3.log" terminated with SIGINT
+09:33:44.622 detox[18184] [90mi[39m 
+09:33:44.622 detox[18184] [90mi[39m stopping ADBScreencapRecording
+09:33:44.622 detox[18184] [90mE[39m onTestDone
+09:33:44.623 detox[18184] [90mE[39m permite login y muestra el dashboard de autoridad
+09:33:44.623 detox[18184] [90mi[39m Login autoridad - flujo básico: permite login y muestra el dashboard de autoridad [FAIL]
+09:33:44.625 detox[18184] [90mB[39m onRunDescribeFinish
+  args: ({"name":"Login autoridad - flujo básico"})
+09:33:44.625 detox[18184] [90mE[39m onRunDescribeFinish
+09:33:44.625 detox[18184] [90mE[39m Login autoridad - flujo básico
+09:33:44.625 detox[18184] [90mB[39m afterAll
+09:33:44.626 detox[18184] [90mE[39m afterAll
+09:33:44.626 detox[18184] [90mB[39m onRunDescribeFinish
+  args: ({"name":"ROOT_DESCRIBE_BLOCK"})
+09:33:44.626 detox[18184] [90mE[39m onRunDescribeFinish
+09:33:44.626 detox[18184] [90mE[39m run the tests
+09:33:44.642 detox[18184] [90mB[39m tear down environment
+09:33:44.643 detox[18184] [90mB[39m onBeforeCleanup
+  args: ()
+09:33:44.801 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell du /sdcard/9331637_2.mp4
+09:33:44.839 detox[18184] [90mi[39m 612	/sdcard/9331637_2.mp4
+
+09:33:44.839 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 pull "/sdcard/9331637_2.mp4" "e2e\artifacts\android.emu.debug.2025-11-10 14-33-13Z\✗ Login autoridad - flujo básico permite login y muestra el dashboard de autoridad\test.mp4"
+09:33:44.880 detox[18184] [90mi[39m /sdcard/9331637_2.mp4: 1 file pulled, 0 skipped. 86.0 MB/s (614395 bytes in 0.007s)
+
+09:33:44.881 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "rm  \"/sdcard/9331637_2.mp4\""
+09:33:44.931 detox[18184] [90mi[39m 
+09:33:44.932 detox[18184] [90mi[39m saving ADBLogcatRecording to: e2e\artifacts\android.emu.debug.2025-11-10 14-33-13Z\✗ Login autoridad - flujo básico permite login y muestra el dashboard de autoridad\device.log
+09:33:44.932 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 pull "/sdcard/9331637_3.log" "e2e\artifacts\android.emu.debug.2025-11-10 14-33-13Z\✗ Login autoridad - flujo básico permite login y muestra el dashboard de autoridad\device.log"
+09:33:44.975 detox[18184] [90mi[39m /sdcard/9331637_3.log: 1 file pulled, 0 skipped. 11.2 MB/s (110592 bytes in 0.009s)
+
+09:33:44.975 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "rm  \"/sdcard/9331637_3.log\""
+09:33:45.020 detox[18184] [90mi[39m 
+09:33:45.020 detox[18184] [90mi[39m saving ADBLogcatRecording to: e2e\artifacts\android.emu.debug.2025-11-10 14-33-13Z\emulator-5554 2025-11-10 14-33-45Z.startup.log
+09:33:45.021 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 pull "/sdcard/9331637_0.log" "e2e\artifacts\android.emu.debug.2025-11-10 14-33-13Z\emulator-5554 2025-11-10 14-33-45Z.startup.log"
+09:33:45.056 detox[18184] [90mi[39m /sdcard/9331637_0.log: 1 file pulled, 0 skipped. 39.5 MB/s (86016 bytes in 0.002s)
+
+09:33:45.057 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "rm  \"/sdcard/9331637_0.log\""
+09:33:45.110 detox[18184] [90mi[39m 
+09:33:45.110 detox[18184] [90mi[39m saving ADBScreencapRecording to: e2e\artifacts\android.emu.debug.2025-11-10 14-33-13Z\✗ Login autoridad - flujo básico permite login y muestra el dashboard de autoridad\testStart.png
+09:33:45.110 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 pull "/sdcard/9331637_1.png" "e2e\artifacts\android.emu.debug.2025-11-10 14-33-13Z\✗ Login autoridad - flujo básico permite login y muestra el dashboard de autoridad\testStart.png"
+09:33:45.151 detox[18184] [90mi[39m /sdcard/9331637_1.png: 1 file pulled, 0 skipped. 30.6 MB/s (129011 bytes in 0.004s)
+
+09:33:45.151 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "rm  \"/sdcard/9331637_1.png\""
+09:33:45.199 detox[18184] [90mi[39m 
+09:33:45.200 detox[18184] [90mi[39m saving ADBScreencapRecording to: e2e\artifacts\android.emu.debug.2025-11-10 14-33-13Z\✗ Login autoridad - flujo básico permite login y muestra el dashboard de autoridad\testFnFailure.png
+09:33:45.200 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 pull "/sdcard/9331637_4.png" "e2e\artifacts\android.emu.debug.2025-11-10 14-33-13Z\✗ Login autoridad - flujo básico permite login y muestra el dashboard de autoridad\testFnFailure.png"
+09:33:45.239 detox[18184] [90mi[39m /sdcard/9331637_4.png: 1 file pulled, 0 skipped. 67.1 MB/s (284069 bytes in 0.004s)
+
+09:33:45.240 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "rm  \"/sdcard/9331637_4.png\""
+09:33:45.285 detox[18184] [90mi[39m 
+09:33:45.285 detox[18184] [90mi[39m saving ADBScreencapRecording to: e2e\artifacts\android.emu.debug.2025-11-10 14-33-13Z\✗ Login autoridad - flujo básico permite login y muestra el dashboard de autoridad\testDone.png
+09:33:45.285 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 pull "/sdcard/9331637_5.png" "e2e\artifacts\android.emu.debug.2025-11-10 14-33-13Z\✗ Login autoridad - flujo básico permite login y muestra el dashboard de autoridad\testDone.png"
+09:33:45.326 detox[18184] [90mi[39m /sdcard/9331637_5.png: 1 file pulled, 0 skipped. 56.6 MB/s (284069 bytes in 0.005s)
+
+09:33:45.326 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 shell "rm  \"/sdcard/9331637_5.png\""
+09:33:45.376 detox[18184] [90mi[39m 
+09:33:45.377 detox[18184] [90mi[39m saving FileArtifact to: e2e\artifacts\android.emu.debug.2025-11-10 14-33-13Z\detox_pid_18184.json.log { append: true }
+09:33:45.377 detox[18184] [90mi[39m saving FileArtifact to: e2e\artifacts\android.emu.debug.2025-11-10 14-33-13Z\detox_pid_18184.log { append: true }
+09:33:45.377 detox[18184] [90mE[39m onBeforeCleanup
+09:33:45.378 detox[18184] [90mi[39m send message
+  data: {"type":"cleanup","params":{"stopRunner":false},"messageId":-49642}
+09:33:45.378 detox[18488] [90mi[39m get
+  data: {"type":"cleanup","params":{"stopRunner":false},"messageId":-49642}
+09:33:45.379 detox[18488] [90mi[39m send
+  data: {
+    "type": "cleanup",
+    "params": {
+      "stopRunner": false
+    },
+    "messageId": -49642
+  }
+09:33:45.381 detox[18488] [90mi[39m get
+  data: {"messageId":-49642,"type":"cleanupDone","params":{}}
+09:33:45.381 detox[18488] [90mi[39m send
+  data: {
+    "messageId": -49642,
+    "type": "cleanupDone",
+    "params": {}
+  }
+09:33:45.382 detox[18184] [90mi[39m get message
+  data: {"messageId":-49642,"type":"cleanupDone","params":{}}
+   
+09:33:45.383 detox[18488] [90mi[39m tester exited session f965ed91-fdef-ddcd-6523-8e3004610b2b
+09:33:45.383 detox[18488] [90mi[39m send
+  data: {
+    "type": "testerDisconnected",
+    "messageId": -1
+  }
+09:33:45.383 detox[18488] [90mE[39m connection :54702<->:54705
+09:33:45.400 detox[18184] [90mi[39m sending SIGINT to: C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell am instrument -w -r -e detoxServer ws://localhost:54702 -e detoxSessionId f965ed91-fdef-ddcd-6523-8e3004610b2b -e detoxEnableSynchronization 0 -e detoxURLOverride 'exp+seguridadciudadanaapp://expo-development-client/?url=http%3A%2F%2F10.0.2.2%3A8081' -e debug false com.tuapp.seguritacapp.test/androidx.test.runner.AndroidJUnitRunner
+09:33:45.402 detox[18184] [90mi[39m C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE -s emulator-5554 shell am instrument -w -r -e detoxServer ws://localhost:54702 -e detoxSessionId f965ed91-fdef-ddcd-6523-8e3004610b2b -e detoxEnableSynchronization 0 -e detoxURLOverride 'exp+seguridadciudadanaapp://expo-development-client/?url=http%3A%2F%2F10.0.2.2%3A8081' -e debug false com.tuapp.seguritacapp.test/androidx.test.runner.AndroidJUnitRunner terminated with SIGINT
+09:33:45.403 detox[18184] [90mi[39m "C:\Users\carus\AppData\Local\Android\Sdk\platform-tools\adb.EXE" -s emulator-5554 reverse --remove tcp:54702
+09:33:45.410 detox[18184] [90mi[39m dispatching event to  primary-18488 /tmp/detox.primary-18488  :  deallocateDevice , {
+  deviceCookie: {
+    id: 'emulator-5554',
+    adbName: 'emulator-5554',
+    name: 'emulator-5554 (Pixel_4)'
+  }
+}
+09:33:45.411 detox[18488] [90mi[39m received event of :  deallocateDevice {
+  deviceCookie: {
+    id: 'emulator-5554',
+    adbName: 'emulator-5554',
+    name: 'emulator-5554 (Pixel_4)'
+  }
+}
+09:33:45.411 detox[18488] [90mB[39m free: emulator-5554
+  data: {}
+09:33:45.414 detox[18184] [90mi[39m ## received events ##
+09:33:45.414 detox[18184] [90mi[39m detected event deallocateDeviceDone {}
+09:33:45.414 detox[18488] [90mE[39m free: emulator-5554
+09:33:45.414 detox[18488] [90mi[39m dispatching event to socket  :  deallocateDeviceDone {}
+09:33:45.414 detox[18488] [90mi[39m socket disconnected secondary-18184
+09:33:45.415 detox[18184] [90mi[39m connection closed primary-18488 /tmp/detox.primary-18488 0 tries remaining of 0
+09:33:45.415 detox[18184] [90mi[39m secondary-18184 exceeded connection rety amount of  or stopRetrying flag set.
+09:33:45.415 detox[18184] [90mE[39m tear down environment
+09:33:45.415 detox[18184] [90mE[39m e2e\login.e2e.test.js
+09:33:45.433 detox[18184] [90mi[39m 
+09:33:45.547 detox[18488] [90mE[39m Command failed with exit code = 1:
+DETOX_E2E="true" jest --config e2e/jest.config.js
+09:33:45.548 detox[18488] [90mB[39m cleanup
+  args: ()
+09:33:45.551 detox[18488] [90mE[39m cleanup
+09:33:45.552 detox[18488] [90mi[39m Detox server has been closed gracefully
+09:33:45.553 detox[18488] [90mi[39m app exited session f965ed91-fdef-ddcd-6523-8e3004610b2b
+09:33:45.553 detox[18488] [90mE[39m connection :54702<->:54810
+09:33:45.553 detox[18488] [90mE[39m node_modules\detox\local-cli\cli.js test -c android.emu.debug --record-logs all --record-videos failing --artifacts-location e2e/artifacts --take-screenshots failing --headless

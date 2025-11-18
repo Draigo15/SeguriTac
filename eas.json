@@ -1,0 +1,57 @@
+{
+  "cli": {
+    "version": ">= 16.6.2",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "developmentClient": true,
+        "image": "latest"
+      },
+      "env": {
+        "FIREBASE_API_KEY": "AIzaSyBI5Jwmt5CoT02LhuoHvHIxMQl3S9yMgSA",
+        "FIREBASE_AUTH_DOMAIN": "seguritacapp.firebaseapp.com",
+        "FIREBASE_PROJECT_ID": "seguritacapp",
+        "FIREBASE_STORAGE_BUCKET": "seguritacapp.appspot.com",
+        "FIREBASE_MESSAGING_SENDER_ID": "361203563970",
+        "FIREBASE_APP_ID": "1:361203563970:android:b59da781c8ef1142f7aa5b"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "image": "latest"
+      },
+      "env": {
+        "FIREBASE_API_KEY": "AIzaSyBI5Jwmt5CoT02LhuoHvHIxMQl3S9yMgSA",
+        "FIREBASE_AUTH_DOMAIN": "seguritacapp.firebaseapp.com",
+        "FIREBASE_PROJECT_ID": "seguritacapp",
+        "FIREBASE_STORAGE_BUCKET": "seguritacapp.appspot.com",
+        "FIREBASE_MESSAGING_SENDER_ID": "361203563970",
+        "FIREBASE_APP_ID": "1:361203563970:android:b59da781c8ef1142f7aa5b"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "android": {
+        "buildType": "app-bundle",
+        "image": "latest"
+      },
+      "env": {
+        "FIREBASE_API_KEY": "AIzaSyBI5Jwmt5CoT02LhuoHvHIxMQl3S9yMgSA",
+        "FIREBASE_AUTH_DOMAIN": "seguritacapp.firebaseapp.com",
+        "FIREBASE_PROJECT_ID": "seguritacapp",
+        "FIREBASE_STORAGE_BUCKET": "seguritacapp.appspot.com",
+        "FIREBASE_MESSAGING_SENDER_ID": "361203563970",
+        "FIREBASE_APP_ID": "1:361203563970:android:b59da781c8ef1142f7aa5b"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "require": ["e2e/mocha.setup.js"],
+  "spec": "e2e/*.e2e.test.js",
+  "timeout": 300000,
+  "parallel": false,
+  "color": true
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Calor de Incidentes</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+        .legend {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .legend-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 2px 0;
+        }
+        .legend-color {
+            width: 20px;
+            height: 15px;
+            margin-right: 8px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    
+    <script>
+        // Inicializar el mapa
+        const map = L.map('map').setView([-12.0464, -77.0428], 12); // Lima, Perú
+        
+        // Agregar capa base
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        
+        let heatLayer;
+        let riskZones = [];
+        let riskCircles = [];
+        
+        // Función para actualizar el mapa de calor
+        function updateHeatmap(heatmapData) {
+            if (heatLayer) {
+                map.removeLayer(heatLayer);
+            }
+            
+            if (heatmapData && heatmapData.length > 0) {
+                heatLayer = L.heatLayer(heatmapData, {
+                    radius: 25,
+                    blur: 15,
+                    maxZoom: 17,
+                    gradient: {
+                        0.0: 'blue',
+                        0.2: 'cyan',
+                        0.4: 'lime',
+                        0.6: 'yellow',
+                        0.8: 'orange',
+                        1.0: 'red'
+                    }
+                }).addTo(map);
+            }
+        }
+        
+        // Función para mostrar zonas de riesgo
+        function updateRiskZones(zones) {
+            // Limpiar círculos anteriores
+            riskCircles.forEach(circle => map.removeLayer(circle));
+            riskCircles = [];
+            
+            zones.forEach(zone => {
+                const color = zone.riskLevel === 'high' ? '#ff0000' : 
+                             zone.riskLevel === 'medium' ? '#ff8800' : '#ffff00';
+                
+                const circle = L.circle([zone.latitude, zone.longitude], {
+                    color: color,
+                    fillColor: color,
+                    fillOpacity: 0.3,
+                    radius: zone.radius || 500
+                }).addTo(map);
+                
+                circle.bindPopup(`
+                    <div>
+                        <h4>Zona de Riesgo ${zone.riskLevel.toUpperCase()}</h4>
+                        <p><strong>Incidentes:</strong> ${zone.incidentCount}</p>
+                        <p><strong>Tipos:</strong> ${zone.incidentTypes.join(', ')}</p>
+                        <p><strong>Última actividad:</strong> ${zone.lastIncident}</p>
+                    </div>
+                `);
+                
+                riskCircles.push(circle);
+            });
+        }
+        
+        // Agregar leyenda
+        const legend = L.control({position: 'bottomright'});
+        legend.onAdd = function(map) {
+            const div = L.DomUtil.create('div', 'legend');
+            div.innerHTML = `
+                <div class="legend-title">Intensidad de Incidentes</div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: blue;"></div>
+                    <span>Muy Baja</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: cyan;"></div>
+                    <span>Baja</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: lime;"></div>
+                    <span>Media</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: yellow;"></div>
+                    <span>Alta</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: orange;"></div>
+                    <span>Muy Alta</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: red;"></div>
+                    <span>Crítica</span>
+                </div>
+            `;
+            return div;
+        };
+        legend.addTo(map);
+        
+        // Función para centrar el mapa en una ubicación
+        function centerMap(lat, lng, zoom = 13) {
+            map.setView([lat, lng], zoom);
+        }
+        
+        // Función para ajustar el mapa a los datos
+        function fitMapToData(bounds) {
+            if (bounds && bounds.length === 4) {
+                map.fitBounds([[bounds[0], bounds[1]], [bounds[2], bounds[3]]]);
+            }
+        }
+        
+        // Comunicación con React Native
+        window.addEventListener('message', function(event) {
+            const data = JSON.parse(event.data);
+            
+            switch(data.type) {
+                case 'updateHeatmap':
+                    updateHeatmap(data.heatmapData);
+                    break;
+                case 'updateRiskZones':
+                    updateRiskZones(data.riskZones);
+                    break;
+                case 'centerMap':
+                    centerMap(data.latitude, data.longitude, data.zoom);
+                    break;
+                case 'fitBounds':
+                    fitMapToData(data.bounds);
+                    break;
+            }
+        });
+        
+        // Notificar que el mapa está listo
+        window.ReactNativeWebView?.postMessage(JSON.stringify({
+            type: 'mapReady'
+        }));
+    </script>
+</body>
+</html>

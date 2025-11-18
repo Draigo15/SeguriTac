@@ -1,0 +1,208 @@
+--------- beginning of main
+11-14 16:01:01.688  7755  7755 I pp.seguritacapp: Late-enabling -Xcheck:jni
+11-14 16:01:01.701  7755  7755 I pp.seguritacapp: Using CollectorTypeCC GC.
+11-14 16:01:01.701  7755  7755 W pp.seguritacapp: Unexpected CPU variant for x86: x86_64.
+11-14 16:01:01.701  7755  7755 W pp.seguritacapp: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+11-14 16:01:01.764  7755  7755 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10196; state: ENABLED
+11-14 16:01:01.765  7755  7755 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10196; state: ENABLED
+--------- beginning of system
+11-14 16:01:01.775  7755  7755 W ActivityThread: Package uses different ABI(s) than its instrumentation: package[com.tuapp.seguritacapp]: x86_64, null instrumentation[com.tuapp.seguritacapp.test]: null, null
+11-14 16:01:01.782  7755  7755 D nativeloader: Configuring clns-6 for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/lib/x86_64:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/lib/x86_64:/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk!/lib/x86_64:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.tuapp.seguritacapp
+11-14 16:01:01.785  7755  7755 W pp.seguritacapp: ClassLoaderContext shared library size mismatch. Expected=2, found=1 (PCL[]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]} | PCL[]{PCL[/system/framework/org.apache.http.legacy.jar*365604908]})
+11-14 16:01:01.787  7755  7755 W pp.seguritacapp: ClassLoaderContext classpath size mismatch. expected=0, found=1 (PCL[] | PCL[/system/framework/android.test.runner.jar*4168958247]{PCL[/system/framework/org.apache.http.legacy.jar*365604908]})
+11-14 16:01:01.789  7755  7755 W pp.seguritacapp: ClassLoaderContext classpath size mismatch. expected=0, found=2 (PCL[] | PCL[/system/framework/android.test.runner.jar*4168958247:/system/framework/android.test.mock.jar*3186112116]{PCL[/system/framework/org.apache.http.legacy.jar*365604908]})
+11-14 16:01:01.790  7755  7755 W ziparchive: Unable to open '/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.dm': No such file or directory
+11-14 16:01:01.790  7755  7755 W ziparchive: Unable to open '/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.dm': No such file or directory
+11-14 16:01:01.830  7755  7755 W ziparchive: Unable to open '/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.dm': No such file or directory
+11-14 16:01:01.830  7755  7755 W ziparchive: Unable to open '/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.dm': No such file or directory
+11-14 16:01:02.065  7755  7755 D nativeloader: Configuring clns-7 for other apk /system/framework/android.test.runner.jar:/system/framework/android.test.mock.jar:/system/framework/android.test.base.jar:/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/lib/x86_64:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/lib/x86_64:/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk!/lib/x86_64:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.tuapp.seguritacapp
+11-14 16:01:02.079  7755  7755 V GraphicsEnvironment: Currently set values for:
+11-14 16:01:02.079  7755  7755 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-14 16:01:02.079  7755  7755 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-14 16:01:02.080  7755  7755 V GraphicsEnvironment: ANGLE GameManagerService for com.tuapp.seguritacapp: false
+11-14 16:01:02.080  7755  7755 V GraphicsEnvironment: com.tuapp.seguritacapp is not listed in per-application setting
+11-14 16:01:02.080  7755  7755 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-14 16:01:02.084  7755  7755 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-14 16:01:02.085  7755  7755 D nativeloader: Configuring clns-8 for other apk /system/framework/android.test.mock.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/lib/x86_64:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/lib/x86_64, permitted_path=/data:/mnt/expand
+11-14 16:01:02.086  7755  7755 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-14 16:01:02.087  7755  7755 D nativeloader: Configuring clns-9 for other apk /system/framework/android.test.runner.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/lib/x86_64:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/lib/x86_64, permitted_path=/data:/mnt/expand
+11-14 16:01:02.087  7755  7755 W pp.seguritacapp: ClassLoaderContext shared library size mismatch. Expected=2, found=3 (PCL[]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]} | PCL[]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]#PCL[/system/framework/android.test.runner.jar*4168958247]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]}};PCL[/system/framework/android.test.runner.jar*4168958247:/system/framework/android.test.mock.jar*3186112116:/system/framework/android.test.base.jar*836642756:/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk*710614376:/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk!classes2.dex*314750459:/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk!classes3.dex*2150330680:/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk!classes4.dex*3754422716:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk*3735652970:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes2.dex*2846272409:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes3.dex*568552958:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes4.dex*3366001543:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes5.dex*401369396:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes6.dex*4234121696:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes7.dex*2649428190]{PCL[/system/framework/org.apache.http.legacy.jar*365604908]})
+11-14 16:01:02.088  7755  7755 W pp.seguritacapp: ClassLoaderContext classpath size mismatch. expected=0, found=1 (PCL[] | PCL[/system/framework/android.test.runner.jar*4168958247]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]#PCL[/system/framework/android.test.runner.jar*4168958247]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]}};PCL[/system/framework/android.test.runner.jar*4168958247:/system/framework/android.test.mock.jar*3186112116:/system/framework/android.test.base.jar*836642756:/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk*710614376:/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk!classes2.dex*314750459:/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk!classes3.dex*2150330680:/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk!classes4.dex*3754422716:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk*3735652970:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes2.dex*2846272409:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes3.dex*568552958:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes4.dex*3366001543:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes5.dex*401369396:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes6.dex*4234121696:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes7.dex*2649428190]{PCL[/system/framework/org.apache.http.legacy.jar*365604908]})
+11-14 16:01:02.089  7755  7755 W pp.seguritacapp: ClassLoaderContext classpath size mismatch. expected=0, found=2 (PCL[] | PCL[/system/framework/android.test.runner.jar*4168958247:/system/framework/android.test.mock.jar*3186112116]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]#PCL[/system/framework/android.test.runner.jar*4168958247]{PCL[/system/framework/android.test.base.jar*836642756]#PCL[/system/framework/android.test.mock.jar*3186112116]}};PCL[/system/framework/android.test.runner.jar*4168958247:/system/framework/android.test.mock.jar*3186112116:/system/framework/android.test.base.jar*836642756:/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk*710614376:/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk!classes2.dex*314750459:/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk!classes3.dex*2150330680:/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk!classes4.dex*3754422716:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk*3735652970:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes2.dex*2846272409:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes3.dex*568552958:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes4.dex*3366001543:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes5.dex*401369396:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes6.dex*4234121696:/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!classes7.dex*2649428190]{PCL[/system/framework/org.apache.http.legacy.jar*365604908]})
+11-14 16:01:02.089  7755  7755 W ziparchive: Unable to open '/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.dm': No such file or directory
+11-14 16:01:02.089  7755  7755 W ziparchive: Unable to open '/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.dm': No such file or directory
+11-14 16:01:02.127  7755  7755 W ziparchive: Unable to open '/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.dm': No such file or directory
+11-14 16:01:02.127  7755  7755 W ziparchive: Unable to open '/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.dm': No such file or directory
+11-14 16:01:02.556  7755  7755 I AndroidJUnitRunner: newApplication com.tuapp.seguritacapp.MainApplication
+11-14 16:01:02.609  7755  7755 D CompatibilityChangeReporter: Compat change id reported: 183155436; UID 10196; state: ENABLED
+11-14 16:01:02.616  7755  7755 I FirebaseApp: Device unlocked: initializing all Firebase APIs for app [DEFAULT]
+11-14 16:01:02.624  7755  7755 I FirebaseInitProvider: FirebaseApp initialization successful
+11-14 16:01:02.636  7755  7755 D WM-WrkMgrInitializer: Initializing WorkManager with default configuration.
+11-14 16:01:02.664  7755  7755 I AndroidJUnitRunner: onCreate Bundle[mParcelledData.dataSize=588]
+11-14 16:01:02.667  7755  7755 D AndroidJUnitRunner: Use the raw file system for managing file I/O.
+11-14 16:01:02.692  7755  7755 V TestEventClient: No service name argument was given (testDiscoveryService, testRunEventService or orchestratorService)
+11-14 16:01:02.693  7755  7798 D AndroidJUnitRunner: onStart is called.
+11-14 16:01:02.693  7755  7755 W SoLoader: Initializing SoLoader: 0
+11-14 16:01:02.696  7755  7755 W SoLoader: Recording new base apk path: /data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk
+11-14 16:01:02.696  7755  7755 W SoLoader: Previously recorded 0 base apk paths.
+11-14 16:01:02.699  7755  7755 I SoLoader: Preparing SO source: DirectorySoSource[root = /vendor/lib64 flags = 2]
+11-14 16:01:02.699  7755  7755 I SoLoader: Preparing SO source: DirectorySoSource[root = /system/lib64 flags = 2]
+11-14 16:01:02.699  7755  7755 I SoLoader: Preparing SO source: DirectApkSoSource[root = [/data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/base.apk!/lib/x86_64]]
+11-14 16:01:02.705  7755  7794 D TrafficStats: tagSocket(79) with statsTag=0x8001, statsUid=-1
+11-14 16:01:02.718  7755  7793 D CompatibilityChangeReporter: Compat change id reported: 160794467; UID 10196; state: ENABLED
+11-14 16:01:02.741  7755  7755 I SoLoader: Preparing SO source: ApplicationSoSource[DirectorySoSource[root = /data/app/~~vjs1Xzr9NH5CsolcZsLZJw==/com.tuapp.seguritacapp-XYNWXzmWknwo9ws53lIWeg==/lib/x86_64 flags = 0]]
+11-14 16:01:02.741  7755  7755 I SoLoader: init finish: 4 SO sources prepared
+11-14 16:01:02.741  7755  7755 W SoLoader: SoLoader initialized: 8
+11-14 16:01:02.801  7755  7798 I InstrConnection: Could not send broadcast or register receiver (isolatedProcess?)
+11-14 16:01:02.803  7755  7798 D TestRequestBuilder: Using class path scanning to discover tests
+11-14 16:01:02.804  7755  7798 I TestRequestBuilder: Scanning classpath to find tests in paths [/data/app/~~oqrxJyudqTis-VlAOUHQDQ==/com.tuapp.seguritacapp.test-sRW-A0qu9UY5xvgb1uAnmg==/base.apk]
+11-14 16:01:02.806  7755  7798 W pp.seguritacapp: Opening an oat file without a class loader. Are you using the deprecated DexFile APIs?
+11-14 16:01:03.475  7755  7798 I TestRunner: run started: 1 tests
+11-14 16:01:03.476  7755  7798 I TestRunner: started: runDetoxTests(com.tuapp.seguritacapp.DetoxTest)
+11-14 16:01:03.479  7755  7798 I Detox   : Detox server connection details: url=ws://localhost:63788, sessionId=59e0c3da-e792-b21e-22ab-a8c41baceb35
+11-14 16:01:03.483  7755  7798 W FileTestStorage: Output properties is not supported.
+11-14 16:01:03.483  7755  7798 I Tracing : Tracer added: class androidx.test.platform.tracing.AndroidXTracer
+11-14 16:01:03.487  7755  7798 D EventInjectionStrategy: Creating injection strategy with input manager.
+11-14 16:01:03.487  7755  7798 W pp.seguritacapp: Accessing hidden method Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager; (unsupported, reflection, allowed)
+11-14 16:01:03.488  7755  7798 W pp.seguritacapp: Accessing hidden method Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z (unsupported, reflection, allowed)
+11-14 16:01:03.488  7755  7798 W pp.seguritacapp: Accessing hidden field Landroid/hardware/input/InputManager;->INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH:I (unsupported, reflection, allowed)
+11-14 16:01:03.494  7755  7798 W pp.seguritacapp: Accessing hidden field Ljava/lang/reflect/Field;->accessFlags:I (unsupported, reflection, allowed)
+11-14 16:01:03.496  7755  7798 I Detox   : Connecting to server...
+11-14 16:01:03.496  7755  7798 I DetoxWSClient: At connectToServer
+11-14 16:01:03.525  7755  7821 D TrafficStats: tagSocket(98) with statsTag=0xffffffff, statsUid=-1
+11-14 16:01:03.534  7755  7821 D DetoxWSClient: At onOpen
+11-14 16:01:03.534  7755  7821 I DetoxWSClient: Sending out action 'login' (ID #0)
+11-14 16:01:03.535  7755  7821 I Detox   : Connected to server!
+11-14 16:01:03.538  7755  7821 D DetoxWSClient: Received action 'loginSuccess' (ID #0, params={"testerConnected":true,"appConnected":true})
+11-14 16:01:03.538  7755  7817 I DetoxDispatcher: Handling action 'loginSuccess' (ID #0)...
+11-14 16:01:03.539  7755  7817 I DetoxDispatcher: Done with action 'loginSuccess'
+11-14 16:01:03.539  7755  7798 I Detox   : Launching the tested activity!
+11-14 16:01:03.578  7755  7821 D DetoxWSClient: Received action 'isReady' (ID #-1000, params={})
+11-14 16:01:03.579  7755  7817 I DetoxDispatcher: Handling action 'isReady' (ID #-1000)...
+11-14 16:01:03.636  7755  7828 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-14 16:01:03.638  7755  7828 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-14 16:01:03.640  7755  7755 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+11-14 16:01:03.644  7755  7828 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-14 16:01:03.651  7755  7755 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@61ed606 in: PRE_ON_CREATE
+11-14 16:01:03.750  7755  7755 W pp.seguritacapp: Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (unsupported, reflection, allowed)
+11-14 16:01:03.750  7755  7755 W pp.seguritacapp: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (unsupported, reflection, allowed)
+11-14 16:01:03.764  7755  7755 I ExpoDevMenu: Set new dev-menu delegate: class expo.modules.devmenu.DevMenuDefaultDelegate
+11-14 16:01:03.767  7755  7755 D Detox.RNMarker: BUILD_REACT_INSTANCE_MANAGER_START (null)
+11-14 16:01:03.772  7755  7755 W SoLoader: SoLoader already initialized
+11-14 16:01:03.780  7755  7755 D Detox.RNMarker: BUILD_REACT_INSTANCE_MANAGER_END (null)
+11-14 16:01:03.781  7755  7755 W SoLoader: SoLoader already initialized
+11-14 16:01:03.786  7755  7835 D TrafficStats: tagSocket(105) with statsTag=0xffffffff, statsUid=-1
+11-14 16:01:03.826  7755  7842 D TrafficStats: tagSocket(106) with statsTag=0xffffffff, statsUid=-1
+11-14 16:01:03.851  7755  7755 D jni_lib_merge: Entering merged library JNI_OnLoad.
+11-14 16:01:03.851  7755  7755 D jni_lib_merge: Preparing 12 pre-merged libs (including stub)
+11-14 16:01:03.851  7755  7755 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x7bde4d63fa60
+11-14 16:01:03.851  7755  7755 D jni_lib_merge: Preparing to register libmapbufferjni_so.  onload_func: 0x7bde4d71abb0
+11-14 16:01:03.851  7755  7755 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x7bde4d86cfe0
+11-14 16:01:03.851  7755  7755 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x7bde4d878b90
+11-14 16:01:03.851  7755  7755 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x7bde4d8e9b00
+11-14 16:01:03.851  7755  7755 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x7bde4daf4460
+11-14 16:01:03.851  7755  7755 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x7bde4db50750
+11-14 16:01:03.851  7755  7755 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x7bde4db9deb0
+11-14 16:01:03.851  7755  7755 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x7bde4dc6c410
+11-14 16:01:03.851  7755  7755 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x7bde4dc86bd0
+11-14 16:01:03.851  7755  7755 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x7bde4dc94950
+11-14 16:01:03.851  7755  7755 D jni_lib_merge: About to register 11 actual methods.
+11-14 16:01:03.854  7755  7755 I expo-notifications: ExpoNotificationLifeCycleListener.onCreate::
+11-14 16:01:03.854  7755  7755 I expo-notifications: launchArgs
+11-14 16:01:03.854  7755  7755 I expo-notifications:   detoxURLOverride: seguridadciudadanaapp://expo-development-client/?url=http%3A%2F%2F127.0.0.1%3A8081&role=ciudadano&disableBypass=1
+11-14 16:01:03.854  7755  7755 I expo-notifications:   detoxServer: ws://localhost:63788
+11-14 16:01:03.854  7755  7755 I expo-notifications:   detoxSessionId: 59e0c3da-e792-b21e-22ab-a8c41baceb35
+11-14 16:01:03.854  7755  7755 I expo-notifications:   detoxEnableSynchronization: 0
+11-14 16:01:03.856  7755  7755 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@61ed606 in: CREATED
+11-14 16:01:03.857  7755  7755 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@61ed606 in: STARTED
+11-14 16:01:03.859  7755  7755 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@61ed606 in: RESUMED
+11-14 16:01:03.864  7755  7755 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10196; state: DISABLED
+11-14 16:01:03.865  7755  7755 W OpenGLRenderer: Unknown dataspace 0
+11-14 16:01:03.913  7755  7827 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+11-14 16:01:03.913  7755  7827 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-14 16:01:03.972  7755  7827 I Gralloc4: mapper 4.x is not supported
+11-14 16:01:03.988  7755  7827 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-14 16:01:04.039  7755  7755 I ExpoDevMenu: Set new dev-menu delegate: class expo.modules.devmenu.DevMenuDefaultDelegate
+11-14 16:01:04.059  7755  7755 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@61ed606 in: PAUSED
+11-14 16:01:04.061  7755  7853 D TrafficStats: tagSocket(125) with statsTag=0xffffffff, statsUid=-1
+11-14 16:01:04.095  7755  7755 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@f1be462 in: PRE_ON_CREATE
+11-14 16:01:04.125  7755  7857 D TrafficStats: tagSocket(126) with statsTag=0xffffffff, statsUid=-1
+11-14 16:01:04.149  7755  7755 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@f1be462 in: CREATED
+11-14 16:01:04.150  7755  7755 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@f1be462 in: STARTED
+11-14 16:01:04.151  7755  7755 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@f1be462 in: RESUMED
+11-14 16:01:04.187  7755  7859 D TrafficStats: tagSocket(128) with statsTag=0xffffffff, statsUid=-1
+11-14 16:01:04.199  7755  7827 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-14 16:01:04.220  7755  7755 D Detox.RNMarker: DOWNLOAD_START (null)
+11-14 16:01:04.225  7755  7862 D TrafficStats: tagSocket(119) with statsTag=0xffffffff, statsUid=-1
+11-14 16:01:04.235  7755  7755 D CompatibilityChangeReporter: Compat change id reported: 210923482; UID 10196; state: ENABLED
+11-14 16:01:04.248  7755  7755 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@61ed606 in: STOPPED
+11-14 16:01:04.249  7755  7755 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@61ed606 in: DESTROYED
+11-14 16:01:04.249  7755  7755 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@f42a74e
+11-14 16:01:04.276  7755  7827 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-14 16:01:08.187  7755  7865 D ProfileInstaller: Installing profile for com.tuapp.seguritacapp
+11-14 16:01:13.542  7755  7821 D DetoxWSClient: Received action 'currentStatus' (ID #1, params={})
+11-14 16:01:13.543  7755  7818 I DetoxDispatcher: Handling action 'currentStatus' (ID #1)...
+11-14 16:01:15.415  7755  7764 W pp.seguritacapp: Cleared Reference was only reachable from finalizer (only reported once)
+11-14 16:04:04.496  7755  7817 W pp.seguritacapp: Long monitor contention with owner Instr: com.wix.detox.DetoxJUnitRunner (7798) at void com.wix.detox.DetoxMain.launchActivityOnCue(android.content.Context, com.wix.detox.ActivityLaunchHelper)(DetoxMain.kt:53) waiters=0 in void com.wix.detox.DetoxMain$setupActionHandlers$SynchronizedActionHandler.handle(java.lang.String, long) for 180.917s
+11-14 16:04:04.496  7755  7798 E TestRunner: failed: runDetoxTests(com.tuapp.seguritacapp.DetoxTest)
+11-14 16:04:04.498  7755  7798 E TestRunner: ----- begin exception -----
+11-14 16:04:04.498  7755  7798 E TestRunner: com.wix.detox.common.DetoxErrors$DetoxRuntimeException: Waited for the new RN-context for too long! (180 seconds)
+11-14 16:04:04.498  7755  7798 E TestRunner: If you think that's not long enough, consider applying a custom Detox runtime-config in DetoxTest.runTests().
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at com.wix.detox.reactnative.ReactNativeLoadingMonitor.awaitNewRNContext(ReactNativeLoadingMonitor.kt:54)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at com.wix.detox.reactnative.ReactNativeLoadingMonitor.getNewContext(ReactNativeLoadingMonitor.kt:26)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at com.wix.detox.reactnative.ReactNativeExtension.awaitNewReactNativeContext(ReactNativeExtension.kt:127)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at com.wix.detox.reactnative.ReactNativeExtension.waitForRNBootstrap(ReactNativeExtension.kt:37)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at com.wix.detox.DetoxMain.launchActivity(DetoxMain.kt:133)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at com.wix.detox.DetoxMain.launchActivityOnCue(DetoxMain.kt:55)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at com.wix.detox.DetoxMain.run(DetoxMain.kt:35)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at com.wix.detox.Detox.runTests(Detox.java:127)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at com.tuapp.seguritacapp.DetoxTest.runDetoxTests(DetoxTest.java:23)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at androidx.test.rule.ActivityTestRule$ActivityStatement.evaluate(ActivityTestRule.java:522)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+11-14 16:04:04.498  7755  7798 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2402)
+11-14 16:04:04.498  7755  7798 E TestRunner: ----- end exception -----
+11-14 16:04:04.500  7755  7798 I TestRunner: finished: runDetoxTests(com.tuapp.seguritacapp.DetoxTest)
+11-14 16:04:04.501  7755  7755 W pp.seguritacapp: Accessing hidden method Landroid/os/MessageQueue;->next()Landroid/os/Message; (unsupported, reflection, allowed)
+11-14 16:04:04.501  7755  7755 W pp.seguritacapp: Accessing hidden field Landroid/os/MessageQueue;->mMessages:Landroid/os/Message; (unsupported, reflection, allowed)
+11-14 16:04:04.501  7755  7755 W pp.seguritacapp: Accessing hidden method Landroid/os/Message;->recycleUnchecked()V (unsupported, reflection, allowed)
+11-14 16:04:04.502  7755  7798 I MonitoringInstr: Unstopped activity count: 1
+11-14 16:04:04.502  7755  7755 I Detox   : Wait is over: App is now idle!
+11-14 16:04:04.503  7755  7817 I DetoxWSClient: Sending out action 'ready' (ID #-1000)
+11-14 16:04:04.504  7755  7755 I MonitoringInstr: Finishing activity: com.tuapp.seguritacapp.MainActivity@f1be462
+11-14 16:04:04.504  7755  7817 I DetoxDispatcher: Done with action 'isReady'
+11-14 16:04:04.504  7755  7818 W pp.seguritacapp: Long monitor contention with owner Instr: com.wix.detox.DetoxJUnitRunner (7798) at void com.wix.detox.DetoxMain.launchActivityOnCue(android.content.Context, com.wix.detox.ActivityLaunchHelper)(DetoxMain.kt:53) waiters=1 in void com.wix.detox.DetoxMain$setupActionHandlers$SynchronizedActionHandler.handle(java.lang.String, long) for 170.962s
+11-14 16:04:04.510  7755  7818 I DetoxWSClient: Sending out action 'currentStatusResult' (ID #1)
+11-14 16:04:04.510  7755  7818 I DetoxDispatcher: Done with action 'currentStatus'
+11-14 16:04:04.512  7755  7755 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@f1be462 in: PAUSED
+11-14 16:04:04.518  7755  7755 W WindowOnBackDispatcher: sendCancel

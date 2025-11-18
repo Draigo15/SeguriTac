@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "SeguridadCiudadanaApp",
+    "slug": "SeguridadCiudadanaApp",
+    "owner": "rodliraa15",
+    "scheme": "seguridadciudadanaapp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "main": "index.ts",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/iconselector.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#002B7F"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Esta aplicación necesita acceso a tu ubicación para mostrar reportes cercanos y permitir reportar incidentes con ubicación precisa.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Esta aplicación necesita acceso a tu ubicación para mostrar reportes cercanos y permitir reportar incidentes con ubicación precisa."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.tuapp.seguritacapp",
+      "googleServicesFile": "./google-services.json",
+      "useNextNotificationsApi": true,
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "93506b05-04c3-4913-a269-1cb2a63a151c"
+      }
+    }
+  }
+}

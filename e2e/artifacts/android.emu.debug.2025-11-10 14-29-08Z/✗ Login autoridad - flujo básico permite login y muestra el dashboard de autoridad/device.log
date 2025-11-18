@@ -1,0 +1,160 @@
+--------- beginning of main
+11-10 14:29:29.093 10915 10966 D DetoxWSClient: Received action 'invoke' (ID #1, params={"target":{"type":"Class","value":"com.wix.detox.Detox"},"method":"startActivityFromUrl","args":["exp+seguridadciudadanaapp:\/\/login"]})
+11-10 14:29:29.095 10915 10962 I DetoxDispatcher: Handling action 'invoke' (ID #1)...
+11-10 14:29:29.098 10915 10997 W ReactNativeJS: '[2025-11-10T14:29:29.092Z]  @firebase/auth:', 'Auth (11.9.0): \nYou are initializing Firebase Auth for React Native without providing\nAsyncStorage. Auth state will default to memory persistence and will not\npersist between sessions. In order to persist auth state, install the package\n"@react-native-async-storage/async-storage" and provide it to\ninitializeAuth:\n\nimport { initializeAuth, getReactNativePersistence } from \'firebase/auth\';\nimport ReactNativeAsyncStorage from \'@react-native-async-storage/async-storage\';\nconst auth = initializeAuth(app, {\n  persistence: getReactNativePersistence(ReactNativeAsyncStorage)\n});\n'
+11-10 14:29:29.108 10915 10962 D Detox   : class com.wix.detox.Detox, startActivityFromUrl, [exp+seguridadciudadanaapp://login]
+11-10 14:29:29.120 10915 10997 I ReactNativeJS: ✅ Firestore inicializado con configuración básica
+11-10 14:29:29.127 10915 10997 I ReactNativeJS: ✅ Firebase inicializado correctamente
+11-10 14:29:29.129 10915 10997 I ReactNativeJS: '📱 Proyecto:', 'seguritacapp'
+11-10 14:29:29.142 10915 10997 V AsyncStorageExpoMigration: No scoped database found
+11-10 14:29:29.153 10915 10915 W unknown:BridgelessReact: ReactHost{1}.onHostPause(activity)
+11-10 14:29:29.153 10915 10915 W unknown:BridgelessReact: ReactContext.onHostPause()
+11-10 14:29:29.154 10915 10915 D LifecycleMonitor: Lifecycle status change: expo.modules.devmenu.DevMenuActivity@f8d2ae6 in: PAUSED
+11-10 14:29:29.171 10915 10915 W unknown:BridgelessReact: ReactHost{0}.onHostResume(activity)
+11-10 14:29:29.172 10915 10915 W unknown:BridgelessReact: ReactContext.onHostResume()
+11-10 14:29:29.172 10915 10915 D LifecycleMonitor: Lifecycle status change: com.tuapp.seguritacapp.MainActivity@6f3d575 in: RESUMED
+11-10 14:29:29.175 10915 10962 I DetoxWSClient: Sending out action 'invokeResult' (ID #1)
+11-10 14:29:29.175 10915 10962 I DetoxDispatcher: Done with action 'invoke'
+11-10 14:29:29.190 10915 10915 D VRI[DevMenuActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-10 14:29:29.194 10915 10915 D LifecycleMonitor: Lifecycle status change: expo.modules.devmenu.DevMenuActivity@f8d2ae6 in: STOPPED
+11-10 14:29:29.196 10915 10915 D LifecycleMonitor: Lifecycle status change: expo.modules.devmenu.DevMenuActivity@f8d2ae6 in: DESTROYED
+11-10 14:29:29.196 10915 10915 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda13@58bca7a
+11-10 14:29:29.201 10915 10915 D ViewRootImpl: Skipping stats log for color mode
+11-10 14:29:29.222 10915 10915 D InsetsController: hide(ime(), fromIme=false)
+11-10 14:29:29.222 10915 10915 I ImeTracker: com.tuapp.seguritacapp:d1219818: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+11-10 14:29:30.134 10915 10997 D Detox.RNMarker: RUN_JS_BUNDLE_END (/index.ts.bundle?platform=android&dev=true&hot=false&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&unstable_transformProfile=hermes-stable)
+11-10 14:29:30.135 10915 10997 W ReactNativeJS: [Reanimated] Reduced motion setting is enabled on this device. This warning is visible only in the development mode. Some animations will be disabled by default. You can override the behavior for individual animations, see https://docs.swmansion.com/react-native-reanimated/docs/guides/troubleshooting#reduced-motion-setting-is-enabled-on-this-device.
+11-10 14:29:30.139 10915 10997 I ReactNativeJS: Running "main" with {"rootTag":11,"initialProps":{},"fabric":true}
+11-10 14:29:30.427 10915 10997 W HWUI    : Image decoding logging dropped!
+11-10 14:29:30.428 10915 10997 W HWUI    : Image decoding logging dropped!
+11-10 14:29:30.532 10915 10915 W HWUI    : Image decoding logging dropped!
+11-10 14:29:30.545 10915 10915 W HWUI    : Image decoding logging dropped!
+11-10 14:29:30.546 10915 10915 W HWUI    : Image decoding logging dropped!
+11-10 14:29:30.615 10915 10966 D DetoxWSClient: Received action 'invoke' (ID #2, params={"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxAssertion"},"method":"waitForAssertMatcher","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"androidx.test.espresso.Espresso"},"method":"onView","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForAtIndex","args":[{"type":"Integer","value":0},{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForClass","args":["android.widget.EditText"]}}]}}]}},{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForSufficientlyVisible","args":[{"type":"Integer","value":75}]}},{"type":"Double","value":8}]})
+11-10 14:29:30.616 10915 10962 I DetoxDispatcher: Handling action 'invoke' (ID #2)...
+11-10 14:29:30.618 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForClass, [android.widget.EditText]
+11-10 14:29:30.619 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForAtIndex, [0, (is assignable from class: class android.widget.EditText and view has effective visibility <VISIBLE>)]
+11-10 14:29:30.620 10915 10962 D Detox   : class androidx.test.espresso.Espresso, onView, [View at index #0, of those matching MATCHER(is assignable from class: class android.widget.EditText and view has effective visibility <VISIBLE>)]
+11-10 14:29:30.623 10915 10962 D CompatChangeReporter: Compat change id reported: 247079863; UID 10219; state: ENABLED
+11-10 14:29:30.624 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForSufficientlyVisible, [75]
+11-10 14:29:30.627 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxAssertion, waitForAssertMatcher, [androidx.test.espresso.ViewInteraction@8c6ae89, (view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() covers at least <75> percent of the view's area), 8.0]
+11-10 14:29:30.642 10915 10915 W [RNScreens]: backTitleFontFamily prop is not available on Android
+11-10 14:29:30.643 10915 10915 W [RNScreens]: disableBackButtonMenu prop is not available on Android
+11-10 14:29:30.643 10915 10915 W [RNScreens]: backTitleVisible prop is not available on Android
+11-10 14:29:30.643 10915 10915 W [RNScreens]: largeTitleHideShadow prop is not available on Android
+11-10 14:29:30.643 10915 10915 W [RNScreens]: largeTitleFontWeight prop is not available on Android
+11-10 14:29:30.643 10915 10915 W [RNScreens]: largeTitleFontFamily prop is not available on Android
+11-10 14:29:30.733 10915 10915 D Detox.RNMarker: CONTENT_APPEARED (main)
+11-10 14:29:31.102 10915 10915 I ViewInteraction: Checking 'MatchesViewAssertion(Detox){viewMatcher=(view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() covers at least <75> percent of the view's area)}' assertion on view View at index #0, of those matching MATCHER(is assignable from class: class android.widget.EditText and view has effective visibility <VISIBLE>)
+11-10 14:29:31.146 10915 10962 I DetoxWSClient: Sending out action 'invokeResult' (ID #2)
+11-10 14:29:31.146 10915 10962 I DetoxDispatcher: Done with action 'invoke'
+11-10 14:29:31.159 10915 10997 I ReactNativeJS: [METRIC] navigation_ready_ms=1027ms {"initialRoute":"AuthLoading"}
+11-10 14:29:31.173 10915 10966 D DetoxWSClient: Received action 'invoke' (ID #3, params={"target":{"type":"Class","value":"com.wix.detox.espresso.EspressoDetox"},"method":"perform","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForAtIndex","args":[{"type":"Integer","value":0},{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForClass","args":["android.widget.EditText"]}}]}},{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxViewActions"},"method":"typeText","args":["autoridad@ciudad.com"]}}]})
+11-10 14:29:31.174 10915 10962 I DetoxDispatcher: Handling action 'invoke' (ID #3)...
+11-10 14:29:31.174 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForClass, [android.widget.EditText]
+11-10 14:29:31.175 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForAtIndex, [0, (is assignable from class: class android.widget.EditText and view has effective visibility <VISIBLE>)]
+11-10 14:29:31.175 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxViewActions, typeText, [autoridad@ciudad.com]
+11-10 14:29:31.187 10915 10997 I ReactNativeJS: [METRIC] cold_start_first_render_ms=1054ms {"platform":"android"}
+11-10 14:29:31.198 10915 10962 I pp.seguritacapp: hiddenapi: Accessing hidden method Landroid/view/ViewConfiguration;->getDoubleTapMinTime()I (runtime_flags=0, domain=platform, api=unsupported) from Lcom/wix/detox/espresso/action/common/DetoxViewConfigurations; (domain=app) using reflection: allowed
+11-10 14:29:31.220 10915 10997 I ReactNativeJS: ✅ Firestore reiniciado correctamente
+11-10 14:29:31.227 10915 10962 D Detox   : class com.wix.detox.espresso.EspressoDetox, perform, [View at index #0, of those matching MATCHER(is assignable from class: class android.widget.EditText and view has effective visibility <VISIBLE>), com.wix.detox.espresso.action.DetoxTypeTextAction@567efe7]
+11-10 14:29:31.346 10915 10915 I ViewInteraction: Performing 'Click to focus & type text (autoridad@ciudad.com)' action on view View at index #0, of those matching MATCHER(is assignable from class: class android.widget.EditText and view has effective visibility <VISIBLE>)
+11-10 14:29:31.463 10915 11025 W HWUI    : Image decoding logging dropped!
+11-10 14:29:31.561 10915 10997 I ReactNativeJS: 📱 Dispositivo conectado - sincronizando datos
+11-10 14:29:31.562 10915 10997 I ReactNativeJS: ✅ Red de Firestore habilitada
+11-10 14:29:31.562 10915 10997 I ReactNativeJS: ✅ Red de Firestore habilitada
+11-10 14:29:31.562 10915 10997 I ReactNativeJS: 📱 Dispositivo conectado - sincronizando datos
+11-10 14:29:31.563 10915 10997 I ReactNativeJS: 📱 Dispositivo conectado - sincronizando datos
+11-10 14:29:31.563 10915 10997 I ReactNativeJS: ✅ Red de Firestore habilitada
+11-10 14:29:31.563 10915 10997 I ReactNativeJS: ✅ Red de Firestore habilitada
+11-10 14:29:31.563 10915 10997 I ReactNativeJS: ✅ Red de Firestore habilitada
+11-10 14:29:31.564 10915 10997 I ReactNativeJS: ✅ Red de Firestore habilitada
+11-10 14:29:31.574 10915 10915 W [RNScreens]: largeTitleFontFamily prop is not available on Android
+11-10 14:29:31.574 10915 10915 W [RNScreens]: largeTitleFontWeight prop is not available on Android
+11-10 14:29:31.574 10915 10915 W [RNScreens]: largeTitleHideShadow prop is not available on Android
+11-10 14:29:31.574 10915 10915 W [RNScreens]: backTitleVisible prop is not available on Android
+11-10 14:29:31.574 10915 10915 W [RNScreens]: disableBackButtonMenu prop is not available on Android
+11-10 14:29:31.575 10915 10915 W [RNScreens]: backTitleFontFamily prop is not available on Android
+11-10 14:29:31.931 10915 10915 I ImeTracker: com.tuapp.seguritacapp:1e5fb374: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+11-10 14:29:31.943 10915 10915 D InsetsController: show(ime(), fromIme=false)
+--------- beginning of system
+11-10 14:29:31.947 10915 10915 D InsetsController: Setting requestedVisibleTypes to -1 (was -9)
+11-10 14:29:31.962 10915 10997 D Detox.RNMarker: REACT_BRIDGELESS_LOADING_END (null)
+11-10 14:29:32.061 10915 10915 I AssistStructure: Flattened final assist data: 2892 bytes, containing 1 windows, 20 views
+11-10 14:29:32.530 10915 10915 D UiControllerImpl: Injecting string: "autoridad@ciudad.com"
+11-10 14:29:34.233 10915 11228 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=com.tuapp.seguritacapp
+11-10 14:29:34.277 10915 10915 I ImeTracker: com.tuapp.seguritacapp:1e5fb374: onShown
+11-10 14:29:36.181 10915 10962 I DetoxWSClient: Sending out action 'invokeResult' (ID #3)
+11-10 14:29:36.198 10915 10962 I DetoxDispatcher: Done with action 'invoke'
+11-10 14:29:36.221 10915 10966 D DetoxWSClient: Received action 'invoke' (ID #4, params={"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxAssertion"},"method":"waitForAssertMatcher","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"androidx.test.espresso.Espresso"},"method":"onView","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForAtIndex","args":[{"type":"Integer","value":1},{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForClass","args":["android.widget.EditText"]}}]}}]}},{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForSufficientlyVisible","args":[{"type":"Integer","value":75}]}},{"type":"Double","value":8}]})
+11-10 14:29:36.224 10915 10962 I DetoxDispatcher: Handling action 'invoke' (ID #4)...
+11-10 14:29:36.241 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForClass, [android.widget.EditText]
+11-10 14:29:36.242 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForAtIndex, [1, (is assignable from class: class android.widget.EditText and view has effective visibility <VISIBLE>)]
+11-10 14:29:36.242 10915 10962 D Detox   : class androidx.test.espresso.Espresso, onView, [View at index #1, of those matching MATCHER(is assignable from class: class android.widget.EditText and view has effective visibility <VISIBLE>)]
+11-10 14:29:36.244 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForSufficientlyVisible, [75]
+11-10 14:29:36.278 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxAssertion, waitForAssertMatcher, [androidx.test.espresso.ViewInteraction@7f2ef07, (view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() covers at least <75> percent of the view's area), 8.0]
+11-10 14:29:36.282 10915 10915 I ViewInteraction: Checking 'MatchesViewAssertion(Detox){viewMatcher=(view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() covers at least <75> percent of the view's area)}' assertion on view View at index #1, of those matching MATCHER(is assignable from class: class android.widget.EditText and view has effective visibility <VISIBLE>)
+11-10 14:29:36.287 10915 10962 I DetoxWSClient: Sending out action 'invokeResult' (ID #4)
+11-10 14:29:36.287 10915 10962 I DetoxDispatcher: Done with action 'invoke'
+11-10 14:29:36.301 10915 10966 D DetoxWSClient: Received action 'invoke' (ID #5, params={"target":{"type":"Class","value":"com.wix.detox.espresso.EspressoDetox"},"method":"perform","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForAtIndex","args":[{"type":"Integer","value":1},{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForClass","args":["android.widget.EditText"]}}]}},{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxViewActions"},"method":"typeText","args":["Password123!"]}}]})
+11-10 14:29:36.309 10915 10962 I DetoxDispatcher: Handling action 'invoke' (ID #5)...
+11-10 14:29:36.309 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForClass, [android.widget.EditText]
+11-10 14:29:36.309 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForAtIndex, [1, (is assignable from class: class android.widget.EditText and view has effective visibility <VISIBLE>)]
+11-10 14:29:36.310 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxViewActions, typeText, [Password123!]
+11-10 14:29:36.310 10915 10962 D Detox   : class com.wix.detox.espresso.EspressoDetox, perform, [View at index #1, of those matching MATCHER(is assignable from class: class android.widget.EditText and view has effective visibility <VISIBLE>), com.wix.detox.espresso.action.DetoxTypeTextAction@ab8565d]
+11-10 14:29:36.312 10915 10915 I ViewInteraction: Performing 'Click to focus & type text (Password123!)' action on view View at index #1, of those matching MATCHER(is assignable from class: class android.widget.EditText and view has effective visibility <VISIBLE>)
+11-10 14:29:36.540 10915 10915 I ImeTracker: com.tuapp.seguritacapp:f36576c9: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+11-10 14:29:36.543 10915 10915 D InsetsController: show(ime(), fromIme=false)
+11-10 14:29:36.544 10915 10915 I ImeTracker: com.tuapp.seguritacapp:f36576c9: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+11-10 14:29:36.637 10915 10915 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+11-10 14:29:36.650 10915 10915 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@97eff7b
+11-10 14:29:36.769 10915 10915 D UiControllerImpl: Injecting string: "Password123!"
+11-10 14:29:37.971 10915 10962 I DetoxWSClient: Sending out action 'invokeResult' (ID #5)
+11-10 14:29:37.971 10915 10962 I DetoxDispatcher: Done with action 'invoke'
+11-10 14:29:37.987 10915 10966 D DetoxWSClient: Received action 'invoke' (ID #6, params={"target":{"type":"Class","value":"com.wix.detox.espresso.EspressoDetox"},"method":"perform","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForTestId","args":["login-submit",{"type":"boolean","value":false}]}},{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxViewActions"},"method":"click","args":[]}}]})
+11-10 14:29:37.987 10915 10962 I DetoxDispatcher: Handling action 'invoke' (ID #6)...
+11-10 14:29:37.988 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForTestId, [login-submit, false]
+11-10 14:29:37.990 10915 10962 D Detox   : class com.wix.detox.espresso.DetoxViewActions, click, []
+11-10 14:29:37.991 10915 10962 D Detox   : class com.wix.detox.espresso.EspressoDetox, perform, [(view.getTag() is "login-submit" and view has effective visibility <VISIBLE>), com.wix.detox.espresso.action.RNClickAction@9acb92a]
+11-10 14:29:38.000 10915 10915 I ViewInteraction: Performing 'com.wix.detox.espresso.action.detoxsingletap@f71d31b click' action on view (view.getTag() is "login-submit" and view has effective visibility <VISIBLE>)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: Test exception
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: java.lang.reflect.InvocationTargetException
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at java.lang.reflect.Method.invoke(Native Method)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at org.apache.commons.lang3.reflect.MethodUtils.invokeStaticMethod(MethodUtils.java:443)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at org.apache.commons.lang3.reflect.MethodUtils.invokeStaticMethod(MethodUtils.java:405)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at com.wix.invoke.types.ClassTarget.execute(ClassTarget.java:23)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at com.wix.invoke.types.Target.invoke(Target.java:59)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at com.wix.invoke.MethodInvocation.invoke(MethodInvocation.java:35)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at com.wix.invoke.MethodInvocation.invoke(MethodInvocation.java:26)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at com.wix.invoke.MethodInvocation.invoke(MethodInvocation.java:20)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.InvokeActionHandler.handle(DetoxActionHandlers.kt:54)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor.executeAction$lambda$2$lambda$1(DetoxActionsDispatcher.kt:76)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor.$r8$lambda$GVbB7LHtBHxNHGbgYnHJ6YrwCqs(Unknown Source:0)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at android.os.Handler.handleCallback(Handler.java:995)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at android.os.Handler.dispatchMessage(Handler.java:103)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at android.os.Looper.loopOnce(Looper.java:248)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at android.os.Looper.loop(Looper.java:338)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor._init_$lambda$0(DetoxActionsDispatcher.kt:62)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor.$r8$lambda$xlgL0CQim6vNM0wWEqM8JIDgZUE(Unknown Source:0)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor$$ExternalSyntheticLambda1.run(D8$$SyntheticClass:0)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at java.lang.Thread.run(Thread.java:1119)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: Caused by: androidx.test.espresso.PerformException: Error performing 'com.wix.detox.espresso.action.detoxsingletap@f71d31b click' on view '(view.getTag() is "login-submit" and view has effective visibility <VISIBLE>)'.
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at androidx.test.espresso.PerformException$Builder.build(PerformException.java:86)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at androidx.test.espresso.ViewInteraction.doPerform(ViewInteraction.java:288)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at androidx.test.espresso.ViewInteraction.access$300(ViewInteraction.java:70)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at androidx.test.espresso.ViewInteraction$1.call(ViewInteraction.java:193)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at androidx.test.espresso.ViewInteraction$1.call(ViewInteraction.java:182)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at android.os.Handler.handleCallback(Handler.java:995)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at android.os.Handler.dispatchMessage(Handler.java:103)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at android.os.Looper.loopOnce(Looper.java:248)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at android.os.Looper.loop(Looper.java:338)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at java.lang.reflect.Method.invoke(Native Method)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: Caused by: java.lang.RuntimeException: Action will not be performed because the target view does not match one or more of the following constraints:
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: (view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() covers at least <75> percent of the view's area)
+11-10 14:29:38.010 10915 10962 I DetoxActionHandlers: Target view: "ReactViewGroup{id=86, visibility=VISIBLE, width=948, height=154, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.view.ViewGroup$LayoutParams@YYYYYY, tag=login-submit, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=1}"
+11-10 14:29:38.010 10915 10962 

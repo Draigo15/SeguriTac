@@ -1,0 +1,247 @@
+01:14:28.090 detox[12672] [90mB[39m [33mlifecycle[39m node_modules\detox\local-cli\cli.js test --configuration android.emu.debug --config e2e/jest.config.js --record-logs all --record-videos all --take-screenshots all -l trace
+  data: {
+    "id": "dcabe650-e408-4def-c308-bdd5ba9d6e07",
+    "detoxConfig": {
+      "configurationName": "android.emu.debug",
+      "apps": {
+        "default": {
+          "type": "android.apk",
+          "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+          "testBinaryPath": "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+          "build": "cmd /C cd android && gradlew.bat assembleDebug assembleAndroidTest -DtestBuildType=debug"
+        }
+      },
+      "artifacts": {
+        "rootDir": "artifacts\\android.emu.debug.2025-11-13 06-14-28Z",
+        "plugins": {
+          "log": {
+            "enabled": true,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "screenshot": {
+            "enabled": true,
+            "shouldTakeAutomaticSnapshots": true,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "video": {
+            "enabled": true,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "instruments": {
+            "enabled": false,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "uiHierarchy": {
+            "enabled": false,
+            "keepOnlyFailedTestsArtifacts": false
+          }
+        },
+        "pathBuilder": {
+          "rootDir": "artifacts"
+        }
+      },
+      "behavior": {
+        "init": {
+          "keepLockFile": false,
+          "reinstallApp": true,
+          "exposeGlobals": true
+        },
+        "cleanup": {
+          "shutdownDevice": false
+        },
+        "launchApp": "auto"
+      },
+      "cli": {
+        "recordLogs": "all",
+        "takeScreenshots": "all",
+        "recordVideos": "all",
+        "configuration": "android.emu.debug",
+        "loglevel": "trace",
+        "start": true
+      },
+      "commands": [
+        {
+          "appName": "default",
+          "build": "cmd /C cd android && gradlew.bat assembleDebug assembleAndroidTest -DtestBuildType=debug"
+        }
+      ],
+      "device": {
+        "type": "android.emulator",
+        "device": {
+          "avdName": "Pixel_6"
+        }
+      },
+      "logger": {
+        "level": "trace",
+        "overrideConsole": true,
+        "options": {
+          "showLoggerName": true,
+          "showPid": true,
+          "showLevel": false,
+          "showMetadata": false,
+          "basepath": "D:\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\detox\\src",
+          "prefixers": {},
+          "stringifiers": {}
+        }
+      },
+      "testRunner": {
+        "retries": 0,
+        "forwardEnv": true,
+        "detached": false,
+        "bail": false,
+        "noRetryArgs": [
+          "shard"
+        ],
+        "jest": {
+          "setupTimeout": 300000,
+          "teardownTimeout": 30000,
+          "retryAfterCircusRetries": false,
+          "reportWorkerAssign": true
+        },
+        "args": {
+          "$0": "jest",
+          "_": [],
+          "config": "e2e/jest.config.js",
+          "--": []
+        }
+      },
+      "session": {
+        "autoStart": true,
+        "debugSynchronization": 10000
+      }
+    },
+    "detoxIPCServer": "primary-12672",
+    "testResults": [],
+    "testSessionIndex": 0,
+    "workersCount": 0
+  }
+01:14:28.114 detox[12672] [90mi[39m [33mipc[39m Server path not specified, so defaulting to ipc.config.socketRoot + ipc.config.appspace + ipc.config.id /tmp/detox.primary-12672
+01:14:28.116 detox[12672] [90mi[39m [33mipc[39m starting server on  /tmp/detox.primary-12672 
+01:14:28.117 detox[12672] [90mi[39m [33mipc[39m starting TLS server false
+01:14:28.117 detox[12672] [90mi[39m [33mipc[39m starting server as Unix || Windows Socket
+01:14:28.120 detox[12672] [90mi[39m [33mws-server[39m Detox server listening on localhost:60311...
+01:14:28.126 detox[12672] [90mi[39m [33mlifecycle[39m Serialized the session state at: C:\Users\carus\AppData\Local\Temp\dcabe650-e408-4def-c308-bdd5ba9d6e07.detox.json
+01:14:28.128 detox[12672] [90mB[39m [33mlifecycle[39m DETOX_CONFIGURATION="android.emu.debug" DETOX_LOGLEVEL="trace" DETOX_RECORD_LOGS="all" DETOX_RECORD_VIDEOS="all" DETOX_TAKE_SCREENSHOTS="all" jest --config e2e/jest.config.js
+01:14:30.411 detox[13616] [90mB[39m [33mlifecycle[39m e2e\smoke.e2e.js
+01:14:30.454 detox[13616] [90mB[39m [33mlifecycle[39m set up environment
+01:14:30.507 detox[13616] [90mi[39m [33mipc[39m Service path not specified, so defaulting to ipc.config.socketRoot + ipc.config.appspace + id 
+01:14:30.507 detox[13616] [90mi[39m [33mipc[39m requested connection to  primary-12672 /tmp/detox.primary-12672
+01:14:30.508 detox[13616] [90mi[39m [33mipc[39m Connecting client on Unix Socket : /tmp/detox.primary-12672
+01:14:30.509 detox[12672] [90mi[39m [33mipc[39m ## socket connection to server detected ##
+01:14:30.510 detox[13616] [90mi[39m [33mipc[39m retrying reset
+01:14:30.513 detox[13616] [90mi[39m [33mipc[39m dispatching event to  primary-12672 /tmp/detox.primary-12672  :  registerContext , { id: 'secondary-13616' }
+01:14:30.514 detox[12672] [90mi[39m [33mipc[39m received event of :  registerContext { id: 'secondary-13616' }
+01:14:30.515 detox[12672] [90mi[39m [33mipc[39m dispatching event to socket  :  registerContextDone {
+  testResults: [],
+  testSessionIndex: 0,
+  unsafe_earlyTeardown: undefined
+}
+01:14:30.526 detox[13616] [90mi[39m [33mipc[39m ## received events ##
+01:14:30.527 detox[13616] [90mi[39m [33mipc[39m detected event registerContextDone { testResults: [], testSessionIndex: 0 }
+01:14:30.528 detox[12672] [90mi[39m [33mipc[39m received event of :  registerWorker { workerId: 'w1' }
+01:14:30.528 detox[12672] [90mi[39m [33mipc[39m dispatching event to socket  :  registerWorkerDone { workersCount: 1 }
+01:14:30.528 detox[12672] [90mi[39m [33mipc[39m broadcasting event to all known sockets listening to  \\.\pipe\tmp-detox.primary-12672  :   sessionStateUpdate { workersCount: 1 }
+01:14:30.528 detox[13616] [90mi[39m [33mipc[39m dispatching event to  primary-12672 /tmp/detox.primary-12672  :  registerWorker , { workerId: 'w1' }
+01:14:30.529 detox[13616] [90mi[39m [33mipc[39m ## received events ##
+01:14:30.530 detox[13616] [90mi[39m [33mipc[39m detected event registerWorkerDone { workersCount: 1 }
+01:14:34.455 detox[13616] [90mi[39m [33mipc[39m ## received events ##
+01:14:34.455 detox[13616] [90mi[39m [33mipc[39m detected event sessionStateUpdate { workersCount: 1 }
+01:14:34.458 detox[12672] [90mB[39m [33mws-server[39m[33m@60318[39m connection :60311<->:60318
+01:14:34.461 detox[13616] [90mi[39m [33mws-client[39m opened web socket to: ws://localhost:60311
+01:14:34.463 detox[13616] [90mi[39m [33mws-client[39m send message
+  data: {"type":"login","params":{"sessionId":"6fb4e7ad-4bdb-53e2-0fe2-ac083ba6a723","role":"tester"},"messageId":0}
+01:14:34.464 detox[12672] [90mi[39m [33mws-server[39m[33m@60318[39m get
+  data: {"type":"login","params":{"sessionId":"6fb4e7ad-4bdb-53e2-0fe2-ac083ba6a723","role":"tester"},"messageId":0}
+01:14:34.464 detox[12672] [90mi[39m [33mws-server[39m created session 6fb4e7ad-4bdb-53e2-0fe2-ac083ba6a723
+01:14:34.465 detox[12672] [90mi[39m [33mws-server[39m[33m@60318[39m send
+  data: {
+    "type": "loginSuccess",
+    "params": {
+      "testerConnected": true,
+      "appConnected": false
+    },
+    "messageId": 0
+  }
+01:14:34.466 detox[12672] [90mi[39m [33mws-server[39m tester joined session 6fb4e7ad-4bdb-53e2-0fe2-ac083ba6a723
+01:14:34.467 detox[13616] [90mi[39m [33mws-client[39m get message
+  data: {"type":"loginSuccess","params":{"testerConnected":true,"appConnected":false},"messageId":0}
+   
+01:14:35.399 detox[12672] [90mi[39m [33mipc[39m received event of :  allocateDevice {
+  deviceConfig: { type: 'android.emulator', device: { avdName: 'Pixel_6' } }
+}
+01:14:35.399 detox[13616] [90mi[39m [33mipc[39m dispatching event to  primary-12672 /tmp/detox.primary-12672  :  allocateDevice , {
+  deviceConfig: { type: 'android.emulator', device: { avdName: 'Pixel_6' } }
+}
+01:14:35.639 detox[12672] [90mB[39m [33mdevice[39m init
+  args: ()
+01:14:35.646 detox[12672] [90mE[39m [33mdevice[39m init
+01:14:35.646 detox[12672] [90mB[39m [33mdevice[39m[33m@0[39m allocate
+  data: {
+    "type": "android.emulator",
+    "device": {
+      "avdName": "Pixel_6"
+    }
+  }
+01:14:35.726 detox[12672] [90mE[39m [33mdevice[39m[33m@0[39m allocate
+  error: Cannot boot Android Emulator with the name: 'Pixel_6'
+  
+  HINT: Make sure you choose one of the available emulators: Pixel_4,Pixel_6_API34
+01:14:35.727 detox[12672] [90mi[39m [33mipc[39m dispatching event to socket  :  allocateDeviceDone {
+  error: {
+    name: 'DetoxRuntimeError',
+    message: "Cannot boot Android Emulator with the name: 'Pixel_6'\n" +
+      '\n' +
+      'HINT: Make sure you choose one of the available emulators: Pixel_4,Pixel_6_API34',
+    stack: "DetoxRuntimeError: Cannot boot Android Emulator with the name: 'Pixel_6'\n" +
+      '\n' +
+      'HINT: Make sure you choose one of the available emulators: Pixel_4,Pixel_6_API34\n' +
+      '    at AVDValidator._assertAVDMatch (D:\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\detox\\src\\devices\\allocation\\drivers\\android\\emulator\\AVDValidator.js:36:13)\n' +
+      '    at AVDValidator.validate (D:\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\detox\\src\\devices\\allocation\\drivers\\android\\emulator\\AVDValidator.js:18:16)\n' +
+      '    at async EmulatorAllocDriver.allocate (D:\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\detox\\src\\devices\\allocation\\drivers\\android\\emulator\\EmulatorAllocDriver.js:59:5)\n' +
+      '    at async D:\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\detox\\src\\devices\\allocation\\DeviceAllocator.js:44:22'
+  }
+}
+01:14:35.729 detox[13616] [90mi[39m [33mipc[39m ## received events ##
+01:14:35.730 detox[13616] [90mi[39m [33mipc[39m detected event allocateDeviceDone {
+  error: {
+    name: 'DetoxRuntimeError',
+    message: "Cannot boot Android Emulator with the name: 'Pixel_6'\n" +
+      '\n' +
+      'HINT: Make sure you choose one of the available emulators: Pixel_4,Pixel_6_API34',
+    stack: "DetoxRuntimeError: Cannot boot Android Emulator with the name: 'Pixel_6'\n" +
+      '\n' +
+      'HINT: Make sure you choose one of the available emulators: Pixel_4,Pixel_6_API34\n' +
+      '    at AVDValidator._assertAVDMatch (D:\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\detox\\src\\devices\\allocation\\drivers\\android\\emulator\\AVDValidator.js:36:13)\n' +
+      '    at AVDValidator.validate (D:\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\detox\\src\\devices\\allocation\\drivers\\android\\emulator\\AVDValidator.js:18:16)\n' +
+      '    at async EmulatorAllocDriver.allocate (D:\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\detox\\src\\devices\\allocation\\drivers\\android\\emulator\\EmulatorAllocDriver.js:59:5)\n' +
+      '    at async D:\\SeguridadAPP\\SeguridadCiudadanaApp\\node_modules\\detox\\src\\devices\\allocation\\DeviceAllocator.js:44:22'
+  }
+}
+01:14:35.731 detox[13616] [90mE[39m [33mlifecycle[39m set up environment
+  error: DetoxRuntimeError: Cannot boot Android Emulator with the name: 'Pixel_6'
+  
+  HINT: Make sure you choose one of the available emulators: Pixel_4,Pixel_6_API34
+      at AVDValidator._assertAVDMatch (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\devices\allocation\drivers\android\emulator\AVDValidator.js:36:13)
+      at AVDValidator.validate (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\devices\allocation\drivers\android\emulator\AVDValidator.js:18:16)
+      at async EmulatorAllocDriver.allocate (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\devices\allocation\drivers\android\emulator\EmulatorAllocDriver.js:59:5)
+      at async D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\devices\allocation\DeviceAllocator.js:44:22
+01:14:35.731 detox[13616] [90mB[39m [33mlifecycle[39m tear down environment
+01:14:35.732 detox[13616] [90mB[39m [33martifacts-manager[39m onBeforeCleanup
+  args: ()
+01:14:35.736 detox[13616] [90mi[39m [33martifacts-manager[39m Suppressed error inside function call.
+  error: TypeError: this._pathBuilder.buildPathForTestArtifact is not a function
+      at Object.preparePathForArtifact (D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\ArtifactsManager.js:73:48)
+      at D:\SeguridadAPP\SeguridadCiudadanaApp\node_modules\detox\src\artifacts\log\LogArtifactPlugin.js:21:20
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+01:14:35.737 detox[13616] [90mE[39m [33martifacts-manager[39m onBeforeCleanup
+01:14:35.739 detox[12672] [90mi[39m [33mws-server[39m tester exited session 6fb4e7ad-4bdb-53e2-0fe2-ac083ba6a723
+01:14:35.739 detox[12672] [90mE[39m [33mws-server[39m[33m@60318[39m connection :60311<->:60318
+01:14:35.739 detox[12672] [90mi[39m [33mipc[39m socket disconnected secondary-13616
+01:14:35.740 detox[13616] [90mi[39m [33mipc[39m connection closed primary-12672 /tmp/detox.primary-12672 0 tries remaining of 0
+01:14:35.776 detox[12672] [90mE[39m [33mlifecycle[39m Command failed with exit code = 1:
+DETOX_CONFIGURATION="android.emu.debug" DETOX_LOGLEVEL="trace" DETOX_RECORD_LOGS="all" DETOX_RECORD_VIDEOS="all" DETOX_TAKE_SCREENSHOTS="all" jest --config e2e/jest.config.js
+01:14:35.777 detox[12672] [90mB[39m [33mdevice[39m cleanup
+  args: ()
+01:14:35.780 detox[12672] [90mE[39m [33mdevice[39m cleanup
+01:14:35.781 detox[12672] [90mi[39m [33mws-server[39m Detox server has been closed gracefully
+01:14:35.783 detox[12672] [90mE[39m [33mlifecycle[39m node_modules\detox\local-cli\cli.js test --configuration android.emu.debug --config e2e/jest.config.js --record-logs all --record-videos all --take-screenshots all -l trace

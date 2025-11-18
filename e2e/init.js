@@ -1,3 +1,4 @@
+// Ensure Android SDK is discoverable for Detox on Windows
 if (!process.env.ANDROID_SDK_ROOT) {
   const localAppData = process.env.LOCALAPPDATA || process.env.APPDATA || '';
   if (localAppData) {
@@ -5,18 +6,23 @@ if (!process.env.ANDROID_SDK_ROOT) {
   }
 }
 
-jest.setTimeout(300000);
+// Aumentar timeout para dar más tiempo al Dev Client
+jest.setTimeout(120000);
 
 beforeAll(async () => {
-  const defaultUrl = 'http://localhost:8081';
-  const bundleURL = (process.env.EXPO_BUNDLE_URL || defaultUrl).trim();
-  const devClientURL = `exp+seguridadciudadanaapp://expo-development-client/?url=${encodeURIComponent(bundleURL)}`;
-  try {
-    await device.reverseTcpPort(8081);
-  } catch (_) {}
-  await device.launchApp({ newInstance: true, launchArgs: { detoxEnableSynchronization: 0 }, url: devClientURL });
-  await new Promise(r => setTimeout(r, 15000));
-});
+  // Simplificado: lanzar la app directamente sin complicaciones
+  await device.launchApp({ 
+    newInstance: true,
+    launchArgs: {
+      detoxPrintBusyIdleResources: 'YES'
+    }
+  });
+  
+  // Esperar a que la app se estabilice
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+}, 120000);
 
 afterAll(async () => {
+  // Cleanup básico
+  await device.terminateApp();
 });
